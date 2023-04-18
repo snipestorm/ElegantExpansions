@@ -1,0 +1,67 @@
+
+{
+  "golem_roar": {
+    "subtitle": "sounds.elegantexpansions.golem_roar",
+    "sounds": [
+      "elegantexpansions:golem_roar"
+    ]
+  },
+  "golem_walk": {
+    "subtitle": "sounds.elegantexpansions.golem_walk",
+    "sounds": [
+      "elegantexpansions:golem_walk"
+    ]
+  },
+  "golem_hurt": {
+    "subtitle": "sounds.elegantexpansions.golem_hurt",
+    "sounds": [
+      "elegantexpansions:golem_hurt"
+    ]
+  },
+  "golem_death": {
+    "subtitle": "sounds.elegantexpansions.golem_death",
+    "sounds": [
+      "elegantexpansions:golem_death"
+    ]
+  },
+  "anubis_ambient": {
+    "subtitle": "sounds.elegantexpansions.anubis_ambient",
+    "sounds": [
+      "elegantexpansions:anubis_ambient"
+    ]
+  },
+  "anubis_unstoppable": {
+    "subtitle": "sounds.elegantexpansions.anubis_unstoppable",
+    "sounds": [
+      "elegantexpansions:anubis_unstoppable"
+    ]
+  }, "anubis_bless_me_again": {
+  "subtitle": "sounds.elegantexpansions.anubis_bless_me_again",
+  "sounds": [
+    "elegantexpansions:anubis_bless_me_again"
+  ]
+}, "anubis_restore_me": {
+  "subtitle": "sounds.elegantexpansions.anubis_restore_me",
+  "sounds": [
+    "elegantexpansions:anubis_restore_me"
+  ]
+}, "anubis_awaken_friends": {
+  "subtitle": "sounds.elegantexpansions.anubis_awaken_friends",
+  "sounds": [
+    "elegantexpansions:anubis_awaken_friends"
+  ]
+}, "shrek_donkey": {
+  "subtitle": "sounds.elegantexpansions.shrek_donkey",
+  "sounds": [
+    "elegantexpansions:shrek_donkey"
+  ]
+},
+  "shrek_ambient": {
+    "sounds": [
+      {
+        "name": "elegantexpansions:shrek_ambient",
+        "stream": true
+      }
+    ]
+  }
+}

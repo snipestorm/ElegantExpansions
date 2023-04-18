@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "elegantexpansions:block/stripped_magic_log",
+    "side": "elegantexpansions:block/stripped_magic_log"
+  }
+}

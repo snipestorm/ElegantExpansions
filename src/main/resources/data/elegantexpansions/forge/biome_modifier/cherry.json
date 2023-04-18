@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes":[
+    "minecraft:flower_forest",
+    "minecraft:forest"],
+  "features":
+  [
+    "elegantexpansions:cherry_placed",
+    "elegantexpansions:large_cherry_placed"
+  ],
+  "step": "vegetal_decoration"
+}

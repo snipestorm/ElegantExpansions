@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:swamp",
+  "features":
+  [
+    "elegantexpansions:willow_placed",
+    "elegantexpansions:large_willow_placed"
+  ],
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,75 @@
+{
+
+  "creativemodetab.elegant_expansions_ores": "Elegant Expansions Ores",
+  "creativemodetab.elegant_expansions_nature":"Elegant Expansions Nature",
+  "creativemodetab.elegant_expansions_mobs":"Elegant Expansions Mobs",
+
+  "block.elegantexpansions.ruby_block": "Ruby Block",
+  "block.elegantexpansions.ruby_ore": "Ruby Ore",
+  "block.elegantexpansions.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "item.elegantexpansions.ruby": "Ruby",
+
+  "item.elegantexpansions.golem_spawn_egg": "Golem Spawn Egg",
+  "item.elegantexpansions.mummy_spawn_egg": "Mummy Spawn Egg",
+  "item.elegantexpansions.anubis_spawn_egg": "Anubis Spawn Egg",
+  "item.elegantexpansions.tiger_spawn_egg": "Tiger Spawn Egg",
+  "item.elegantexpansions.white_tiger_spawn_egg": "White Tiger Spawn Egg",
+  "item.elegantexpansions.shrek_spawn_egg": "Shrek Spawn Egg",
+  "item.elegantexpansions.shark_spawn_egg": "Shark Spawn Egg",
+
+  "item.elegantexpansions.shrek_theme_music_disc": "Shrek Theme",
+  "item.elegantexpansions.shrek_theme_music_disc.desc": "The Greatest Song Ever",
+
+  "entity.elegantexpansions.mummy": "Mummy",
+  "entity.elegantexpansions.anubis": "Anubis",
+  "entity.elegantexpansions.golem": "Golem",
+  "entity.elegantexpansions.tiger": "Tiger",
+  "entity.elegantexpansions.white_tiger": "White Tiger",
+  "entity.elegantexpansions.shrek": "Shrek",
+  "entity.elegantexpansions.shark": "Shark",
+
+
+  "block.elegantexpansions.magic_log": "Magic Log",
+  "block.elegantexpansions.magic_planks": "Magic Planks",
+  "block.elegantexpansions.magic_wood": "Magic Wood",
+  "block.elegantexpansions.stripped_magic_log": "Stripped Magic Log",
+  "block.elegantexpansions.stripped_magic_wood": "Stripped Magic Wood",
+  "block.elegantexpansions.magic_leaves": "Magic Leaves",
+  "block.elegantexpansions.magic_sapling": "Magic Sapling",
+
+  "block.elegantexpansions.willow_log": "Willow Log",
+  "block.elegantexpansions.willow_planks": "Willow Planks",
+  "block.elegantexpansions.willow_wood": "Willow Wood",
+  "block.elegantexpansions.stripped_willow_log": "Stripped Willow Log",
+  "block.elegantexpansions.stripped_willow_wood": "Stripped Willow Wood",
+  "block.elegantexpansions.willow_leaves": "Willow Leaves",
+  "block.elegantexpansions.willow_sapling": "Willow Sapling",
+
+  "block.elegantexpansions.ash_log": "Ash Log",
+  "block.elegantexpansions.ash_planks": "Ash Planks",
+  "block.elegantexpansions.ash_wood": "Ash Wood",
+  "block.elegantexpansions.stripped_ash_log": "Stripped Ash Log",
+  "block.elegantexpansions.stripped_ash_wood": "Stripped Ash Wood",
+  "block.elegantexpansions.ash_leaves": "Ash Leaves",
+  "block.elegantexpansions.ash_sapling": "Ash Sapling",
+ 
+
+  "block.elegantexpansions.maple_leaves": "Maple Leaves",
+  "block.elegantexpansions.maple_sapling": "Maple Sapling",
+
+  "block.elegantexpansions.cherry_log": "Cherry Log",
+  "block.elegantexpansions.cherry_planks": "Cherry Planks",
+  "block.elegantexpansions.cherry_wood": "Cherry Wood",
+  "block.elegantexpansions.stripped_cherry_log": "Stripped Cherry Log",
+  "block.elegantexpansions.stripped_cherry_wood": "Stripped Cherry Wood",
+  "block.elegantexpansions.white_cherry_leaves": "White Cherry Leaves",
+  "block.elegantexpansions.white_cherry_sapling": "White Cherry Sapling",
+
+  "block.elegantexpansions.banana_log": "Banana Log",
+  "block.elegantexpansions.banana_planks": "Banana Planks",
+  "block.elegantexpansions.banana_wood": "Banana Wood",
+  "block.elegantexpansions.stripped_banana_log": "Stripped Banana Log",
+  "block.elegantexpansions.stripped_banana_wood": "Stripped Banana Wood",
+  "block.elegantexpansions.banana_leaves": "Banana Leaves",
+  "block.elegantexpansions.banana_sapling": "Banana Sapling"
+}

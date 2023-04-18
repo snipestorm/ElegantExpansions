@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "elegantexpansions:magic_log",
+    "elegantexpansions:magic_wood",
+    "elegantexpansions:stripped_magic_log",
+    "elegantexpansions:stripped_magic_wood",
+    "elegantexpansions:willow_log",
+    "elegantexpansions:willow_wood",
+    "elegantexpansions:stripped_willow_log",
+    "elegantexpansions:stripped_willow_wood",
+    "elegantexpansions:ash_log",
+    "elegantexpansions:ash_wood",
+    "elegantexpansions:stripped_ash_log",
+    "elegantexpansions:stripped_ash_wood",
+    "elegantexpansions:cherry_log",
+    "elegantexpansions:cherry_wood",
+    "elegantexpansions:stripped_cherry_log",
+    "elegantexpansions:stripped_cherry_wood",
+    "elegantexpansions:banana_log",
+    "elegantexpansions:banana_wood",
+    "elegantexpansions:stripped_banana_log",
+    "elegantexpansions:stripped_banana_wood"
+  ]
+}

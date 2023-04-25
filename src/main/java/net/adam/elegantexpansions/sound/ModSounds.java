@@ -6,30 +6,33 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ElegantExpansions.MOD_ID);
 
     //golem//
-    public static final SoundEvent GOLEM_ROAR = register("golem_roar");
-    public static final SoundEvent GOLEM_WALK = register("golem_walk");
-    public static final SoundEvent GOLEM_HURT = register("golem_hurt");
-    public static final SoundEvent GOLEM_DEATH = register("golem_death");
+    public static final RegistryObject<SoundEvent> GOLEM_ROAR = registerSoundEvent("golem_roar");
+    public static final RegistryObject<SoundEvent> GOLEM_WALK = registerSoundEvent("golem_walk");
+    public static final RegistryObject<SoundEvent> GOLEM_HURT = registerSoundEvent("golem_hurt");
+    public static final RegistryObject<SoundEvent> GOLEM_DEATH = registerSoundEvent("golem_death");
     //Anubis//
-    public static final SoundEvent ANUBIS_AMBIENT = register("anubis_ambient");
-    public static final SoundEvent ANUBIS_HEAL1 = register("anubis_unstoppable");
-    public static final SoundEvent ANUBIS_HEAL2 = register("anubis_bless_me_again");
-    public static final SoundEvent ANUBIS_HEAL3 = register("anubis_restore_me");
-    public static final SoundEvent ANUBIS_AWAKEN = register("anubis_awaken_friends");
+    public static final RegistryObject<SoundEvent> ANUBIS_AMBIENT = registerSoundEvent("anubis_ambient");
+    public static final RegistryObject<SoundEvent> ANUBIS_HEAL1 = registerSoundEvent("anubis_unstoppable");
+    public static final RegistryObject<SoundEvent> ANUBIS_HEAL2 = registerSoundEvent("anubis_bless_me_again");
+    public static final RegistryObject<SoundEvent> ANUBIS_HEAL3 = registerSoundEvent("anubis_restore_me");
+    public static final RegistryObject<SoundEvent> ANUBIS_AWAKEN = registerSoundEvent("anubis_awaken_friends");
 
     //shrek//
-    public static final SoundEvent SHREK_DONKEY = register("shrek_donkey");
-    public static final SoundEvent SHREK_AMBIENT = register("shrek_ambient");
+    public static final RegistryObject<SoundEvent> SHREK_DONKEY = registerSoundEvent("shrek_donkey");
+    public static final RegistryObject<SoundEvent> SHREK_AMBIENT = registerSoundEvent("shrek_ambient");
 
     //tiger//
-    private static SoundEvent register(String soundname) {
-        return SoundEvent.createVariableRangeEvent(new ResourceLocation(ElegantExpansions.MOD_ID, soundname));}
+    private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
+        ResourceLocation id = new ResourceLocation(ElegantExpansions.MOD_ID, name);
+        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
+    }
 
 
     public static void register (IEventBus eventBus) {

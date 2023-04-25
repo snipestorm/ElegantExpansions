@@ -232,17 +232,17 @@ public class AnubisEntity extends Monster implements GeoEntity {
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(ModSounds.GOLEM_WALK, 0.25F, 1.0F);
+        this.playSound(ModSounds.GOLEM_WALK.get(), 0.25F, 1.0F);
     }
 
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return ModSounds.GOLEM_HURT;
+        return ModSounds.GOLEM_HURT.get();
     }
     protected SoundEvent getDeathSound() {
-        return ModSounds.GOLEM_DEATH;
+        return ModSounds.GOLEM_DEATH.get();
     }
-    protected SoundEvent getAmbientSound() {return ModSounds.ANUBIS_AMBIENT;}
+    protected SoundEvent getAmbientSound() {return ModSounds.ANUBIS_AMBIENT.get();}
 
     @Override
     public int getAmbientSoundInterval() {
@@ -295,13 +295,13 @@ public class AnubisEntity extends Monster implements GeoEntity {
         }
         {
             if (this.quater() && !this.summon1 && !this.friends1) {
-                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL1, SoundSource.HOSTILE, 1, 1);
+                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL1.get(), SoundSource.HOSTILE, 1, 1);
                 this.summon1 = true;
 
                 if (this.summon1 && !this.friends1) {
 
 
-                    this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_AWAKEN, SoundSource.HOSTILE, 1, 1);
+                    this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_AWAKEN.get(), SoundSource.HOSTILE, 1, 1);
                     this.friends1 = true;
                 }
             }
@@ -309,7 +309,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
         }
         {
             if (this.half() && !this.summon2) {
-                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL2, SoundSource.HOSTILE, 1, 1);
+                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL2.get(), SoundSource.HOSTILE, 1, 1);
                 this.summon2 = true;
 
 
@@ -318,7 +318,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
         }
         {
             if (this.threequater() && !this.summon3) {
-                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL3, SoundSource.HOSTILE, 1, 1);
+                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL3.get(), SoundSource.HOSTILE, 1, 1);
                 this.summon3 = true;
             }
 

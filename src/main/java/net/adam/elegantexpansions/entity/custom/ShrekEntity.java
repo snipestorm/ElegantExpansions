@@ -173,16 +173,16 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(ModSounds.GOLEM_WALK, 0.25F, 1.0F);
+        this.playSound(ModSounds.GOLEM_WALK.get(), 0.25F, 1.0F);
     }
 
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return ModSounds.GOLEM_HURT;
+        return ModSounds.GOLEM_HURT.get();
     }
 
     protected SoundEvent getDeathSound() {
-        return ModSounds.GOLEM_DEATH;
+        return ModSounds.GOLEM_DEATH.get();
     }
 
 
@@ -204,7 +204,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
 
     {
         if (this.isSummoning && !this.donkeysoundhasPlayedOnce) {
-            this.level.playSound(null, blockPosition(), ModSounds.SHREK_DONKEY, SoundSource.NEUTRAL, 3, 1);
+            this.level.playSound(null, blockPosition(), ModSounds.SHREK_DONKEY.get(), SoundSource.NEUTRAL, 3, 1);
             this.donkeysoundhasPlayedOnce = true;
         }
 

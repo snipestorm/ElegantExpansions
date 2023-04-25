@@ -71,6 +71,7 @@ public class ElegantExpansions {
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
 
+
         if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_ORES) {
             event.accept(ModItems.RUBY);
             event.accept(ModBlocks.RUBY_BLOCK);
@@ -124,11 +125,18 @@ public class ElegantExpansions {
 
             event.accept(ModItems.GOLEM_SPAWN_EGG);
             event.accept(ModItems.MUMMY_SPAWN_EGG);
+            event.accept(ModItems.PLAYERS_MUMMY_SPAWN_EGG);
             event.accept(ModItems.ANUBIS_SPAWN_EGG);
             event.accept(ModItems.TIGER_SPAWN_EGG);
             event.accept(ModItems.WHITE_TIGER_SPAWN_EGG);
             event.accept(ModItems.SHREK_SPAWN_EGG);
             event.accept(ModItems.SHARK_SPAWN_EGG);
+
+        }
+
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_MISC) {
+            event.accept(ModItems.SHREK_THEME_MUSIC_DISC);
+            event.accept(ModItems.STAFF_OF_MUMMIES);
 
         }
 
@@ -142,6 +150,7 @@ public class ElegantExpansions {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntityTypes.GOLEM.get(), GolemRenderer::new);
             EntityRenderers.register(ModEntityTypes.MUMMY.get(), MummyRenderer::new);
+            EntityRenderers.register(ModEntityTypes.PLAYERS_MUMMY.get(), PlayersMummyRenderer::new);
             EntityRenderers.register(ModEntityTypes.ANUBIS.get(), AnubisRenderer::new);
             EntityRenderers.register(ModEntityTypes.TIGER.get(), TigerRenderer::new);
             EntityRenderers.register(ModEntityTypes.WHITE_TIGER.get(), WhiteTigerRenderer::new);

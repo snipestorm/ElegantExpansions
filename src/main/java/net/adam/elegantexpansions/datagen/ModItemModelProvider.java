@@ -21,7 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.RUBY);
-      //  simpleItem(ModItems.SHREK_THEME_MUSIC_DISC);
+        simpleItem(ModItems.SHREK_THEME_MUSIC_DISC);
         saplingItem(ModBlocks.MAGIC_SAPLING);
         saplingItem(ModBlocks.WILLOW_SAPLING);
         saplingItem(ModBlocks.MAPLE_SAPLING);
@@ -32,6 +32,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.TIGER_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.WHITE_TIGER_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.MUMMY_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.PLAYERS_MUMMY_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.ANUBIS_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.GOLEM_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SHREK_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));

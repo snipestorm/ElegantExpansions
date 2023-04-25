@@ -3,6 +3,8 @@
   "creativemodetab.elegant_expansions_ores": "Elegant Expansions Ores",
   "creativemodetab.elegant_expansions_nature":"Elegant Expansions Nature",
   "creativemodetab.elegant_expansions_mobs":"Elegant Expansions Mobs",
+  "creativemodetab.elegant_expansions_misc":"Elegant Expansions Misc",
+
   "effect.elegantexpansions.bleed": "Bleed",
 
   "block.elegantexpansions.ruby_block": "Ruby Block",
@@ -16,19 +18,23 @@
   "item.minecraft.potion.effect.bleed_potion": "Potion Of Bleeding",
   "item.minecraft.splash_potion.effect.bleed_potion": "Splash Potion Of Bleeding",
   "item.minecraft.lingering_potion.effect.bleed_potion": "Lingering Potion Of Bleeding",
+  "item.minecraft.tipped_arrow.effect.bleed_potion" : "Arrow Of Bleeding",
 
   "item.elegantexpansions.golem_spawn_egg": "Golem Spawn Egg",
   "item.elegantexpansions.mummy_spawn_egg": "Mummy Spawn Egg",
+  "item.elegantexpansions.players_mummy_spawn_egg": "Players Mummy Spawn Egg",
   "item.elegantexpansions.anubis_spawn_egg": "Anubis Spawn Egg",
   "item.elegantexpansions.tiger_spawn_egg": "Tiger Spawn Egg",
   "item.elegantexpansions.white_tiger_spawn_egg": "White Tiger Spawn Egg",
   "item.elegantexpansions.shrek_spawn_egg": "Shrek Spawn Egg",
   "item.elegantexpansions.shark_spawn_egg": "Shark Spawn Egg",
+  "item.elegantexpansions.staff_of_mummies": "Staff Of Mummies",
 
   "item.elegantexpansions.shrek_theme_music_disc": "Shrek Theme",
   "item.elegantexpansions.shrek_theme_music_disc.desc": "The Greatest Song Ever",
 
   "entity.elegantexpansions.mummy": "Mummy",
+  "entity.elegantexpansions.players_mummy": "Mummy",
   "entity.elegantexpansions.anubis": "Anubis",
   "entity.elegantexpansions.golem": "Golem",
   "entity.elegantexpansions.tiger": "Tiger",

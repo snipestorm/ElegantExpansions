@@ -25,6 +25,12 @@ public class ModEntityTypes {
                             .sized(0.6F, 1.95f)
                             .build(new ResourceLocation(ElegantExpansions.MOD_ID, "mummy").toString()));
 
+    public static final RegistryObject<EntityType<PlayersMummy>> PLAYERS_MUMMY =
+            ENTITY_TYPES.register("players_mummy",
+                    () -> EntityType.Builder.of(PlayersMummy::new, MobCategory.MONSTER)
+                            .sized(0.6F, 1.95f)
+                            .build(new ResourceLocation(ElegantExpansions.MOD_ID, "mummy").toString()));
+
     public static final RegistryObject<EntityType<AnubisEntity>> ANUBIS =
             ENTITY_TYPES.register("anubis",
                     () -> EntityType.Builder.of(AnubisEntity::new, MobCategory.MONSTER)

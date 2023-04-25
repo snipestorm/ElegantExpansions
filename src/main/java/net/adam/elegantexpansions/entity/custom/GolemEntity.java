@@ -197,16 +197,16 @@ public class GolemEntity extends Monster implements GeoEntity {
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(ModSounds.GOLEM_WALK, 0.25F, 1.0F);
+        this.playSound(ModSounds.GOLEM_WALK.get(), 0.25F, 1.0F);
     }
 
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return ModSounds.GOLEM_HURT;
+        return ModSounds.GOLEM_HURT.get();
     }
 
     protected SoundEvent getDeathSound() {
-        return ModSounds.GOLEM_DEATH;
+        return ModSounds.GOLEM_DEATH.get();
     }
 
 
@@ -239,7 +239,7 @@ public class GolemEntity extends Monster implements GeoEntity {
         }
         {
             if (this.isRage() && !this.ragehasPlayedOnce) {
-                this.level.playSound(null, blockPosition(), ModSounds.GOLEM_ROAR, SoundSource.HOSTILE, 1, 1);
+                this.level.playSound(null, blockPosition(), ModSounds.GOLEM_ROAR.get(), SoundSource.HOSTILE, 1, 1);
                 this.ragehasPlayedOnce = true;
             }
 

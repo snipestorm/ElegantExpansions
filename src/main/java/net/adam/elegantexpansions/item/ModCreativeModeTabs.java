@@ -15,6 +15,7 @@ public class ModCreativeModeTabs {
     public static CreativeModeTab ELEGANT_EXPANSIONS_ORES;
     public static CreativeModeTab ELEGANT_EXPANSIONS_NATURE;
     public static CreativeModeTab ELEGANT_EXPANSIONS_MOBS;
+    public static CreativeModeTab ELEGANT_EXPANSIONS_MISC;
 
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
@@ -29,6 +30,10 @@ public class ModCreativeModeTabs {
         ELEGANT_EXPANSIONS_MOBS = event.registerCreativeModeTab(new ResourceLocation(ElegantExpansions.MOD_ID, "elegant_expansions_mobs"),
                 builder -> builder.icon(() -> new ItemStack(ModItems.MUMMY_SPAWN_EGG.get()))
                         .title(Component.translatable("creativemodetab.elegant_expansions_mobs")));
+
+        ELEGANT_EXPANSIONS_MISC = event.registerCreativeModeTab(new ResourceLocation(ElegantExpansions.MOD_ID, "elegant_expansions_misc"),
+                builder -> builder.icon(() -> new ItemStack(ModItems.SHREK_THEME_MUSIC_DISC.get()))
+                        .title(Component.translatable("creativemodetab.elegant_expansions_misc")));
     }
 
 }

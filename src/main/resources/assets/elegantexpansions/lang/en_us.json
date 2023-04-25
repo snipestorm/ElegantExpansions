@@ -3,11 +3,19 @@
   "creativemodetab.elegant_expansions_ores": "Elegant Expansions Ores",
   "creativemodetab.elegant_expansions_nature":"Elegant Expansions Nature",
   "creativemodetab.elegant_expansions_mobs":"Elegant Expansions Mobs",
+  "effect.elegantexpansions.bleed": "Bleed",
 
   "block.elegantexpansions.ruby_block": "Ruby Block",
   "block.elegantexpansions.ruby_ore": "Ruby Ore",
   "block.elegantexpansions.deepslate_ruby_ore": "Deepslate Ruby Ore",
   "item.elegantexpansions.ruby": "Ruby",
+
+  "enchantment.elegantexpansions.lightning_strike": "Lightning Strike",
+
+
+  "item.minecraft.potion.effect.bleed_potion": "Potion Of Bleeding",
+  "item.minecraft.splash_potion.effect.bleed_potion": "Splash Potion Of Bleeding",
+  "item.minecraft.lingering_potion.effect.bleed_potion": "Lingering Potion Of Bleeding",
 
   "item.elegantexpansions.golem_spawn_egg": "Golem Spawn Egg",
   "item.elegantexpansions.mummy_spawn_egg": "Mummy Spawn Egg",

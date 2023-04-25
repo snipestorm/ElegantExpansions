@@ -55,6 +55,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
     private boolean friends2;
     private boolean friends3;
 
+    protected int nextSoundTickCount;
 
     public AnubisEntity(EntityType<? extends AnubisEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -115,12 +116,12 @@ public class AnubisEntity extends Monster implements GeoEntity {
         return Monster.createMobAttributes()
 
                 .add(Attributes.MAX_HEALTH, 250)
-                .add(Attributes.ARMOR,10)
+                .add(Attributes.ARMOR,30)
                 .add(Attributes.ARMOR_TOUGHNESS,10)
-                .add(Attributes.ATTACK_DAMAGE, 8.00f)
+                .add(Attributes.ATTACK_DAMAGE, 6.00f)
                 .add(Attributes.ATTACK_SPEED, 1.1f)
-                .add(Attributes.MOVEMENT_SPEED, 0.215f)
-                .add(Attributes.ATTACK_KNOCKBACK, 2.5f).build();
+                .add(Attributes.MOVEMENT_SPEED, 0.200f)
+                .add(Attributes.ATTACK_KNOCKBACK, 1.2f).build();
 
     }
 
@@ -245,7 +246,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
 
     @Override
     public int getAmbientSoundInterval() {
-        return 6000;
+        return 60000;
     }
 
 
@@ -269,11 +270,12 @@ public class AnubisEntity extends Monster implements GeoEntity {
         return super.hurt(p_31461_, p_31462_);
     }
 
+    @Override
     public boolean doHurtTarget(Entity p_32892_) {
         boolean flag = super.doHurtTarget(p_32892_);
         if (flag && this.getMainHandItem().isEmpty() && p_32892_ instanceof LivingEntity) {
             float f = this.level.getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
-            ((LivingEntity) p_32892_).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100 * (int) f), this);
+            ((LivingEntity) p_32892_).addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60 * (int) f), this);
         }
 
         return flag;
@@ -296,8 +298,12 @@ public class AnubisEntity extends Monster implements GeoEntity {
                 this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL1, SoundSource.HOSTILE, 1, 1);
                 this.summon1 = true;
 
-                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_AWAKEN, SoundSource.HOSTILE, 1, 1);
-                this.friends1 = true;
+                if (this.summon1 && !this.friends1) {
+
+
+                    this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_AWAKEN, SoundSource.HOSTILE, 1, 1);
+                    this.friends1 = true;
+                }
             }
 
         }

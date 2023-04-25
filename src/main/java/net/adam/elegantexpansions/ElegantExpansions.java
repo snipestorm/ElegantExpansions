@@ -2,10 +2,13 @@ package net.adam.elegantexpansions;
 
 import com.mojang.logging.LogUtils;
 import net.adam.elegantexpansions.block.ModBlocks;
+import net.adam.elegantexpansions.effect.ModEffects;
+import net.adam.elegantexpansions.enchantment.ModEnchantments;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
 import net.adam.elegantexpansions.entity.client.*;
 import net.adam.elegantexpansions.item.ModCreativeModeTabs;
 import net.adam.elegantexpansions.item.ModItems;
+import net.adam.elegantexpansions.potion.ModPotions;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.sounds.SoundEvent;
@@ -45,6 +48,9 @@ public class ElegantExpansions {
         GeckoLib.initialize();
         ModEntityTypes.register(modEventBus);
         ModSounds.register(modEventBus);
+        ModEffects.register(modEventBus);
+        ModPotions.register(modEventBus);
+        ModEnchantments.register(modEventBus);
 
 
 
@@ -118,6 +124,7 @@ public class ElegantExpansions {
 
             event.accept(ModItems.GOLEM_SPAWN_EGG);
             event.accept(ModItems.MUMMY_SPAWN_EGG);
+            event.accept(ModItems.ANUBIS_SPAWN_EGG);
             event.accept(ModItems.TIGER_SPAWN_EGG);
             event.accept(ModItems.WHITE_TIGER_SPAWN_EGG);
             event.accept(ModItems.SHREK_SPAWN_EGG);

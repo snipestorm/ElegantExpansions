@@ -28,7 +28,7 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<AnubisEntity>> ANUBIS =
             ENTITY_TYPES.register("anubis",
                     () -> EntityType.Builder.of(AnubisEntity::new, MobCategory.MONSTER)
-                            .sized(0.6F, 1.95f)
+                            .sized(0.9F, 2.25f)
                             .build(new ResourceLocation(ElegantExpansions.MOD_ID, "anubis").toString()));
 
     public static final RegistryObject<EntityType<TigerEntity>> TIGER =

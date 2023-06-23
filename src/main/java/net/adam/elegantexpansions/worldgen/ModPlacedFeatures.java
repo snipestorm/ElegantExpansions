@@ -27,8 +27,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LARGE_ASH_PLACED_KEY = createKey("large_ash_placed");
     public static final ResourceKey<PlacedFeature> BURNT_ASH_PLACED_KEY = createKey("burnt_ash_placed");
     public static final ResourceKey<PlacedFeature> LARGE_BURNT_ASH_PLACED_KEY = createKey("burnt_large_ash_placed");
-    public static final ResourceKey<PlacedFeature> CHERRY_PLACED_KEY = createKey("cherry_placed");
-    public static final ResourceKey<PlacedFeature> LARGE_CHERRY_PLACED_KEY = createKey("large_cherry_placed");
+
 
     public static final ResourceKey<PlacedFeature> BANANA_PLACED_KEY = createKey("banana_placed");
     public static final ResourceKey<PlacedFeature> LARGE_BANANA_PLACED_KEY = createKey("large_banana_placed");
@@ -65,12 +64,6 @@ public class ModPlacedFeatures {
 
         register(context, LARGE_BURNT_ASH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BURNT_LARGE_ASH_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 2), ModBlocks.ASH_SAPLING.get()));
-
-        register(context, CHERRY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CHERRY_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.CHERRY_SAPLING.get()));
-
-        register(context, LARGE_CHERRY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_CHERRY_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1f, 2), ModBlocks.CHERRY_SAPLING.get()));
 
         register(context, BANANA_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BANANA_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.BANANA_SAPLING.get()));

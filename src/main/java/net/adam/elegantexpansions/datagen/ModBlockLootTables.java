@@ -57,15 +57,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.ASH_LEAVES.get(), (block) ->
                 createLeavesDrops(block, ModBlocks.ASH_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
-        this.dropSelf(ModBlocks.CHERRY_LOG.get());
-        this.dropSelf(ModBlocks.CHERRY_WOOD.get());
-        this.dropSelf(ModBlocks.CHERRY_PLANKS.get());
-        this.dropSelf(ModBlocks.STRIPPED_CHERRY_WOOD.get());
-        this.dropSelf(ModBlocks.STRIPPED_CHERRY_LOG.get());
-        this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
-
-        this.add(ModBlocks.CHERRY_LEAVES.get(), (block) ->
-                createLeavesDrops(block, ModBlocks.CHERRY_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
      
 
         this.dropSelf(ModBlocks.BANANA_LOG.get());

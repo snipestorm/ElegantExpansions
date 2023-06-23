@@ -21,12 +21,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.RUBY);
+        simpleItem(ModItems.SHARK_TOOTH);
         simpleItem(ModItems.SHREK_THEME_MUSIC_DISC);
         saplingItem(ModBlocks.MAGIC_SAPLING);
         saplingItem(ModBlocks.WILLOW_SAPLING);
         saplingItem(ModBlocks.MAPLE_SAPLING);
         saplingItem(ModBlocks.ASH_SAPLING);
-        saplingItem(ModBlocks.CHERRY_SAPLING);
         saplingItem(ModBlocks.BANANA_SAPLING);
 
         withExistingParent(ModItems.TIGER_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));

@@ -39,8 +39,6 @@ import static net.minecraft.Util.getOrThrow;
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAGIC_KEY = registerKey("magic");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_MAGIC_KEY = registerKey("large_magic");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CHERRY_KEY = registerKey("cherry");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_CHERRY_KEY = registerKey("large_cherry");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WILLOW_KEY = registerKey("willow");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_WILLOW_KEY = registerKey("large_willow");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAPLE_KEY = registerKey("maple");
@@ -127,19 +125,6 @@ public class ModConfiguredFeatures {
                 new  RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2),0),
                 new TwoLayersFeatureSize(0, 0, 0)).build());
 
-        register(context, CHERRY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.CHERRY_LOG.get()),
-                new StraightTrunkPlacer(3, 2, 0),
-                BlockStateProvider.simple(ModBlocks.CHERRY_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
-                new TwoLayersFeatureSize(1, 0, 2)).build());
-
-        register(context, LARGE_CHERRY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.CHERRY_LOG.get()),
-                new FancyTrunkPlacer(3, 7, 0),
-                BlockStateProvider.simple(ModBlocks.CHERRY_LEAVES.get()),
-                new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
-                new TwoLayersFeatureSize(0, 0, 0)).build());
 
         register(context, BANANA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.BANANA_LOG.get()),

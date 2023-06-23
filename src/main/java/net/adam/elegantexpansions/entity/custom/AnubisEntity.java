@@ -104,7 +104,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
     }
 
     public void checkDespawn() {
-        if (this.level.getDifficulty() == Difficulty.PEACEFUL && this.shouldDespawnInPeaceful()) {
+        if (this.level().getDifficulty() == Difficulty.PEACEFUL && this.shouldDespawnInPeaceful()) {
             this.discard();
         } else {
             this.noActionTime = 0;
@@ -274,7 +274,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
     public boolean doHurtTarget(Entity p_32892_) {
         boolean flag = super.doHurtTarget(p_32892_);
         if (flag && this.getMainHandItem().isEmpty() && p_32892_ instanceof LivingEntity) {
-            float f = this.level.getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
+            float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
             ((LivingEntity) p_32892_).addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60 * (int) f), this);
         }
 
@@ -295,13 +295,13 @@ public class AnubisEntity extends Monster implements GeoEntity {
         }
         {
             if (this.quater() && !this.summon1 && !this.friends1) {
-                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL1.get(), SoundSource.HOSTILE, 1, 1);
+                this.level().playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL1.get(), SoundSource.HOSTILE, 1, 1);
                 this.summon1 = true;
 
                 if (this.summon1 && !this.friends1) {
 
 
-                    this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_AWAKEN.get(), SoundSource.HOSTILE, 1, 1);
+                    this.level().playSound(null, blockPosition(), ModSounds.ANUBIS_AWAKEN.get(), SoundSource.HOSTILE, 1, 1);
                     this.friends1 = true;
                 }
             }
@@ -309,7 +309,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
         }
         {
             if (this.half() && !this.summon2) {
-                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL2.get(), SoundSource.HOSTILE, 1, 1);
+                this.level().playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL2.get(), SoundSource.HOSTILE, 1, 1);
                 this.summon2 = true;
 
 
@@ -318,7 +318,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
         }
         {
             if (this.threequater() && !this.summon3) {
-                this.level.playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL3.get(), SoundSource.HOSTILE, 1, 1);
+                this.level().playSound(null, blockPosition(), ModSounds.ANUBIS_HEAL3.get(), SoundSource.HOSTILE, 1, 1);
                 this.summon3 = true;
             }
 
@@ -326,14 +326,14 @@ public class AnubisEntity extends Monster implements GeoEntity {
 
         {
             if (this.quater() && !this.firstsummon) {
-                ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level;
+                ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level();
                 this.heal(250);
                 for (int i = 0; i < 1; ++i) {
                     BlockPos blockpos = AnubisEntity.this.blockPosition().offset(-2 + AnubisEntity.this.random.nextInt(5), 1, -2 + AnubisEntity.this.random.nextInt(5));
-                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level);
+                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level());
                     if (mummy != null) {
                         mummy.moveTo(blockpos, 0.0F, 0.0F);
-                        mummy.finalizeSpawn(serverlevel, AnubisEntity.this.level.getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
+                        mummy.finalizeSpawn(serverlevel, AnubisEntity.this.level().getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
                         serverlevel.addFreshEntityWithPassengers(mummy);
                         this.firstsummon = true;
                     }
@@ -344,17 +344,17 @@ public class AnubisEntity extends Monster implements GeoEntity {
         }
         {
             if (this.half() && !this.secondsummon) {
-                ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level;
+                ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level();
                 this.heal(250);
 
                 for (int i = 0; i < 3; ++i) {
                     BlockPos blockpos = AnubisEntity.this.blockPosition().offset(-2 + AnubisEntity.this.random.nextInt(5), 1, -2 + AnubisEntity.this.random.nextInt(5));
-                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level);
+                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level());
                     if (mummy != null) {
                         mummy.moveTo(blockpos, 0.0F, 0.0F);
                         mummy.invulnerableTime = 10;
                         mummy.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST));
-                        mummy.finalizeSpawn(serverlevel, AnubisEntity.this.level.getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
+                        mummy.finalizeSpawn(serverlevel, AnubisEntity.this.level().getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
                         serverlevel.addFreshEntityWithPassengers(mummy);
                         this.secondsummon = true;
 
@@ -365,17 +365,17 @@ public class AnubisEntity extends Monster implements GeoEntity {
 
         {
             if (this.threequater() && !this.thirdsummon) {
-                ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level;
+                ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level();
                 this.heal(250);
 
                 for (int i = 0; i < 5; ++i) {
                     BlockPos blockpos = AnubisEntity.this.blockPosition().offset(-2 + AnubisEntity.this.random.nextInt(5), 1, -2 + AnubisEntity.this.random.nextInt(5));
-                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level);
+                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level());
                     if (mummy != null) {
                         mummy.moveTo(blockpos, 0.0F, 0.0F);
                         mummy.invulnerableTime = 10;
                         mummy.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST));
-                        mummy.finalizeSpawn(serverlevel, AnubisEntity.this.level.getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
+                        mummy.finalizeSpawn(serverlevel, AnubisEntity.this.level().getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
                         serverlevel.addFreshEntityWithPassengers(mummy);
                         this.thirdsummon = true;
 

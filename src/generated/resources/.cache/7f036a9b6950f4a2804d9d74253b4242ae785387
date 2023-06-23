@@ -1,4 +1,4 @@
-// 1.19.3	2023-04-25T16:06:40.6233361	Item Models: elegantexpansions
+// 1.20	2023-06-23T19:10:12.9072241	Item Models: elegantexpansions
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/elegantexpansions/models/item/anubis_spawn_egg.json
 b4dbd4ec53a8eb1956461819ccc674c17fa2f556 assets/elegantexpansions/models/item/ash_sapling.json
 aea3cad49bb03450f7c4566001842501c2e642ca assets/elegantexpansions/models/item/banana_sapling.json
@@ -9,9 +9,9 @@ dab35a4ccbaea21a3f6749c6ad3954769736d188 assets/elegantexpansions/models/item/ma
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/elegantexpansions/models/item/players_mummy_spawn_egg.json
 fd6aa47c51bc30c4924182b0470aeddce557cc82 assets/elegantexpansions/models/item/ruby.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/elegantexpansions/models/item/shark_spawn_egg.json
+5d8a28160bd15be2c9631c59ca1cc7496c67b669 assets/elegantexpansions/models/item/shark_tooth.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/elegantexpansions/models/item/shrek_spawn_egg.json
 c63cbf5a0f4e9eef284dcc180750f0ca26251529 assets/elegantexpansions/models/item/shrek_theme_music_disc.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/elegantexpansions/models/item/tiger_spawn_egg.json
-19417e00437d347469111000cf36da826757ec7b assets/elegantexpansions/models/item/white_cherry_sapling.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/elegantexpansions/models/item/white_tiger_spawn_egg.json
 2af7996074e0f5aec5ff321dd5761a4f19b9cd58 assets/elegantexpansions/models/item/willow_sapling.json

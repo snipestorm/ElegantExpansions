@@ -1,6 +1,8 @@
 package net.adam.elegantexpansions.effect;
 
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
@@ -13,8 +15,8 @@ public class BleedEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
-        if (!pLivingEntity.level.isClientSide()) {
-            pLivingEntity.hurt(DamageSource.GENERIC, 0.5F);
+        if (!pLivingEntity.level().isClientSide()) {
+            pLivingEntity.hurt(pLivingEntity.damageSources().generic(), 0.5F);
         }
     }
 

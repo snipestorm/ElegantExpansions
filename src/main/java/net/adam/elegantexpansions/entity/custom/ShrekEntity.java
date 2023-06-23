@@ -9,6 +9,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -33,7 +34,7 @@ import java.util.EnumSet;
 import java.util.Random;
 import java.util.UUID;
 
-import static net.adam.elegantexpansions.ElegantExpansions.instance;
+
 
 public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob {
     private final AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
@@ -97,7 +98,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
 
     public void readAdditionalSaveData(CompoundTag p_30402_) {
         super.readAdditionalSaveData(p_30402_);
-        this.readPersistentAngerSaveData(this.level, p_30402_);
+        this.readPersistentAngerSaveData(this.level(), p_30402_);
     }
 
     private PlayState predicate(software.bernie.geckolib.core.animation.AnimationState animationState) {
@@ -193,8 +194,8 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
 
     public void tick() {
         super.tick();
-        if (!this.level.isClientSide) {
-            this.updatePersistentAnger((ServerLevel) this.level, true);
+        if (!this.level().isClientSide) {
+            this.updatePersistentAnger((ServerLevel) this.level(), true);
         }
     }
 
@@ -204,7 +205,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
 
     {
         if (this.isSummoning && !this.donkeysoundhasPlayedOnce) {
-            this.level.playSound(null, blockPosition(), ModSounds.SHREK_DONKEY.get(), SoundSource.NEUTRAL, 3, 1);
+            this.level().playSound(null, blockPosition(), ModSounds.SHREK_DONKEY.get(), SoundSource.NEUTRAL, 3, 1);
             this.donkeysoundhasPlayedOnce = true;
         }
 
@@ -217,7 +218,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
 
 
     public boolean doHurtTarget(Entity p_30372_) {
-        boolean flag = p_30372_.hurt(DamageSource.mobAttack(this), (float) ((int) this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
+        boolean flag = p_30372_.hurt(damageSources().mobAttack(this), (float) ((int) this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
         if (flag) {
             this.doEnchantDamageEffects(this, p_30372_);
         }
@@ -280,7 +281,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
         public boolean canUse() {
             LivingEntity livingentity = ShrekEntity.this;
             if (livingentity != null && livingentity.isAlive()) {
-                return ShrekEntity.this.tickCount >= this.nextCastTickCount && random.nextInt(100) == 3;
+                return ShrekEntity.this.tickCount >= this.nextCastTickCount && random.nextInt(1000) == 3;
 
             }
             if (donkeySummoned) {
@@ -332,15 +333,15 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
 
         public void performSpellCasting() {
             if (!donkeySummoned && !isSummoning) {
-                ServerLevel serverlevel = (ServerLevel) ShrekEntity.this.level;
+                ServerLevel serverlevel = (ServerLevel) ShrekEntity.this.level();
 
 
                 for (int i = 0; i < 1; ++i) {
                     BlockPos blockpos = ShrekEntity.this.blockPosition().offset(-2 + ShrekEntity.this.random.nextInt(5), 1, -2 + ShrekEntity.this.random.nextInt(5));
-                    Donkey donkey = EntityType.DONKEY.create(ShrekEntity.this.level);
+                    Donkey donkey = EntityType.DONKEY.create(ShrekEntity.this.level());
                     if (donkey != null) {
                         donkey.moveTo(blockpos, 0.0F, 0.0F);
-                        donkey.finalizeSpawn(serverlevel, ShrekEntity.this.level.getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
+                        donkey.finalizeSpawn(serverlevel, ShrekEntity.this.level().getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
                         serverlevel.addFreshEntityWithPassengers(donkey);
 
                     }

@@ -30,5 +30,6 @@
     "recipes": [
       "elegantexpansions:ruby_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

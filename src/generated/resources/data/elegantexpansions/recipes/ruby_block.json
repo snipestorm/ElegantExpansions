@@ -13,5 +13,6 @@
   ],
   "result": {
     "item": "elegantexpansions:ruby_block"
-  }
+  },
+  "show_notification": true
 }

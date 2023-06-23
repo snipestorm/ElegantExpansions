@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "elegantexpansions:block/white_cherry_sapling"
+    "layer0": "elegantexpansions:item/shark_tooth"
   }
 }

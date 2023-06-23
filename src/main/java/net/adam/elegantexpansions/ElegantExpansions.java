@@ -10,11 +10,15 @@ import net.adam.elegantexpansions.item.ModCreativeModeTabs;
 import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.potion.ModPotions;
 import net.adam.elegantexpansions.sound.ModSounds;
+import net.adam.elegantexpansions.util.BetterBrewingRecipe;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,22 +31,23 @@ import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
 
 
-
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ElegantExpansions.MOD_ID)
 public class ElegantExpansions {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "elegantexpansions";
+
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ElegantExpansions.MOD_ID);
 
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
-    public static ElegantExpansions instance;
-    public ElegantExpansions() {
 
-        instance = this;
+    public ElegantExpansions() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         GeckoLib.initialize();
@@ -51,6 +56,8 @@ public class ElegantExpansions {
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
         ModEnchantments.register(modEventBus);
+
+
 
 
 
@@ -66,20 +73,27 @@ public class ElegantExpansions {
         modEventBus.addListener(this::addCreative);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+        event.enqueueWork(() -> {
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
+                ModItems.SHARK_TOOTH.get(), ModPotions.BLEED_POTION.get()));
+    });
     }
 
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
 
 
-        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_ORES) {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+
+
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_ORES.get()) {
             event.accept(ModItems.RUBY);
             event.accept(ModBlocks.RUBY_BLOCK);
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
 
         }
-        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_NATURE) {
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_NATURE.get()) {
 
             event.accept(ModBlocks.MAGIC_LEAVES);
             event.accept(ModBlocks.MAGIC_LOG);
@@ -104,13 +118,6 @@ public class ElegantExpansions {
             event.accept(ModBlocks.STRIPPED_ASH_LOG);
             event.accept(ModBlocks.STRIPPED_ASH_WOOD);
             event.accept(ModBlocks.ASH_SAPLING);
-            event.accept(ModBlocks.CHERRY_LEAVES);
-            event.accept(ModBlocks.CHERRY_LOG);
-            event.accept(ModBlocks.CHERRY_WOOD);
-            event.accept(ModBlocks.CHERRY_PLANKS);
-            event.accept(ModBlocks.STRIPPED_CHERRY_LOG);
-            event.accept(ModBlocks.STRIPPED_CHERRY_WOOD);
-            event.accept(ModBlocks.CHERRY_SAPLING);
             event.accept(ModBlocks.BANANA_LEAVES);
             event.accept(ModBlocks.BANANA_LOG);
             event.accept(ModBlocks.BANANA_WOOD);
@@ -118,10 +125,11 @@ public class ElegantExpansions {
             event.accept(ModBlocks.STRIPPED_BANANA_LOG);
             event.accept(ModBlocks.STRIPPED_BANANA_WOOD);
             event.accept(ModBlocks.BANANA_SAPLING);
+            event.accept(ModItems.SHARK_TOOTH);
         }
 
 
-        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_MOBS) {
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_MOBS.get()) {
 
             event.accept(ModItems.GOLEM_SPAWN_EGG);
             event.accept(ModItems.MUMMY_SPAWN_EGG);
@@ -134,7 +142,7 @@ public class ElegantExpansions {
 
         }
 
-        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_MISC) {
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_MISC.get()) {
             event.accept(ModItems.SHREK_THEME_MUSIC_DISC);
             event.accept(ModItems.STAFF_OF_MUMMIES);
 

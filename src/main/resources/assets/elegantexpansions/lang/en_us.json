@@ -11,6 +11,7 @@
   "block.elegantexpansions.ruby_ore": "Ruby Ore",
   "block.elegantexpansions.deepslate_ruby_ore": "Deepslate Ruby Ore",
   "item.elegantexpansions.ruby": "Ruby",
+  "item.elegantexpansions.shark_tooth": "Shark Tooth",
 
   "enchantment.elegantexpansions.lightning_strike": "Lightning Strike",
 
@@ -71,13 +72,6 @@
   "block.elegantexpansions.maple_leaves": "Maple Leaves",
   "block.elegantexpansions.maple_sapling": "Maple Sapling",
 
-  "block.elegantexpansions.cherry_log": "Cherry Log",
-  "block.elegantexpansions.cherry_planks": "Cherry Planks",
-  "block.elegantexpansions.cherry_wood": "Cherry Wood",
-  "block.elegantexpansions.stripped_cherry_log": "Stripped Cherry Log",
-  "block.elegantexpansions.stripped_cherry_wood": "Stripped Cherry Wood",
-  "block.elegantexpansions.white_cherry_leaves": "White Cherry Leaves",
-  "block.elegantexpansions.white_cherry_sapling": "White Cherry Sapling",
 
   "block.elegantexpansions.banana_log": "Banana Log",
   "block.elegantexpansions.banana_planks": "Banana Planks",

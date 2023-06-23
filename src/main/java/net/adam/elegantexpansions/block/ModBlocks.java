@@ -13,7 +13,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -26,15 +25,15 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, ElegantExpansions.MOD_ID);
 
     public static final RegistryObject<Block> RUBY_BLOCK = registerblock("ruby_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> RUBY_ORE = registerblock("ruby_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)
                     .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
 
     public static final RegistryObject<Block> DEEPSLATE_RUBY_ORE = registerblock("deepslate_ruby_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)
                     .strength(8f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
 
 
@@ -231,62 +230,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> ASH_SAPLING = registerblock("ash_sapling",
             () -> new SaplingBlock(new AshTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
-    public static final RegistryObject<Block> CHERRY_LOG = registerblock("cherry_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
-                    .strength(5f)));
 
-    public static final RegistryObject<Block> CHERRY_WOOD = registerblock("cherry_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
-                    .strength(5f)));
-
-    public static final RegistryObject<Block> STRIPPED_CHERRY_LOG = registerblock("stripped_cherry_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
-                    .strength(5f)));
-
-    public static final RegistryObject<Block> STRIPPED_CHERRY_WOOD = registerblock("stripped_cherry_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
-                    .strength(5f)));
-
-
-
-    public static final RegistryObject<Block> CHERRY_PLANKS = registerblock("cherry_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(5f)) {
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 5;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 5;
-                }
-            });
-
-    public static final RegistryObject<Block> CHERRY_LEAVES = registerblock("white_cherry_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 30;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 60;
-                }
-            });
-
-    public static final RegistryObject<Block> CHERRY_SAPLING = registerblock("white_cherry_sapling",
-            () -> new SaplingBlock(new CherryTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 
     public static final RegistryObject<Block> BANANA_LOG = registerblock("banana_log",

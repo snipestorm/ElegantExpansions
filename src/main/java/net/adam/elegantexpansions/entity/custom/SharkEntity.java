@@ -58,7 +58,7 @@ public class SharkEntity extends WaterAnimal implements GeoEntity {
         public boolean doHurtTarget(Entity entity) {
         boolean flag = super.doHurtTarget(entity);
         if (flag && this.getMainHandItem().isEmpty() && entity instanceof LivingEntity) {
-            float f = this.level.getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
+            float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
             ((LivingEntity)entity).addEffect(new MobEffectInstance(ModEffects.BLEED.get(), 140 * (int)f), this);
         }
 

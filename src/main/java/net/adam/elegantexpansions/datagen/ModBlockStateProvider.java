@@ -75,21 +75,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(ModBlocks.STRIPPED_ASH_LOG.get(), models().withExistingParent("elegantexpansions:stripped_ash_log", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_ASH_WOOD.get(), models().withExistingParent("elegantexpansions:stripped_ash_wood", "minecraft:block/cube_column"));
 
-        logBlock(((RotatedPillarBlock) ModBlocks.CHERRY_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.CHERRY_WOOD.get(), blockTexture(ModBlocks.CHERRY_LOG.get()), blockTexture(ModBlocks.CHERRY_LOG.get()));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_CHERRY_LOG.get(), new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_cherry_log"),
-                new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_cherry_log_top"));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_CHERRY_WOOD.get(), new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_cherry_log"),
-                new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_cherry_log"));
-
-        blockWithItem(ModBlocks.CHERRY_PLANKS);
-        blockWithItem(ModBlocks.CHERRY_LEAVES);
-        saplingBlock(ModBlocks.CHERRY_SAPLING);
-
-        simpleBlockItem(ModBlocks.CHERRY_LOG.get(), models().withExistingParent("elegantexpansions:cherry_log", "minecraft:block/cube_column"));
-        simpleBlockItem(ModBlocks.CHERRY_WOOD.get(), models().withExistingParent("elegantexpansions:cherry_wood", "minecraft:block/cube_column"));
-        simpleBlockItem(ModBlocks.STRIPPED_CHERRY_LOG.get(), models().withExistingParent("elegantexpansions:stripped_cherry_log", "minecraft:block/cube_column"));
-        simpleBlockItem(ModBlocks.STRIPPED_CHERRY_WOOD.get(), models().withExistingParent("elegantexpansions:stripped_cherry_wood", "minecraft:block/cube_column"));
       
 
         logBlock(((RotatedPillarBlock) ModBlocks.BANANA_LOG.get()));

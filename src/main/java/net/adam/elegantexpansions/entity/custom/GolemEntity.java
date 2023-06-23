@@ -99,7 +99,7 @@ public class GolemEntity extends Monster implements GeoEntity {
     }
 
     public void checkDespawn() {
-        if (this.level.getDifficulty() == Difficulty.PEACEFUL && this.shouldDespawnInPeaceful()) {
+        if (this.level().getDifficulty() == Difficulty.PEACEFUL && this.shouldDespawnInPeaceful()) {
             this.discard();
         } else {
             this.noActionTime = 0;
@@ -239,7 +239,7 @@ public class GolemEntity extends Monster implements GeoEntity {
         }
         {
             if (this.isRage() && !this.ragehasPlayedOnce) {
-                this.level.playSound(null, blockPosition(), ModSounds.GOLEM_ROAR.get(), SoundSource.HOSTILE, 1, 1);
+                this.level().playSound(null, blockPosition(), ModSounds.GOLEM_ROAR.get(), SoundSource.HOSTILE, 1, 1);
                 this.ragehasPlayedOnce = true;
             }
 
@@ -247,16 +247,16 @@ public class GolemEntity extends Monster implements GeoEntity {
 
         {
             if (this.isEnraged() && !this.summonAgain) {
-                ServerLevel serverlevel = (ServerLevel) GolemEntity.this.level;
+                ServerLevel serverlevel = (ServerLevel) GolemEntity.this.level();
                 this.heal(this.getMaxHealth() / 10);
 
                 for (int i = 0; i < 5; ++i) {
                     BlockPos blockpos = GolemEntity.this.blockPosition().offset(-2 + GolemEntity.this.random.nextInt(5), 1, -2 + GolemEntity.this.random.nextInt(5));
-                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(GolemEntity.this.level);
+                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(GolemEntity.this.level());
                     if (mummy != null) {
-                        float f = this.level.getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
+                        float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
                         mummy.moveTo(blockpos, 0.0F, 0.0F);
-                        mummy.finalizeSpawn(serverlevel, GolemEntity.this.level.getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
+                        mummy.finalizeSpawn(serverlevel, GolemEntity.this.level().getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
                         serverlevel.addFreshEntityWithPassengers(mummy);
                         this.summonAgain = true;
 

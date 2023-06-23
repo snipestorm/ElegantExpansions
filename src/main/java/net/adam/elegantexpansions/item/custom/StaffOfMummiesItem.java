@@ -1,5 +1,7 @@
 package net.adam.elegantexpansions.item.custom;
 
+import net.adam.elegantexpansions.enchantment.AncientPowerEnchantment;
+import net.adam.elegantexpansions.enchantment.ModEnchantments;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
 import net.adam.elegantexpansions.item.client.StaffOfMummiesRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -10,6 +12,7 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Vanishable;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -22,10 +25,12 @@ import software.bernie.geckolib.util.RenderUtils;
 
 import java.util.function.Consumer;
 
-public class StaffOfMummiesItem extends Item implements GeoItem {
+public class StaffOfMummiesItem extends Item implements GeoItem, Vanishable {
+
+    public boolean cooldown;
+
 
     public AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
-    public boolean isnotoncooldown;
 
     public StaffOfMummiesItem(Properties properties) {
         super(properties);
@@ -67,24 +72,43 @@ public class StaffOfMummiesItem extends Item implements GeoItem {
         });
     }
 
+
     public InteractionResult useOn(UseOnContext use) {
         Player player = use.getPlayer();
         Level level = use.getLevel();
-        BlockPos blockpos = use.getClickedPos();
         if (!level.isClientSide()) {
-            BlockPos pos = blockpos.relative(use.getClickedFace());
             ServerLevel world = ((ServerLevel) level);
             BlockPos position = use.getClickedPos();
 
-            if(!this.isnotoncooldown) {
+
+            if (!player.getCooldowns().isOnCooldown(this)) {
                 ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position,
-                        MobSpawnType.TRIGGERED, true, true);
+                                MobSpawnType.TRIGGERED, true, true)
+                        .setLimitedLife(1200);
+                player.getCooldowns().addCooldown(this, 200);
+                cooldown = true;
+
+                if (player != null) {
+                    use.getItemInHand().hurtAndBreak(1, player, (p_41303_) -> {
+                        p_41303_.broadcastBreakEvent(use.getHand());
+
+                    });
+                }
 
             }
+
         }
-            return InteractionResult.sidedSuccess(level.isClientSide());
-        }
+
+        return InteractionResult.sidedSuccess(level.isClientSide());
     }
+
+    }
+
+
+
+
+
+
 
 
 

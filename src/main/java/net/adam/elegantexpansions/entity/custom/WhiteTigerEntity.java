@@ -175,7 +175,7 @@ public class WhiteTigerEntity extends TigerEntity implements GeoEntity {
 
     protected void followParent() {
         if (this.isBred() && this.isBaby()) {
-            LivingEntity livingentity = this.level.getNearestEntity(WhiteTigerEntity.class, MOMMY_TARGETING, this, this.getX(), this.getY(), this.getZ(), this.getBoundingBox().inflate(16.0D));
+            LivingEntity livingentity = this.level().getNearestEntity(WhiteTigerEntity.class, MOMMY_TARGETING, this, this.getX(), this.getY(), this.getZ(), this.getBoundingBox().inflate(16.0D));
             if (livingentity != null && this.distanceToSqr(livingentity) > 4.0D) {
                 this.navigation.createPath(livingentity, 0);
             }

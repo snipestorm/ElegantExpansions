@@ -7,7 +7,7 @@
   "spawners": {
     "type": "elegantexpansions:shark",
     "weight": 90,
-    "minCount": 0,
+    "minCount": 1,
     "maxCount": 1
   }
 }

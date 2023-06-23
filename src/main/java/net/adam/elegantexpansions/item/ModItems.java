@@ -19,6 +19,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SHARK_TOOTH = ITEMS.register("shark_tooth",
+            () -> new Item(new Item.Properties()));
+
+
     public static final RegistryObject<Item> GOLEM_SPAWN_EGG = ITEMS.register("golem_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.GOLEM, 0x363d42, 0xcc14b0, new Item.Properties()));
     public static final RegistryObject<Item> MUMMY_SPAWN_EGG = ITEMS.register("mummy_spawn_egg",
@@ -41,7 +46,7 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.SHARK, 0x34bdeb, 0xfcfcfc, new Item.Properties()));
 
     public static final RegistryObject<Item> STAFF_OF_MUMMIES = ITEMS.register("staff_of_mummies",
-            () -> new StaffOfMummiesItem(new Item.Properties()));
+            () -> new StaffOfMummiesItem(new Item.Properties().stacksTo(1).durability(10).fireResistant().rarity(Rarity.EPIC)));
 
 
     public static final RegistryObject<Item> SHREK_THEME_MUSIC_DISC = ITEMS.register("shrek_theme_music_disc",

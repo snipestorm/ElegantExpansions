@@ -16,6 +16,7 @@ public class ModEvents {
             public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
                 event.put(ModEntityTypes.GOLEM.get(), GolemEntity.setAttributes());
                 event.put(ModEntityTypes.MUMMY.get(), MummyEntity.setAttributes());
+                event.put(ModEntityTypes.PLAYERS_MUMMY.get(), PlayersMummy.setAttributes());
                 event.put(ModEntityTypes.ANUBIS.get(),AnubisEntity.setAttributes());
                 event.put(ModEntityTypes.TIGER.get(), TigerEntity.setAttributes());
                 event.put(ModEntityTypes.WHITE_TIGER.get(), WhiteTigerEntity.setAttributes());

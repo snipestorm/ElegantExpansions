@@ -50,7 +50,7 @@ public class MummyEntity extends Monster implements GeoEntity {
     public boolean doHurtTarget(Entity p_32892_) {
         boolean flag = super.doHurtTarget(p_32892_);
         if (flag && this.getMainHandItem().isEmpty() && p_32892_ instanceof LivingEntity) {
-            float f = this.level.getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
+            float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
             ((LivingEntity) p_32892_).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300 * (int) f), this);
         }
 

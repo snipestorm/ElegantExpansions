@@ -28,6 +28,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.Nullable;
@@ -51,7 +52,7 @@ public class TigerEntity extends Animal implements GeoEntity {
     private static final EntityDataAccessor<Byte> DATA_ID_FLAGS = SynchedEntityData.defineId(TigerEntity.class, EntityDataSerializers.BYTE);
     private static final Predicate<LivingEntity> PREY_SELECTOR = (p_248371_) -> {
         EntityType<?> entitytype = p_248371_.getType();
-        return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT ||
+        return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT || entitytype == ModEntityTypes.CAPYBARA.get() ||
                 entitytype == EntityType.FOX || entitytype == EntityType.COW||
                 entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA||
                 entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT||

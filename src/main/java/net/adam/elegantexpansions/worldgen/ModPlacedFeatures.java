@@ -27,8 +27,6 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LARGE_ASH_PLACED_KEY = createKey("large_ash_placed");
     public static final ResourceKey<PlacedFeature> BURNT_ASH_PLACED_KEY = createKey("burnt_ash_placed");
     public static final ResourceKey<PlacedFeature> LARGE_BURNT_ASH_PLACED_KEY = createKey("burnt_large_ash_placed");
-
-
     public static final ResourceKey<PlacedFeature> BANANA_PLACED_KEY = createKey("banana_placed");
     public static final ResourceKey<PlacedFeature> LARGE_BANANA_PLACED_KEY = createKey("large_banana_placed");
 

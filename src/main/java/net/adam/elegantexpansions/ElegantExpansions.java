@@ -13,8 +13,10 @@ import net.adam.elegantexpansions.sound.ModSounds;
 import net.adam.elegantexpansions.util.BetterBrewingRecipe;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
@@ -87,10 +89,14 @@ public class ElegantExpansions {
 
 
         if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_ORES.get()) {
-            event.accept(ModItems.RUBY);
-            event.accept(ModBlocks.RUBY_BLOCK);
+
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
+            event.accept(ModBlocks.SAPPHIRE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
+            event.accept(ModBlocks.ENDSTONE_TANZANITE_ORE);
+            event.accept(ModBlocks.NETHER_CITRINE_ORE);
+
 
         }
         if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_NATURE.get()) {
@@ -139,12 +145,56 @@ public class ElegantExpansions {
             event.accept(ModItems.WHITE_TIGER_SPAWN_EGG);
             event.accept(ModItems.SHREK_SPAWN_EGG);
             event.accept(ModItems.SHARK_SPAWN_EGG);
+            event.accept(ModItems.CAPYBARA_SPAWN_EGG);
 
         }
 
         if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_MISC.get()) {
             event.accept(ModItems.SHREK_THEME_MUSIC_DISC);
             event.accept(ModItems.STAFF_OF_MUMMIES);
+
+        }
+
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_GEMS.get()) {
+            event.accept(ModItems.RUBY);
+            event.accept(ModItems.CITRINE);
+            event.accept(ModItems.ONYX);
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.TANZANITE);
+            event.accept(Items.DIAMOND);
+            event.accept(Items.EMERALD);
+            event.accept(Items.AMETHYST_SHARD);
+
+            event.accept(ModItems.CUT_RUBY);
+            event.accept(ModItems.CUT_CITRINE);
+            event.accept(ModItems.CUT_ONYX);
+            event.accept(ModItems.CUT_SAPPHIRE);
+            event.accept(ModItems.CUT_TANZANITE);
+            event.accept(ModItems.CUT_DIAMOND);
+            event.accept(ModItems.CUT_EMERALD);
+            event.accept(ModItems.CUT_AMETHYST);
+
+            event.accept(ModItems.INFUSED_RUBY);
+            event.accept(ModItems.INFUSED_CITRINE);
+            event.accept(ModItems.INFUSED_ONYX);
+            event.accept(ModItems.INFUSED_SAPPHIRE);
+            event.accept(ModItems.INFUSED_TANZANITE);
+            event.accept(ModItems.INFUSED_DIAMOND);
+            event.accept(ModItems.INFUSED_EMERALD);
+            event.accept(ModItems.INFUSED_AMETHYST);
+
+            event.accept(ModBlocks.RUBY_BLOCK);
+            event.accept(ModBlocks.CITRINE_BLOCK);
+            event.accept(ModBlocks.ONYX_BLOCK);
+            event.accept(ModBlocks.SAPPHIRE_BLOCK);
+            event.accept(ModBlocks.TANZANITE_BLOCK);
+            event.accept(Blocks.DIAMOND_BLOCK);
+            event.accept(Blocks.EMERALD_BLOCK);
+            event.accept(Blocks.AMETHYST_BLOCK);
+
+
+
+            event.accept(ModItems.GEM_CUTTERS);
 
         }
 
@@ -165,6 +215,7 @@ public class ElegantExpansions {
             EntityRenderers.register(ModEntityTypes.ALBINO_TIGER.get(), AlbinoTigerRenderer::new);
             EntityRenderers.register(ModEntityTypes.SHREK.get(), ShrekRenderer::new);
             EntityRenderers.register(ModEntityTypes.SHARK.get(), SharkRenderer::new);
+            EntityRenderers.register(ModEntityTypes.CAPYBARA.get(), CapybaraRenderer::new);
         }
 }
     }

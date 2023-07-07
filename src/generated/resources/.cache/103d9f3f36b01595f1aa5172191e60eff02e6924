@@ -1,4 +1,10 @@
-// 1.20	2023-06-23T17:22:43.9295085	Registries
+// 1.20	2023-07-05T22:50:56.8119388	Registries
+3c40ed4475353043ae17966c3785460ddcb6df58 data/elegantexpansions/forge/biome_modifier/add_tree_ash.json
+c44d75b53bfe865e72b36a3b974a5d60ee3dcb81 data/elegantexpansions/forge/biome_modifier/add_tree_banana.json
+48cb70b21e6d22ea6546675beb8af8aaea47fd60 data/elegantexpansions/forge/biome_modifier/add_tree_burnt_ash.json
+a247bfcc660f20c319931becf67c80ac98454063 data/elegantexpansions/forge/biome_modifier/add_tree_magic.json
+a2db2699c296a5ce78659b5f0b70161af1411fcb data/elegantexpansions/forge/biome_modifier/add_tree_maple.json
+05e455da0036f77d7aa5643deb81c034157643c5 data/elegantexpansions/forge/biome_modifier/add_tree_willow.json
 32d76b6e43928afdc127061b3ddc1002ff410726 data/elegantexpansions/worldgen/configured_feature/ash.json
 b0c562960e985392cd9698c1336e8e661f0df8a1 data/elegantexpansions/worldgen/configured_feature/banana.json
 f9dc99f1d8625e764c504e419c74ea03a8040822 data/elegantexpansions/worldgen/configured_feature/burnt_ash.json

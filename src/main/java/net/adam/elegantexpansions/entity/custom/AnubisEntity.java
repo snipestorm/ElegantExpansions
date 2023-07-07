@@ -94,14 +94,6 @@ public class AnubisEntity extends Monster implements GeoEntity {
         return MobType.UNDEAD;
     }
 
-    protected void dropCustomDeathLoot(DamageSource p_31464_, int p_31465_, boolean p_31466_) {
-        super.dropCustomDeathLoot(p_31464_, p_31465_, p_31466_);
-        ItemEntity itementity = this.spawnAtLocation(ModBlocks.MAGIC_SAPLING.get());
-        if (itementity != null) {
-            itementity.setExtendedLifetime();
-        }
-
-    }
 
     public void checkDespawn() {
         if (this.level().getDifficulty() == Difficulty.PEACEFUL && this.shouldDespawnInPeaceful()) {
@@ -115,7 +107,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
 
-                .add(Attributes.MAX_HEALTH, 250)
+                .add(Attributes.MAX_HEALTH, 200)
                 .add(Attributes.ARMOR,30)
                 .add(Attributes.ARMOR_TOUGHNESS,10)
                 .add(Attributes.ATTACK_DAMAGE, 6.00f)

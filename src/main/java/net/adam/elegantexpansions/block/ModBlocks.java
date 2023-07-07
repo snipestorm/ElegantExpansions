@@ -24,9 +24,12 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS=
             DeferredRegister.create(ForgeRegistries.BLOCKS, ElegantExpansions.MOD_ID);
 
+    //ruby//
+
     public static final RegistryObject<Block> RUBY_BLOCK = registerblock("ruby_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops()));
+
 
     public static final RegistryObject<Block> RUBY_ORE = registerblock("ruby_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)
@@ -36,6 +39,45 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)
                     .strength(8f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
 
+//sapphire//
+
+    public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerblock("sapphire_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SAPPHIRE_ORE = registerblock("sapphire_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)
+                    .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
+
+    public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerblock("deepslate_sapphire_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)
+                    .strength(8f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
+
+    //tanzanite//
+
+    public static final RegistryObject<Block> TANZANITE_BLOCK = registerblock("tanzanite_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> ENDSTONE_TANZANITE_ORE = registerblock("endstone_tanzanite_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE)
+                    .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
+
+    //citrine//
+
+    public static final RegistryObject<Block> CITRINE_BLOCK = registerblock("citrine_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> NETHER_CITRINE_ORE = registerblock("nether_citrine_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_QUARTZ_ORE)
+                    .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
+
+    //onyx//
+
+    public static final RegistryObject<Block> ONYX_BLOCK = registerblock("onyx_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> MAGIC_LOG = registerblock("magic_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)

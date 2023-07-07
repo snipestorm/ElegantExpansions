@@ -23,6 +23,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
          blockWithItem(ModBlocks.RUBY_ORE);
          blockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
 
+        blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
+        blockWithItem(ModBlocks.SAPPHIRE_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
+
+        blockWithItem(ModBlocks.TANZANITE_BLOCK);
+        blockWithItem(ModBlocks.ENDSTONE_TANZANITE_ORE);
+
+        blockWithItem(ModBlocks.CITRINE_BLOCK);
+        blockWithItem(ModBlocks.NETHER_CITRINE_ORE);
+
+        blockWithItem(ModBlocks.ONYX_BLOCK);
+
          logBlock(((RotatedPillarBlock) ModBlocks.MAGIC_LOG.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.MAGIC_WOOD.get(), blockTexture(ModBlocks.MAGIC_LOG.get()), blockTexture(ModBlocks.MAGIC_LOG.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_MAGIC_LOG.get(), new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_magic_log"),

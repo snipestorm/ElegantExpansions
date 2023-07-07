@@ -4,13 +4,58 @@
   "creativemodetab.elegant_expansions_nature":"Elegant Expansions Nature",
   "creativemodetab.elegant_expansions_mobs":"Elegant Expansions Mobs",
   "creativemodetab.elegant_expansions_misc":"Elegant Expansions Misc",
+  "creativemodetab.elegant_expansions_gems":"Elegant Expansions Gems+",
+
+  "item.elegantexpansions.ruby": "Ruby",
+  "item.elegantexpansions.sapphire": "Sapphire",
+  "item.elegantexpansions.tanzanite": "Tanzanite",
+  "item.elegantexpansions.citrine": "Citrine",
+  "item.elegantexpansions.onyx": "Onyx",
+
+  "item.elegantexpansions.cut_ruby": "Cut Ruby",
+  "item.elegantexpansions.cut_sapphire": "Cut Sapphire",
+  "item.elegantexpansions.cut_tanzanite": "Cut Tanzanite",
+  "item.elegantexpansions.cut_citrine": "Cut Citrine",
+  "item.elegantexpansions.cut_onyx": "Cut Onyx",
+  "item.elegantexpansions.cut_emerald": "Cut Emerald",
+  "item.elegantexpansions.cut_diamond": "Cut Diamond",
+  "item.elegantexpansions.cut_amethyst": "Cut Amethyst",
+
+  "item.elegantexpansions.infused_ruby": "Infused Ruby",
+  "item.elegantexpansions.infused_sapphire": "Infused Sapphire",
+  "item.elegantexpansions.infused_tanzanite": "Infused Tanzanite",
+  "item.elegantexpansions.infused_citrine": "Infused Citrine",
+  "item.elegantexpansions.infused_onyx": "Infused Onyx",
+  "item.elegantexpansions.infused_emerald": "Infused Emerald",
+  "item.elegantexpansions.infused_diamond": "Infused Diamond",
+  "item.elegantexpansions.infused_amethyst": "Infused Amethyst",
+
+
+  "item.elegantexpansions.gem_cutters": "Gem Cutters",
+
+  
+  
 
   "effect.elegantexpansions.bleed": "Bleed",
 
   "block.elegantexpansions.ruby_block": "Ruby Block",
   "block.elegantexpansions.ruby_ore": "Ruby Ore",
   "block.elegantexpansions.deepslate_ruby_ore": "Deepslate Ruby Ore",
-  "item.elegantexpansions.ruby": "Ruby",
+
+  "block.elegantexpansions.sapphire_block": "Sapphire Block",
+  "block.elegantexpansions.sapphire_ore": "Sapphire Ore",
+  "block.elegantexpansions.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+
+  "block.elegantexpansions.tanzanite_block": "Tanzanite Block",
+  "block.elegantexpansions.endstone_tanzanite_ore": "Endstone Tanzanite Ore",
+
+  "block.elegantexpansions.citrine_block": "Citrine Block",
+  "block.elegantexpansions.nether_citrine_ore": "Nether Citrine Ore",
+
+  "block.elegantexpansions.onyx_block": "Onyx Block",
+
+
+
   "item.elegantexpansions.shark_tooth": "Shark Tooth",
 
   "enchantment.elegantexpansions.lightning_strike": "Lightning Strike",
@@ -22,6 +67,7 @@
   "item.minecraft.tipped_arrow.effect.bleed_potion" : "Arrow Of Bleeding",
 
   "item.elegantexpansions.golem_spawn_egg": "Golem Spawn Egg",
+  "item.elegantexpansions.capybara_spawn_egg": "Capybara Spawn Egg",
   "item.elegantexpansions.mummy_spawn_egg": "Mummy Spawn Egg",
   "item.elegantexpansions.players_mummy_spawn_egg": "Players Mummy Spawn Egg",
   "item.elegantexpansions.anubis_spawn_egg": "Anubis Spawn Egg",
@@ -29,6 +75,7 @@
   "item.elegantexpansions.white_tiger_spawn_egg": "White Tiger Spawn Egg",
   "item.elegantexpansions.shrek_spawn_egg": "Shrek Spawn Egg",
   "item.elegantexpansions.shark_spawn_egg": "Shark Spawn Egg",
+
   "item.elegantexpansions.staff_of_mummies": "Staff Of Mummies",
 
   "item.elegantexpansions.shrek_theme_music_disc": "Shrek Theme",
@@ -40,8 +87,10 @@
   "entity.elegantexpansions.golem": "Golem",
   "entity.elegantexpansions.tiger": "Tiger",
   "entity.elegantexpansions.white_tiger": "White Tiger",
+  "entity.elegantexpansions.albino_tiger": "Albino Tiger",
   "entity.elegantexpansions.shrek": "Shrek",
   "entity.elegantexpansions.shark": "Shark",
+  "entity.elegantexpansions.capybara": "Capybara",
 
 
   "block.elegantexpansions.magic_log": "Magic Log",

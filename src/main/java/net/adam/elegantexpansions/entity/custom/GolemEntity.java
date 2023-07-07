@@ -2,6 +2,7 @@ package net.adam.elegantexpansions.entity.custom;
 
 import net.adam.elegantexpansions.block.ModBlocks;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
+import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -55,7 +56,7 @@ public class GolemEntity extends Monster implements GeoEntity {
     public GolemEntity(EntityType<? extends GolemEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setHealth(this.getMaxHealth());
-        this.xpReward = 150;
+        this.xpReward = 250;
 
 
     }
@@ -91,7 +92,7 @@ public class GolemEntity extends Monster implements GeoEntity {
 
     protected void dropCustomDeathLoot(DamageSource p_31464_, int p_31465_, boolean p_31466_) {
         super.dropCustomDeathLoot(p_31464_, p_31465_, p_31466_);
-        ItemEntity itementity = this.spawnAtLocation(ModBlocks.MAGIC_SAPLING.get());
+        ItemEntity itementity = this.spawnAtLocation(ModItems.ONYX.get());
         if (itementity != null) {
             itementity.setExtendedLifetime();
         }
@@ -243,36 +244,13 @@ public class GolemEntity extends Monster implements GeoEntity {
                 this.ragehasPlayedOnce = true;
             }
 
-            }
-
-        {
-            if (this.isEnraged() && !this.summonAgain) {
-                ServerLevel serverlevel = (ServerLevel) GolemEntity.this.level();
-                this.heal(this.getMaxHealth() / 10);
-
-                for (int i = 0; i < 5; ++i) {
-                    BlockPos blockpos = GolemEntity.this.blockPosition().offset(-2 + GolemEntity.this.random.nextInt(5), 1, -2 + GolemEntity.this.random.nextInt(5));
-                    MummyEntity mummy = ModEntityTypes.MUMMY.get().create(GolemEntity.this.level());
-                    if (mummy != null) {
-                        float f = this.level().getCurrentDifficultyAt(this.blockPosition()).getEffectiveDifficulty();
-                        mummy.moveTo(blockpos, 0.0F, 0.0F);
-                        mummy.finalizeSpawn(serverlevel, GolemEntity.this.level().getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
-                        serverlevel.addFreshEntityWithPassengers(mummy);
-                        this.summonAgain = true;
-
-                    }
-                }
-            }
         }
 
 
-        }
-
-    public boolean isEnraged() {
-        return this.getHealth() <= this.getMaxHealth() / 3.0F;
     }
-
 }
+
+
 
 
 

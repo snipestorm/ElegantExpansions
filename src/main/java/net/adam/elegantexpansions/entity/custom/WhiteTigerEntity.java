@@ -49,7 +49,7 @@ public class WhiteTigerEntity extends TigerEntity implements GeoEntity {
     private static final EntityDataAccessor<Byte> DATA_ID_FLAGS = SynchedEntityData.defineId(WhiteTigerEntity.class, EntityDataSerializers.BYTE);
     private static final Predicate<LivingEntity> PREY_SELECTOR = (p_248371_) -> {
         EntityType<?> entitytype = p_248371_.getType();
-        return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT ||
+        return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT || entitytype == ModEntityTypes.CAPYBARA.get() ||
                 entitytype == EntityType.FOX || entitytype == EntityType.COW||
                 entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA||
                 entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT||

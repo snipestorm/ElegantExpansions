@@ -85,7 +85,7 @@ public class StaffOfMummiesItem extends Item implements GeoItem, Vanishable {
                 ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position,
                                 MobSpawnType.TRIGGERED, true, true)
                         .setLimitedLife(1200);
-                player.getCooldowns().addCooldown(this, 200);
+                player.getCooldowns().addCooldown(this, 1200);
                 cooldown = true;
 
                 if (player != null) {

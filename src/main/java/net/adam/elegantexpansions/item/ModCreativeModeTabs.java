@@ -19,6 +19,10 @@ public class ModCreativeModeTabs {
             CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.RUBY_ORE.get()))
                     .title(Component.translatable("creativemodetab.elegant_expansions_ores")).build());
 
+    public static RegistryObject<CreativeModeTab> ELEGANT_EXPANSIONS_GEMS = CREATIVE_MODE_TABS.register("elegant_expansions_gems", () ->
+            CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.INFUSED_ONYX.get()))
+                    .title(Component.translatable("creativemodetab.elegant_expansions_gems")).build());
+
     public static RegistryObject<CreativeModeTab> ELEGANT_EXPANSIONS_NATURE = CREATIVE_MODE_TABS.register("elegant_expansions_nature", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.MAGIC_SAPLING.get()))
                     .title(Component.translatable("creativemodetab.elegant_expansions_nature")).build());
@@ -30,6 +34,8 @@ public class ModCreativeModeTabs {
     public static RegistryObject<CreativeModeTab> ELEGANT_EXPANSIONS_MISC = CREATIVE_MODE_TABS.register("elegant_expansions_misc", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SHREK_THEME_MUSIC_DISC.get()))
                     .title(Component.translatable("creativemodetab.elegant_expansions_misc")).build());
+
+
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);

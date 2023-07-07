@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:birch_forest",
+  "features": [
+    "elegantexpansions:magic_placed",
+    "elegantexpansions:large_magic_placed"
+  ],
+  "step": "vegetal_decoration"
+}

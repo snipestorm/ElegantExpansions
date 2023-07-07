@@ -55,6 +55,12 @@ public class ModEntityTypes {
                             .sized(0.6F, 1.95f)
                             .build(new ResourceLocation(ElegantExpansions.MOD_ID, "albino_tiger").toString()));
 
+    public static final RegistryObject<EntityType<CapybaraEntity>> CAPYBARA =
+            ENTITY_TYPES.register("capybara",
+                    () -> EntityType.Builder.of(CapybaraEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.95f)
+                            .build(new ResourceLocation(ElegantExpansions.MOD_ID, "capybara").toString()));
+
     public static final RegistryObject<EntityType<ShrekEntity>> SHREK =
             ENTITY_TYPES.register("shrek",
                     () -> EntityType.Builder.of(ShrekEntity::new, MobCategory.CREATURE)

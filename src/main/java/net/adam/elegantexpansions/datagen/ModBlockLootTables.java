@@ -16,11 +16,28 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.RUBY_BLOCK.get());
+        dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
+        dropSelf(ModBlocks.TANZANITE_BLOCK.get());
+        dropSelf(ModBlocks.CITRINE_BLOCK.get());
+        dropSelf(ModBlocks.ONYX_BLOCK.get());
+
 
         add(ModBlocks.RUBY_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY.get()));
         add(ModBlocks.DEEPSLATE_RUBY_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.DEEPSLATE_RUBY_ORE.get(), ModItems.RUBY.get()));
+
+        add(ModBlocks.SAPPHIRE_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.SAPPHIRE_ORE.get(), ModItems.SAPPHIRE.get()));
+        add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModItems.SAPPHIRE.get()));
+
+        add(ModBlocks.NETHER_CITRINE_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.NETHER_CITRINE_ORE.get(), ModItems.CITRINE.get()));
+
+        add(ModBlocks.ENDSTONE_TANZANITE_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.ENDSTONE_TANZANITE_ORE.get(), ModItems.TANZANITE.get()));
+
 
         this.dropSelf(ModBlocks.MAGIC_LOG.get());
         this.dropSelf(ModBlocks.MAGIC_WOOD.get());

@@ -47,7 +47,8 @@ public class SharkEntity extends WaterAnimal implements GeoEntity {
                 entitytype == EntityType.COD || entitytype == EntityType.SALMON||
                 entitytype == EntityType.TROPICAL_FISH|| entitytype == EntityType.SQUID||
                 entitytype == EntityType.GLOW_SQUID|| entitytype == EntityType.PUFFERFISH||
-                entitytype == EntityType.HORSE|| entitytype == EntityType.TURTLE;};
+                entitytype == EntityType.HORSE|| entitytype == EntityType.TURTLE
+                || entitytype == ModEntityTypes.CAPYBARA.get();};
     public SharkEntity(EntityType<? extends WaterAnimal> p_30341_, Level p_30342_) {
         super(p_30341_, p_30342_);
         this.moveControl = new SmoothSwimmingMoveControl(this, 45, 10, 0.2F, 0.1F, true);

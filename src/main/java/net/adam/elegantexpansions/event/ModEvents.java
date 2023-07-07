@@ -23,6 +23,7 @@ public class ModEvents {
                 event.put(ModEntityTypes.ALBINO_TIGER.get(), AlbinoTigerEntity.setAttributes());
                 event.put(ModEntityTypes.SHREK.get(), ShrekEntity.setAttributes());
                 event.put(ModEntityTypes.SHARK.get(), SharkEntity.setAttributes());
+                event.put(ModEntityTypes.CAPYBARA.get(), CapybaraEntity.setAttributes());
             }
         }
     }

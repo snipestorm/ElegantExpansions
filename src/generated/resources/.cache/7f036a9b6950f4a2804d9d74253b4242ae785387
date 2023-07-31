@@ -1,5 +1,12 @@
-// 1.20	2023-07-30T10:15:58.1901947	Item Models: elegantexpansions
+// 1.20	2023-08-01T00:35:49.4629342	Item Models: elegantexpansions
+dd49ca0bce541c1611d382a7b9387af20acc4abf assets/elegantexpansions/models/item/alexandrite.json
+2a49790d3219ec73810c8e48741af262fb16be0b assets/elegantexpansions/models/item/alexandrite_axe.json
+3976a64b103ffd5eb27058732a59583863e60bfe assets/elegantexpansions/models/item/alexandrite_hoe.json
+ec1e9aa9588c8bd2d284fca3d91c66b3648d513d assets/elegantexpansions/models/item/alexandrite_paxel.json
+4b61f1bb7b056e38f2e001edd29b3be96ac16be7 assets/elegantexpansions/models/item/alexandrite_pickaxe.json
 d44f6af333b60562ada3fbe490a65e7a6db25924 assets/elegantexpansions/models/item/alexandrite_shard.json
+505e5ea3b81e214cd5f98f649c6d53c8d9b98796 assets/elegantexpansions/models/item/alexandrite_shovel.json
+65e5fd87fea89543bba0a4dd28ed7db09bfe022c assets/elegantexpansions/models/item/alexandrite_sword.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/elegantexpansions/models/item/anubis_spawn_egg.json
 b4dbd4ec53a8eb1956461819ccc674c17fa2f556 assets/elegantexpansions/models/item/ash_sapling.json
 aea3cad49bb03450f7c4566001842501c2e642ca assets/elegantexpansions/models/item/banana_sapling.json

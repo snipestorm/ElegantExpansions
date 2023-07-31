@@ -149,7 +149,7 @@ public class ElegantExpansions {
             event.accept(ModBlocks.STRIPPED_BANANA_LOG);
             event.accept(ModBlocks.STRIPPED_BANANA_WOOD);
             event.accept(ModBlocks.BANANA_SAPLING);
-            event.accept(ModItems.SHARK_TOOTH);
+
         }
 
 
@@ -169,8 +169,9 @@ public class ElegantExpansions {
 
         if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_MISC.get()) {
             event.accept(ModItems.SHREK_THEME_MUSIC_DISC);
-            event.accept(ModItems.STAFF_OF_MUMMIES);
             event.accept(ModItems.MAGICAL_SAP_BUCKET);
+            event.accept(ModItems.SHARK_TOOTH);
+
 
         }
 
@@ -224,6 +225,20 @@ public class ElegantExpansions {
             event.accept(ModItems.GEM_DETECTOR);
             event.accept(ModItems.DATA_TABLET);
             event.accept(ModItems.ALEXANDRITE_SHARD);
+            event.accept(ModItems.ALEXANDRITE);
+
+        }
+
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_TOOLS.get()) {
+            event.accept(ModItems.ALEXANDRITE_PAXEL);
+            event.accept(ModItems.ALEXANDRITE_PICKAXE);
+            event.accept(ModItems.ALEXANDRITE_AXE);
+            event.accept(ModItems.ALEXANDRITE_SHOVEL);
+            event.accept(ModItems.ALEXANDRITE_HOE);
+            event.accept(ModItems.ALEXANDRITE_SWORD);
+            event.accept(ModItems.STAFF_OF_MUMMIES);
+
+
 
         }
 

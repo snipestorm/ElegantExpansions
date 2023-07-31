@@ -5,6 +5,7 @@
   "creativemodetab.elegant_expansions_mobs":"Elegant Expansions Mobs",
   "creativemodetab.elegant_expansions_misc":"Elegant Expansions Misc",
   "creativemodetab.elegant_expansions_gems":"Elegant Expansions Gems+",
+  "creativemodetab.elegant_expansions_tools":"Elegant Expansions Tools/Weapons",
   "creativemodetab.elegant_expansions_armor":"Elegant Expansions Armor",
 
   "tooltip.elegant_expansions.gem_upgrade_template.tooltip" : "Use On A Smithing Table With An Infused Gem & A Piece Of Diamond Armor",
@@ -15,7 +16,16 @@
   "fluid_type.elegantexpansions.magical_sap_fluid" : "Magical Sap",
   "item.elegantexpansions.gem_detector.no_valuables": "No Gems Found!",
 
+  "item.elegantexpansions.alexandrite": "Alexandrite",
   "item.elegantexpansions.alexandrite_shard": "Alexandrite Shard",
+
+  "item.elegantexpansions.alexandrite_sword": "Alexandrite Sword",
+  "item.elegantexpansions.alexandrite_shovel": "Alexandrite Shovel",
+  "item.elegantexpansions.alexandrite_pickaxe": "Alexandrite Pickaxe",
+  "item.elegantexpansions.alexandrite_axe": "Alexandrite Axe",
+  "item.elegantexpansions.alexandrite_hoe": "Alexandrite Hoe",
+
+  "item.elegantexpansions.alexandrite_paxel": "Alexandrite Paxel",
 
   "item.elegantexpansions.gem_detector": "Gem Detector",
   "item.elegantexpansions.data_tablet": "Data Tablet",

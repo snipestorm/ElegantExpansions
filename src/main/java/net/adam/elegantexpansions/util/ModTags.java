@@ -26,6 +26,8 @@ public class ModTags {
 
     public static class Blocks {
         public static final TagKey<Block> GEM_DETECTOR_GEMS = tag("gem_detector_gems");
+        public static final TagKey<Block> NEEDS_ALEXANDRITE_TOOL = tag("needs_alexandrite_tool");
+        public static final TagKey<Block> PAXEL_MINEABLE = tag("mineable/paxel");
 
 
         private static TagKey<Block> tag(String name) {

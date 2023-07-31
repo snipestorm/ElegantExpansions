@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -29,6 +30,9 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecora
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.UpwardsBranchingTrunkPlacer;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraftforge.common.Tags;
 
 import java.util.List;
@@ -49,7 +53,35 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BURNT_LARGE_ASH_KEY = registerKey("burnt_large_ash");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BANANA_KEY = registerKey("banana");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_BANANA_KEY = registerKey("large_banana");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_KEY = registerKey("ruby_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_SAPPHIRE_ORE_KEY = registerKey("sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_CITRINE_ORE_KEY = registerKey("nether_citrine_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> END_TANZANITE_ORE_KEY = registerKey("end_tanzanite_ore");
+
+
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+
+        RuleTest stoneReplaceabeles = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateReplaceabeles = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest netherrackReplaceabeles = new BlockMatchTest(Blocks.NETHERRACK);
+        RuleTest endReplaceabeles = new BlockMatchTest(Blocks.END_STONE);
+
+        List<OreConfiguration.TargetBlockState> overworldRubyOres = List.of(OreConfiguration.target(stoneReplaceabeles,
+                        ModBlocks.RUBY_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_RUBY_ORE.get().defaultBlockState()));
+
+        List<OreConfiguration.TargetBlockState> overworldSapphireOres = List.of(OreConfiguration.target(stoneReplaceabeles,
+                        ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState()));
+
+        register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 7));
+        register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSapphireOres, 7));
+        register(context, NETHER_CITRINE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceabeles,
+                ModBlocks.NETHER_CITRINE_ORE.get().defaultBlockState(), 5));
+        register(context, END_TANZANITE_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceabeles,
+                ModBlocks.ENDSTONE_TANZANITE_ORE.get().defaultBlockState(), 3));
+
 
         HolderGetter<Block> holdergetter = context.lookup(Registries.BLOCK);
 

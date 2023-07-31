@@ -2,20 +2,30 @@ package net.adam.elegantexpansions;
 
 import com.mojang.logging.LogUtils;
 import net.adam.elegantexpansions.block.ModBlocks;
+import net.adam.elegantexpansions.block.entity.ModBlockEntities;
 import net.adam.elegantexpansions.effect.ModEffects;
 import net.adam.elegantexpansions.enchantment.ModEnchantments;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
 import net.adam.elegantexpansions.entity.client.*;
+import net.adam.elegantexpansions.fluid.ModFluidTypes;
+import net.adam.elegantexpansions.fluid.ModFluids;
 import net.adam.elegantexpansions.item.ModCreativeModeTabs;
+import net.adam.elegantexpansions.item.ModItemProperties;
 import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.potion.ModPotions;
+import net.adam.elegantexpansions.recipe.ModRecipes;
+import net.adam.elegantexpansions.screen.*;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.adam.elegantexpansions.util.BetterBrewingRecipe;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,6 +41,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
+
+import java.util.function.Supplier;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -58,6 +70,12 @@ public class ElegantExpansions {
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
         ModEnchantments.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
 
 
@@ -152,6 +170,7 @@ public class ElegantExpansions {
         if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_MISC.get()) {
             event.accept(ModItems.SHREK_THEME_MUSIC_DISC);
             event.accept(ModItems.STAFF_OF_MUMMIES);
+            event.accept(ModItems.MAGICAL_SAP_BUCKET);
 
         }
 
@@ -192,9 +211,63 @@ public class ElegantExpansions {
             event.accept(Blocks.EMERALD_BLOCK);
             event.accept(Blocks.AMETHYST_BLOCK);
 
+            event.accept(ModItems.GEM_UPGRADE_TEMPLATE);
+
 
 
             event.accept(ModItems.GEM_CUTTERS);
+
+            event.accept(ModBlocks.GEM_CUTTING_STATION);
+            event.accept(ModBlocks.GEM_INFUSING_STATION);
+            event.accept(ModBlocks.SHARD_CREATION_STATION);
+
+            event.accept(ModItems.GEM_DETECTOR);
+            event.accept(ModItems.DATA_TABLET);
+            event.accept(ModItems.ALEXANDRITE_SHARD);
+
+        }
+
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_ARMOR.get()) {
+            event.accept(ModItems.INFUSED_DIAMOND_HELMET);
+            event.accept(ModItems.INFUSED_DIAMOND_CHESTPLATE);
+            event.accept(ModItems.INFUSED_DIAMOND_LEGGINGS);
+            event.accept(ModItems.INFUSED_DIAMOND_BOOTS);
+
+            event.accept(ModItems.INFUSED_RUBY_HELMET);
+            event.accept(ModItems.INFUSED_RUBY_CHESTPLATE);
+            event.accept(ModItems.INFUSED_RUBY_LEGGINGS);
+            event.accept(ModItems.INFUSED_RUBY_BOOTS);
+
+            event.accept(ModItems.INFUSED_SAPPHIRE_HELMET);
+            event.accept(ModItems.INFUSED_SAPPHIRE_CHESTPLATE);
+            event.accept(ModItems.INFUSED_SAPPHIRE_LEGGINGS);
+            event.accept(ModItems.INFUSED_SAPPHIRE_BOOTS);
+
+            event.accept(ModItems.INFUSED_EMERALD_HELMET);
+            event.accept(ModItems.INFUSED_EMERALD_CHESTPLATE);
+            event.accept(ModItems.INFUSED_EMERALD_LEGGINGS);
+            event.accept(ModItems.INFUSED_EMERALD_BOOTS);
+
+            event.accept(ModItems.INFUSED_AMETHYST_HELMET);
+            event.accept(ModItems.INFUSED_AMETHYST_CHESTPLATE);
+            event.accept(ModItems.INFUSED_AMETHYST_LEGGINGS);
+            event.accept(ModItems.INFUSED_AMETHYST_BOOTS);
+
+            event.accept(ModItems.INFUSED_CITRINE_HELMET);
+            event.accept(ModItems.INFUSED_CITRINE_CHESTPLATE);
+            event.accept(ModItems.INFUSED_CITRINE_LEGGINGS);
+            event.accept(ModItems.INFUSED_CITRINE_BOOTS);
+
+            event.accept(ModItems.INFUSED_TANZANITE_HELMET);
+            event.accept(ModItems.INFUSED_TANZANITE_CHESTPLATE);
+            event.accept(ModItems.INFUSED_TANZANITE_LEGGINGS);
+            event.accept(ModItems.INFUSED_TANZANITE_BOOTS);
+
+            event.accept(ModItems.INFUSED_ONYX_HELMET);
+            event.accept(ModItems.INFUSED_ONYX_CHESTPLATE);
+            event.accept(ModItems.INFUSED_ONYX_LEGGINGS);
+            event.accept(ModItems.INFUSED_ONYX_BOOTS);
+
 
         }
 
@@ -206,6 +279,11 @@ public class ElegantExpansions {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
+            event.enqueueWork(() -> {
+                        ModItemProperties.addCustomItemProperties();
+                    });
+
             EntityRenderers.register(ModEntityTypes.GOLEM.get(), GolemRenderer::new);
             EntityRenderers.register(ModEntityTypes.MUMMY.get(), MummyRenderer::new);
             EntityRenderers.register(ModEntityTypes.PLAYERS_MUMMY.get(), PlayersMummyRenderer::new);
@@ -216,6 +294,18 @@ public class ElegantExpansions {
             EntityRenderers.register(ModEntityTypes.SHREK.get(), ShrekRenderer::new);
             EntityRenderers.register(ModEntityTypes.SHARK.get(), SharkRenderer::new);
             EntityRenderers.register(ModEntityTypes.CAPYBARA.get(), CapybaraRenderer::new);
+
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_INFUSING_STATION.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHARD_CREATION_STATION.get(), RenderType.translucent());
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MAGICAL_SAP.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MAGICAL_SAP.get(), RenderType.translucent());
+
+            MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
+            MenuScreens.register(ModMenuTypes.GEM_INFUSING_STATION_MENU.get(), GemInfusingStationScreen::new);
+            MenuScreens.register(ModMenuTypes.SHARD_CREATION_STATION_MENU.get(), ShardCreationStationScreen::new);
         }
 }
     }

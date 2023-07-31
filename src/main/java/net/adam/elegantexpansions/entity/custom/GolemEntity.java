@@ -108,6 +108,7 @@ public class GolemEntity extends Monster implements GeoEntity {
     }
 
 
+
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
 

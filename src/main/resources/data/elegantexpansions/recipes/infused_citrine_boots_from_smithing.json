@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "elegantexpansions:infused_citrine"
+  },
+  "base": {
+    "item": "minecraft:diamond_boots"
+  },
+  "result": {
+    "item": "elegantexpansions:infused_citrine_boots"
+  },
+  "template": {
+    "item": "elegantexpansions:gem_upgrade_template"
+  }
+}

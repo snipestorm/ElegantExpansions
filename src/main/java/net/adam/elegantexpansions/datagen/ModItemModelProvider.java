@@ -44,10 +44,55 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INFUSED_ONYX);
         simpleItem(ModItems.INFUSED_EMERALD);
         
-        
-        
+        simpleItem(ModItems.INFUSED_DIAMOND_HELMET);
+        simpleItem(ModItems.INFUSED_DIAMOND_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_DIAMOND_LEGGINGS);
+        simpleItem(ModItems.INFUSED_DIAMOND_BOOTS);
+
+        simpleItem(ModItems.INFUSED_RUBY_HELMET);
+        simpleItem(ModItems.INFUSED_RUBY_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_RUBY_LEGGINGS);
+        simpleItem(ModItems.INFUSED_RUBY_BOOTS);
+
+        simpleItem(ModItems.INFUSED_SAPPHIRE_HELMET);
+        simpleItem(ModItems.INFUSED_SAPPHIRE_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_SAPPHIRE_LEGGINGS);
+        simpleItem(ModItems.INFUSED_SAPPHIRE_BOOTS);
+
+        simpleItem(ModItems.INFUSED_EMERALD_HELMET);
+        simpleItem(ModItems.INFUSED_EMERALD_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_EMERALD_LEGGINGS);
+        simpleItem(ModItems.INFUSED_EMERALD_BOOTS);
+
+        simpleItem(ModItems.INFUSED_AMETHYST_HELMET);
+        simpleItem(ModItems.INFUSED_AMETHYST_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_AMETHYST_LEGGINGS);
+        simpleItem(ModItems.INFUSED_AMETHYST_BOOTS);
+
+        simpleItem(ModItems.INFUSED_CITRINE_HELMET);
+        simpleItem(ModItems.INFUSED_CITRINE_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_CITRINE_LEGGINGS);
+        simpleItem(ModItems.INFUSED_CITRINE_BOOTS);
+
+        simpleItem(ModItems.INFUSED_TANZANITE_HELMET);
+        simpleItem(ModItems.INFUSED_TANZANITE_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_TANZANITE_LEGGINGS);
+        simpleItem(ModItems.INFUSED_TANZANITE_BOOTS);
+
+        simpleItem(ModItems.INFUSED_ONYX_HELMET);
+        simpleItem(ModItems.INFUSED_ONYX_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_ONYX_LEGGINGS);
+        simpleItem(ModItems.INFUSED_ONYX_BOOTS);
+
+        simpleItem(ModItems.GEM_UPGRADE_TEMPLATE);
+        simpleItem(ModItems.ALEXANDRITE_SHARD);
+
+
+
         simpleItem(ModItems.SHARK_TOOTH);
         simpleItem(ModItems.GEM_CUTTERS);
+        simpleItem(ModItems.GEM_DETECTOR);
+        simpleItem(ModItems.MAGICAL_SAP_BUCKET);
 
         simpleItem(ModItems.SHREK_THEME_MUSIC_DISC);
         saplingItem(ModBlocks.MAGIC_SAPLING);

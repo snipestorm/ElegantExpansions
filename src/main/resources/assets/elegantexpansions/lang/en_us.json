@@ -5,7 +5,20 @@
   "creativemodetab.elegant_expansions_mobs":"Elegant Expansions Mobs",
   "creativemodetab.elegant_expansions_misc":"Elegant Expansions Misc",
   "creativemodetab.elegant_expansions_gems":"Elegant Expansions Gems+",
+  "creativemodetab.elegant_expansions_armor":"Elegant Expansions Armor",
 
+  "tooltip.elegant_expansions.gem_upgrade_template.tooltip" : "Use On A Smithing Table With An Infused Gem & A Piece Of Diamond Armor",
+  "tooltip.elegant_expansions.gem_detector.tooltip" : "Right Click To Search For Gems",
+
+  "elegantexpansions.tooltip.liquid.amount.with.capacity" : "%s / %s mB",
+  "elegantexpansions.tooltip.liquid.amount" : "%s mB",
+  "fluid_type.elegantexpansions.magical_sap_fluid" : "Magical Sap",
+  "item.elegantexpansions.gem_detector.no_valuables": "No Gems Found!",
+
+  "item.elegantexpansions.alexandrite_shard": "Alexandrite Shard",
+
+  "item.elegantexpansions.gem_detector": "Gem Detector",
+  "item.elegantexpansions.data_tablet": "Data Tablet",
   "item.elegantexpansions.ruby": "Ruby",
   "item.elegantexpansions.sapphire": "Sapphire",
   "item.elegantexpansions.tanzanite": "Tanzanite",
@@ -30,11 +43,56 @@
   "item.elegantexpansions.infused_diamond": "Infused Diamond",
   "item.elegantexpansions.infused_amethyst": "Infused Amethyst",
 
+  "item.elegantexpansions.infused_diamond_helmet": "Infused Diamond Helmet",
+  "item.elegantexpansions.infused_diamond_chestplate": "Infused Diamond Chestplate",
+  "item.elegantexpansions.infused_diamond_leggings": "Infused Diamond Leggings",
+  "item.elegantexpansions.infused_diamond_boots": "Infused Diamond Boots",
+
+  "item.elegantexpansions.infused_ruby_helmet": "Infused Ruby Helmet",
+  "item.elegantexpansions.infused_ruby_chestplate": "Infused Ruby Chestplate",
+  "item.elegantexpansions.infused_ruby_leggings": "Infused Ruby Leggings",
+  "item.elegantexpansions.infused_ruby_boots": "Infused Ruby Boots",
+
+  "item.elegantexpansions.infused_sapphire_helmet": "Infused Sapphire Helmet",
+  "item.elegantexpansions.infused_sapphire_chestplate": "Infused Sapphire Chestplate",
+  "item.elegantexpansions.infused_sapphire_leggings": "Infused Sapphire Leggings",
+  "item.elegantexpansions.infused_sapphire_boots": "Infused Sapphire Boots",
+
+  "item.elegantexpansions.infused_emerald_helmet": "Infused Emerald Helmet",
+  "item.elegantexpansions.infused_emerald_chestplate": "Infused Emerald Chestplate",
+  "item.elegantexpansions.infused_emerald_leggings": "Infused Emerald Leggings",
+  "item.elegantexpansions.infused_emerald_boots": "Infused Emerald Boots",
+
+  "item.elegantexpansions.infused_amethyst_helmet": "Infused Amethyst Helmet",
+  "item.elegantexpansions.infused_amethyst_chestplate": "Infused Amethyst Chestplate",
+  "item.elegantexpansions.infused_amethyst_leggings": "Infused Amethyst Leggings",
+  "item.elegantexpansions.infused_amethyst_boots": "Infused Amethyst Boots",
+
+  "item.elegantexpansions.infused_citrine_helmet": "Infused Citrine Helmet",
+  "item.elegantexpansions.infused_citrine_chestplate": "Infused Citrine Chestplate",
+  "item.elegantexpansions.infused_citrine_leggings": "Infused Citrine Leggings",
+  "item.elegantexpansions.infused_citrine_boots": "Infused Citrine Boots",
+
+  "item.elegantexpansions.infused_tanzanite_helmet": "Infused Tanzanite Helmet",
+  "item.elegantexpansions.infused_tanzanite_chestplate": "Infused Tanzanite Chestplate",
+  "item.elegantexpansions.infused_tanzanite_leggings": "Infused Tanzanite Leggings",
+  "item.elegantexpansions.infused_tanzanite_boots": "Infused Tanzanite Boots",
+
+  "item.elegantexpansions.infused_onyx_helmet": "Infused Onyx Helmet",
+  "item.elegantexpansions.infused_onyx_chestplate": "Infused Onyx Chestplate",
+  "item.elegantexpansions.infused_onyx_leggings": "Infused Onyx Leggings",
+  "item.elegantexpansions.infused_onyx_boots": "Infused Onyx Boots",
+
+
 
   "item.elegantexpansions.gem_cutters": "Gem Cutters",
+  "item.elegantexpansions.magical_sap_bucket": "Bucket Of Magical Sap",
+  "item.elegantexpansions.gem_upgrade_template": "Gem Upgrade Template",
 
-  
-  
+
+  "block.elegantexpansions.gem_cutting_station": "Gem Cutting Station",
+  "block.elegantexpansions.gem_infusing_station": "Gem Infusing Station",
+  "block.elegantexpansions.shard_creation_station": "Shard Creation Station",
 
   "effect.elegantexpansions.bleed": "Bleed",
 

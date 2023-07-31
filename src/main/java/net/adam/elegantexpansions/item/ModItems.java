@@ -2,7 +2,8 @@ package net.adam.elegantexpansions.item;
 
 import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
-import net.adam.elegantexpansions.item.custom.StaffOfMummiesItem;
+import net.adam.elegantexpansions.fluid.ModFluids;
+import net.adam.elegantexpansions.item.custom.*;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -66,13 +67,104 @@ public class ModItems {
     public static final RegistryObject<Item> INFUSED_AMETHYST = ITEMS.register("infused_amethyst",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> GEM_UPGRADE_TEMPLATE = ITEMS.register("gem_upgrade_template",
+            () -> new GemUpgradeTemplateItem(new Item.Properties()));
+
+    //alexandrite//
+
+    public static final RegistryObject<Item> ALEXANDRITE_SHARD = ITEMS.register("alexandrite_shard",
+            () -> new Item(new Item.Properties()));
+
+    //armors//
+
+    public static final RegistryObject<Item> INFUSED_DIAMOND_HELMET = ITEMS.register("infused_diamond_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_DIAMOND, ArmorItem.Type.HELMET, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_DIAMOND_CHESTPLATE = ITEMS.register("infused_diamond_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_DIAMOND, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_DIAMOND_LEGGINGS = ITEMS.register("infused_diamond_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_DIAMOND, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_DIAMOND_BOOTS = ITEMS.register("infused_diamond_boots",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_DIAMOND, ArmorItem.Type.BOOTS, new  Item.Properties()));
+
+    public static final RegistryObject<Item> INFUSED_RUBY_HELMET = ITEMS.register("infused_ruby_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_RUBY, ArmorItem.Type.HELMET, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_RUBY_CHESTPLATE = ITEMS.register("infused_ruby_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_RUBY, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_RUBY_LEGGINGS = ITEMS.register("infused_ruby_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_RUBY, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_RUBY_BOOTS = ITEMS.register("infused_ruby_boots",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_RUBY, ArmorItem.Type.BOOTS, new  Item.Properties()));
+
+    public static final RegistryObject<Item> INFUSED_SAPPHIRE_HELMET = ITEMS.register("infused_sapphire_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_SAPPHIRE, ArmorItem.Type.HELMET, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_SAPPHIRE_CHESTPLATE = ITEMS.register("infused_sapphire_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_SAPPHIRE, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_SAPPHIRE_LEGGINGS = ITEMS.register("infused_sapphire_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_SAPPHIRE, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_SAPPHIRE_BOOTS = ITEMS.register("infused_sapphire_boots",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_SAPPHIRE, ArmorItem.Type.BOOTS, new  Item.Properties()));
+
+    public static final RegistryObject<Item> INFUSED_EMERALD_HELMET = ITEMS.register("infused_emerald_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_EMERALD, ArmorItem.Type.HELMET, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_EMERALD_CHESTPLATE = ITEMS.register("infused_emerald_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_EMERALD, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_EMERALD_LEGGINGS = ITEMS.register("infused_emerald_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_EMERALD, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_EMERALD_BOOTS = ITEMS.register("infused_emerald_boots",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_EMERALD, ArmorItem.Type.BOOTS, new  Item.Properties()));
+
+    public static final RegistryObject<Item> INFUSED_AMETHYST_HELMET = ITEMS.register("infused_amethyst_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_AMETHYST, ArmorItem.Type.HELMET, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_AMETHYST_CHESTPLATE = ITEMS.register("infused_amethyst_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_AMETHYST, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_AMETHYST_LEGGINGS = ITEMS.register("infused_amethyst_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_AMETHYST, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_AMETHYST_BOOTS = ITEMS.register("infused_amethyst_boots",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_AMETHYST, ArmorItem.Type.BOOTS, new  Item.Properties()));
+
+    public static final RegistryObject<Item> INFUSED_CITRINE_HELMET = ITEMS.register("infused_citrine_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.HELMET, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_CITRINE_CHESTPLATE = ITEMS.register("infused_citrine_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_CITRINE_LEGGINGS = ITEMS.register("infused_citrine_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_CITRINE_BOOTS = ITEMS.register("infused_citrine_boots",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.BOOTS, new  Item.Properties()));
+
+    public static final RegistryObject<Item> INFUSED_TANZANITE_HELMET = ITEMS.register("infused_tanzanite_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.HELMET, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_TANZANITE_CHESTPLATE = ITEMS.register("infused_tanzanite_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_TANZANITE_LEGGINGS = ITEMS.register("infused_tanzanite_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_TANZANITE_BOOTS = ITEMS.register("infused_tanzanite_boots",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.BOOTS, new  Item.Properties()));
+
+    public static final RegistryObject<Item> INFUSED_ONYX_HELMET = ITEMS.register("infused_onyx_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.HELMET, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_ONYX_CHESTPLATE = ITEMS.register("infused_onyx_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_ONYX_LEGGINGS = ITEMS.register("infused_onyx_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_ONYX_BOOTS = ITEMS.register("infused_onyx_boots",
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.BOOTS, new  Item.Properties()));
+
 
 
     public static final RegistryObject<Item> SHARK_TOOTH = ITEMS.register("shark_tooth",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GEM_CUTTERS = ITEMS.register("gem_cutters",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().durability(3)));
+
+    public static final RegistryObject<Item> GEM_DETECTOR = ITEMS.register("gem_detector",
+            () -> new GemDetectorItem(new Item.Properties().durability(50)));
+
+    public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
+            () -> new DataTabletItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> MAGICAL_SAP_BUCKET = ITEMS.register("magical_sap_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_MAGICAL_SAP, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
 
     public static final RegistryObject<Item> GOLEM_SPAWN_EGG = ITEMS.register("golem_spawn_egg",
@@ -103,7 +195,7 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntityTypes.CAPYBARA, 0x332626, 0x080000, new Item.Properties()));
 
     public static final RegistryObject<Item> STAFF_OF_MUMMIES = ITEMS.register("staff_of_mummies",
-            () -> new StaffOfMummiesItem(new Item.Properties().stacksTo(1).durability(10).fireResistant().rarity(Rarity.EPIC)));
+            () -> new StaffOfMummiesItem(new Item.Properties().stacksTo(1).durability(25).fireResistant().rarity(Rarity.EPIC)));
 
 
     public static final RegistryObject<Item> SHREK_THEME_MUSIC_DISC = ITEMS.register("shrek_theme_music_disc",

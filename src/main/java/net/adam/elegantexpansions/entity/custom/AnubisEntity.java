@@ -2,6 +2,7 @@ package net.adam.elegantexpansions.entity.custom;
 
 import net.adam.elegantexpansions.block.ModBlocks;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
+import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -108,8 +109,8 @@ public class AnubisEntity extends Monster implements GeoEntity {
         return Monster.createMobAttributes()
 
                 .add(Attributes.MAX_HEALTH, 200)
-                .add(Attributes.ARMOR,30)
-                .add(Attributes.ARMOR_TOUGHNESS,10)
+                .add(Attributes.ARMOR,15)
+                .add(Attributes.ARMOR_TOUGHNESS,5)
                 .add(Attributes.ATTACK_DAMAGE, 6.00f)
                 .add(Attributes.ATTACK_SPEED, 1.1f)
                 .add(Attributes.MOVEMENT_SPEED, 0.200f)
@@ -227,6 +228,14 @@ public class AnubisEntity extends Monster implements GeoEntity {
         this.playSound(ModSounds.GOLEM_WALK.get(), 0.25F, 1.0F);
     }
 
+    protected void dropCustomDeathLoot(DamageSource p_31464_, int p_31465_, boolean p_31466_) {
+        super.dropCustomDeathLoot(p_31464_, p_31465_, p_31466_);
+        ItemEntity itementity = this.spawnAtLocation(ModItems.GEM_UPGRADE_TEMPLATE.get());
+        if (itementity != null) {
+            itementity.setExtendedLifetime();
+        }
+
+    }
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
         return ModSounds.GOLEM_HURT.get();

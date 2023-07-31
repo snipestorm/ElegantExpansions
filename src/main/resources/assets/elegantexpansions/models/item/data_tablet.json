@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "elegantexpansions:item/data_tablet_off"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "elegantexpansions:on": 1
+      },
+      "model": "elegantexpansions:item/data_tablet_on"
+    }
+  ]
+}

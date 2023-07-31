@@ -15,7 +15,7 @@ public class ModEnchantments {
 public static RegistryObject<Enchantment> LIGHTNING_STRIKE =
         ENCHANTMENTS.register("lightning_strike",
                 () -> new LightningStrikeEnchantment(Enchantment.Rarity.VERY_RARE,
-                        EnchantmentCategory.BOW));
+                        EnchantmentCategory.CROSSBOW));
 
     public static RegistryObject<Enchantment> ANCIENT_POWER =
             ENCHANTMENTS.register("ancient_power",

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "elegantexpansions:item/magical_sap_bucket"
+  }
+}

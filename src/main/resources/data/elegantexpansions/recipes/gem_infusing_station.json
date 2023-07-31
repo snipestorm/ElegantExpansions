@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:calcite"
+    },
+    "S": {
+      "item": "minecraft:blackstone"
+    }
+  },
+  "pattern": [
+    "SCS",
+    "L L"
+  ],
+  "result": {
+    "item": "elegantexpansions:gem_infusing_station"
+  },
+  "show_notification": false
+}

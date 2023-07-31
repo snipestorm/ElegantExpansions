@@ -21,6 +21,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.CITRINE_BLOCK.get());
         dropSelf(ModBlocks.ONYX_BLOCK.get());
 
+        dropSelf(ModBlocks.GEM_CUTTING_STATION.get());
+        dropSelf(ModBlocks.GEM_INFUSING_STATION.get());
+        dropSelf(ModBlocks.SHARD_CREATION_STATION.get());
+
 
         add(ModBlocks.RUBY_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY.get()));

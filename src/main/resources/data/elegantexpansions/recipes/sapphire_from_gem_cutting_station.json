@@ -1,0 +1,11 @@
+{
+  "type": "elegantexpansions:gem_cutting",
+  "ingredients": [
+    {
+      "item": "elegantexpansions:sapphire"
+    }
+  ],
+  "output": {
+    "item": "elegantexpansions:cut_sapphire"
+  }
+}

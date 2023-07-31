@@ -54,7 +54,8 @@ public class AlbinoTigerEntity extends TigerEntity implements GeoEntity {
                 entitytype == EntityType.FOX || entitytype == EntityType.COW||
                 entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA||
                 entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT||
-                entitytype == EntityType.HORSE|| entitytype == EntityType.DONKEY|| entitytype == EntityType.MULE;};
+                entitytype == EntityType.HORSE|| entitytype == EntityType.DONKEY||
+                entitytype == EntityType.MULE || entitytype == EntityType.GOAT;};
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public AlbinoTigerEntity(EntityType<? extends AlbinoTigerEntity> entityType, Level level) {

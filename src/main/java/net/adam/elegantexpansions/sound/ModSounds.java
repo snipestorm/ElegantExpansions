@@ -28,7 +28,15 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> SHREK_DONKEY = registerSoundEvent("shrek_donkey");
     public static final RegistryObject<SoundEvent> SHREK_AMBIENT = registerSoundEvent("shrek_ambient");
 
+
     //tiger//
+
+    //gems//
+
+    public static final RegistryObject<SoundEvent> GEM_CUTTING = registerSoundEvent("gem_cutting");
+    public static final RegistryObject<SoundEvent> GEM_DETECTOR_FOUND_GEM = registerSoundEvent("gem_detector_found_gem");
+
+
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = new ResourceLocation(ElegantExpansions.MOD_ID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));

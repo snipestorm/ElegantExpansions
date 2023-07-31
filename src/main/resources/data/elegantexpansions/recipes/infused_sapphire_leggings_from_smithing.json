@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "elegantexpansions:infused_sapphire"
+  },
+  "base": {
+    "item": "minecraft:diamond_leggings"
+  },
+  "result": {
+    "item": "elegantexpansions:infused_sapphire_leggings"
+  },
+  "template": {
+    "item": "elegantexpansions:gem_upgrade_template"
+  }
+}

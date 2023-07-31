@@ -63,5 +63,22 @@
         "stream": true
       }
     ]
+  },
+
+  "gem_cutting": {
+    "subtitle": "sounds.elegantexpansions.gem_cutting",
+    "sounds": [
+      "elegantexpansions:gem_cutting"
+
+    ]
+  },
+
+  "gem_detector_found_gem": {
+    "subtitle": "sounds.elegantexpansions.gem_detector_found_gem",
+    "sounds": [
+      "elegantexpansions:gem_detector_found_gem"
+
+    ]
   }
+
 }

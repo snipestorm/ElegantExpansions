@@ -1,7 +1,11 @@
 package net.adam.elegantexpansions.block;
 
 import net.adam.elegantexpansions.ElegantExpansions;
+import net.adam.elegantexpansions.block.custom.GemCuttingStationBlock;
+import net.adam.elegantexpansions.block.custom.GemInfusingStationBlock;
 import net.adam.elegantexpansions.block.custom.ModFlammableRotatedPillarBlock;
+import net.adam.elegantexpansions.block.custom.ShardCreationStationBlock;
+import net.adam.elegantexpansions.fluid.ModFluids;
 import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.worldgen.tree.*;
 import net.minecraft.core.BlockPos;
@@ -78,6 +82,22 @@ public class ModBlocks {
     public static final RegistryObject<Block> ONYX_BLOCK = registerblock("onyx_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops()));
+
+    //Gem based blocks//
+
+    public static final RegistryObject<Block> GEM_CUTTING_STATION = registerblock("gem_cutting_station",
+            () -> new GemCuttingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+                    .strength(6f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> GEM_INFUSING_STATION = registerblock("gem_infusing_station",
+            () -> new GemInfusingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+                    .strength(6f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SHARD_CREATION_STATION = registerblock("shard_creation_station",
+            () -> new ShardCreationStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+                    .strength(6f).requiresCorrectToolForDrops()));
+
+
 
     public static final RegistryObject<Block> MAGIC_LOG = registerblock("magic_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
@@ -331,6 +351,11 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BANANA_SAPLING = registerblock("banana_sapling",
             () -> new SaplingBlock(new BananaTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+
+
+    public static final RegistryObject<LiquidBlock> MAGICAL_SAP_BLOCK = BLOCKS.register("magical_sap_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_MAGICAL_SAP, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
 
 

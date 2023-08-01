@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "elegantexpansions:infused_amethyst"
+  },
+  "base": {
+    "item": "minecraft:diamond_chestplate"
+  },
+  "result": {
+    "item": "elegantexpansions:infused_amethyst_chestplate"
+  },
+  "template": {
+    "item": "elegantexpansions:gem_upgrade_template"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:glass_bottle"
+    },
+    "L": {
+      "item": "minecraft:calcite"
+    },
+    "S": {
+      "item": "minecraft:blackstone"
+    },
+    "D": {
+      "item": "minecraft:lightning_rod"
+    },
+    "I": {
+      "item": "elegantexpansions:gem_cutters"
+    },
+
+    "O": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "DOI",
+    "SCS",
+    "L L"
+  ],
+  "result": {
+    "item": "elegantexpansions:gem_cutting_station"
+  },
+  "show_notification": false
+}

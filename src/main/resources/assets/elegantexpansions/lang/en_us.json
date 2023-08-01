@@ -1,0 +1,200 @@
+{
+
+  "creativemodetab.elegant_expansions_ores": "Elegant Expansions Ores",
+  "creativemodetab.elegant_expansions_nature":"Elegant Expansions Nature",
+  "creativemodetab.elegant_expansions_mobs":"Elegant Expansions Mobs",
+  "creativemodetab.elegant_expansions_misc":"Elegant Expansions Misc",
+  "creativemodetab.elegant_expansions_gems":"Elegant Expansions Gems+",
+  "creativemodetab.elegant_expansions_tools":"Elegant Expansions Tools/Weapons",
+  "creativemodetab.elegant_expansions_armor":"Elegant Expansions Armor",
+
+  "tooltip.elegant_expansions.gem_upgrade_template.tooltip" : "Use On A Smithing Table With An Infused Gem & A Piece Of Diamond Armor",
+  "tooltip.elegant_expansions.gem_detector.tooltip" : "Right Click To Search For Gems",
+
+  "elegantexpansions.tooltip.liquid.amount.with.capacity" : "%s / %s mB",
+  "elegantexpansions.tooltip.liquid.amount" : "%s mB",
+  "fluid_type.elegantexpansions.magical_sap_fluid" : "Magical Sap",
+  "item.elegantexpansions.gem_detector.no_valuables": "No Gems Found!",
+
+  "item.elegantexpansions.alexandrite": "Alexandrite",
+  "item.elegantexpansions.alexandrite_shard": "Alexandrite Shard",
+
+  "item.elegantexpansions.alexandrite_sword": "Alexandrite Sword",
+  "item.elegantexpansions.alexandrite_shovel": "Alexandrite Shovel",
+  "item.elegantexpansions.alexandrite_pickaxe": "Alexandrite Pickaxe",
+  "item.elegantexpansions.alexandrite_axe": "Alexandrite Axe",
+  "item.elegantexpansions.alexandrite_hoe": "Alexandrite Hoe",
+
+  "item.elegantexpansions.alexandrite_paxel": "Alexandrite Paxel",
+
+  "item.elegantexpansions.gem_detector": "Gem Detector",
+  "item.elegantexpansions.data_tablet": "Data Tablet",
+  "item.elegantexpansions.ruby": "Ruby",
+  "item.elegantexpansions.sapphire": "Sapphire",
+  "item.elegantexpansions.tanzanite": "Tanzanite",
+  "item.elegantexpansions.citrine": "Citrine",
+  "item.elegantexpansions.onyx": "Onyx",
+
+  "item.elegantexpansions.cut_ruby": "Cut Ruby",
+  "item.elegantexpansions.cut_sapphire": "Cut Sapphire",
+  "item.elegantexpansions.cut_tanzanite": "Cut Tanzanite",
+  "item.elegantexpansions.cut_citrine": "Cut Citrine",
+  "item.elegantexpansions.cut_onyx": "Cut Onyx",
+  "item.elegantexpansions.cut_emerald": "Cut Emerald",
+  "item.elegantexpansions.cut_diamond": "Cut Diamond",
+  "item.elegantexpansions.cut_amethyst": "Cut Amethyst",
+
+  "item.elegantexpansions.infused_ruby": "Infused Ruby",
+  "item.elegantexpansions.infused_sapphire": "Infused Sapphire",
+  "item.elegantexpansions.infused_tanzanite": "Infused Tanzanite",
+  "item.elegantexpansions.infused_citrine": "Infused Citrine",
+  "item.elegantexpansions.infused_onyx": "Infused Onyx",
+  "item.elegantexpansions.infused_emerald": "Infused Emerald",
+  "item.elegantexpansions.infused_diamond": "Infused Diamond",
+  "item.elegantexpansions.infused_amethyst": "Infused Amethyst",
+
+  "item.elegantexpansions.infused_diamond_helmet": "Infused Diamond Helmet",
+  "item.elegantexpansions.infused_diamond_chestplate": "Infused Diamond Chestplate",
+  "item.elegantexpansions.infused_diamond_leggings": "Infused Diamond Leggings",
+  "item.elegantexpansions.infused_diamond_boots": "Infused Diamond Boots",
+
+  "item.elegantexpansions.infused_ruby_helmet": "Infused Ruby Helmet",
+  "item.elegantexpansions.infused_ruby_chestplate": "Infused Ruby Chestplate",
+  "item.elegantexpansions.infused_ruby_leggings": "Infused Ruby Leggings",
+  "item.elegantexpansions.infused_ruby_boots": "Infused Ruby Boots",
+
+  "item.elegantexpansions.infused_sapphire_helmet": "Infused Sapphire Helmet",
+  "item.elegantexpansions.infused_sapphire_chestplate": "Infused Sapphire Chestplate",
+  "item.elegantexpansions.infused_sapphire_leggings": "Infused Sapphire Leggings",
+  "item.elegantexpansions.infused_sapphire_boots": "Infused Sapphire Boots",
+
+  "item.elegantexpansions.infused_emerald_helmet": "Infused Emerald Helmet",
+  "item.elegantexpansions.infused_emerald_chestplate": "Infused Emerald Chestplate",
+  "item.elegantexpansions.infused_emerald_leggings": "Infused Emerald Leggings",
+  "item.elegantexpansions.infused_emerald_boots": "Infused Emerald Boots",
+
+  "item.elegantexpansions.infused_amethyst_helmet": "Infused Amethyst Helmet",
+  "item.elegantexpansions.infused_amethyst_chestplate": "Infused Amethyst Chestplate",
+  "item.elegantexpansions.infused_amethyst_leggings": "Infused Amethyst Leggings",
+  "item.elegantexpansions.infused_amethyst_boots": "Infused Amethyst Boots",
+
+  "item.elegantexpansions.infused_citrine_helmet": "Infused Citrine Helmet",
+  "item.elegantexpansions.infused_citrine_chestplate": "Infused Citrine Chestplate",
+  "item.elegantexpansions.infused_citrine_leggings": "Infused Citrine Leggings",
+  "item.elegantexpansions.infused_citrine_boots": "Infused Citrine Boots",
+
+  "item.elegantexpansions.infused_tanzanite_helmet": "Infused Tanzanite Helmet",
+  "item.elegantexpansions.infused_tanzanite_chestplate": "Infused Tanzanite Chestplate",
+  "item.elegantexpansions.infused_tanzanite_leggings": "Infused Tanzanite Leggings",
+  "item.elegantexpansions.infused_tanzanite_boots": "Infused Tanzanite Boots",
+
+  "item.elegantexpansions.infused_onyx_helmet": "Infused Onyx Helmet",
+  "item.elegantexpansions.infused_onyx_chestplate": "Infused Onyx Chestplate",
+  "item.elegantexpansions.infused_onyx_leggings": "Infused Onyx Leggings",
+  "item.elegantexpansions.infused_onyx_boots": "Infused Onyx Boots",
+
+
+
+  "item.elegantexpansions.gem_cutters": "Gem Cutters",
+  "item.elegantexpansions.magical_sap_bucket": "Bucket Of Magical Sap",
+  "item.elegantexpansions.gem_upgrade_template": "Gem Upgrade Template",
+
+
+  "block.elegantexpansions.gem_cutting_station": "Gem Cutting Station",
+  "block.elegantexpansions.gem_infusing_station": "Gem Infusing Station",
+  "block.elegantexpansions.shard_creation_station": "Shard Creation Station",
+
+  "effect.elegantexpansions.bleed": "Bleed",
+
+  "block.elegantexpansions.ruby_block": "Ruby Block",
+  "block.elegantexpansions.ruby_ore": "Ruby Ore",
+  "block.elegantexpansions.deepslate_ruby_ore": "Deepslate Ruby Ore",
+
+  "block.elegantexpansions.sapphire_block": "Sapphire Block",
+  "block.elegantexpansions.sapphire_ore": "Sapphire Ore",
+  "block.elegantexpansions.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+
+  "block.elegantexpansions.tanzanite_block": "Tanzanite Block",
+  "block.elegantexpansions.endstone_tanzanite_ore": "Endstone Tanzanite Ore",
+
+  "block.elegantexpansions.citrine_block": "Citrine Block",
+  "block.elegantexpansions.nether_citrine_ore": "Nether Citrine Ore",
+
+  "block.elegantexpansions.onyx_block": "Onyx Block",
+
+
+
+  "item.elegantexpansions.shark_tooth": "Shark Tooth",
+
+  "enchantment.elegantexpansions.lightning_strike": "Lightning Strike",
+
+
+  "item.minecraft.potion.effect.bleed_potion": "Potion Of Bleeding",
+  "item.minecraft.splash_potion.effect.bleed_potion": "Splash Potion Of Bleeding",
+  "item.minecraft.lingering_potion.effect.bleed_potion": "Lingering Potion Of Bleeding",
+  "item.minecraft.tipped_arrow.effect.bleed_potion" : "Arrow Of Bleeding",
+
+  "item.elegantexpansions.golem_spawn_egg": "Golem Spawn Egg",
+  "item.elegantexpansions.capybara_spawn_egg": "Capybara Spawn Egg",
+  "item.elegantexpansions.mummy_spawn_egg": "Mummy Spawn Egg",
+  "item.elegantexpansions.players_mummy_spawn_egg": "Players Mummy Spawn Egg",
+  "item.elegantexpansions.anubis_spawn_egg": "Anubis Spawn Egg",
+  "item.elegantexpansions.tiger_spawn_egg": "Tiger Spawn Egg",
+  "item.elegantexpansions.white_tiger_spawn_egg": "White Tiger Spawn Egg",
+  "item.elegantexpansions.shrek_spawn_egg": "Shrek Spawn Egg",
+  "item.elegantexpansions.shark_spawn_egg": "Shark Spawn Egg",
+
+  "item.elegantexpansions.staff_of_mummies": "Staff Of Mummies",
+
+  "item.elegantexpansions.shrek_theme_music_disc": "Shrek Theme",
+  "item.elegantexpansions.shrek_theme_music_disc.desc": "The Greatest Song Ever",
+
+  "entity.elegantexpansions.mummy": "Mummy",
+  "entity.elegantexpansions.players_mummy": "Mummy",
+  "entity.elegantexpansions.anubis": "Anubis",
+  "entity.elegantexpansions.golem": "Golem",
+  "entity.elegantexpansions.tiger": "Tiger",
+  "entity.elegantexpansions.white_tiger": "White Tiger",
+  "entity.elegantexpansions.albino_tiger": "Albino Tiger",
+  "entity.elegantexpansions.shrek": "Shrek",
+  "entity.elegantexpansions.shark": "Shark",
+  "entity.elegantexpansions.capybara": "Capybara",
+
+
+  "block.elegantexpansions.magic_log": "Magic Log",
+  "block.elegantexpansions.magic_planks": "Magic Planks",
+  "block.elegantexpansions.magic_wood": "Magic Wood",
+  "block.elegantexpansions.stripped_magic_log": "Stripped Magic Log",
+  "block.elegantexpansions.stripped_magic_wood": "Stripped Magic Wood",
+  "block.elegantexpansions.magic_leaves": "Magic Leaves",
+  "block.elegantexpansions.magic_sapling": "Magic Sapling",
+
+  "block.elegantexpansions.willow_log": "Willow Log",
+  "block.elegantexpansions.willow_planks": "Willow Planks",
+  "block.elegantexpansions.willow_wood": "Willow Wood",
+  "block.elegantexpansions.stripped_willow_log": "Stripped Willow Log",
+  "block.elegantexpansions.stripped_willow_wood": "Stripped Willow Wood",
+  "block.elegantexpansions.willow_leaves": "Willow Leaves",
+  "block.elegantexpansions.willow_sapling": "Willow Sapling",
+
+  "block.elegantexpansions.ash_log": "Ash Log",
+  "block.elegantexpansions.ash_planks": "Ash Planks",
+  "block.elegantexpansions.ash_wood": "Ash Wood",
+  "block.elegantexpansions.stripped_ash_log": "Stripped Ash Log",
+  "block.elegantexpansions.stripped_ash_wood": "Stripped Ash Wood",
+  "block.elegantexpansions.ash_leaves": "Ash Leaves",
+  "block.elegantexpansions.ash_sapling": "Ash Sapling",
+ 
+
+  "block.elegantexpansions.maple_leaves": "Maple Leaves",
+  "block.elegantexpansions.maple_sapling": "Maple Sapling",
+
+
+  "block.elegantexpansions.banana_log": "Banana Log",
+  "block.elegantexpansions.banana_planks": "Banana Planks",
+  "block.elegantexpansions.banana_wood": "Banana Wood",
+  "block.elegantexpansions.stripped_banana_log": "Stripped Banana Log",
+  "block.elegantexpansions.stripped_banana_wood": "Stripped Banana Wood",
+  "block.elegantexpansions.banana_leaves": "Banana Leaves",
+  "block.elegantexpansions.banana_sapling": "Banana Sapling"
+}

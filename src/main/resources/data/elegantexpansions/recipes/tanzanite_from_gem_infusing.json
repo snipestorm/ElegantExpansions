@@ -1,0 +1,11 @@
+{
+  "type": "elegantexpansions:gem_infusing",
+  "ingredients": [
+    {
+      "item": "elegantexpansions:cut_tanzanite"
+    }
+  ],
+  "output": {
+    "item": "elegantexpansions:infused_tanzanite"
+  }
+}

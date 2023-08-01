@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "elegantexpansions:block/stripped_ash_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "elegantexpansions:block/stripped_ash_wood"
+    },
+    "axis=z": {
+      "model": "elegantexpansions:block/stripped_ash_wood_horizontal",
+      "x": 90
+    }
+  }
+}

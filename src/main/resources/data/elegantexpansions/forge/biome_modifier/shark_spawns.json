@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:deep_cold_ocean",
+    "minecraft:deep_ocean"
+  ],
+  "spawners": {
+    "type": "elegantexpansions:shark",
+    "weight": 95,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

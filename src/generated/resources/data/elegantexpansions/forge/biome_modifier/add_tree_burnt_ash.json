@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:savanna",
+  "features": [
+    "elegantexpansions:burnt_ash_placed",
+    "elegantexpansions:burnt_large_ash_placed"
+  ],
+  "step": "vegetal_decoration"
+}

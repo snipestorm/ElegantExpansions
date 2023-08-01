@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "elegantexpansions:block/shard_creation_station" },
+    "facing=east": { "model": "elegantexpansions:block/shard_creation_station", "y": 90 },
+    "facing=south": { "model": "elegantexpansions:block/shard_creation_station", "y": 180 },
+    "facing=west": { "model": "elegantexpansions:block/shard_creation_station", "y": 270 }
+  }
+}

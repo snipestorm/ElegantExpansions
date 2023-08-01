@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:netherite_pickaxe"
+    },
+    "A": {
+      "item": "minecraft:netherite_axe"
+    },
+    "H": {
+      "item": "minecraft:netherite_shovel"
+    },
+    "S": {
+      "item": "elegantexpansions:alexandrite_shard"
+    }
+  },
+  "pattern": [
+    " P ",
+    " S ",
+    "A H"
+  ],
+  "result": {
+    "item": "elegantexpansions:alexandrite_paxel"
+  },
+  "show_notification": false
+}

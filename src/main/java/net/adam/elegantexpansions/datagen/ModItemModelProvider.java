@@ -86,6 +86,14 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.GEM_UPGRADE_TEMPLATE);
         simpleItem(ModItems.ALEXANDRITE_SHARD);
+        simpleItem(ModItems.ALEXANDRITE);
+
+        handheldItem(ModItems.ALEXANDRITE_PAXEL);
+        handheldItem(ModItems.ALEXANDRITE_SWORD);
+        handheldItem(ModItems.ALEXANDRITE_SHOVEL);
+        handheldItem(ModItems.ALEXANDRITE_PICKAXE);
+        handheldItem(ModItems.ALEXANDRITE_AXE);
+        handheldItem(ModItems.ALEXANDRITE_HOE);
 
 
 

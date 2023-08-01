@@ -23,6 +23,10 @@ public class ModCreativeModeTabs {
             CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.INFUSED_ONYX.get()))
                     .title(Component.translatable("creativemodetab.elegant_expansions_gems")).build());
 
+    public static RegistryObject<CreativeModeTab> ELEGANT_EXPANSIONS_TOOLS = CREATIVE_MODE_TABS.register("elegant_expansions_tools", () ->
+            CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ALEXANDRITE_PAXEL.get()))
+                    .title(Component.translatable("creativemodetab.elegant_expansions_tools")).build());
+
     public static RegistryObject<CreativeModeTab> ELEGANT_EXPANSIONS_ARMOR = CREATIVE_MODE_TABS.register("elegant_expansions_armor", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.INFUSED_DIAMOND_CHESTPLATE.get()))
                     .title(Component.translatable("creativemodetab.elegant_expansions_armor")).build());

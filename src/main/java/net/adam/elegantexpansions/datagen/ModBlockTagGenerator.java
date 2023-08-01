@@ -50,6 +50,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.CITRINE_BLOCK.get(),
                         ModBlocks.NETHER_CITRINE_ORE.get());
 
+        this.tag(ModTags.Blocks.PAXEL_MINEABLE)
+                .addTags(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTags(BlockTags.MINEABLE_WITH_AXE)
+                .addTags(BlockTags.MINEABLE_WITH_SHOVEL);
+
 
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.ASH_LOG.get())

@@ -5,13 +5,13 @@
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:dirt"
+        "Name": "minecraft:sand"
       }
     },
     "foliage_placer": {
-      "type": "minecraft:fancy_foliage_placer",
-      "height": 4,
-      "offset": 4,
+      "type": "elegantexpansions:large_banana_foliage_placer",
+      "height": 2,
+      "offset": 0,
       "radius": 2
     },
     "foliage_provider": {
@@ -34,9 +34,9 @@
       "upper_size": 0
     },
     "trunk_placer": {
-      "type": "minecraft:fancy_trunk_placer",
-      "base_height": 3,
-      "height_rand_a": 16,
+      "type": "minecraft:straight_trunk_placer",
+      "base_height": 10,
+      "height_rand_a": 2,
       "height_rand_b": 0
     },
     "trunk_provider": {

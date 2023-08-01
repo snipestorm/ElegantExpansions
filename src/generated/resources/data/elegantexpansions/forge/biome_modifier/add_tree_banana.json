@@ -1,9 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:jungle",
-  "features": [
-    "elegantexpansions:banana_placed",
-    "elegantexpansions:large_banana_placed"
-  ],
+  "biomes": "#minecraft:is_beach",
+  "features": "elegantexpansions:banana_placed",
   "step": "vegetal_decoration"
 }

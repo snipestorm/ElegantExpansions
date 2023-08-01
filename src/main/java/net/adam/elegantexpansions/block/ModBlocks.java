@@ -1,10 +1,7 @@
 package net.adam.elegantexpansions.block;
 
 import net.adam.elegantexpansions.ElegantExpansions;
-import net.adam.elegantexpansions.block.custom.GemCuttingStationBlock;
-import net.adam.elegantexpansions.block.custom.GemInfusingStationBlock;
-import net.adam.elegantexpansions.block.custom.ModFlammableRotatedPillarBlock;
-import net.adam.elegantexpansions.block.custom.ShardCreationStationBlock;
+import net.adam.elegantexpansions.block.custom.*;
 import net.adam.elegantexpansions.fluid.ModFluids;
 import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.worldgen.tree.*;
@@ -350,7 +347,7 @@ public class ModBlocks {
             });
 
     public static final RegistryObject<Block> BANANA_SAPLING = registerblock("banana_sapling",
-            () -> new SaplingBlock(new BananaTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+            () -> new SandSaplingBlock(new BananaTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 
 

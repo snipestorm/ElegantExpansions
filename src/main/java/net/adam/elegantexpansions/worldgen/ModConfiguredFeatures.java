@@ -2,17 +2,15 @@ package net.adam.elegantexpansions.worldgen;
 
 import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.block.ModBlocks;
-import net.minecraft.Util;
+import net.adam.elegantexpansions.worldgen.tree.custom.BananaFoliagePlacer;
+import net.adam.elegantexpansions.worldgen.tree.custom.LargeBananaFoliagePlacer;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -33,11 +31,8 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.UpwardsBranchingT
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.minecraftforge.common.Tags;
 
 import java.util.List;
-
-import static net.minecraft.Util.getOrThrow;
 
 
 public class ModConfiguredFeatures {
@@ -90,8 +85,8 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.MAGIC_LOG.get()),
                 new StraightTrunkPlacer(4, 2, 0),
                 BlockStateProvider.simple(ModBlocks.MAGIC_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1)).build());
 
         register(context, LARGE_MAGIC_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.MAGIC_LOG.get()),
@@ -102,10 +97,10 @@ public class ModConfiguredFeatures {
 
         register(context, MAPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()),
-                new StraightTrunkPlacer(4, 2, 0),
+                new StraightTrunkPlacer(5, 2, 0),
                 BlockStateProvider.simple(ModBlocks.MAPLE_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1)).build());
 
         register(context, LARGE_MAPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(Blocks.OAK_LOG.defaultBlockState()),
@@ -133,8 +128,8 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.ASH_LOG.get()),
                 new StraightTrunkPlacer(5, 2, 0),
                 BlockStateProvider.simple(ModBlocks.ASH_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
-                new TwoLayersFeatureSize(2, 0, 2)).build());
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1)).build());
 
         register(context, LARGE_ASH_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.ASH_LOG.get()),
@@ -160,17 +155,17 @@ public class ModConfiguredFeatures {
 
         register(context, BANANA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.BANANA_LOG.get()),
-                new StraightTrunkPlacer(6, 2, 0),
+                new StraightTrunkPlacer(5, 2, 0),
                 BlockStateProvider.simple(ModBlocks.BANANA_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+                new BananaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(Blocks.SAND)).build());
 
         register(context, LARGE_BANANA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.BANANA_LOG.get()),
-                new FancyTrunkPlacer(3, 16, 0),
+                new StraightTrunkPlacer(10, 2, 0),
                 BlockStateProvider.simple(ModBlocks.BANANA_LEAVES.get()),
-                new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
-                new TwoLayersFeatureSize(0, 0, 0)).build());
+                new LargeBananaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
+                new TwoLayersFeatureSize(0, 0, 0)).dirt(BlockStateProvider.simple(Blocks.SAND)).build());
 
     }
 

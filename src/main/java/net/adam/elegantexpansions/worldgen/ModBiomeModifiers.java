@@ -30,10 +30,10 @@ public class ModBiomeModifiers {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-        context.register(ADD_TREE_MAGIC, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.BIRCH_FOREST)),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MAGIC_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_MAGIC_PLACED_KEY)),
-                GenerationStep.Decoration.VEGETAL_DECORATION));
+      //  context.register(ADD_TREE_MAGIC, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+       //         HolderSet.direct(biomes.getOrThrow(Biomes.BIRCH_FOREST)),
+       //         HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MAGIC_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_MAGIC_PLACED_KEY)),
+       //       GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_TREE_ASH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.TAIGA)),

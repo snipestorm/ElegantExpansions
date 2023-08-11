@@ -6,10 +6,15 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.TallFlowerBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -34,6 +39,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NETHER_CITRINE_ORE);
 
         blockWithItem(ModBlocks.ONYX_BLOCK);
+
+        simpleBlockWithItem(ModBlocks.MYSTICSHROOM.get(),
+                models().cross(blockTexture(ModBlocks.MYSTICSHROOM.get()).getPath(), blockTexture(ModBlocks.MYSTICSHROOM.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.MYSTIC_GLOWFLOWER.get(),
+                models().cross(blockTexture(ModBlocks.MYSTIC_GLOWFLOWER.get()).getPath(), blockTexture(ModBlocks.MYSTIC_GLOWFLOWER.get())).renderType("cutout"));
+
+
 
          logBlock(((RotatedPillarBlock) ModBlocks.MAGIC_LOG.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.MAGIC_WOOD.get(), blockTexture(ModBlocks.MAGIC_LOG.get()), blockTexture(ModBlocks.MAGIC_LOG.get()));
@@ -113,4 +126,5 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(blockRegistryObject.get(),
                 models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
+
 }

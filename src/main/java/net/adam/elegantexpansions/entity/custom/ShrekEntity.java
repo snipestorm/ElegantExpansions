@@ -9,7 +9,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -22,6 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.event.sound.PlaySoundEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -30,7 +30,7 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.object.PlayState;
 
-import java.util.EnumSet;
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -39,14 +39,14 @@ import java.util.UUID;
 public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob {
     private final AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
     private int remainingPersistentAngerTime;
-
     public boolean donkeysoundhasPlayedOnce;
-    private boolean canDoAnimation;
     public boolean donkeySummoned;
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
     @javax.annotation.Nullable
     private UUID persistentAngerTarget;
-    boolean isSummoning;
+    public boolean isSummoning;
+
+    public boolean hasYelled;
 
     protected int castingTickCount;
 
@@ -59,7 +59,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 750f)
-                .add(Attributes.ATTACK_DAMAGE, (double) 3f)
+                .add(Attributes.ATTACK_DAMAGE,  3f)
                 .add(Attributes.ATTACK_SPEED, 0.2)
                 .add(Attributes.FOLLOW_RANGE, 20D)
                 .add(Attributes.MOVEMENT_SPEED, 0.175).build();
@@ -101,7 +101,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
         this.readPersistentAngerSaveData(this.level(), p_30402_);
     }
 
-    private PlayState predicate(software.bernie.geckolib.core.animation.AnimationState animationState) {
+    private PlayState predicate(AnimationState animationState) {
         if (animationState.isMoving()) {
             animationState.getController().setAnimation(RawAnimation.begin().then("animation.shrek.walk", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
@@ -112,14 +112,49 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
     }
 
     private PlayState seeingPredicate(AnimationState state) {
-        if (this.canDoAnimation && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
+
+        if (yellAtPlayer(level(), this) && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
             state.getController().forceAnimationReset();
             state.getController().setAnimation(RawAnimation.begin().then("animation.shrek.what", Animation.LoopType.PLAY_ONCE));
-            setCantDoAnimation();
+
         }
+
 
         return PlayState.CONTINUE;
     }
+
+
+    public boolean yellAtPlayer(Level level, Entity entity) {
+        if (entity.isAlive() && !entity.isSilent() && level.random.nextInt(10) == 0) {
+            List<Player> list = level.getEntitiesOfClass(Player.class, entity.getBoundingBox().inflate(10.0D));
+            if (!list.isEmpty()) {
+                    SoundEvent soundevent = getSound();
+                    level.playSound (null, entity, soundevent, entity.getSoundSource(), 0.7F, 1F);
+                    return true;
+
+            }
+            return false;
+
+        } else {
+            return false;
+        }
+    }
+
+
+    private static SoundEvent getSound() {
+        return ModSounds.GOLEM_ROAR.get();
+    }
+
+    public void aiStep() {
+
+        if (this.level().random.nextInt(100) == 0) {
+            yellAtPlayer(this.level(), this);
+
+
+        }
+        super.aiStep();
+    }
+
 
     private PlayState donkeyPredicate(AnimationState state) {
 
@@ -143,17 +178,10 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
         return PlayState.CONTINUE;
     }
 
-    public void setCantDoAnimation() {
-        canDoAnimation = false;
-    }
     public boolean DoAnimation() {
         return donkeySummoned;
     }
 
-
-      public void setCanDoAnimation() {
-        canDoAnimation = true;
-    }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {

@@ -12,11 +12,14 @@ import net.adam.elegantexpansions.fluid.ModFluids;
 import net.adam.elegantexpansions.item.ModCreativeModeTabs;
 import net.adam.elegantexpansions.item.ModItemProperties;
 import net.adam.elegantexpansions.item.ModItems;
+import net.adam.elegantexpansions.particle.ModParticles;
 import net.adam.elegantexpansions.potion.ModPotions;
 import net.adam.elegantexpansions.recipe.ModRecipes;
 import net.adam.elegantexpansions.screen.*;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.adam.elegantexpansions.util.BetterBrewingRecipe;
+import net.adam.elegantexpansions.worldgen.biome.ModTerrablender;
+import net.adam.elegantexpansions.worldgen.biome.surface.ModSurfaceRules;
 import net.adam.elegantexpansions.worldgen.tree.ModFoliagePlacerTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -26,6 +29,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
@@ -40,6 +44,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import software.bernie.geckolib.GeckoLib;
+import terrablender.api.SurfaceRuleManager;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -67,6 +72,7 @@ public class ElegantExpansions {
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
         ModEnchantments.register(modEventBus);
+        ModParticles.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
@@ -74,6 +80,8 @@ public class ElegantExpansions {
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
         ModFoliagePlacerTypes.register(modEventBus);
+
+        ModTerrablender.registerRegions();
 
 
 
@@ -96,6 +104,12 @@ public class ElegantExpansions {
         event.enqueueWork(() -> {
         BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
                 ModItems.SHARK_TOOTH.get(), ModPotions.BLEED_POTION.get()));
+
+            ((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(ModBlocks.MYSTICSHROOM.getId(), ModBlocks.POTTED_MYSTICSHROOM);
+            ((FlowerPotBlock)Blocks.FLOWER_POT).addPlant(ModBlocks.MYSTIC_GLOWFLOWER.getId(), ModBlocks.POTTED_MYSTIC_GLOWFLOWER);
+
+
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
     });
     }
 
@@ -147,6 +161,9 @@ public class ElegantExpansions {
             event.accept(ModBlocks.STRIPPED_BANANA_LOG);
             event.accept(ModBlocks.STRIPPED_BANANA_WOOD);
             event.accept(ModBlocks.BANANA_SAPLING);
+            event.accept(ModBlocks.MYSTICSHROOM);
+            event.accept(ModBlocks.MYSTIC_GLOWFLOWER);
+            event.accept(ModBlocks.ICY_IRIS);
 
         }
 

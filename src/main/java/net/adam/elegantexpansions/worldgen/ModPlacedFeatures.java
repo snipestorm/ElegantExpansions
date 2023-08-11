@@ -84,10 +84,10 @@ public class ModPlacedFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 2), ModBlocks.ASH_SAPLING.get()));
 
         register(context, BANANA_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BANANA_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.BANANA_SAPLING.get()));
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), ModBlocks.BANANA_SAPLING.get()));
 
         register(context, LARGE_BANANA_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_BANANA_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1f, 2), ModBlocks.BANANA_SAPLING.get()));
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), ModBlocks.BANANA_SAPLING.get()));
 
     }
 

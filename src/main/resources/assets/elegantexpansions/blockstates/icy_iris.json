@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "elegantexpansions:block/icy_iris_bottom"
+    },
+    "half=upper": {
+      "model": "elegantexpansions:block/icy_iris_top"
+    }
+  }
+}

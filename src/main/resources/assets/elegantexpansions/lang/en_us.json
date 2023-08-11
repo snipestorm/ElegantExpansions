@@ -196,5 +196,10 @@
   "block.elegantexpansions.stripped_banana_log": "Stripped Banana Log",
   "block.elegantexpansions.stripped_banana_wood": "Stripped Banana Wood",
   "block.elegantexpansions.banana_leaves": "Banana Leaves",
-  "block.elegantexpansions.banana_sapling": "Banana Sapling"
+  "block.elegantexpansions.banana_sapling": "Banana Sapling",
+
+
+  "block.elegantexpansions.mysticshroom": "Mysticshroom",
+  "block.elegantexpansions.mystic_glowflower": "Mystic Glowflower",
+  "block.elegantexpansions.icy_iris": "Icy Iris"
 }

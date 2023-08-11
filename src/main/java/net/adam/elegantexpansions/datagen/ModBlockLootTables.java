@@ -25,6 +25,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.GEM_INFUSING_STATION.get());
         dropSelf(ModBlocks.SHARD_CREATION_STATION.get());
 
+        dropSelf(ModBlocks.MYSTICSHROOM.get());
+        add(ModBlocks.POTTED_MYSTICSHROOM.get(),
+                createPotFlowerItemTable(ModBlocks.POTTED_MYSTICSHROOM.get()));
+
+        dropSelf(ModBlocks.MYSTIC_GLOWFLOWER.get());
+
+        add(ModBlocks.POTTED_MYSTIC_GLOWFLOWER.get(),
+                createPotFlowerItemTable(ModBlocks.POTTED_MYSTIC_GLOWFLOWER.get()));
+
+        dropSelf(ModBlocks.ICY_IRIS.get());
+
+
 
         add(ModBlocks.RUBY_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY.get()));

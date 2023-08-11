@@ -8,6 +8,7 @@ import net.adam.elegantexpansions.worldgen.tree.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -24,6 +25,8 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS=
             DeferredRegister.create(ForgeRegistries.BLOCKS, ElegantExpansions.MOD_ID);
+
+
 
     //ruby//
 
@@ -292,6 +295,8 @@ public class ModBlocks {
 
 
 
+
+
     public static final RegistryObject<Block> BANANA_LOG = registerblock("banana_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
                     .strength(5f)));
@@ -354,7 +359,21 @@ public class ModBlocks {
     public static final RegistryObject<LiquidBlock> MAGICAL_SAP_BLOCK = BLOCKS.register("magical_sap_block",
             () -> new LiquidBlock(ModFluids.SOURCE_MAGICAL_SAP, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
+    public static final RegistryObject<Block> MYSTICSHROOM = registerblock("mysticshroom",
+            () -> new FlowerBlock(() -> MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.copy(Blocks.POPPY)));
+    public static final RegistryObject<Block> POTTED_MYSTICSHROOM = BLOCKS.register("potted_mysticshroom",
+            () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT),MYSTICSHROOM, BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY)));
 
+    public static final RegistryObject<Block> MYSTIC_GLOWFLOWER = registerblock("mystic_glowflower",
+            () -> new FlowerBlock(() -> MobEffects.GLOWING, 5, BlockBehaviour.Properties.copy(Blocks.POPPY).lightLevel((light) -> {
+                return 4;
+            })));
+    public static final RegistryObject<Block> POTTED_MYSTIC_GLOWFLOWER = BLOCKS.register("potted_mystic_glowflower",
+            () -> new FlowerPotBlock((() -> (FlowerPotBlock) Blocks.FLOWER_POT),MYSTIC_GLOWFLOWER, BlockBehaviour.Properties.copy(Blocks.POTTED_POPPY).lightLevel((light) -> {
+                return 4;
+            })));
+    public static final RegistryObject<Block> ICY_IRIS = registerblock("icy_iris",
+            () -> new TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.PEONY)));
 
     private static <T extends Block> RegistryObject<T> registerblock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

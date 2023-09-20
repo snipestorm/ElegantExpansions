@@ -82,6 +82,9 @@
     ],
     [
       "minecraft:glow_lichen",
+      "elegantexpansions:mysticshroom_placed",
+      "elegantexpansions:mystic_glowflower_placed",
+      "elegantexpansions:icy_iris_placed",
       "minecraft:patch_large_fern",
       "minecraft:forest_flowers",
       "minecraft:patch_grass_forest",

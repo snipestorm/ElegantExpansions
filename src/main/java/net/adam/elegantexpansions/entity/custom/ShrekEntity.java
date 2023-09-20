@@ -3,6 +3,9 @@ package net.adam.elegantexpansions.entity.custom;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -21,7 +24,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.event.sound.PlaySoundEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -33,7 +35,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
-
+import java.util.function.Predicate;
 
 
 public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob {
@@ -41,14 +43,18 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
     private int remainingPersistentAngerTime;
     public boolean donkeysoundhasPlayedOnce;
     public boolean donkeySummoned;
+    protected int castingTickCount;
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
     @javax.annotation.Nullable
     private UUID persistentAngerTarget;
     public boolean isSummoning;
-
-    public boolean hasYelled;
-
-    protected int castingTickCount;
+    public static final EntityDataAccessor<Boolean> SUMMON = SynchedEntityData.defineId(ShrekEntity.class, EntityDataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<Boolean> YELL = SynchedEntityData.defineId(ShrekEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final Predicate<Player> NOT_PLAYER_PREDICATE = new Predicate<Player>() {
+        public boolean test(@javax.annotation.Nullable Player p_29453_) {
+            return p_29453_ != null;
+        }
+    };
 
     public ShrekEntity(EntityType<? extends ShrekEntity> entityType, Level level) {
         super(entityType, level);
@@ -59,15 +65,12 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 750f)
-                .add(Attributes.ATTACK_DAMAGE,  3f)
+                .add(Attributes.ATTACK_DAMAGE, 3f)
                 .add(Attributes.ATTACK_SPEED, 0.2)
                 .add(Attributes.FOLLOW_RANGE, 20D)
                 .add(Attributes.MOVEMENT_SPEED, 0.175).build();
 
     }
-
-
-
 
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
@@ -87,18 +90,39 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
         return MobType.UNDEFINED;
     }
 
-
-
-
-
     public void addAdditionalSaveData(CompoundTag p_30418_) {
         super.addAdditionalSaveData(p_30418_);
         this.addPersistentAngerSaveData(p_30418_);
+        p_30418_.putBoolean("Yell", this.isYelling());
+        p_30418_.putBoolean("Summon", this.isSummoning());
     }
 
     public void readAdditionalSaveData(CompoundTag p_30402_) {
         super.readAdditionalSaveData(p_30402_);
         this.readPersistentAngerSaveData(this.level(), p_30402_);
+        this.setYellStatus(p_30402_.getBoolean("Yell"));
+        this.setSummonStatus(p_30402_.getBoolean("Summon"));
+    }
+
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        entityData.define(YELL, false);
+        entityData.define(SUMMON, false);
+    }
+
+    public boolean isSummoning() {
+        return this.entityData.get(SUMMON);
+    }
+
+    public void setSummonStatus(boolean summon) {
+        this.entityData.set(SUMMON, Boolean.valueOf(summon));
+    }
+    public boolean isYelling() {
+        return this.entityData.get(YELL);
+    }
+
+    public void setYellStatus(boolean yell) {
+        this.entityData.set(YELL, Boolean.valueOf(yell));
     }
 
     private PlayState predicate(AnimationState animationState) {
@@ -112,59 +136,27 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
     }
 
     private PlayState seeingPredicate(AnimationState state) {
-
-        if (yellAtPlayer(level(), this) && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
-            state.getController().forceAnimationReset();
+        if (isYelling()) {
             state.getController().setAnimation(RawAnimation.begin().then("animation.shrek.what", Animation.LoopType.PLAY_ONCE));
 
-        }
-
-
         return PlayState.CONTINUE;
+    } else {
+        state.getController().forceAnimationReset();
+        return PlayState.STOP;
     }
-
-
-    public boolean yellAtPlayer(Level level, Entity entity) {
-        if (entity.isAlive() && !entity.isSilent() && level.random.nextInt(10) == 0) {
-            List<Player> list = level.getEntitiesOfClass(Player.class, entity.getBoundingBox().inflate(10.0D));
-            if (!list.isEmpty()) {
-                    SoundEvent soundevent = getSound();
-                    level.playSound (null, entity, soundevent, entity.getSoundSource(), 0.7F, 1F);
-                    return true;
-
-            }
-            return false;
-
-        } else {
-            return false;
-        }
-    }
-
-
-    private static SoundEvent getSound() {
-        return ModSounds.GOLEM_ROAR.get();
-    }
-
-    public void aiStep() {
-
-        if (this.level().random.nextInt(100) == 0) {
-            yellAtPlayer(this.level(), this);
-
-
-        }
-        super.aiStep();
-    }
-
+}
 
     private PlayState donkeyPredicate(AnimationState state) {
 
-            if (isSummoning && state.getController().getAnimationState().equals(AnimationController.State.STOPPED)) {
-                state.getController().forceAnimationReset();
-                state.getController().setAnimation(RawAnimation.begin().then("animation.shrek.donkey", Animation.LoopType.PLAY_ONCE));
+        if (isSummoning()) {
+            state.getController().setAnimation(RawAnimation.begin().then("animation.shrek.donkey", Animation.LoopType.PLAY_ONCE));
 
-            }
+            return PlayState.CONTINUE;
+        } else {
 
-        return PlayState.CONTINUE;
+            state.getController().forceAnimationReset();
+            return PlayState.STOP;
+        }
     }
 
 
@@ -176,10 +168,6 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
         }
 
         return PlayState.CONTINUE;
-    }
-
-    public boolean DoAnimation() {
-        return donkeySummoned;
     }
 
 
@@ -199,6 +187,46 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return factory;
+    }
+
+
+
+    public boolean yellAtPlayer(Level level, Entity entity) {
+        if (entity.isAlive() && !isYelling() && !entity.isSilent() && level.random.nextInt(2) == 0) {
+            List<Player> list = level.getEntitiesOfClass(Player.class, entity.getBoundingBox().inflate(10.0D), NOT_PLAYER_PREDICATE);
+            if (!list.isEmpty()) {
+                Player player = list.get(level.random.nextInt(list.size()));
+                SoundEvent soundevent = getYellSound();
+                level.playSound((Player) null, entity.getX(), entity.getY(), entity.getZ(), soundevent, entity.getSoundSource(), 0.7F, 1F);
+                setYellStatus(true);
+                return true;
+            }
+            return false;
+
+        } else {
+            return false;
+        }
+    }
+
+
+    private static SoundEvent getYellSound() {
+        return ModSounds.SHREK_WHAT.get();
+    }
+
+    public void aiStep() {
+
+        if (this.level().random.nextInt(100) == 0) {
+            yellAtPlayer(this.level(), this);
+        }
+
+        if (this.level().random.nextInt(10000) == 0) {
+            setYellFalse();
+        }
+        super.aiStep();
+    }
+
+    public void setYellFalse() {
+        this.setYellStatus(false);
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
@@ -226,23 +254,18 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
             this.updatePersistentAnger((ServerLevel) this.level(), true);
         }
     }
+    @Override
+   protected void customServerAiStep() {
+   super.customServerAiStep();
 
-@Override
-    protected void customServerAiStep() {
-    super.customServerAiStep();
+   {
+       if (this.isSummoning && !this.donkeysoundhasPlayedOnce) {
+           this.level().playSound(null, blockPosition(), ModSounds.SHREK_DONKEY.get(), SoundSource.NEUTRAL, 3, 1);
+           this.donkeysoundhasPlayedOnce = true;
+       }
 
-    {
-        if (this.isSummoning && !this.donkeysoundhasPlayedOnce) {
-            this.level().playSound(null, blockPosition(), ModSounds.SHREK_DONKEY.get(), SoundSource.NEUTRAL, 3, 1);
-            this.donkeysoundhasPlayedOnce = true;
-        }
-
-    }
+   }
 }
-
-
-
-
 
 
     public boolean doHurtTarget(Entity p_30372_) {
@@ -309,8 +332,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
         public boolean canUse() {
             LivingEntity livingentity = ShrekEntity.this;
             if (livingentity != null && livingentity.isAlive()) {
-                return ShrekEntity.this.tickCount >= this.nextCastTickCount && random.nextInt(1000) == 3;
-
+                return ShrekEntity.this.tickCount >= this.nextCastTickCount && random.nextInt(1000) == 0;
             }
             if (donkeySummoned) {
                 return false;
@@ -371,6 +393,7 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
                         donkey.moveTo(blockpos, 0.0F, 0.0F);
                         donkey.finalizeSpawn(serverlevel, ShrekEntity.this.level().getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData) null, (CompoundTag) null);
                         serverlevel.addFreshEntityWithPassengers(donkey);
+                        setSummonStatus(true);
 
                     }
                     donkeySummoned = true;

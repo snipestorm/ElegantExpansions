@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+    "L": {
+      "item": "minecraft:calcite"
+    },
+    "S": {
+      "item": "minecraft:blackstone"
+    },
+    "pattern": [
+      "BBB",
+      "SSS",
+      "L L"
+    ],
+    "result": {
+      "item": "elegantexpansions:shard_creation_station"
+    },
+    "show_notification": false
+  }
+}

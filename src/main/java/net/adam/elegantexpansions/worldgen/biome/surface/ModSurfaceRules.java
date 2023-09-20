@@ -9,9 +9,9 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
-    private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
+    private static final SurfaceRules.RuleSource WHITE_SAND = makeStateRule(ModBlocks.WHITE_SAND.get());
     private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
-    private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
+    private static final SurfaceRules.RuleSource WHITE_SANDSTONE = makeStateRule(ModBlocks.WHITE_SANDSTONE.get());
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
 
 
@@ -19,7 +19,7 @@ public class ModSurfaceRules {
 
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
-        SurfaceRules.RuleSource ancientSands = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SAND),SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SAND), SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SANDSTONE), SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, STONE));
+        SurfaceRules.RuleSource ancientSands = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, WHITE_SAND),SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,  WHITE_SAND), SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, WHITE_SANDSTONE), SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, STONE));
 
 
 

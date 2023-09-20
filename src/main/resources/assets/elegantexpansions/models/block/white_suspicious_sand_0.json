@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "elegantexpansions:block/white_suspicious_sand_0"
+  }
+}

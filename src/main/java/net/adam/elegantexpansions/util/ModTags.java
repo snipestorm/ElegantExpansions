@@ -1,12 +1,14 @@
 package net.adam.elegantexpansions.util;
+
 import net.adam.elegantexpansions.ElegantExpansions;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.PotionItem;
-import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
@@ -24,10 +26,12 @@ public class ModTags {
         }
     }
 
+
     public static class Blocks {
         public static final TagKey<Block> GEM_DETECTOR_GEMS = tag("gem_detector_gems");
         public static final TagKey<Block> NEEDS_ALEXANDRITE_TOOL = tag("needs_alexandrite_tool");
         public static final TagKey<Block> PAXEL_MINEABLE = tag("mineable/paxel");
+        public static final TagKey<Block> ANUBIS_BASE_BLOCKS = tag("anubis_base");
 
 
         private static TagKey<Block> tag(String name) {
@@ -38,4 +42,5 @@ public class ModTags {
             return BlockTags.create(new ResourceLocation("forge", name));
         }
     }
+
     }

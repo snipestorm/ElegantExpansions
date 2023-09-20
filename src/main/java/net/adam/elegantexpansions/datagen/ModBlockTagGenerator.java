@@ -6,6 +6,7 @@ import net.adam.elegantexpansions.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -31,7 +32,15 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.TANZANITE_BLOCK.get(),
                         ModBlocks.ENDSTONE_TANZANITE_ORE.get(),
                         ModBlocks.CITRINE_BLOCK.get(),
-                        ModBlocks.NETHER_CITRINE_ORE.get());
+                        ModBlocks.NETHER_CITRINE_ORE.get(),
+
+                        ModBlocks.EYE_OF_HORUS_GOLD.get(),
+                        ModBlocks.GLPYH_OF_ANUBIS_GOLD.get(),
+                        ModBlocks.ANKH_GOLD.get(),
+                        ModBlocks.GOLD_CHAIN.get(),
+                        ModBlocks.WHITE_SANDSTONE.get(),
+                        ModBlocks.LANTERN_OF_ANUBIS.get(),
+                        ModBlocks.CHISELED_WHITE_SANDSTONE.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RUBY_BLOCK.get(),
@@ -49,6 +58,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.ENDSTONE_TANZANITE_ORE.get(),
                         ModBlocks.CITRINE_BLOCK.get(),
                         ModBlocks.NETHER_CITRINE_ORE.get());
+
+        this.tag(ModTags.Blocks.ANUBIS_BASE_BLOCKS)
+
+                .add(Blocks.REINFORCED_DEEPSLATE);
 
         this.tag(ModTags.Blocks.PAXEL_MINEABLE)
                 .addTags(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -82,6 +95,27 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.WILLOW_PLANKS.get())
                 .add(ModBlocks.MAGIC_PLANKS.get())
                 .add(ModBlocks.BANANA_PLANKS.get());
+
+
+
+        this.tag(BlockTags.FENCES)
+                .add(ModBlocks.MAGIC_FENCE.get())
+                .add(ModBlocks.ASH_FENCE.get())
+                .add(ModBlocks.WILLOW_FENCE.get())
+                .add(ModBlocks.PALM_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.MAGIC_FENCE_GATE.get())
+                .add(ModBlocks.ASH_FENCE_GATE.get())
+                .add(ModBlocks.PALM_FENCE_GATE.get())
+                .add(ModBlocks.WILLOW_FENCE_GATE.get());
+        this.tag(BlockTags.WALLS)
+                .add(ModBlocks.MAGIC_WALL.get())
+                .add(ModBlocks.ASH_WALL.get())
+                .add(ModBlocks.WILLOW_WALL.get())
+                .add(ModBlocks.PALM_WALL.get());
+
+        this.tag(BlockTags.SAND)
+                .add(ModBlocks.WHITE_SAND.get());
 
     }
 

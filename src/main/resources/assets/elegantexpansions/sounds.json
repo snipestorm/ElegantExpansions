@@ -27,7 +27,10 @@
   "anubis_ambient": {
     "subtitle": "sounds.elegantexpansions.anubis_ambient",
     "sounds": [
-      "elegantexpansions:anubis_ambient"
+      "elegantexpansions:anubis_army_of_dead",
+      "elegantexpansions:anubis_courage",
+      "elegantexpansions:anubis_last",
+      "elegantexpansions:anubis_leave_alive"
     ]
   },
   "anubis_unstoppable": {
@@ -50,12 +53,27 @@
   "sounds": [
     "elegantexpansions:anubis_awaken_friends"
   ]
-}, "shrek_donkey": {
+}, "anubis_spawn": {
+  "subtitle": "sounds.elegantexpansions.anubis_spawn",
+  "sounds": [
+    "elegantexpansions:anubis_spawn"
+  ]
+},
+
+
+  "shrek_donkey": {
   "subtitle": "sounds.elegantexpansions.shrek_donkey",
   "sounds": [
     "elegantexpansions:shrek_donkey"
   ]
 },
+
+  "shrek_what": {
+    "subtitle": "sounds.elegantexpansions.shrek_what",
+    "sounds": [
+      "elegantexpansions:shrek_what"
+    ]
+  },
   "shrek_ambient": {
     "sounds": [
       {
@@ -79,6 +97,62 @@
       "elegantexpansions:gem_detector_found_gem"
 
     ]
-  }
+  },
 
+  "elephant_trumpet": {
+    "subtitle": "sounds.elegantexpansions.elephant_trumpet",
+    "sounds": [
+      "elegantexpansions:elephant_trumpet"
+    ]
+  },
+
+  "entity.lion.hurt": {
+    "sounds": [
+      "elegantexpansions:lion_hurt1"
+    ],
+    "subtitle": "elegantexpansions.subtitles.entity.lion.hurt"
+  },
+  "entity.lion.ambient": {
+    "sounds": [
+      "elegantexpansions:lion_idle1",
+      "elegantexpansions:lion_roar1"
+    ],
+    "subtitle": "elegantexpansions.subtitles.entity.lion.ambient"
+  },
+  "entity.lion.roar": {
+    "sounds": [
+      "elegantexpansions:lion_roar1",
+      "elegantexpansions:lion_roar2"
+    ],
+    "subtitle": "elegantexpansions.subtitles.entity.lion.roar"
+  },
+  "hippo_hurt": {
+    "subtitle": "sounds.elegantexpansions.hippo_hurt",
+    "sounds": [
+      "elegantexpansions:hippo_hurt1",
+      "elegantexpansions:hippo_hurt2",
+      "elegantexpansions:hippo_hurt3"
+    ]
+  },
+  "hippo_ambient": {
+    "subtitle": "sounds.elegantexpansions.hippo_ambient",
+    "sounds": [
+      "elegantexpansions:hippo_idle1",
+      "elegantexpansions:hippo_idle2"
+    ]
+  },
+  "elephant_hurt": {
+    "subtitle": "sounds.elegantexpansions.elephant_hurt",
+    "sounds": [
+      "elegantexpansions:elephant_hurt"
+
+    ]
+  },
+  "elephant_ambient": {
+    "subtitle": "sounds.elegantexpansions.elephant_ambient",
+    "sounds": [
+      "elegantexpansions:elephant_idle1",
+      "elegantexpansions:elephant_idle2"
+    ]
+  }
 }

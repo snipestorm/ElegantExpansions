@@ -12,9 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -36,6 +34,10 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> OVERWORLD_SAPPHIRE_ORE_PLACED_KEY = createKey("sapphire_ore_placed");
     public static final ResourceKey<PlacedFeature> NETHER_CITRINE_ORE_PLACED_KEY = createKey("nether_citrine_ore_placed");
     public static final ResourceKey<PlacedFeature> END_TANZANITE_ORE_PLACED_KEY = createKey("end_tanzanite_ore_placed");
+
+    public static final ResourceKey<PlacedFeature> MYSTICSHROOM_PLACED_KEY = createKey("mysticshroom_placed");
+    public static final ResourceKey<PlacedFeature> MYSTIC_GLOWFLOWER_PLACED_KEY = createKey("mystic_glowflower_placed");
+    public static final ResourceKey<PlacedFeature> ICY_IRIS_PLACED_KEY = createKey("icy_iris_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -88,6 +90,18 @@ public class ModPlacedFeatures {
 
         register(context, LARGE_BANANA_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_BANANA_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), ModBlocks.BANANA_SAPLING.get()));
+
+
+
+
+        register(context, MYSTICSHROOM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MYSTICSHROOM_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,BiomeFilter.biome()));
+
+        register(context, MYSTIC_GLOWFLOWER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MYSTIC_GLOWFLOWER_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,BiomeFilter.biome()));
+
+        register(context, ICY_IRIS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ICY_IRIS_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP,BiomeFilter.biome()));
 
     }
 

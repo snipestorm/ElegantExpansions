@@ -1,12 +1,16 @@
 package net.adam.elegantexpansions.item.custom;
 
+import net.adam.elegantexpansions.block.ModBlocks;
 import net.adam.elegantexpansions.enchantment.AncientPowerEnchantment;
 import net.adam.elegantexpansions.enchantment.ModEnchantments;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
+import net.adam.elegantexpansions.entity.custom.AnubisEntity;
 import net.adam.elegantexpansions.item.client.StaffOfMummiesRenderer;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
@@ -15,6 +19,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Vanishable;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CryingObsidianBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -24,6 +32,8 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.RenderUtils;
 
 import java.util.function.Consumer;
+
+import static net.adam.elegantexpansions.block.ModBlocks.WHITE_SANDSTONE;
 
 public class StaffOfMummiesItem extends Item implements GeoItem, Vanishable {
 
@@ -76,9 +86,13 @@ public class StaffOfMummiesItem extends Item implements GeoItem, Vanishable {
     public InteractionResult useOn(UseOnContext use) {
         Player player = use.getPlayer();
         Level level = use.getLevel();
+
         if (!level.isClientSide()) {
             ServerLevel world = ((ServerLevel) level);
             BlockPos position = use.getClickedPos();
+            BlockState blockState = level.getBlockState(position);
+            Block block = blockState.getBlock();
+
 
 
             if (!player.getCooldowns().isOnCooldown(this)) {
@@ -92,17 +106,15 @@ public class StaffOfMummiesItem extends Item implements GeoItem, Vanishable {
                     use.getItemInHand().hurtAndBreak(1, player, (p_41303_) -> {
                         p_41303_.broadcastBreakEvent(use.getHand());
 
-                    });
-                }
-
-            }
-
-        }
+                                });
+                            }
+                        }
+                    }
 
         return InteractionResult.sidedSuccess(level.isClientSide());
     }
 
-    }
+}
 
 
 

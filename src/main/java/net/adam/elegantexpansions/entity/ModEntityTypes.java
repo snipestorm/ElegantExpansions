@@ -73,6 +73,29 @@ public class ModEntityTypes {
                             .sized(1.3F, 0.7f)
                             .build(new ResourceLocation(ElegantExpansions.MOD_ID, "shrek").toString()));
 
+    public static final RegistryObject<EntityType<ElephantEntity>> ELEPHANT =
+            ENTITY_TYPES.register("elephant",
+                    () -> EntityType.Builder.of(ElephantEntity::new, MobCategory.CREATURE)
+                            .sized(2.2F,3F)
+                            .build(new ResourceLocation(ElegantExpansions.MOD_ID, "elephant").toString()));
+
+    public static final RegistryObject<EntityType<RaccoonEntity>> RACCOON =
+            ENTITY_TYPES.register("raccoon",
+                    () -> EntityType.Builder.of(RaccoonEntity::new, MobCategory.CREATURE)
+                            .sized(0.8F,0.6F)
+                            .build(new ResourceLocation(ElegantExpansions.MOD_ID, "raccoon").toString()));
+
+    public static final RegistryObject<EntityType<LionEntity>> LION =
+            ENTITY_TYPES.register("lion",
+                    () -> EntityType.Builder.of(LionEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.95f)
+                            .build(new ResourceLocation(ElegantExpansions.MOD_ID, "lion").toString()));
+
+    public static final RegistryObject<EntityType<HippoEntity>> HIPPO =
+            ENTITY_TYPES.register("hippo",
+                    () -> EntityType.Builder.of(HippoEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.95f)
+                            .build(new ResourceLocation(ElegantExpansions.MOD_ID, "hippo").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

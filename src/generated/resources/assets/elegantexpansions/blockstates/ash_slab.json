@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elegantexpansions:block/ash_slab"
+    },
+    "type=double": {
+      "model": "elegantexpansions:block/ash_planks"
+    },
+    "type=top": {
+      "model": "elegantexpansions:block/ash_slab_top"
+    }
+  }
+}

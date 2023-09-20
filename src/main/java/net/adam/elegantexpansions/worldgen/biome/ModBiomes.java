@@ -4,6 +4,7 @@ import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
 import net.adam.elegantexpansions.particle.ModParticles;
 import net.adam.elegantexpansions.worldgen.ModPlacedFeatures;
+import net.adam.elegantexpansions.worldgen.biome.custom.ModBiomeFeatures;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -24,11 +25,13 @@ import static net.minecraft.data.worldgen.BiomeDefaultFeatures.monsters;
 public class ModBiomes {
 
     public static final ResourceKey<Biome> MYSTICAL_FOREST = register ("mystical_forest");
+    public static final ResourceKey<Biome> ASH_FOREST = register ("ash_forest");
     public static final ResourceKey<Biome> ANCIENT_SANDS = register ("ancient_sands");
 
     public static void boostrap(BootstapContext<Biome> context) {
         context.register(MYSTICAL_FOREST, mysticalForest (context));
         context.register(ANCIENT_SANDS, ancientSands (context));
+        context.register(ASH_FOREST, ashForest (context));
     }
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
@@ -58,6 +61,7 @@ public class ModBiomes {
 
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
 
+        ModBiomeFeatures.addMysticFlowers(biomeBuilder);
         BiomeDefaultFeatures.addFerns(biomeBuilder);
         BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
         BiomeDefaultFeatures.addForestGrass(biomeBuilder);
@@ -133,6 +137,55 @@ public class ModBiomes {
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
                         .ambientParticle(new AmbientParticleSettings(ModParticles.SAND_ASH_PARTICLE.get(), 1F))
+                        .build())
+                .build();
+    }
+    public static Biome ashForest(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+
+
+        BiomeDefaultFeatures.addFerns(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
+
+
+
+
+
+
+
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_SUGAR_CANE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.ASH_PLACED_KEY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LARGE_ASH_PLACED_KEY);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .skyColor(7972607)
+                        .fogColor(12638463)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
                         .build())
                 .build();
     }

@@ -166,7 +166,8 @@ public class ModItems {
     public static final RegistryObject<Item> INFUSED_ONYX_BOOTS = ITEMS.register("infused_onyx_boots",
             () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.BOOTS, new  Item.Properties()));
 
-
+    public static final RegistryObject<Item> ANCIENT_SCROLL = ITEMS.register("ancient_scroll",
+            () -> new AncientScrollItem(new Item.Properties().durability(1)));
 
     public static final RegistryObject<Item> SHARK_TOOTH = ITEMS.register("shark_tooth",
             () -> new Item(new Item.Properties()));
@@ -210,6 +211,18 @@ public class ModItems {
 
     public static final RegistryObject<Item> CAPYBARA_SPAWN_EGG = ITEMS.register("capybara_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.CAPYBARA, 0x332626, 0x080000, new Item.Properties()));
+
+    public static final RegistryObject<Item> ELEPHANT_SPAWN_EGG = ITEMS.register("elephant_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.ELEPHANT, 0x57524f, 0x4f2b15, new Item.Properties()));
+
+    public static final RegistryObject<Item> RACCOON_SPAWN_EGG = ITEMS.register("raccoon_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.RACCOON, 0x57524f, 0x4f2b15, new Item.Properties()));
+
+    public static final RegistryObject<Item> LION_SPAWN_EGG = ITEMS.register("lion_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.LION, 0x57524f, 0x4f2b15, new Item.Properties()));
+
+    public static final RegistryObject<Item> HIPPO_SPAWN_EGG = ITEMS.register("hippo_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.HIPPO, 0x57524f, 0x4f2b15, new Item.Properties()));
 
     public static final RegistryObject<Item> STAFF_OF_MUMMIES = ITEMS.register("staff_of_mummies",
             () -> new StaffOfMummiesItem(new Item.Properties().stacksTo(1).durability(25).fireResistant().rarity(Rarity.EPIC)));

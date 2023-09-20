@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "elegantexpansions:block/glyph_of_anubis_gold"
+  }
+}

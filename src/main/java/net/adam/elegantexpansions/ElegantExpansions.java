@@ -165,6 +165,52 @@ public class ElegantExpansions {
             event.accept(ModBlocks.MYSTIC_GLOWFLOWER);
             event.accept(ModBlocks.ICY_IRIS);
 
+            event.accept(ModBlocks.MAGIC_STAIRS.get());
+            event.accept(ModBlocks.MAGIC_SLAB.get());
+            event.accept(ModBlocks.MAGIC_BUTTON.get());
+            event.accept(ModBlocks.MAGIC_PRESSURE_PLATE.get());
+            event.accept(ModBlocks.MAGIC_FENCE.get());
+            event.accept(ModBlocks.MAGIC_FENCE_GATE.get());
+            event.accept(ModBlocks.MAGIC_WALL.get());
+            event.accept(ModBlocks.MAGIC_DOOR.get());
+            event.accept(ModBlocks.MAGIC_TRAPDOOR.get());
+
+            event.accept(ModBlocks.ASH_STAIRS.get());
+            event.accept(ModBlocks.ASH_SLAB.get());
+            event.accept(ModBlocks.ASH_BUTTON.get());
+            event.accept(ModBlocks.ASH_PRESSURE_PLATE.get());
+            event.accept(ModBlocks.ASH_FENCE.get());
+            event.accept(ModBlocks.ASH_FENCE_GATE.get());
+            event.accept(ModBlocks.ASH_WALL.get());
+            event.accept(ModBlocks.ASH_DOOR.get());
+            event.accept(ModBlocks.ASH_TRAPDOOR.get());
+
+            event.accept(ModBlocks.WILLOW_STAIRS.get());
+            event.accept(ModBlocks.WILLOW_SLAB.get());
+            event.accept(ModBlocks.WILLOW_BUTTON.get());
+            event.accept(ModBlocks.WILLOW_PRESSURE_PLATE.get());
+            event.accept(ModBlocks.WILLOW_FENCE.get());
+            event.accept(ModBlocks.WILLOW_FENCE_GATE.get());
+            event.accept(ModBlocks.WILLOW_WALL.get());
+            event.accept(ModBlocks.WILLOW_DOOR.get());
+            event.accept(ModBlocks.WILLOW_TRAPDOOR.get());
+
+            event.accept(ModBlocks.PALM_STAIRS.get());
+            event.accept(ModBlocks.PALM_SLAB.get());
+            event.accept(ModBlocks.PALM_BUTTON.get());
+            event.accept(ModBlocks.PALM_PRESSURE_PLATE.get());
+            event.accept(ModBlocks.PALM_FENCE.get());
+            event.accept(ModBlocks.PALM_FENCE_GATE.get());
+            event.accept(ModBlocks.PALM_WALL.get());
+            event.accept(ModBlocks.PALM_DOOR.get());
+            event.accept(ModBlocks.PALM_TRAPDOOR.get());
+
+            event.accept(ModBlocks.WHITE_SAND);
+            //event.accept(ModBlocks.WHITE_SUSPICIOUS_SAND);
+            event.accept(ModBlocks.WHITE_SANDSTONE.get());
+            event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE.get());
+            event.accept(ModBlocks.CHISELED_WHITE_SANDSTONE.get());
+
         }
 
 
@@ -179,6 +225,10 @@ public class ElegantExpansions {
             event.accept(ModItems.SHREK_SPAWN_EGG);
             event.accept(ModItems.SHARK_SPAWN_EGG);
             event.accept(ModItems.CAPYBARA_SPAWN_EGG);
+            event.accept(ModItems.ELEPHANT_SPAWN_EGG);
+            event.accept(ModItems.RACCOON_SPAWN_EGG);
+            event.accept(ModItems.LION_SPAWN_EGG);
+            event.accept(ModItems.HIPPO_SPAWN_EGG);
 
         }
 
@@ -186,6 +236,13 @@ public class ElegantExpansions {
             event.accept(ModItems.SHREK_THEME_MUSIC_DISC);
             event.accept(ModItems.MAGICAL_SAP_BUCKET);
             event.accept(ModItems.SHARK_TOOTH);
+            event.accept(ModItems.ANCIENT_SCROLL);
+            event.accept(ModBlocks.GOLD_CHAIN);
+            event.accept(ModBlocks.LANTERN_OF_ANUBIS);
+            event.accept(ModBlocks.EYE_OF_HORUS_GOLD);
+            event.accept(ModBlocks.ANKH_GOLD);
+            event.accept(ModBlocks.GLPYH_OF_ANUBIS_GOLD);
+            event.accept(ModBlocks.ANUBIS_SUMMON_BLOCK);
 
 
         }
@@ -324,6 +381,10 @@ public class ElegantExpansions {
             EntityRenderers.register(ModEntityTypes.SHREK.get(), ShrekRenderer::new);
             EntityRenderers.register(ModEntityTypes.SHARK.get(), SharkRenderer::new);
             EntityRenderers.register(ModEntityTypes.CAPYBARA.get(), CapybaraRenderer::new);
+            EntityRenderers.register(ModEntityTypes.ELEPHANT.get(), ElephantRenderer::new);
+            EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
+            EntityRenderers.register(ModEntityTypes.LION.get(), LionRenderer::new);
+            EntityRenderers.register(ModEntityTypes.HIPPO.get(), HippoRenderer::new);
 
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
@@ -332,6 +393,10 @@ public class ElegantExpansions {
 
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MAGICAL_SAP.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MAGICAL_SAP.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.LANTERN_OF_ANUBIS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOLD_CHAIN.get(), RenderType.cutout());
+
+
 
             MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
             MenuScreens.register(ModMenuTypes.GEM_INFUSING_STATION_MENU.get(), GemInfusingStationScreen::new);

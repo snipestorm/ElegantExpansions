@@ -24,6 +24,10 @@ public class ModEvents {
                 event.put(ModEntityTypes.SHREK.get(), ShrekEntity.setAttributes());
                 event.put(ModEntityTypes.SHARK.get(), SharkEntity.setAttributes());
                 event.put(ModEntityTypes.CAPYBARA.get(), CapybaraEntity.setAttributes());
+                event.put(ModEntityTypes.ELEPHANT.get(), ElephantEntity.setAttributes());
+                event.put(ModEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
+                event.put(ModEntityTypes.LION.get(), LionEntity.setAttributes());
+                event.put(ModEntityTypes.HIPPO.get(), HippoEntity.setAttributes());
             }
         }
     }

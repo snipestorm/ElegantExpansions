@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elegantexpansions:block/magic_slab"
+    },
+    "type=double": {
+      "model": "elegantexpansions:block/magic_planks"
+    },
+    "type=top": {
+      "model": "elegantexpansions:block/magic_slab_top"
+    }
+  }
+}

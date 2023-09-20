@@ -26,6 +26,7 @@ public class ModOverworldRegion extends Region {
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
             modifiedVanillaOverworldBuilder.replaceBiome(Biomes.FOREST, ModBiomes.MYSTICAL_FOREST);
             modifiedVanillaOverworldBuilder.replaceBiome(Biomes.DESERT, ModBiomes.ANCIENT_SANDS);
+            modifiedVanillaOverworldBuilder.replaceBiome(Biomes.FOREST, ModBiomes.ASH_FOREST);
         });
     }
 }

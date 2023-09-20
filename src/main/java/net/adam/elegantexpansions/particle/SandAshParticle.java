@@ -16,9 +16,9 @@ public class SandAshParticle extends BaseAshSmokeParticle {
 
     protected SandAshParticle(ClientLevel p_108512_, double p_108513_, double p_108514_, double p_108515_, double p_108516_, double p_108517_, double p_108518_, float p_108519_, SpriteSet p_108520_) {
         super(p_108512_, p_108513_, p_108514_, p_108515_, 0.1F, -0.1F, 0.1F, p_108516_, p_108517_, p_108518_, p_108519_, p_108520_, 0.0F, 20, 0.0125F, false);
-        this.rCol = 0.828125F;
-        this.gCol = 0.8203125F;
-        this.bCol = 0.5390625F;
+        this.rCol = 0.95703125F;
+        this.gCol = 0.94140625F;
+        this.bCol = 0.8515625F;
     }
 
     @OnlyIn(Dist.CLIENT)

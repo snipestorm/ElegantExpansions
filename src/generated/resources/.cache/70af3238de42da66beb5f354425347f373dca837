@@ -1,7 +1,12 @@
-// 1.20	2023-08-01T00:35:49.461446	Block Tags
+// 1.20	2023-09-09T14:47:40.4668654	Block Tags
+bfdfab925d3aae515709e426b963be6ae6fc0d4b data/elegantexpansions/tags/blocks/anubis_base.json
 82362cfbd1836db13c7e9d36c8712821e795ac55 data/elegantexpansions/tags/blocks/mineable/paxel.json
+c167be028d06883ed9fa9453e629a25111d5ab3c data/minecraft/tags/blocks/fences.json
+73d57aff673089e859d522262c8b8dc5e5655793 data/minecraft/tags/blocks/fence_gates.json
 4e21e8ca6cdd5fc1ce86d74faf1235fa6800a4b2 data/minecraft/tags/blocks/logs_that_burn.json
-adf69c25e2042a0b1ce9ab2c433bca4063371ac7 data/minecraft/tags/blocks/mineable/pickaxe.json
+4993684e7a07244d3c8cfa4d3fb5e40ccc91e191 data/minecraft/tags/blocks/mineable/pickaxe.json
 d0c804c389df13f3d17af93c8b6c444190b028db data/minecraft/tags/blocks/needs_diamond_tool.json
 f1c56c04e1ddd684c658d263ce6205796d6d4c28 data/minecraft/tags/blocks/needs_iron_tool.json
 863b8ff36e34e417eb6b8a6578a0a8fe1f8ca828 data/minecraft/tags/blocks/planks.json
+2f305a86c1fef870ad67373f4a0cc9425c6ed90f data/minecraft/tags/blocks/sand.json
+ef845eca572845c536aa5d1862b2569ab0e3a733 data/minecraft/tags/blocks/walls.json

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "elegantexpansions:block/anubis_skull" },
+    "facing=east": { "model": "elegantexpansions:block/anubis_skull", "y": 90 },
+    "facing=south": { "model": "elegantexpansions:block/anubis_skull", "y": 180 },
+    "facing=west": { "model": "elegantexpansions:block/anubis_skull", "y": 270 }
+  }
+}

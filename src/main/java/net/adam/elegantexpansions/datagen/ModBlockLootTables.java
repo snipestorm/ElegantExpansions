@@ -25,6 +25,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.GEM_INFUSING_STATION.get());
         dropSelf(ModBlocks.SHARD_CREATION_STATION.get());
 
+        dropSelf(ModBlocks.WHITE_SANDSTONE.get());
+        dropSelf(ModBlocks.SMOOTH_WHITE_SANDSTONE.get());
+        dropSelf(ModBlocks.WHITE_SAND.get());
+        dropSelf(ModBlocks.CHISELED_WHITE_SANDSTONE.get());
+        dropSelf(ModBlocks.LANTERN_OF_ANUBIS.get());
+        dropSelf(ModBlocks.EYE_OF_HORUS_GOLD.get());
+        dropSelf(ModBlocks.GLPYH_OF_ANUBIS_GOLD.get());
+        dropSelf(ModBlocks.ANKH_GOLD.get());
+        dropSelf(ModBlocks.GOLD_CHAIN.get());
+
         dropSelf(ModBlocks.MYSTICSHROOM.get());
         add(ModBlocks.POTTED_MYSTICSHROOM.get(),
                 createPotFlowerItemTable(ModBlocks.POTTED_MYSTICSHROOM.get()));
@@ -35,6 +45,59 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 createPotFlowerItemTable(ModBlocks.POTTED_MYSTIC_GLOWFLOWER.get()));
 
         dropSelf(ModBlocks.ICY_IRIS.get());
+
+        this.dropSelf(ModBlocks.MAGIC_STAIRS.get());
+        this.dropSelf(ModBlocks.MAGIC_BUTTON.get());
+        this.dropSelf(ModBlocks.MAGIC_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.MAGIC_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.MAGIC_FENCE.get());
+        this.dropSelf(ModBlocks.MAGIC_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.MAGIC_WALL.get());
+
+        this.add(ModBlocks.MAGIC_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.MAGIC_SLAB.get()));
+        this.add(ModBlocks.MAGIC_DOOR.get(),
+                block -> createDoorTable(ModBlocks.MAGIC_DOOR.get()));
+
+        this.dropSelf(ModBlocks.ASH_STAIRS.get());
+        this.dropSelf(ModBlocks.ASH_BUTTON.get());
+        this.dropSelf(ModBlocks.ASH_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.ASH_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.ASH_FENCE.get());
+        this.dropSelf(ModBlocks.ASH_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.ASH_WALL.get());
+
+        this.add(ModBlocks.ASH_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.ASH_SLAB.get()));
+        this.add(ModBlocks.ASH_DOOR.get(),
+                block -> createDoorTable(ModBlocks.ASH_DOOR.get()));
+
+        this.dropSelf(ModBlocks.WILLOW_STAIRS.get());
+        this.dropSelf(ModBlocks.WILLOW_BUTTON.get());
+        this.dropSelf(ModBlocks.WILLOW_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.WILLOW_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.WILLOW_FENCE.get());
+        this.dropSelf(ModBlocks.WILLOW_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.WILLOW_WALL.get());
+
+        this.add(ModBlocks.WILLOW_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WILLOW_SLAB.get()));
+        this.add(ModBlocks.WILLOW_DOOR.get(),
+                block -> createDoorTable(ModBlocks.WILLOW_DOOR.get()));
+
+
+        this.dropSelf(ModBlocks.PALM_STAIRS.get());
+        this.dropSelf(ModBlocks.PALM_BUTTON.get());
+        this.dropSelf(ModBlocks.PALM_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.PALM_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.PALM_FENCE.get());
+        this.dropSelf(ModBlocks.PALM_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.PALM_WALL.get());
+
+        this.add(ModBlocks.PALM_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.PALM_SLAB.get()));
+        this.add(ModBlocks.PALM_DOOR.get(),
+                block -> createDoorTable(ModBlocks.PALM_DOOR.get()));
 
 
 

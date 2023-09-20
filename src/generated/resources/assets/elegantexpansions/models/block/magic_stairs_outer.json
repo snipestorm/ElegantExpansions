@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "elegantexpansions:block/magic_planks",
+    "side": "elegantexpansions:block/magic_planks",
+    "top": "elegantexpansions:block/magic_planks"
+  }
+}

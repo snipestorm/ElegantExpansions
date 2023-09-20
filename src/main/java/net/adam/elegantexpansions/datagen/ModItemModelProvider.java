@@ -5,13 +5,12 @@ import net.adam.elegantexpansions.block.ModBlocks;
 import net.adam.elegantexpansions.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.EggItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -85,6 +84,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INFUSED_ONYX_BOOTS);
 
         simpleItem(ModItems.GEM_UPGRADE_TEMPLATE);
+        simpleItem(ModItems.ANCIENT_SCROLL);
         simpleItem(ModItems.ALEXANDRITE_SHARD);
         simpleItem(ModItems.ALEXANDRITE);
 
@@ -118,6 +118,31 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SHREK_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SHARK_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.CAPYBARA_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ELEPHANT_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.RACCOON_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.LION_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.HIPPO_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
+
+        simpleBlockItem(ModBlocks.MAGIC_DOOR);
+        fenceItem(ModBlocks.MAGIC_FENCE, ModBlocks.MAGIC_PLANKS);
+        buttonItem(ModBlocks.MAGIC_BUTTON, ModBlocks.MAGIC_PLANKS);
+        wallItem(ModBlocks.MAGIC_WALL, ModBlocks.MAGIC_PLANKS);
+
+        simpleBlockItem(ModBlocks.ASH_DOOR);
+        fenceItem(ModBlocks.ASH_FENCE, ModBlocks.ASH_PLANKS);
+        buttonItem(ModBlocks.ASH_BUTTON, ModBlocks.ASH_PLANKS);
+        wallItem(ModBlocks.ASH_WALL, ModBlocks.ASH_PLANKS);
+
+        simpleBlockItem(ModBlocks.WILLOW_DOOR);
+        fenceItem(ModBlocks.WILLOW_FENCE, ModBlocks.WILLOW_PLANKS);
+        buttonItem(ModBlocks.WILLOW_BUTTON, ModBlocks.WILLOW_PLANKS);
+        wallItem(ModBlocks.WILLOW_WALL, ModBlocks.WILLOW_PLANKS);
+
+        simpleBlockItem(ModBlocks.PALM_DOOR);
+        fenceItem(ModBlocks.PALM_FENCE, ModBlocks.BANANA_PLANKS);
+        buttonItem(ModBlocks.PALM_BUTTON, ModBlocks.BANANA_PLANKS);
+        wallItem(ModBlocks.PALM_WALL, ModBlocks.BANANA_PLANKS);
+
 
     }
 
@@ -136,6 +161,27 @@ public class ModItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(ElegantExpansions.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture",  new ResourceLocation(ElegantExpansions.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
+                .texture("texture",  new ResourceLocation(ElegantExpansions.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    public void wallItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
+                .texture("wall",  new ResourceLocation(ElegantExpansions.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(ElegantExpansions.MOD_ID,"item/" + item.getId().getPath()));
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "elegantexpansions:block/eye_of_horus_gold"
+  }
+}

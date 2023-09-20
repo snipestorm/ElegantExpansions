@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elegantexpansions:block/palm_slab"
+    },
+    "type=double": {
+      "model": "elegantexpansions:block/banana_planks"
+    },
+    "type=top": {
+      "model": "elegantexpansions:block/palm_slab_top"
+    }
+  }
+}

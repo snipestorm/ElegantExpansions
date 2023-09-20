@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "elegantexpansions:block/willow_planks",
+    "side": "elegantexpansions:block/willow_planks",
+    "top": "elegantexpansions:block/willow_planks"
+  }
+}

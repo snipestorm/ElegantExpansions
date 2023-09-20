@@ -9,6 +9,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.fluids.FluidStack;
@@ -19,7 +20,7 @@ public class GemInfusingStationScreen extends AbstractContainerScreen<GemInfusin
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(ElegantExpansions.MOD_ID,"textures/gui/gem_infusing_station_gui.png");
 
-    private static final int[] BUBBLELENGTHS = new int[]{29, 24, 20, 16, 11, 6, 0};
+    private static final int[] BUBBLELENGTHS1 = new int[]{29, 24, 20, 16, 11, 6, 0};
 
     private FluidTankRenderer fluidRenderer;
 
@@ -59,14 +60,15 @@ public class GemInfusingStationScreen extends AbstractContainerScreen<GemInfusin
 
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float pPartialTick, int pMouseX, int pMouseY) {
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-        RenderSystem.setShaderTexture(0, TEXTURE);
-        int x = (width - imageWidth) / 2;
-        int y = (height - imageHeight) / 2;
-        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
+      // RenderSystem.setShader(GameRenderer::getPositionTexShader);
+      // RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+      // RenderSystem.setShaderTexture(0, TEXTURE);
+        int i = (this.width - this.imageWidth) / 2;
+        int j = (this.height - this.imageHeight) / 2;
+        guiGraphics.blit(TEXTURE, i, j, 0, 0, this.imageWidth, this.imageHeight);
 
-        fluidRenderer.render(guiGraphics, x + 80, y + 20, menu.blockEntity.getFluid());
+
+        fluidRenderer.render(guiGraphics, i + 80, j + 20, menu.blockEntity.getFluid());
 
         int i1 = this.menu.getCraftingTicks();
         if (i1 > 0) {
@@ -74,12 +76,13 @@ public class GemInfusingStationScreen extends AbstractContainerScreen<GemInfusin
             if (j1 > 0) {
             }
 
-            j1 = BUBBLELENGTHS[i1 / 2 % 7];
+            j1 = BUBBLELENGTHS1[i1 / 2 % 7];
             if (j1 > 0) {
-                guiGraphics.blit(TEXTURE, x + 140, y + 36 + 29 - j1, 184, 29 - j1, 11, j1);
+                guiGraphics.blit(TEXTURE, i + 140, j + 36 + 29 - j1, 184, 29 - j1, 11, j1);
+
             }
         }
-        renderProgressArrow(guiGraphics,x,y);
+        renderProgressArrow(guiGraphics,i,j);
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {

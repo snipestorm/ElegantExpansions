@@ -12,6 +12,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
@@ -53,12 +54,12 @@ public class GolemEntity extends Monster implements GeoEntity {
     private boolean summonAgain;
 
 
+
+
     public GolemEntity(EntityType<? extends GolemEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setHealth(this.getMaxHealth());
         this.xpReward = 250;
-
-
     }
 
 
@@ -112,11 +113,12 @@ public class GolemEntity extends Monster implements GeoEntity {
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
 
-                .add(Attributes.MAX_HEALTH, 300)
-                .add(Attributes.ATTACK_DAMAGE, 12.00f)
-                .add(Attributes.ATTACK_SPEED, 0.8f)
-                .add(Attributes.MOVEMENT_SPEED, 0.285f)
-                .add(Attributes.ATTACK_KNOCKBACK, 1.5f).build();
+                .add(Attributes.MAX_HEALTH, 300D)
+                .add(Attributes.ATTACK_DAMAGE, 1.00D)
+                .add(Attributes.ARMOR, 0.0D)
+                .add(Attributes.ATTACK_SPEED, 0.8D)
+                .add(Attributes.MOVEMENT_SPEED, 0.175D)
+                .add(Attributes.ATTACK_KNOCKBACK, 1.5D).build();
 
     }
 
@@ -167,13 +169,9 @@ public class GolemEntity extends Monster implements GeoEntity {
     private PlayState ragePredicate(AnimationState state) {
         if (this.isRage()) {
             state.getController().setAnimation(RawAnimation.begin().then("animation.golem.rage", Animation.LoopType.PLAY_ONCE));
-
-
         }
 
         return PlayState.CONTINUE;
-
-
     }
 
     public boolean isRage() {
@@ -201,8 +199,6 @@ public class GolemEntity extends Monster implements GeoEntity {
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(ModSounds.GOLEM_WALK.get(), 0.25F, 1.0F);
     }
-
-
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
         return ModSounds.GOLEM_HURT.get();
     }
@@ -236,20 +232,33 @@ public class GolemEntity extends Monster implements GeoEntity {
             if (this.tickCount % 20 == 0) {
                 this.heal(0.2F);
             }
-
             this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
         }
         {
             if (this.isRage() && !this.ragehasPlayedOnce) {
                 this.level().playSound(null, blockPosition(), ModSounds.GOLEM_ROAR.get(), SoundSource.HOSTILE, 1, 1);
                 this.ragehasPlayedOnce = true;
+                this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.225D);
+                this.getAttribute(Attributes.ARMOR).setBaseValue(4.0D);
+                this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(12.0D);
+
+            } else {
+
+                if(!this.isRage()) {
+
+                    this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.175D);
+                    this.getAttribute(Attributes.ARMOR).setBaseValue(0.0D);
+                    this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(1.0D);
+
+                    if(this.ragehasPlayedOnce) {
+                        ragehasPlayedOnce = false;
+                        }
+                    }
+                }
             }
-
         }
-
-
     }
-}
+
 
 
 

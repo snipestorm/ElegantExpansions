@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=east,lit=false": {
+      "model": "elegantexpansions:block/eye_of_horus_gold"
+    },
+    "facing=east,lit=true": {
+      "model": "elegantexpansions:block/anubis_summon_block"
+    },
+    "facing=north,lit=false": {
+      "model": "elegantexpansions:block/eye_of_horus_gold", "y": 180
+    },
+    "facing=north,lit=true": {
+      "model": "elegantexpansions:block/anubis_summon_block", "y": 180
+    },
+    "facing=south,lit=false": {
+      "model": "elegantexpansions:block/eye_of_horus_gold"
+    },
+    "facing=south,lit=true": {
+      "model": "elegantexpansions:block/anubis_summon_block"
+    },
+    "facing=west,lit=false": {
+      "model": "elegantexpansions:block/eye_of_horus_gold"
+    },
+    "facing=west,lit=true": {
+      "model": "elegantexpansions:block/anubis_summon_block"
+    }
+  }
+}

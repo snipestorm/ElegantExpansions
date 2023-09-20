@@ -125,6 +125,15 @@
 
 
   "item.elegantexpansions.shark_tooth": "Shark Tooth",
+  "item.elegantexpansions.ancient_scroll": "Ancient Scroll",
+  "block.elegantexpansions.lantern_of_anubis": "Lantern Of Anubis",
+  "block.elegantexpansions.gold_chain": "Gold Chain",
+
+  "block.elegantexpansions.eye_of_horus_gold": "Eye Of Horus Carved In Gold",
+  "block.elegantexpansions.glyph_of_anubis_gold": "Glyph Of Anubis Carved In Gold",
+  "block.elegantexpansions.ankh_gold": "Ankh Glyph Carved In Gold",
+
+  "block.elegantexpansions.anubis_summon_block": "Summon Anubis Block",
 
   "enchantment.elegantexpansions.lightning_strike": "Lightning Strike",
 
@@ -143,6 +152,10 @@
   "item.elegantexpansions.white_tiger_spawn_egg": "White Tiger Spawn Egg",
   "item.elegantexpansions.shrek_spawn_egg": "Shrek Spawn Egg",
   "item.elegantexpansions.shark_spawn_egg": "Shark Spawn Egg",
+  "item.elegantexpansions.elephant_spawn_egg": "Elephant Spawn Egg",
+  "item.elegantexpansions.raccoon_spawn_egg": "Raccoon Spawn Egg",
+  "item.elegantexpansions.lion_spawn_egg": "Lion Spawn Egg",
+  "item.elegantexpansions.hippo_spawn_egg": "Hippo Spawn Egg",
 
   "item.elegantexpansions.staff_of_mummies": "Staff Of Mummies",
 
@@ -159,6 +172,10 @@
   "entity.elegantexpansions.shrek": "Shrek",
   "entity.elegantexpansions.shark": "Shark",
   "entity.elegantexpansions.capybara": "Capybara",
+  "entity.elegantexpansions.elephant": "Elephant",
+  "entity.elegantexpansions.raccoon": "Raccoon",
+  "entity.elegantexpansions.lion": "Lion",
+  "entity.elegantexpansions.hippo": "Hippo",
 
 
   "block.elegantexpansions.magic_log": "Magic Log",
@@ -190,13 +207,59 @@
   "block.elegantexpansions.maple_sapling": "Maple Sapling",
 
 
-  "block.elegantexpansions.banana_log": "Banana Log",
-  "block.elegantexpansions.banana_planks": "Banana Planks",
-  "block.elegantexpansions.banana_wood": "Banana Wood",
-  "block.elegantexpansions.stripped_banana_log": "Stripped Banana Log",
-  "block.elegantexpansions.stripped_banana_wood": "Stripped Banana Wood",
-  "block.elegantexpansions.banana_leaves": "Banana Leaves",
-  "block.elegantexpansions.banana_sapling": "Banana Sapling",
+  "block.elegantexpansions.banana_log": "Palm Log",
+  "block.elegantexpansions.banana_planks": "Palm Planks",
+  "block.elegantexpansions.banana_wood": "Palm Wood",
+  "block.elegantexpansions.stripped_banana_log": "Stripped Palm Log",
+  "block.elegantexpansions.stripped_banana_wood": "Stripped Palm Wood",
+  "block.elegantexpansions.banana_leaves": "Palm Leaves",
+  "block.elegantexpansions.banana_sapling": "Palm Sapling",
+
+
+  "block.elegantexpansions.magic_stairs": "Magic Stairs",
+  "block.elegantexpansions.magic_slab": "Magic Slab",
+  "block.elegantexpansions.magic_button": "Magic Button",
+  "block.elegantexpansions.magic_pressure_plate": "Magic Pressure Plate",
+  "block.elegantexpansions.magic_fence": "Magic Fence",
+  "block.elegantexpansions.magic_fence_gate": "Magic Fence Gate",
+  "block.elegantexpansions.magic_wall": "Magic Wall",
+  "block.elegantexpansions.magic_door": "Magic Door",
+  "block.elegantexpansions.magic_trapdoor": "Magic Trapdoor",
+
+  "block.elegantexpansions.ash_stairs": "Ash Stairs",
+  "block.elegantexpansions.ash_slab": "Ash Slab",
+  "block.elegantexpansions.ash_button": "Ash Button",
+  "block.elegantexpansions.ash_pressure_plate": "Ash Pressure Plate",
+  "block.elegantexpansions.ash_fence": "Ash Fence",
+  "block.elegantexpansions.ash_fence_gate": "Ash Fence Gate",
+  "block.elegantexpansions.ash_wall": "Ash Wall",
+  "block.elegantexpansions.ash_door": "Ash Door",
+  "block.elegantexpansions.ash_trapdoor": "Ash Trapdoor",
+
+  "block.elegantexpansions.willow_stairs": "Willow Stairs",
+  "block.elegantexpansions.willow_slab": "Willow Slab",
+  "block.elegantexpansions.willow_button": "Willow Button",
+  "block.elegantexpansions.willow_pressure_plate": "Willow Pressure Plate",
+  "block.elegantexpansions.willow_fence": "Willow Fence",
+  "block.elegantexpansions.willow_fence_gate": "Willow Fence Gate",
+  "block.elegantexpansions.willow_wall": "Willow Wall",
+  "block.elegantexpansions.willow_door": "Willow Door",
+  "block.elegantexpansions.willow_trapdoor": "Willow Trapdoor",
+
+  "block.elegantexpansions.palm_stairs": "Palm Stairs",
+  "block.elegantexpansions.palm_slab": "Palm Slab",
+  "block.elegantexpansions.palm_button": "Palm Button",
+  "block.elegantexpansions.palm_pressure_plate": "Palm Pressure Plate",
+  "block.elegantexpansions.palm_fence": "Palm Fence",
+  "block.elegantexpansions.palm_fence_gate": "Palm Fence Gate",
+  "block.elegantexpansions.palm_wall": "Palm Wall",
+  "block.elegantexpansions.palm_door": "Palm Door",
+  "block.elegantexpansions.palm_trapdoor": "Palm Trapdoor",
+
+  "block.elegantexpansions.white_sand": "White Sand",
+  "block.elegantexpansions.white_sandstone": "White Sandstone",
+  "block.elegantexpansions.smooth_white_sandstone": "Smooth White Sandstone",
+  "block.elegantexpansions.chiseled_white_sandstone": "Chiseled White Sandstone",
 
 
   "block.elegantexpansions.mysticshroom": "Mysticshroom",

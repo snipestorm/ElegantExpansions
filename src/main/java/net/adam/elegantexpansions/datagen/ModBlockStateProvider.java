@@ -1,15 +1,13 @@
-package net.adam.elegantexpansions.datagen;
-
-import net.adam.elegantexpansions.ElegantExpansions;
+package net.adam.elegantexpansions.datagen;import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.block.ModBlocks;
+import net.adam.elegantexpansions.block.custom.AnubisSummonBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.TallFlowerBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -24,6 +22,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // customLamp();
          blockWithItem(ModBlocks.RUBY_BLOCK);
          blockWithItem(ModBlocks.RUBY_ORE);
          blockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
@@ -45,6 +44,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         simpleBlockWithItem(ModBlocks.MYSTIC_GLOWFLOWER.get(),
                 models().cross(blockTexture(ModBlocks.MYSTIC_GLOWFLOWER.get()).getPath(), blockTexture(ModBlocks.MYSTIC_GLOWFLOWER.get())).renderType("cutout"));
+
+        blockWithItem(ModBlocks.WHITE_SAND);
+        blockWithItem(ModBlocks.EYE_OF_HORUS_GOLD);
+        blockWithItem(ModBlocks.GLPYH_OF_ANUBIS_GOLD);
+        blockWithItem(ModBlocks.ANKH_GOLD);
+
 
 
 
@@ -117,9 +122,98 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(ModBlocks.BANANA_WOOD.get(), models().withExistingParent("elegantexpansions:banana_wood", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_BANANA_LOG.get(), models().withExistingParent("elegantexpansions:stripped_banana_log", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_BANANA_WOOD.get(), models().withExistingParent("elegantexpansions:stripped_banana_wood", "minecraft:block/cube_column"));
+
+        stairsBlock(((StairBlock) ModBlocks.MAGIC_STAIRS.get()), blockTexture(ModBlocks.MAGIC_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.MAGIC_SLAB.get()), blockTexture(ModBlocks.MAGIC_PLANKS.get()), blockTexture(ModBlocks.MAGIC_PLANKS.get()));
+        blockItem(ModBlocks.MAGIC_STAIRS);
+        blockItem(ModBlocks.MAGIC_SLAB);
+        blockItem(ModBlocks.MAGIC_PRESSURE_PLATE);
+        blockItem(ModBlocks.MAGIC_FENCE_GATE);
+        blockItem(ModBlocks.MAGIC_TRAPDOOR, "_bottom");
+        buttonBlock(((ButtonBlock) ModBlocks.MAGIC_BUTTON.get()), blockTexture(ModBlocks.MAGIC_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.MAGIC_PRESSURE_PLATE.get()), blockTexture(ModBlocks.MAGIC_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.MAGIC_FENCE.get()), blockTexture(ModBlocks.MAGIC_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.MAGIC_FENCE_GATE.get()), blockTexture(ModBlocks.MAGIC_PLANKS.get()));
+        wallBlock(((WallBlock) ModBlocks.MAGIC_WALL.get()), blockTexture(ModBlocks.MAGIC_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.MAGIC_DOOR.get()), modLoc("block/magic_door_bottom"), modLoc("block/magic_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.MAGIC_TRAPDOOR.get()), modLoc("block/magic_trapdoor"), true, "cutout");
+
+        stairsBlock(((StairBlock) ModBlocks.ASH_STAIRS.get()), blockTexture(ModBlocks.ASH_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.ASH_SLAB.get()), blockTexture(ModBlocks.ASH_PLANKS.get()), blockTexture(ModBlocks.ASH_PLANKS.get()));
+        blockItem(ModBlocks.ASH_STAIRS);
+        blockItem(ModBlocks.ASH_SLAB);
+        blockItem(ModBlocks.ASH_PRESSURE_PLATE);
+        blockItem(ModBlocks.ASH_FENCE_GATE);
+        blockItem(ModBlocks.ASH_TRAPDOOR, "_bottom");
+        buttonBlock(((ButtonBlock) ModBlocks.ASH_BUTTON.get()), blockTexture(ModBlocks.ASH_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.ASH_PRESSURE_PLATE.get()), blockTexture(ModBlocks.ASH_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.ASH_FENCE.get()), blockTexture(ModBlocks.ASH_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.ASH_FENCE_GATE.get()), blockTexture(ModBlocks.ASH_PLANKS.get()));
+        wallBlock(((WallBlock) ModBlocks.ASH_WALL.get()), blockTexture(ModBlocks.ASH_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.ASH_DOOR.get()), modLoc("block/ash_door_bottom"), modLoc("block/ash_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.ASH_TRAPDOOR.get()), modLoc("block/ash_trapdoor"), true, "cutout");
+
+        stairsBlock(((StairBlock) ModBlocks.WILLOW_STAIRS.get()), blockTexture(ModBlocks.WILLOW_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.WILLOW_SLAB.get()), blockTexture(ModBlocks.WILLOW_PLANKS.get()), blockTexture(ModBlocks.WILLOW_PLANKS.get()));
+        blockItem(ModBlocks.WILLOW_STAIRS);
+        blockItem(ModBlocks.WILLOW_SLAB);
+        blockItem(ModBlocks.WILLOW_PRESSURE_PLATE);
+        blockItem(ModBlocks.WILLOW_FENCE_GATE);
+        blockItem(ModBlocks.WILLOW_TRAPDOOR, "_bottom");
+        buttonBlock(((ButtonBlock) ModBlocks.WILLOW_BUTTON.get()), blockTexture(ModBlocks.WILLOW_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.WILLOW_PRESSURE_PLATE.get()), blockTexture(ModBlocks.WILLOW_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.WILLOW_FENCE.get()), blockTexture(ModBlocks.WILLOW_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.WILLOW_FENCE_GATE.get()), blockTexture(ModBlocks.WILLOW_PLANKS.get()));
+        wallBlock(((WallBlock) ModBlocks.WILLOW_WALL.get()), blockTexture(ModBlocks.WILLOW_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.WILLOW_DOOR.get()), modLoc("block/willow_door_bottom"), modLoc("block/willow_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.WILLOW_TRAPDOOR.get()), modLoc("block/willow_trapdoor"), true, "cutout");
+
+        stairsBlock(((StairBlock) ModBlocks.PALM_STAIRS.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.PALM_SLAB.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        blockItem(ModBlocks.PALM_STAIRS);
+        blockItem(ModBlocks.PALM_SLAB);
+        blockItem(ModBlocks.PALM_PRESSURE_PLATE);
+        blockItem(ModBlocks.PALM_FENCE_GATE);
+        blockItem(ModBlocks.PALM_TRAPDOOR, "_bottom");
+        buttonBlock(((ButtonBlock) ModBlocks.PALM_BUTTON.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.PALM_PRESSURE_PLATE.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.PALM_FENCE.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.PALM_FENCE_GATE.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        wallBlock(((WallBlock) ModBlocks.PALM_WALL.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.PALM_DOOR.get()), modLoc("block/palm_door_bottom"), modLoc("block/palm_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.PALM_TRAPDOOR.get()), modLoc("block/palm_trapdoor"), true, "cutout");
+
+
+
     }
+
+
+   // private void customLamp() {
+   //     getVariantBuilder(ModBlocks.ANUBIS_SUMMON_BLOCK.get()).forAllStates(state -> {
+   //         if(state.getValue(AnubisSummonBlock.LIT)) {
+   //             return new ConfiguredModel[]{new ConfiguredModel(models().cubeTop("anubis_summon_block",
+   //                     new ResourceLocation(ElegantExpansions.MOD_ID, "block/" + "anubis_summon_block"),
+   //                     new ResourceLocation(ElegantExpansions.MOD_ID, "block/" + "anubis_summon_block")))};
+   //         } else {
+   //             return new ConfiguredModel[]{new ConfiguredModel(models().cubeTop("eye_of_horus_gold",
+   //                     new ResourceLocation(ElegantExpansions.MOD_ID, "block/" + "eye_of_horus_gold"),
+   //                     new ResourceLocation(ElegantExpansions.MOD_ID, "block/" + "eye_of_horus_gold")))};
+   //         }
+   //     });
+   //     simpleBlockItem(ModBlocks.ANUBIS_SUMMON_BLOCK.get(), models().cubeAll("anubis_summon_block",
+   //             new ResourceLocation(ElegantExpansions.MOD_ID, "block/" +"anubis_summon_block")));
+   // }
+
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
          simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile("elegantexpansions:block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+    }
+
+    private void blockItem(RegistryObject<Block> blockRegistryObject, String appendix) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile("elegantexpansions:block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + appendix));
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

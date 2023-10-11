@@ -1,9 +1,7 @@
 package net.adam.elegantexpansions.block.entity;
 import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.block.ModBlocks;
-import net.adam.elegantexpansions.block.entity.custom.GemCuttingStationBlockEntity;
-import net.adam.elegantexpansions.block.entity.custom.GemInfusingStationBlockEntity;
-import net.adam.elegantexpansions.block.entity.custom.ShardCreationStationBlockEntity;
+import net.adam.elegantexpansions.block.entity.custom.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,6 +26,16 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("shard_creation_station_block_entity", () ->
                     BlockEntityType.Builder.of(ShardCreationStationBlockEntity::new,
                             ModBlocks.SHARD_CREATION_STATION.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<DisplayCaseBlockEntity>> DISPLAY_CASE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("display_case_block_entity", () ->
+                    BlockEntityType.Builder.of(DisplayCaseBlockEntity::new,
+                            ModBlocks.DISPLAY_CASE.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<SapExtractorBlockEntity>> SAP_EXTRACTOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("sap_extractor_block_entity", () ->
+                    BlockEntityType.Builder.of(SapExtractorBlockEntity::new,
+                            ModBlocks.SAP_EXTRACTOR.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

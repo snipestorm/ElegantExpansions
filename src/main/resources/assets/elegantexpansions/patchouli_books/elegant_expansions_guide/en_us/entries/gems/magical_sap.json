@@ -1,0 +1,57 @@
+{
+  "name": "Magical Sap",
+  "icon": "elegantexpansions:magical_sap_bucket",
+  "sortnum": 2,
+  "category": "elegantexpansions:gems",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Magical Sap",
+      "item": "elegantexpansions:magical_sap_bucket",
+       "text": "Magical Sap Buckets can be extracted from Magic Logs via the Sap Extractor"
+
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Magic Tree",
+      "enable_visualize": "false",
+      "text": "This is the Magic Tree, it can be found inside the Mystical Forest, Take its Logs to a Sap Extractor to gain Buckets of Magical Sap",
+      "multiblock": {
+        "pattern": [
+          [ "     ", " GGG ", " GGG ", " GGG ", "     " ],
+          [ " GGG ", "GGGGG", "GGGGG", "GGGGG", " GGG " ],
+          [ " GGG ", "GGGGG", "GGLGG", "GGGGG", " GGG " ],
+          [ "     ", " GGG ", " GLG ", " GGG ", "     " ],
+          [ "     ", "     ", "  0  ", "     ", "     " ],
+          [ "     ", "     ", "  L  ", "     ", "     " ]
+        ],
+        "mapping": {
+          "G": "elegantexpansions:magic_leaves",
+          "L": "elegantexpansions:magic_log",
+          "0": "elegantexpansions:magic_log"
+
+        }
+
+
+      }
+
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Sap Extractor GUI",
+      "images": [
+        "elegantexpansions:textures/guide/sap_extractor_gui.png"
+      ],
+      "border": "true",
+      "text": "Using The Sap Extractor:$(li)Left Hand Slot: Add Any Magic Logs Or Magic Wood$(li)Far Right Slot: Place Empty Buckets$(li)Center Slot: Output Slot to collect Magical Sap"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:sap_extractor",
+      "text": "The Sap Extractor can be connected to Hoppers!$(li)Connect a Hopper to the Left to fill with Logs/Wood$(li)Connect a Hopper to the Right to fill with Empty Buckets$(li)Connect a Hopper Below to collect crafted Magical Sap Buckets"
+
+    }
+  ]
+}

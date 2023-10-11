@@ -84,7 +84,7 @@ public class GemInfusingStationBlockEntity extends BlockEntity implements MenuPr
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 200;
+    private int maxProgress = 12000;
 
     private final FluidTank FLUID_TANK = createFluidTank();
 

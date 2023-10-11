@@ -1,0 +1,45 @@
+{
+  "name": "Gem Infusing",
+  "icon": "elegantexpansions:gem_infusing_station",
+  "sortnum": 3,
+  "category": "elegantexpansions:gems",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Gem Infusing Station",
+      "item": "elegantexpansions:gem_infusing_station",
+       "text": "The Gem Infusing Station is a Block Entity similar to a crafting table, to use it you must insert a Cut Gem and keep the Magical Sap Tank full enough to complete the infusion.$(br2)On Average it takes around 10 Mintues to Infuse a Gem, During this time your Magical Sap will constantly drain, do not let the Magical Sap drain completely otherwise the Infusion will Fail. Each bucket of Magical Sap will add 1000 Units to the Tank, so use the current levels and the progress arrow to gage how much you will need."
+
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:gem_infusing_station",
+      "text": "During the early stages of Infusion it can be hard to see if the Infusion has started as the Progress Arrow wont start Rendering straight away, due to the length of time per Infusion.$(br)To Assist with this to the Right of the progress arrow are some bubbles, If these are Flickering Blue then the Infusion is Active"
+
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Gem Infusing GUI",
+
+      "images" : [
+        "elegantexpansions:textures/guide/gem_infusing_station_gui.png"
+      ],
+
+      "border": "true",
+
+      "text": "Using The Gem Infusing Station:$(li)Top Left Slot: Bucket Of Magical Sap$(li)Top Right Slot: The Cut Gem$(br)The New Infused Gem will appear in the Bottom Right Slot"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Infused Gems",
+      "item":
+      "elegantexpansions:infused_ruby,elegantexpansions:infused_sapphire,elegantexpansions:infused_emerald,elegantexpansions:infused_diamond,elegantexpansions:infused_amethyst,elegantexpansions:infused_citrine,elegantexpansions:infused_tanzanite,elegantexpansions:infused_onyx",
+      "text": "Once the Gems are infused they will appear as they do above.$(br2)All Cut Gems are Infuseable $(br2)To Act as a visual aid, the Infusing Station will Render the Inserted Gem on its Surface, This will Change to the Infused Texture once the Infusion is complete."
+
+    }
+
+
+
+  ]
+}

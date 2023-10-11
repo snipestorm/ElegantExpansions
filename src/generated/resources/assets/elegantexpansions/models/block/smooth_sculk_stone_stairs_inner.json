@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "elegantexpansions:block/smooth_sculk_stone",
+    "side": "elegantexpansions:block/smooth_sculk_stone",
+    "top": "elegantexpansions:block/smooth_sculk_stone"
+  }
+}

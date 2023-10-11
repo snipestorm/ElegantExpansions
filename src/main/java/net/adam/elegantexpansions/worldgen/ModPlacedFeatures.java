@@ -2,6 +2,7 @@ package net.adam.elegantexpansions.worldgen;
 
 import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.block.ModBlocks;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -11,6 +12,7 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -29,6 +31,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LARGE_BURNT_ASH_PLACED_KEY = createKey("burnt_large_ash_placed");
     public static final ResourceKey<PlacedFeature> BANANA_PLACED_KEY = createKey("banana_placed");
     public static final ResourceKey<PlacedFeature> LARGE_BANANA_PLACED_KEY = createKey("large_banana_placed");
+    public static final ResourceKey<PlacedFeature> ECHO_PLACED_KEY = createKey("echo_placed");
 
     public static final ResourceKey<PlacedFeature> OVERWORLD_RUBY_ORE_PLACED_KEY = createKey("ruby_ore_placed");
     public static final ResourceKey<PlacedFeature> OVERWORLD_SAPPHIRE_ORE_PLACED_KEY = createKey("sapphire_ore_placed");
@@ -42,6 +45,8 @@ public class ModPlacedFeatures {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+      //  PlacementUtils.register(context, CRIMSON_FUNGI, holder, CountOnEveryLayerPlacement.of(8), BiomeFilter.biome());
+
         register(context, OVERWORLD_RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_RUBY_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(4,
                         HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
@@ -54,6 +59,10 @@ public class ModPlacedFeatures {
         register(context, END_TANZANITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_TANZANITE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(2,
                         HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(25), VerticalAnchor.aboveBottom(65))));
+
+        //nether//
+
+
 
         register(context, MAGIC_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.MAGIC_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.MAGIC_SAPLING.get()));
@@ -90,6 +99,9 @@ public class ModPlacedFeatures {
 
         register(context, LARGE_BANANA_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.LARGE_BANANA_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1), ModBlocks.BANANA_SAPLING.get()));
+
+       PlacementUtils.register(context, ECHO_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ECHO_KEY),
+                CountOnEveryLayerPlacement.of(8), BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(ModBlocks.ECHO_SAPLING.get().defaultBlockState(), BlockPos.ZERO)));
 
 
 

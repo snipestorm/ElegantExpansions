@@ -10,7 +10,8 @@
     },
     "S": {
       "item": "minecraft:blackstone"
-    },
+    }
+  },
     "pattern": [
       "BBB",
       "SSS",
@@ -21,4 +22,3 @@
     },
     "show_notification": false
   }
-}

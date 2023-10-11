@@ -65,7 +65,9 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "elegantexpansions:ruby_ore_placed",
+      "elegantexpansions:sapphire_ore_placed"
     ],
     [],
     [

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "elegantexpansions:cobbled_sculk_stone"
+  },
+  "result": "elegantexpansions:cobbled_sculk_stone_stairs"
+}

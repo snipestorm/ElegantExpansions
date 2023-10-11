@@ -1,0 +1,36 @@
+{
+  "name": "Infused Emerald Armour",
+  "icon": "elegantexpansions:infused_emerald",
+  "sortnum": 2,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Emerald Armour",
+      "item": "elegantexpansions:infused_emerald_helmet,elegantexpansions:infused_emerald_chestplate,elegantexpansions:infused_emerald_leggings,elegantexpansions:infused_emerald_boots",
+       "text": "To Make Infused Emerald Armour you will need one Infused Emerald per item you wish to make, a Diamond Piece of Armour matching that item and a Gem Upgrade Template.$(br)The Gem Upgrade Template goes in the First Slot, The Diamond Armour goes in the Second Slot and the Infused Emerald goes in the Third Slot"
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Emerald Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/emerald.png"
+      ],
+      "border": "true",
+      "text": "Equip a Full set of Infused Emerald Armour to Gain a Permenant Speed Boost"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_emerald_helmet_from_smithing",
+      "recipe2": "elegantexpansions:infused_emerald_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_emerald_leggings_from_smithing",
+      "recipe2": "elegantexpansions:infused_emerald_boots_from_smithing"
+    }
+  ]
+}

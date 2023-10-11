@@ -1,0 +1,28 @@
+{
+  "name": "Mystical Forest",
+  "icon": "elegantexpansions:magic_sapling",
+  "sortnum": 2,
+  "category": "elegantexpansions:biomes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This magical forest is filled with ambience and beauty, from the sparkling sky to the Magic Tree, a magical blue tree with an animated effect. The tree can be used for its diverse block palette and multicoloured leaves! If you plan to master gem crafting you will need to collect plenty of Magic Logs to extract Magical Sap...$(br2)The Mystical Forest is also home to the Blue Raccoon & The Magical Tower, A special structure with amazing loot."
+
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Mystical Forest",
+
+      "images" : [
+        "elegantexpansions:textures/guide/mystical_forest.png",
+        "elegantexpansions:textures/guide/mystical_spark.png",
+        "elegantexpansions:textures/guide/wizard_tower.png"
+      ],
+
+      "border": "true",
+      "text": "Cycle through the images to see the Forest, the Tower and the magical sparks."
+
+    }
+  ]
+}

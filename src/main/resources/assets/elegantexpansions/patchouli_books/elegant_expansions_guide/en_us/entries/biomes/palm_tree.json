@@ -1,0 +1,26 @@
+{
+  "name": "Palm Tree",
+  "icon": "elegantexpansions:banana_sapling",
+  "sortnum": 5,
+  "category": "elegantexpansions:biomes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A Lovely Tree for the perfect beach, Palm trees spawn on all beaches and have a nice driftwood feel, perfect for building an island retreat."
+
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Palm Tree",
+
+      "images" : [
+        "elegantexpansions:textures/guide/palm_tree.png"
+
+      ],
+
+      "border": "true"
+
+    }
+  ]
+}

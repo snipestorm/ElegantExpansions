@@ -92,7 +92,7 @@ public class ShardCreationStationBlockEntity extends BlockEntity implements Menu
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 200;
+    private int maxProgress = 3000;
 
     private final FluidTank FLUID_TANK = createFluidTank();
 

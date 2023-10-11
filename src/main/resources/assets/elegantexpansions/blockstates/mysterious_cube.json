@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "golem_hatch=0": {
+      "model": "elegantexpansions:block/mysterious_cube_0"
+    },
+    "golem_hatch=1": {
+      "model": "elegantexpansions:block/mysterious_cube_1"
+    },
+    "golem_hatch=2": {
+      "model": "elegantexpansions:block/mysterious_cube_2"
+    },
+
+    "golem_hatch=3": {
+      "model": "elegantexpansions:block/mysterious_cube_3"
+    }
+  }
+}

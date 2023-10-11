@@ -62,7 +62,7 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
 
     public LionEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
-        this.maxUpStep = 1.0F;
+        this.setMaxUpStep(1.0F);
     }
 
     public static AttributeSupplier setAttributes() {
@@ -80,14 +80,16 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
             spawnData = new AgeableMobGroupData(true);
             this.setHasMane(true);
         }
-        if ((ageableMobGroupData = (AgeableMobGroupData)spawnData).getGroupSize() > 2) {
-            this.setAge(-24000);
+        if ((ageableMobGroupData = (AgeableMobGroupData)spawnData).getGroupSize() > 1) {
+            this.setHasMane(false);
+            if ((ageableMobGroupData = (AgeableMobGroupData) spawnData).getGroupSize() >= 3) {
+                this.setAge(-24000);
+            }
         }
+
         ageableMobGroupData.increaseGroupSizeByOne();
         RandomSource random = level.getRandom();
-        this.getAttribute(Attributes.FOLLOW_RANGE).addPermanentModifier
-                (new AttributeModifier("Random spawn bonus", random.triangle(0.0, 0.11485000000000001),
-                        AttributeModifier.Operation.MULTIPLY_BASE));
+        this.getAttribute(Attributes.FOLLOW_RANGE).addPermanentModifier(new AttributeModifier("Random spawn bonus", random.triangle(0.0, 0.11485000000000001), AttributeModifier.Operation.MULTIPLY_BASE));
         return spawnData;
     }
 

@@ -35,15 +35,15 @@ public class ModBiomeModifiers {
        //         HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MAGIC_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_MAGIC_PLACED_KEY)),
        //       GenerationStep.Decoration.VEGETAL_DECORATION));
 
-        context.register(ADD_TREE_ASH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.TAIGA)),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.ASH_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_ASH_PLACED_KEY)),
-                GenerationStep.Decoration.VEGETAL_DECORATION));
+      //  context.register(ADD_TREE_ASH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+      //          HolderSet.direct(biomes.getOrThrow(Biomes.TAIGA)),
+      //          HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.ASH_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_ASH_PLACED_KEY)),
+      //          GenerationStep.Decoration.VEGETAL_DECORATION));
 
-        context.register(ADD_TREE_BURNT_ASH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.SAVANNA)),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BURNT_ASH_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_BURNT_ASH_PLACED_KEY)),
-                GenerationStep.Decoration.VEGETAL_DECORATION));
+     //  context.register(ADD_TREE_BURNT_ASH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+     //          HolderSet.direct(biomes.getOrThrow(Biomes.SAVANNA)),
+     //          HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BURNT_ASH_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_BURNT_ASH_PLACED_KEY)),
+     //          GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_TREE_WILLOW, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP)),
@@ -55,10 +55,10 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BANANA_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
-        context.register(ADD_TREE_MAPLE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.FOREST), biomes.getOrThrow(Biomes.FLOWER_FOREST)),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MAPLE_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_MAPLE_PLACED_KEY)),
-                GenerationStep.Decoration.VEGETAL_DECORATION));
+      //  context.register(ADD_TREE_MAPLE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+      //          HolderSet.direct(biomes.getOrThrow(Biomes.FOREST), biomes.getOrThrow(Biomes.FLOWER_FOREST)),
+      //          HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.MAPLE_PLACED_KEY), placedFeatures.getOrThrow(ModPlacedFeatures.LARGE_MAPLE_PLACED_KEY)),
+      //          GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_RUBY_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),

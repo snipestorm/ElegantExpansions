@@ -1,0 +1,36 @@
+{
+  "name": "Infused Citrine Armour",
+  "icon": "elegantexpansions:infused_citrine",
+  "sortnum": 5,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Citrine Armour",
+      "item": "elegantexpansions:infused_citrine_helmet,elegantexpansions:infused_citrine_chestplate,elegantexpansions:infused_citrine_leggings,elegantexpansions:infused_citrine_boots",
+       "text": "To Make Infused Citrine Armour you will need one Infused Citrine per item you wish to make, a Diamond Piece of Armour matching that item and a Gem Upgrade Template.$(br)The Gem Upgrade Template goes in the First Slot, The Diamond Armour goes in the Second Slot and the Infused Citrine goes in the Third Slot"
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Citrine Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/citrine.png"
+      ],
+      "border": "true",
+      "text": "Equip a Full set of Infused Citrine Armour to Gain a Permenant Fire Resistance Boost"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_citrine_helmet_from_smithing",
+      "recipe2": "elegantexpansions:infused_citrine_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_citrine_leggings_from_smithing",
+      "recipe2": "elegantexpansions:infused_citrine_boots_from_smithing"
+    }
+  ]
+}

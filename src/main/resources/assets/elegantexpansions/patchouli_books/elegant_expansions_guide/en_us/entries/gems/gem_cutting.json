@@ -1,0 +1,44 @@
+{
+  "name": "Gem Cutting",
+  "icon": "elegantexpansions:gem_cutting_station",
+  "sortnum": 1,
+  "category": "elegantexpansions:gems",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Gem Cutting Station",
+      "item": "elegantexpansions:gem_cutting_station",
+       "text": "The Gem Cutting Station is a Block Entity similar to a crafting table, to use it you must insert some gem cutters, a gem and a bottle of water. Once all 3 ingredients are present the station will begin to cut your gem. There is a progress arrow to indicate how far through the cutting process the station is.$(br2)The Gem Cutting Station will also render the Gem and the Gem Cutters on its surface, so you will know when the cutting is complete just by looking at the top of the block."
+
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:gem_cutting_station",
+      "recipe2": "elegantexpansions:gem_cutters"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Gem Cutting GUI",
+
+      "images" : [
+        "elegantexpansions:textures/guide/gem_cutting_station_gui.png"
+      ],
+
+      "border": "true",
+
+      "text": "Using The Gem Cutting Station:$(li)Left Slot: Bottle Of Water$(li)Top Left Slot: The Uncut Gem$(li)Top Right Slot: Gem Cutters$(br)The New Cut Gem will appear in the Bottom Central Slot"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Cut Gems",
+      "item":
+      "elegantexpansions:cut_ruby,elegantexpansions:cut_sapphire,elegantexpansions:cut_emerald,elegantexpansions:cut_diamond,elegantexpansions:cut_amethyst,elegantexpansions:cut_citrine,elegantexpansions:cut_tanzanite,elegantexpansions:cut_onyx",
+      "text": "Once the Gems are cut they will appear as they do above.$(br2)All Gems listed below are cuttable$(br)$(li)Rubies$(li)Sapphires$(li)Emeralds$(li)Diamonds$(li)Amethysts$(li)Citrines$(li)Tanzanites$(li)Onyxs"
+
+    }
+
+
+
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "values": [
+    "minecraft:zombie",
+    "minecraft:zombie_villager",
+    "minecraft:husk",
+    "minecraft:zombified_piglin",
+    "minecraft:zoglin",
+    "minecraft:zombie_horse",
+    "elegantexpansions:mummy",
+    "elegantexpansions:players_mummy"
+  ]
+}

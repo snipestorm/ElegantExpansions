@@ -26,12 +26,17 @@ public class ModBiomes {
 
     public static final ResourceKey<Biome> MYSTICAL_FOREST = register ("mystical_forest");
     public static final ResourceKey<Biome> ASH_FOREST = register ("ash_forest");
+    public static final ResourceKey<Biome> MAPLE_FOREST = register ("maple_forest");
     public static final ResourceKey<Biome> ANCIENT_SANDS = register ("ancient_sands");
+    public static final ResourceKey<Biome> ECHOING_WASTES = register("echoing_wastes");
 
     public static void boostrap(BootstapContext<Biome> context) {
         context.register(MYSTICAL_FOREST, mysticalForest (context));
         context.register(ANCIENT_SANDS, ancientSands (context));
         context.register(ASH_FOREST, ashForest (context));
+        context.register(MAPLE_FOREST, mapleForest (context));
+        //NETHER//
+        context.register(ECHOING_WASTES, ModNetherBiomes.echoforest(context));
     }
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
@@ -59,7 +64,10 @@ public class ModBiomes {
 
         globalOverworldGeneration(biomeBuilder);
 
+
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        ModBiomeFeatures.addEEOres(biomeBuilder);
+
 
         ModBiomeFeatures.addMysticFlowers(biomeBuilder);
         BiomeDefaultFeatures.addFerns(biomeBuilder);
@@ -116,6 +124,7 @@ public class ModBiomes {
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        ModBiomeFeatures.addEEOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
         BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
         BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
@@ -155,6 +164,7 @@ public class ModBiomes {
         globalOverworldGeneration(biomeBuilder);
 
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        ModBiomeFeatures.addEEOres(biomeBuilder);
 
 
         BiomeDefaultFeatures.addFerns(biomeBuilder);
@@ -189,7 +199,57 @@ public class ModBiomes {
                         .build())
                 .build();
     }
+    public static Biome mapleForest(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        ModBiomeFeatures.addEEOres(biomeBuilder);
+
+
+        BiomeDefaultFeatures.addFerns(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
+
+
+
+
+
+
+
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_SUGAR_CANE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.MAPLE_PLACED_KEY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.LARGE_MAPLE_PLACED_KEY);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .foliageColorOverride(0x4f0f0f)
+                        .skyColor(7972607)
+                        .fogColor(12638463)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST))
+                        .build())
+                .build();
+    }
 
 
 

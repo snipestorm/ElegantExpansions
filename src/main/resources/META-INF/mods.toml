@@ -42,11 +42,23 @@ authors="One Minute Redstone" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-This is a long form description of the mod. You can write whatever you want here
+This is a Mod made over the course of a year for my friends, I hope you enjoy playing this mod as much as i enjoyed making it. Go explore and enjoy the Elegant Expansions to the game!
 
-Have some lorem ipsum.
+Credit Awarded To:
+ModdingByKaupenjoe
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sagittis luctus odio eu tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque volutpat ligula eget lacus auctor sagittis. In hac habitasse platea dictumst. Nunc gravida elit vitae sem vehicula efficitur. Donec mattis ipsum et arcu lobortis, eleifend sagittis sem rutrum. Cras pharetra quam eget posuere fermentum. Sed id tincidunt justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Mod Authors of:
+DeeperDarker
+Naturalist
+Ad Astra
+Atum
+Biomes O'Plenty
+
+This Mod Requires all at 1.20.1+:
+Forge
+Terrablender
+Geckolib
+Patchouli
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.elegantexpansions]] #optional
@@ -65,7 +77,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magn
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.19.3,1.21)"
+    versionRange="[1.20.1,1.21)"
     ordering="NONE"
     side="BOTH"
 
@@ -73,5 +85,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magn
 modId="terrablender"
 mandatory=true
 versionRange="[3.0.0.163,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.elegantexpansions]]
+modId="patchouli"
+mandatory=true
+versionRange="[1.20.1-81-FORGE,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.elegantexpansions]]
+modId="geckolib"
+mandatory=true
+versionRange="[4.2.3,)"
 ordering="NONE"
 side="BOTH"

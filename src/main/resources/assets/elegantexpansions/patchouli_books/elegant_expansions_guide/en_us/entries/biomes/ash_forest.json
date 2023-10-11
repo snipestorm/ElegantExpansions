@@ -1,0 +1,27 @@
+{
+  "name": "Ash Forest",
+  "icon": "elegantexpansions:ash_sapling",
+  "sortnum": 0,
+  "category": "elegantexpansions:biomes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This beautiful forest is the home of the Ash Tree, a uniquely coloured grey tree that will give a nice variety to build palettes, my personal recommendation is to use it for flooring."
+
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Ash Forest",
+
+      "images" : [
+        "elegantexpansions:textures/guide/ash_forest.png"
+
+      ],
+
+      "border": "true"
+
+
+    }
+  ]
+}

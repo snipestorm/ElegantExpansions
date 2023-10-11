@@ -104,6 +104,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.SHREK_THEME_MUSIC_DISC);
         saplingItem(ModBlocks.MAGIC_SAPLING);
+        saplingItem(ModBlocks.ECHO_SAPLING);
         saplingItem(ModBlocks.WILLOW_SAPLING);
         saplingItem(ModBlocks.MAPLE_SAPLING);
         saplingItem(ModBlocks.ASH_SAPLING);
@@ -122,6 +123,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.RACCOON_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.LION_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.HIPPO_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.VULTURE_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
 
         simpleBlockItem(ModBlocks.MAGIC_DOOR);
         fenceItem(ModBlocks.MAGIC_FENCE, ModBlocks.MAGIC_PLANKS);
@@ -142,6 +144,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         fenceItem(ModBlocks.PALM_FENCE, ModBlocks.BANANA_PLANKS);
         buttonItem(ModBlocks.PALM_BUTTON, ModBlocks.BANANA_PLANKS);
         wallItem(ModBlocks.PALM_WALL, ModBlocks.BANANA_PLANKS);
+
+        buttonItem(ModBlocks.SCULK_STONE_BUTTON, ModBlocks.SCULK_STONE);
+        wallItem(ModBlocks.SCULK_STONE_WALL, ModBlocks.SCULK_STONE);
+        wallItem(ModBlocks.COBBLED_SCULK_STONE_WALL, ModBlocks.COBBLED_SCULK_STONE);
+        wallItem(ModBlocks.POLISHED_SCULK_STONE_WALL, ModBlocks.POLISHED_SCULK_STONE);
+        wallItem(ModBlocks.SCULK_STONE_BRICK_WALL, ModBlocks.SCULK_STONE_BRICKS);
 
 
     }

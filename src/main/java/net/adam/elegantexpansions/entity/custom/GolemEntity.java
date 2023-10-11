@@ -7,11 +7,15 @@ import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.Difficulty;
@@ -32,7 +36,9 @@ import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -43,6 +49,7 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 
 import javax.annotation.Nullable;
+import java.util.EnumSet;
 import java.util.UUID;
 
 
@@ -52,6 +59,10 @@ public class GolemEntity extends Monster implements GeoEntity {
     private final ServerBossEvent bossEvent = (ServerBossEvent) (new ServerBossEvent(this.getDisplayName(), BossEvent.BossBarColor.GREEN, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
     private boolean ragehasPlayedOnce;
     private boolean summonAgain;
+    private static final EntityDataAccessor<Integer> DATA_ID_INV = SynchedEntityData.defineId(GolemEntity.class, EntityDataSerializers.INT);
+
+    private static final int INVULNERABLE_TICKS = 220;
+    private boolean hasDroppedAmethysts;
 
 
 
@@ -59,17 +70,57 @@ public class GolemEntity extends Monster implements GeoEntity {
     public GolemEntity(EntityType<? extends GolemEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setHealth(this.getMaxHealth());
-        this.xpReward = 250;
+        this.xpReward = 500;
     }
 
 
+
+    public int getInvulnerableTicks() {
+        return this.entityData.get(DATA_ID_INV);
+    }
+
+
+
+    public boolean isInvulnerable() {
+        return this.getInvulnerableTicks() > 0;
+    }
+
+    public void setInvulnerableTicks(int p_31511_) {
+        this.entityData.set(DATA_ID_INV, p_31511_);
+    }
+
+
+    public void makeInvulnerable() {
+        this.setInvulnerableTicks(220);
+        this.bossEvent.setProgress(0.0F);
+        this.setHealth(this.getMaxHealth() / 3.0F);
+
+    }
+
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(DATA_ID_INV, 0);
+    }
+
+    public void addAdditionalSaveData(CompoundTag p_31485_) {
+        super.addAdditionalSaveData(p_31485_);
+        p_31485_.putInt("Invul", this.getInvulnerableTicks());
+
+    }
+
     public void readAdditionalSaveData(CompoundTag p_31474_) {
         super.readAdditionalSaveData(p_31474_);
+        this.setInvulnerableTicks(p_31474_.getInt("Invul"));
+
         if (this.hasCustomName()) {
             this.bossEvent.setName(this.getDisplayName());
             this.bossEvent.setProgress(this.getMaxHealth());
         }
 
+    }
+
+    public boolean isRage() {
+        return this.getHealth() <= this.getMaxHealth() / 2.0F && !this.isInvulnerable();
     }
 
     public void setCustomName(@Nullable Component p_31476_) {
@@ -100,6 +151,12 @@ public class GolemEntity extends Monster implements GeoEntity {
 
     }
 
+    public void dropAmethysts(){
+        ItemStack amethyst = new ItemStack(Items.AMETHYST_SHARD, random.nextInt(4,10));
+
+        this.spawnAtLocation(amethyst);
+    }
+
     public void checkDespawn() {
         if (this.level().getDifficulty() == Difficulty.PEACEFUL && this.shouldDespawnInPeaceful()) {
             this.discard();
@@ -113,8 +170,8 @@ public class GolemEntity extends Monster implements GeoEntity {
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
 
-                .add(Attributes.MAX_HEALTH, 300D)
-                .add(Attributes.ATTACK_DAMAGE, 1.00D)
+                .add(Attributes.MAX_HEALTH, 350D)
+                .add(Attributes.ATTACK_DAMAGE, 6.00D)
                 .add(Attributes.ARMOR, 0.0D)
                 .add(Attributes.ATTACK_SPEED, 0.8D)
                 .add(Attributes.MOVEMENT_SPEED, 0.175D)
@@ -124,6 +181,7 @@ public class GolemEntity extends Monster implements GeoEntity {
 
 
     protected void registerGoals() {
+        this.goalSelector.addGoal(0, new GolemEntity.GolemDoNothingGoal());
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2D, false));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
@@ -174,9 +232,6 @@ public class GolemEntity extends Monster implements GeoEntity {
         return PlayState.CONTINUE;
     }
 
-    public boolean isRage() {
-        return this.getHealth() <= this.getMaxHealth() / 2.0F;
-    }
 
 
     @Override
@@ -213,10 +268,23 @@ public class GolemEntity extends Monster implements GeoEntity {
     }
 
     public boolean hurt(DamageSource p_31461_, float p_31462_) {
-        if (this.isRage()) {
-            Entity entity = p_31461_.getDirectEntity();
-            if (entity instanceof AbstractArrow && entity instanceof Projectile) {
+
+        if (this.isInvulnerableTo(p_31461_)) {
+            return false;
+
+        } else if (!p_31461_.is(DamageTypeTags.WITHER_IMMUNE_TO) && !(p_31461_.getEntity() instanceof GolemEntity)) {
+            if (this.getInvulnerableTicks() > 0 && !p_31461_.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
                 return false;
+
+            } else {
+
+
+                if (this.isRage()) {
+                    Entity entity = p_31461_.getDirectEntity();
+                    if (entity instanceof AbstractArrow && entity instanceof Projectile) {
+                        return false;
+                    }
+                }
             }
         }
         return super.hurt(p_31461_, p_31462_);
@@ -225,16 +293,25 @@ public class GolemEntity extends Monster implements GeoEntity {
 
     @Override
     protected void customServerAiStep() {
-        super.customServerAiStep();
-        {
-            this.bossEvent.setProgress(1.0F / 220.0F);
-
-            if (this.tickCount % 20 == 0) {
-                this.heal(0.2F);
+        if (this.getInvulnerableTicks() > 0) {
+            int k1 = this.getInvulnerableTicks() - 1;
+            this.bossEvent.setProgress(1.0F - (float)k1 / 220.0F);
+            this.setInvulnerableTicks(k1);
+            if (this.tickCount % 10 == 0) {
+                this.heal(10.0F);
             }
+
+        } else {
+            super.customServerAiStep();
+
             this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
         }
-        {
+
+        if(this.isRage() &&!this.hasDroppedAmethysts) {
+            dropAmethysts();
+            this.hasDroppedAmethysts = true;
+        }
+
             if (this.isRage() && !this.ragehasPlayedOnce) {
                 this.level().playSound(null, blockPosition(), ModSounds.GOLEM_ROAR.get(), SoundSource.HOSTILE, 1, 1);
                 this.ragehasPlayedOnce = true;
@@ -242,13 +319,14 @@ public class GolemEntity extends Monster implements GeoEntity {
                 this.getAttribute(Attributes.ARMOR).setBaseValue(4.0D);
                 this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(12.0D);
 
+
             } else {
 
                 if(!this.isRage()) {
 
                     this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.175D);
                     this.getAttribute(Attributes.ARMOR).setBaseValue(0.0D);
-                    this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(1.0D);
+                    this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 
                     if(this.ragehasPlayedOnce) {
                         ragehasPlayedOnce = false;
@@ -256,8 +334,18 @@ public class GolemEntity extends Monster implements GeoEntity {
                     }
                 }
             }
+
+
+    class GolemDoNothingGoal extends Goal {
+        public GolemDoNothingGoal() {
+            this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.JUMP, Goal.Flag.LOOK));
+        }
+
+        public boolean canUse() {
+            return GolemEntity.this.getInvulnerableTicks() > 0;
         }
     }
+}
 
 
 

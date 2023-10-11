@@ -39,6 +39,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.ONYX_BLOCK);
 
+        blockWithItem(ModBlocks.SCULK_GLEAM);
+        blockWithItem(ModBlocks.SCULK_STONE);
+        blockWithItem(ModBlocks.COBBLED_SCULK_STONE);
+        blockWithItem(ModBlocks.SCULK_STONE_BRICKS);
+        blockWithItem(ModBlocks.POLISHED_SCULK_STONE);
+        blockWithItem(ModBlocks.CHISELED_SCULK_STONE);
+        blockWithItem(ModBlocks.SMOOTH_SCULK_STONE);
+        blockWithItem(ModBlocks.ECHO_SOIL);
+
         simpleBlockWithItem(ModBlocks.MYSTICSHROOM.get(),
                 models().cross(blockTexture(ModBlocks.MYSTICSHROOM.get()).getPath(), blockTexture(ModBlocks.MYSTICSHROOM.get())).renderType("cutout"));
 
@@ -68,6 +77,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(ModBlocks.MAGIC_WOOD.get(), models().withExistingParent("elegantexpansions:magic_wood", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_MAGIC_LOG.get(), models().withExistingParent("elegantexpansions:stripped_magic_log", "minecraft:block/cube_column"));
         simpleBlockItem(ModBlocks.STRIPPED_MAGIC_WOOD.get(), models().withExistingParent("elegantexpansions:stripped_magic_wood", "minecraft:block/cube_column"));
+
+        logBlock(((RotatedPillarBlock) ModBlocks.ECHO_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.ECHO_WOOD.get(), blockTexture(ModBlocks.ECHO_LOG.get()), blockTexture(ModBlocks.ECHO_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ECHO_LOG.get(), new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_echo_log"),
+                new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_echo_log_top"));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ECHO_WOOD.get(), new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_echo_log"),
+                new ResourceLocation(ElegantExpansions.MOD_ID, "block/stripped_echo_log"));
+
+        blockWithItem(ModBlocks.ECHO_PLANKS);
+        blockWithItem(ModBlocks.ECHO_LEAVES);
+        saplingBlock(ModBlocks.ECHO_SAPLING);
+
+        simpleBlockItem(ModBlocks.ECHO_LOG.get(), models().withExistingParent("elegantexpansions:echo_log", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.ECHO_WOOD.get(), models().withExistingParent("elegantexpansions:echo_wood", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.STRIPPED_ECHO_LOG.get(), models().withExistingParent("elegantexpansions:stripped_echo_log", "minecraft:block/cube_column"));
+        simpleBlockItem(ModBlocks.STRIPPED_ECHO_WOOD.get(), models().withExistingParent("elegantexpansions:stripped_echo_wood", "minecraft:block/cube_column"));
 
         logBlock(((RotatedPillarBlock) ModBlocks.WILLOW_LOG.get()));
         axisBlock((RotatedPillarBlock) ModBlocks.WILLOW_WOOD.get(), blockTexture(ModBlocks.WILLOW_LOG.get()), blockTexture(ModBlocks.WILLOW_LOG.get()));
@@ -183,8 +208,52 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType(((DoorBlock) ModBlocks.PALM_DOOR.get()), modLoc("block/palm_door_bottom"), modLoc("block/palm_door_top"), "cutout");
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.PALM_TRAPDOOR.get()), modLoc("block/palm_trapdoor"), true, "cutout");
 
+        stairsBlock(((StairBlock) ModBlocks.ECHO_STAIRS.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.ECHO_SLAB.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()), blockTexture(ModBlocks.BANANA_PLANKS.get()));
+        blockItem(ModBlocks.ECHO_STAIRS);
+        blockItem(ModBlocks.ECHO_SLAB);
+        blockItem(ModBlocks.ECHO_PRESSURE_PLATE);
+        blockItem(ModBlocks.ECHO_FENCE_GATE);
+        blockItem(ModBlocks.ECHO_TRAPDOOR, "_bottom");
+        buttonBlock(((ButtonBlock) ModBlocks.ECHO_BUTTON.get()), blockTexture(ModBlocks.ECHO_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.ECHO_PRESSURE_PLATE.get()), blockTexture(ModBlocks.ECHO_PLANKS.get()));
+        fenceBlock(((FenceBlock) ModBlocks.ECHO_FENCE.get()), blockTexture(ModBlocks.ECHO_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) ModBlocks.ECHO_FENCE_GATE.get()), blockTexture(ModBlocks.ECHO_PLANKS.get()));
+        wallBlock(((WallBlock) ModBlocks.ECHO_WALL.get()), blockTexture(ModBlocks.ECHO_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) ModBlocks.ECHO_DOOR.get()), modLoc("block/echo_door_bottom"), modLoc("block/echo_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.ECHO_TRAPDOOR.get()), modLoc("block/echo_trapdoor"), true, "cutout");
 
+        stairsBlock(((StairBlock) ModBlocks.SCULK_STONE_STAIRS.get()), blockTexture(ModBlocks.SCULK_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.SCULK_STONE_SLAB.get()), blockTexture(ModBlocks.SCULK_STONE.get()), blockTexture(ModBlocks.SCULK_STONE.get()));
+        blockItem(ModBlocks.SCULK_STONE_STAIRS);
+        blockItem(ModBlocks.SCULK_STONE_SLAB);
+        blockItem(ModBlocks.SCULK_STONE_PRESSURE_PLATE);
+        buttonBlock(((ButtonBlock) ModBlocks.SCULK_STONE_BUTTON.get()), blockTexture(ModBlocks.SCULK_STONE.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.SCULK_STONE_PRESSURE_PLATE.get()), blockTexture(ModBlocks.SCULK_STONE.get()));
+        wallBlock(((WallBlock) ModBlocks.SCULK_STONE_WALL.get()), blockTexture(ModBlocks.SCULK_STONE.get()));
 
+        stairsBlock(((StairBlock) ModBlocks.COBBLED_SCULK_STONE_STAIRS.get()), blockTexture(ModBlocks.COBBLED_SCULK_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.COBBLED_SCULK_STONE_SLAB.get()), blockTexture(ModBlocks.COBBLED_SCULK_STONE.get()), blockTexture(ModBlocks.COBBLED_SCULK_STONE.get()));
+        blockItem(ModBlocks.COBBLED_SCULK_STONE_STAIRS);
+        blockItem(ModBlocks.COBBLED_SCULK_STONE_SLAB);
+        wallBlock(((WallBlock) ModBlocks.COBBLED_SCULK_STONE_WALL.get()), blockTexture(ModBlocks.COBBLED_SCULK_STONE.get()));
+
+        stairsBlock(((StairBlock) ModBlocks.POLISHED_SCULK_STONE_STAIRS.get()), blockTexture(ModBlocks.POLISHED_SCULK_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.POLISHED_SCULK_STONE_SLAB.get()), blockTexture(ModBlocks.POLISHED_SCULK_STONE.get()), blockTexture(ModBlocks.POLISHED_SCULK_STONE.get()));
+        blockItem(ModBlocks.POLISHED_SCULK_STONE_STAIRS);
+        blockItem(ModBlocks.POLISHED_SCULK_STONE_SLAB);
+        wallBlock(((WallBlock) ModBlocks.POLISHED_SCULK_STONE_WALL.get()), blockTexture(ModBlocks.POLISHED_SCULK_STONE.get()));
+
+        stairsBlock(((StairBlock) ModBlocks.SCULK_STONE_BRICK_STAIRS.get()), blockTexture(ModBlocks.SCULK_STONE_BRICKS.get()));
+        slabBlock(((SlabBlock) ModBlocks.SCULK_STONE_BRICK_SLAB.get()), blockTexture(ModBlocks.SCULK_STONE_BRICKS.get()), blockTexture(ModBlocks.SCULK_STONE_BRICKS.get()));
+        blockItem(ModBlocks.SCULK_STONE_BRICK_STAIRS);
+        blockItem(ModBlocks.SCULK_STONE_BRICK_SLAB);
+        wallBlock(((WallBlock) ModBlocks.SCULK_STONE_BRICK_WALL.get()), blockTexture(ModBlocks.SCULK_STONE_BRICKS.get()));
+
+        stairsBlock(((StairBlock) ModBlocks.SMOOTH_SCULK_STONE_STAIRS.get()), blockTexture(ModBlocks.SMOOTH_SCULK_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.SMOOTH_SCULK_STONE_SLAB.get()), blockTexture(ModBlocks.SMOOTH_SCULK_STONE.get()), blockTexture(ModBlocks.SMOOTH_SCULK_STONE.get()));
+        blockItem(ModBlocks.SMOOTH_SCULK_STONE_STAIRS);
+        blockItem(ModBlocks.SMOOTH_SCULK_STONE_SLAB);
     }
 
 

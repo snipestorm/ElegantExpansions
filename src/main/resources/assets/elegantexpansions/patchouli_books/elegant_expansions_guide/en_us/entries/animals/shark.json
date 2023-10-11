@@ -1,0 +1,18 @@
+{
+  "name": "Sharks",
+  "icon": "elegantexpansions:shark_spawn_egg",
+  "sortnum": 7,
+  "category": "elegantexpansions:animals",
+  "pages": [
+     {
+      "type": "patchouli:entity",
+      "scale": "0.3",
+      "entity": "elegantexpansions:shark",
+      "title": "Sharks"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "Sharks are Aggressive Mobs that roam the Deepest Oceans. They appear to swim slowly until they have a target, if you are the target, you are Doomed. The Shark will gain lightning speed and dart towards its prey dealing enourmous damage and a bleed effect.$(br2)Sharks will attack all other Sea Creatures, The Player and Boats. If you manage to Kill a Shark it will drop a Shark Tooth, which can be used to Craft Potions Of Bleeding in a Potion Stand."
+    }
+  ]
+}

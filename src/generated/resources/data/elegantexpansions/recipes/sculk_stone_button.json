@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "elegantexpansions:sculk_stone"
+    }
+  ],
+  "result": {
+    "item": "elegantexpansions:sculk_stone_button"
+  }
+}

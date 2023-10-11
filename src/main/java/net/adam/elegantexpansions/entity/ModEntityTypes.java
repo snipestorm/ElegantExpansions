@@ -97,6 +97,19 @@ public class ModEntityTypes {
                             .sized(0.6F, 1.95f)
                             .build(new ResourceLocation(ElegantExpansions.MOD_ID, "hippo").toString()));
 
+    public static final RegistryObject<EntityType<VultureEntity>> VULTURE =
+            ENTITY_TYPES.register("vulture",
+                    () -> EntityType.Builder.of(VultureEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 1.95f)
+                            .build(new ResourceLocation(ElegantExpansions.MOD_ID, "vulture").toString()));
+
+    public static final RegistryObject<EntityType<EchoSpider>> ECHO_SPIDER =
+            ENTITY_TYPES.register("echo_spider",
+                    () -> EntityType.Builder.of(EchoSpider::new, MobCategory.MONSTER)
+                            .sized(0.6F, 1.95f)
+                            .build(new ResourceLocation(ElegantExpansions.MOD_ID, "echo_spider").toString()));
+
+
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

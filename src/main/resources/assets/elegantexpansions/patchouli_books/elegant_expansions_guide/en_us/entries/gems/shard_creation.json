@@ -1,0 +1,44 @@
+{
+  "name": "Shard Creation",
+  "icon": "elegantexpansions:shard_creation_station",
+  "sortnum": 4,
+  "category": "elegantexpansions:gems",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Shard Creation Station",
+      "item": "elegantexpansions:shard_creation_station",
+       "text": "The Shard Creation Station is a Block Entity similar to a crafting table, to use it you must insert all 8 Infused Gems and keep the Lava Tank full enough to complete the Creation.$(br2)On Average it takes around 5 Minutes to Create a Shard, During this time your Lava will constantly drain, do not let the Lava drain completely otherwise the Creation will Fail. Each bucket of Lava will add 1000 Units to the Tank, so use the current levels and the progress arrow to gage how much you will need."
+
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:shard_creation_station",
+      "text": "During the early stages of Creation it can be hard to see if the Creation has started as the Progress Arrow wont start Rendering straight away, due to the length of time per Creation.$(br)To Assist with this to the Right of the progress arrow are some bubbles, If these are Flickering Blue then the Creation is Active"
+
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Shard Creation GUI",
+
+      "images" : [
+        "elegantexpansions:textures/guide/shard_creation_station_gui.png"
+      ],
+
+      "border": "true",
+
+      "text": "Using The Shard Creation Station:$(li)Left Slot: Bucket Of Lava$(li)Outer Slots: The Infused Gems, the GUI has a holder image to help placement$(br)The Alexandrite Shard will appear in the center slot"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Alexandrite Shards",
+      "item":
+      "elegantexpansions:alexandrite_shard",
+      "text": "Once the Shard is Created it will appear in the center slot of the GUI.$(br2)To Act as a visual aid, the Shard Creation Station will Render the Inserted Gems and Any Shards on its Surface, You could use this Station as a Storage Table. $(br2)The only purpose of the Alexandrite Shard is to craft the Alexandrite Paxel..."
+    }
+
+
+
+  ]
+}

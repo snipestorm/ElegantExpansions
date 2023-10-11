@@ -1,0 +1,18 @@
+{
+  "name": "Hippos",
+  "icon": "elegantexpansions:hippo_spawn_egg",
+  "sortnum": 3,
+  "category": "elegantexpansions:animals",
+  "pages": [
+     {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:hippo",
+      "title": "Hippos"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "Hippos are an Aggressive Mob that spawn in the Jungles and Savannas.$(br2)Hippos will attack the player on land and in water, Hippos will also attack boats and are much faster when swimming. $(br2)You can feed a Hippo a Melon Block, if 2 Hippos are in Water you can Breed them with a Melon Block."
+    }
+  ]
+}

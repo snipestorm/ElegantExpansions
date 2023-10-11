@@ -1,0 +1,13 @@
+{
+  "type": "elegantexpansions:sap_extracting",
+  "ingredients": [
+    {
+      "count": 4,
+      "item": "elegantexpansions:stripped_magic_wood"
+
+    }
+  ],
+  "output": {
+    "item": "elegantexpansions:magical_sap_bucket"
+  }
+}

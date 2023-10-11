@@ -19,8 +19,15 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<GemInfusingStationMenu>> GEM_INFUSING_STATION_MENU =
             registerMenuType(GemInfusingStationMenu::new, "gem_infusing_station_menu");
+
     public static final RegistryObject<MenuType<ShardCreationStationMenu>> SHARD_CREATION_STATION_MENU =
             registerMenuType(ShardCreationStationMenu::new, "shard_creation_station_menu");
+
+    public static final RegistryObject<MenuType<DisplayCaseMenu>> DISPLAY_CASE_MENU =
+            registerMenuType(DisplayCaseMenu::new, "display_case_menu");
+
+    public static final RegistryObject<MenuType<SapExtractorMenu>> SAP_EXTRACTOR_MENU =
+            registerMenuType(SapExtractorMenu::new, "sap_extractor_menu");
 
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,

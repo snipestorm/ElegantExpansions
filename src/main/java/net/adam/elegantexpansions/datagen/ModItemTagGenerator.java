@@ -2,6 +2,7 @@ package net.adam.elegantexpansions.datagen;
 import net.adam.elegantexpansions.block.ModBlocks;
 import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.ElegantExpansions;
+import net.adam.elegantexpansions.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -43,6 +44,12 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModBlocks.STRIPPED_MAGIC_LOG.get().asItem())
                 .add(ModBlocks.STRIPPED_MAGIC_WOOD.get().asItem())
 
+                .add(ModBlocks.ECHO_LOG.get().asItem())
+                .add(ModBlocks.ECHO_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_ECHO_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_ECHO_WOOD.get().asItem())
+
+
                 .add(ModBlocks.BANANA_LOG.get().asItem())
                 .add(ModBlocks.BANANA_WOOD.get().asItem())
                 .add(ModBlocks.STRIPPED_BANANA_LOG.get().asItem())
@@ -51,8 +58,41 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ItemTags.PLANKS)
                 .add(ModBlocks.ASH_PLANKS.get().asItem())
                 .add(ModBlocks.WILLOW_PLANKS.get().asItem())
+                .add(ModBlocks.ECHO_PLANKS.get().asItem())
                 .add(ModBlocks.MAGIC_PLANKS.get().asItem())
                 .add(ModBlocks.BANANA_PLANKS.get().asItem());
+
+
+        this.tag(ModTags.Items.MAGIC_LOGS)
+                .add(ModBlocks.MAGIC_LOG.get().asItem())
+                .add(ModBlocks.MAGIC_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_MAGIC_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_MAGIC_WOOD.get().asItem());
+
+        this.tag(ModTags.Items.ASH_LOGS)
+                .add(ModBlocks.ASH_LOG.get().asItem())
+                .add(ModBlocks.ASH_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_ASH_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_ASH_WOOD.get().asItem());
+
+        this.tag(ModTags.Items.WILLOW_LOGS)
+                .add(ModBlocks.WILLOW_LOG.get().asItem())
+                .add(ModBlocks.WILLOW_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_WILLOW_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_WILLOW_WOOD.get().asItem());
+
+        this.tag(ModTags.Items.ECHO_LOGS)
+                .add(ModBlocks.ECHO_LOG.get().asItem())
+                .add(ModBlocks.ECHO_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_ECHO_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_ECHO_WOOD.get().asItem());
+
+        this.tag(ModTags.Items.PALM_LOGS)
+                .add(ModBlocks.BANANA_LOG.get().asItem())
+                .add(ModBlocks.BANANA_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_BANANA_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_BANANA_WOOD.get().asItem());
+
     }
 
     @Override

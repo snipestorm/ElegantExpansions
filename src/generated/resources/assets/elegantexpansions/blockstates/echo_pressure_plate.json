@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "elegantexpansions:block/echo_pressure_plate"
+    },
+    "powered=true": {
+      "model": "elegantexpansions:block/echo_pressure_plate_down"
+    }
+  }
+}

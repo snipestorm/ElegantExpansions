@@ -3,6 +3,11 @@
     "elegantexpansions:magic_wall",
     "elegantexpansions:ash_wall",
     "elegantexpansions:willow_wall",
-    "elegantexpansions:palm_wall"
+    "elegantexpansions:palm_wall",
+    "elegantexpansions:echo_wall",
+    "elegantexpansions:sculk_stone_wall",
+    "elegantexpansions:cobbled_sculk_stone_wall",
+    "elegantexpansions:polished_sculk_stone_wall",
+    "elegantexpansions:sculk_stone_brick_wall"
   ]
 }

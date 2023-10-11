@@ -1,0 +1,27 @@
+{
+  "name": "Echoing Wastes",
+  "icon": "elegantexpansions:echo_sapling",
+  "sortnum": 4,
+  "category": "elegantexpansions:biomes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Echoing Wastes is a dangerous and unique biome found in the Nether.$(br2)Be careful when you find this biome, it has an eerie purple mist and Phantoms roam these lands. Enter at your own peril and try to harvest some of the unique trees and blocks here.$(br2)In the Echoing Wastes you may find Echo trees, made of the brand new Echo wood type, you can also find the new Echo Soil which you will need to plant an Echo Sapling on and finally the New Stone variant Sculk Stone!"
+
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Echoing Wastes",
+      "text": "Oh, Watch out for the Echo Spiders...",
+
+      "images" : [
+        "elegantexpansions:textures/guide/echoing_wastes.png"
+      ],
+
+      "border": "true"
+
+
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "name": "Where To Find Gems",
+  "icon": "elegantexpansions:ruby",
+  "sortnum": 0,
+  "category": "elegantexpansions:gems",
+  "pages": [
+    {"type": "patchouli:spotlight",
+      "title": "The Gem Detector",
+      "item":
+      "elegantexpansions:gem_detector",
+
+      "text": "One of the more convenient ways to look for Gems is to Craft the Gem Detector.$(br2)To use the detector just right click the block you are standing on, the detector will check every block down to bedrock and if a Gem is located it will play a sound and display the located Gems name and its co-ordinates in the Chat Log. You can check up to 100 Blocks before the Gem Detector breaks. If you have a Data Tablet in your inventory, the last detected Gems co-ordinates will be stored there. To erase the Data Tablet, right click whilst holding it."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:gem_detector",
+      "recipe2": "elegantexpansions:data_tablet"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Rubies",
+      "item":
+        "elegantexpansions:deepslate_ruby_ore,elegantexpansions:ruby_ore,elegantexpansions:ruby,elegantexpansions:ruby_block",
+
+      "text": "Rubies are a common gem, they can be found underground in amongst minecrafts many ores, the best place to find them is in the lower parts of the world below Y level 0"
+
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Sapphires",
+      "item":
+        "elegantexpansions:deepslate_sapphire_ore,elegantexpansions:sapphire_ore,elegantexpansions:sapphire,elegantexpansions:sapphire_block",
+
+
+
+      "text": "Sapphires are a common gem, they can be found underground in amongst minecrafts many ores, the best place to find them is in the lower parts of the world below Y level 0"
+
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Emeralds",
+      "item":
+      "minecraft:deepslate_emerald_ore,minecraft:emerald_ore,minecraft:emerald,minecraft:emerald_block",
+
+
+
+      "text": "Emeralds are a common gem however are rare to find in ore form, they can be found high above ground in minecrafts mountainous regions, the best place to find them is in the higher parts of the world above Y level 90 in mountains. Another common way to get Emeralds is through Raids and Villager Trading."
+
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Diamonds",
+      "item":
+      "minecraft:deepslate_diamond_ore,minecraft:diamond_ore,minecraft:diamond,minecraft:diamond_block",
+
+
+
+      "text": "Diamonds are a rare gem, they can be found deep underground in amongst minecrafts more rare ores, the best place to find them is in the lower parts of the world below Y level -50"
+
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Amethysts",
+      "item":
+      "minecraft:amethyst_shard,minecraft:budding_amethyst,minecraft:amethyst_cluster,minecraft:amethyst_block",
+
+
+
+      "text": "Amethysts are a very rare gem, they can only be found inside Amethyst Geodes which are rare spawns in deep underground caves."
+
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Citrines",
+      "item":
+      "elegantexpansions:nether_citrine_ore,elegantexpansions:citrine,elegantexpansions:citrine_block",
+
+
+
+      "text": "Citrines are a rare gem, they can only be found in the Nether. You will need to explore in and around the Nethers lava lake and look for an ore that is similar to Nether Gold. Make sure you bring a Diamond Pickaxe or better though!"
+
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Tanzanites",
+      "item":
+      "elegantexpansions:endstone_tanzanite_ore,elegantexpansions:tanzanite,elegantexpansions:tanzanite_block",
+
+
+
+      "text": "Tanzanites are a very rare gem, they can only be found in the End. You can get lucky and find them on the main End island but if you are unlucky you will have to venture out into the end islands to expand your search. Make sure you bring a Diamond Pickaxe or better though!"
+
+    },
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Onyxs",
+      "item":
+      "elegantexpansions:onyx,elegantexpansions:onyx_block",
+
+
+
+      "text": "Onyxs are incredibly difficult to obtain and are the rarest Gem in Elegant Expansions. To obtain an Onyx you must defeat the Amethyst Golem.$(br2)Visit the Boss Entities section of this guidebook to learn how to summon the Amethyst Golem."
+
+    }
+  ]
+}

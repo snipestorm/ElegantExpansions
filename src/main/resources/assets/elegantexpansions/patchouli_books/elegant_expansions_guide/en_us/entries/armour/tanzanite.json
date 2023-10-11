@@ -1,0 +1,36 @@
+{
+  "name": "Infused Tanzanite Armour",
+  "icon": "elegantexpansions:infused_tanzanite",
+  "sortnum": 6,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Tanzanite Armour",
+      "item": "elegantexpansions:infused_tanzanite_helmet,elegantexpansions:infused_tanzanite_chestplate,elegantexpansions:infused_tanzanite_leggings,elegantexpansions:infused_tanzanite_boots",
+       "text": "To Make Infused Tanzanite Armour you will need one Infused Tanzanite per item you wish to make, a Diamond Piece of Armour matching that item and a Gem Upgrade Template.$(br)The Gem Upgrade Template goes in the First Slot, The Diamond Armour goes in the Second Slot and the Infused Tanzanite goes in the Third Slot"
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Tanzanite Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/tanzanite.png"
+      ],
+      "border": "true",
+      "text": "Equip a Full set of Infused Tanzanite Armour to Gain a Permenant Slow Falling Boost"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_tanzanite_helmet_from_smithing",
+      "recipe2": "elegantexpansions:infused_tanzanite_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_tanzanite_leggings_from_smithing",
+      "recipe2": "elegantexpansions:infused_tanzanite_boots_from_smithing"
+    }
+  ]
+}

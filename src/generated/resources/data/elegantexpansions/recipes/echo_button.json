@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "elegantexpansions:echo_planks"
+    }
+  ],
+  "result": {
+    "item": "elegantexpansions:echo_button"
+  }
+}

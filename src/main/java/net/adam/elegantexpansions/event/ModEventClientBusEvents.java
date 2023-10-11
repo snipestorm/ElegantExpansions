@@ -3,9 +3,7 @@ package net.adam.elegantexpansions.event;
 import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.block.entity.ModBlockEntities;
 
-import net.adam.elegantexpansions.block.entity.renderer.GemCuttingStationBlockEntityRenderer;
-import net.adam.elegantexpansions.block.entity.renderer.GemInfusingStationBlockEntityRenderer;
-import net.adam.elegantexpansions.block.entity.renderer.ShardCreationStationBlockEntityRenderer;
+import net.adam.elegantexpansions.block.entity.renderer.*;
 import net.adam.elegantexpansions.particle.ModParticles;
 import net.adam.elegantexpansions.particle.SandAshParticle;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +25,12 @@ public class ModEventClientBusEvents {
 
         event.registerBlockEntityRenderer(ModBlockEntities.SHARD_CREATION_STATION_BLOCK_ENTITY.get(),
                 ShardCreationStationBlockEntityRenderer::new);
+
+        event.registerBlockEntityRenderer(ModBlockEntities.DISPLAY_CASE_BLOCK_ENTITY.get(),
+                DisplayCaseBlockEntityRenderer::new);
+
+        event.registerBlockEntityRenderer(ModBlockEntities.SAP_EXTRACTOR_BLOCK_ENTITY.get(),
+                SapExtractorBlockEntityRenderer::new);
     }
     @SubscribeEvent
     public static void registerParticleFactories(RegisterParticleProvidersEvent event) {

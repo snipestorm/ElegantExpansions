@@ -1,0 +1,26 @@
+{
+  "name": "Maple Forest",
+  "icon": "elegantexpansions:maple_sapling",
+  "sortnum": 1,
+  "category": "elegantexpansions:biomes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This beautiful forest is the home of the Maple Tree. Effectively this is a standard Oak Tree but with new orange/red leaves, perfect for the autumnal vibe. Throw in some pumpkins for that perfect scene!"
+
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Maple Forest",
+
+      "images" : [
+        "elegantexpansions:textures/guide/maple_forest.png"
+
+      ],
+
+      "border": "true"
+
+    }
+  ]
+}

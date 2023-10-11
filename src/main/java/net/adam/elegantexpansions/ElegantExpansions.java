@@ -6,7 +6,9 @@ import net.adam.elegantexpansions.block.entity.ModBlockEntities;
 import net.adam.elegantexpansions.effect.ModEffects;
 import net.adam.elegantexpansions.enchantment.ModEnchantments;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
-import net.adam.elegantexpansions.entity.client.*;
+import net.adam.elegantexpansions.entity.client.renderers.*;
+import net.adam.elegantexpansions.entity.custom.EchoSpider;
+import net.adam.elegantexpansions.entity.custom.VultureEntity;
 import net.adam.elegantexpansions.fluid.ModFluidTypes;
 import net.adam.elegantexpansions.fluid.ModFluids;
 import net.adam.elegantexpansions.item.ModCreativeModeTabs;
@@ -18,6 +20,7 @@ import net.adam.elegantexpansions.recipe.ModRecipes;
 import net.adam.elegantexpansions.screen.*;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.adam.elegantexpansions.util.BetterBrewingRecipe;
+import net.adam.elegantexpansions.villager.ModVillagers;
 import net.adam.elegantexpansions.worldgen.biome.ModTerrablender;
 import net.adam.elegantexpansions.worldgen.biome.surface.ModSurfaceRules;
 import net.adam.elegantexpansions.worldgen.tree.ModFoliagePlacerTypes;
@@ -26,10 +29,12 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
@@ -73,6 +78,7 @@ public class ElegantExpansions {
         ModPotions.register(modEventBus);
         ModEnchantments.register(modEventBus);
         ModParticles.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
@@ -99,6 +105,7 @@ public class ElegantExpansions {
         modEventBus.addListener(this::addCreative);
     }
 
+
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         event.enqueueWork(() -> {
@@ -110,6 +117,7 @@ public class ElegantExpansions {
 
 
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.NETHER, MOD_ID, ModSurfaceRules.netherRules());
     });
     }
 
@@ -161,6 +169,16 @@ public class ElegantExpansions {
             event.accept(ModBlocks.STRIPPED_BANANA_LOG);
             event.accept(ModBlocks.STRIPPED_BANANA_WOOD);
             event.accept(ModBlocks.BANANA_SAPLING);
+            event.accept(ModBlocks.ECHO_LEAVES);
+            event.accept(ModBlocks.ECHO_LOG);
+            event.accept(ModBlocks.ECHO_WOOD);
+            event.accept(ModBlocks.ECHO_PLANKS);
+            event.accept(ModBlocks.STRIPPED_ECHO_LOG);
+            event.accept(ModBlocks.STRIPPED_ECHO_WOOD);
+            event.accept(ModBlocks.ECHO_SAPLING);
+            event.accept(ModBlocks.SCULK_GLEAM);
+            event.accept(ModBlocks.ECHO_SOIL);
+
             event.accept(ModBlocks.MYSTICSHROOM);
             event.accept(ModBlocks.MYSTIC_GLOWFLOWER);
             event.accept(ModBlocks.ICY_IRIS);
@@ -205,11 +223,44 @@ public class ElegantExpansions {
             event.accept(ModBlocks.PALM_DOOR.get());
             event.accept(ModBlocks.PALM_TRAPDOOR.get());
 
+            event.accept(ModBlocks.ECHO_STAIRS.get());
+            event.accept(ModBlocks.ECHO_SLAB.get());
+            event.accept(ModBlocks.ECHO_BUTTON.get());
+            event.accept(ModBlocks.ECHO_PRESSURE_PLATE.get());
+            event.accept(ModBlocks.ECHO_FENCE.get());
+            event.accept(ModBlocks.ECHO_FENCE_GATE.get());
+            event.accept(ModBlocks.ECHO_WALL.get());
+            event.accept(ModBlocks.ECHO_DOOR.get());
+            event.accept(ModBlocks.ECHO_TRAPDOOR.get());
+
             event.accept(ModBlocks.WHITE_SAND);
             //event.accept(ModBlocks.WHITE_SUSPICIOUS_SAND);
             event.accept(ModBlocks.WHITE_SANDSTONE.get());
             event.accept(ModBlocks.SMOOTH_WHITE_SANDSTONE.get());
             event.accept(ModBlocks.CHISELED_WHITE_SANDSTONE.get());
+
+            event.accept(ModBlocks.SCULK_STONE);
+            event.accept(ModBlocks.SCULK_STONE_STAIRS);
+            event.accept(ModBlocks.SCULK_STONE_SLAB);
+            event.accept(ModBlocks.SCULK_STONE_WALL);
+            event.accept(ModBlocks.SCULK_STONE_PRESSURE_PLATE);
+            event.accept(ModBlocks.SCULK_STONE_BUTTON);
+            event.accept(ModBlocks.COBBLED_SCULK_STONE);
+            event.accept(ModBlocks.COBBLED_SCULK_STONE_STAIRS);
+            event.accept(ModBlocks.COBBLED_SCULK_STONE_SLAB);
+            event.accept(ModBlocks.COBBLED_SCULK_STONE_WALL);
+            event.accept(ModBlocks.POLISHED_SCULK_STONE);
+            event.accept(ModBlocks.POLISHED_SCULK_STONE_STAIRS);
+            event.accept(ModBlocks.POLISHED_SCULK_STONE_SLAB);
+            event.accept(ModBlocks.POLISHED_SCULK_STONE_WALL);
+            event.accept(ModBlocks.SCULK_STONE_BRICKS);
+            event.accept(ModBlocks.SCULK_STONE_BRICK_STAIRS);
+            event.accept(ModBlocks.SCULK_STONE_BRICK_SLAB);
+            event.accept(ModBlocks.SCULK_STONE_BRICK_WALL);
+            event.accept(ModBlocks.SMOOTH_SCULK_STONE);
+            event.accept(ModBlocks.SMOOTH_SCULK_STONE_STAIRS);
+            event.accept(ModBlocks.SMOOTH_SCULK_STONE_SLAB);
+            event.accept(ModBlocks.CHISELED_SCULK_STONE);
 
         }
 
@@ -229,6 +280,7 @@ public class ElegantExpansions {
             event.accept(ModItems.RACCOON_SPAWN_EGG);
             event.accept(ModItems.LION_SPAWN_EGG);
             event.accept(ModItems.HIPPO_SPAWN_EGG);
+            event.accept(ModItems.VULTURE_SPAWN_EGG);
 
         }
 
@@ -243,6 +295,8 @@ public class ElegantExpansions {
             event.accept(ModBlocks.ANKH_GOLD);
             event.accept(ModBlocks.GLPYH_OF_ANUBIS_GOLD);
             event.accept(ModBlocks.ANUBIS_SUMMON_BLOCK);
+            event.accept(ModBlocks.MYSTERIOUS_CUBE);
+            event.accept(ModBlocks.DISPLAY_CASE);
 
 
         }
@@ -289,6 +343,7 @@ public class ElegantExpansions {
 
 
             event.accept(ModItems.GEM_CUTTERS);
+            event.accept(ModBlocks.SAP_EXTRACTOR);
 
             event.accept(ModBlocks.GEM_CUTTING_STATION);
             event.accept(ModBlocks.GEM_INFUSING_STATION);
@@ -385,22 +440,29 @@ public class ElegantExpansions {
             EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
             EntityRenderers.register(ModEntityTypes.LION.get(), LionRenderer::new);
             EntityRenderers.register(ModEntityTypes.HIPPO.get(), HippoRenderer::new);
+            EntityRenderers.register(ModEntityTypes.VULTURE.get(), VultureRenderer::new);
+            EntityRenderers.register(ModEntityTypes.ECHO_SPIDER.get(), EchoSpiderRenderer::new);
 
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_INFUSING_STATION.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHARD_CREATION_STATION.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SAP_EXTRACTOR.get(), RenderType.cutout());
 
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MAGICAL_SAP.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MAGICAL_SAP.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.LANTERN_OF_ANUBIS.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOLD_CHAIN.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MYSTERIOUS_CUBE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.DISPLAY_CASE.get(), RenderType.cutout());
 
 
 
             MenuScreens.register(ModMenuTypes.GEM_CUTTING_STATION_MENU.get(), GemCuttingStationScreen::new);
             MenuScreens.register(ModMenuTypes.GEM_INFUSING_STATION_MENU.get(), GemInfusingStationScreen::new);
             MenuScreens.register(ModMenuTypes.SHARD_CREATION_STATION_MENU.get(), ShardCreationStationScreen::new);
+            MenuScreens.register(ModMenuTypes.DISPLAY_CASE_MENU.get(), DisplayCaseScreen::new);
+            MenuScreens.register(ModMenuTypes.SAP_EXTRACTOR_MENU.get(), SapExtractorScreen::new);
         }
 }
     }

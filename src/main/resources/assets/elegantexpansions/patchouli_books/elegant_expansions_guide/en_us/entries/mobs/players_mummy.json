@@ -1,0 +1,21 @@
+{
+  "name": "Possessed Mummies",
+  "icon": "elegantexpansions:staff_of_mummies",
+  "sortnum": 1,
+  "category": "elegantexpansions:mobs",
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:players_mummy",
+      "title": "Possessed Mummies",
+      "text": "Possessed Mummies are non aggressive to Players, but will attack other Hostile Mobs. You can summon 3 Possessed Mummmies using The Staff Of Mummies."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Staff Of Mummies",
+      "item": "elegantexpansions:staff_of_mummies",
+      "text": "The Staff Of Mummies is a powerful magical artifact that can be obtained as a Rare Drop from Anubis.$(br2)The Staff will allow you to summon 3 Possessed Mummies to fight for you for up to one minute. Once the minute has expired the Mummies will die.$(br2)After Using the Staff it will enter a 90 second cooldown. To use the staff simply right click any block.$(br)The Staff can also be used as a Weapon dealing 5 Damage and 1.2 Attack Speed."
+    }
+  ]
+}

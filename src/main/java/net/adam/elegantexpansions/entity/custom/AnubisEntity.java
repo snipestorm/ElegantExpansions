@@ -71,7 +71,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
     public AnubisEntity(EntityType<? extends AnubisEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setHealth(this.getMaxHealth());
-        this.xpReward = 150;
+        this.xpReward = 500;
     }
 
     public int getInvulnerableTicks() {
@@ -93,6 +93,9 @@ public class AnubisEntity extends Monster implements GeoEntity {
         this.playSound(ModSounds.ANUBIS_SPAWN.get());
 
     }
+
+
+
 
     protected void defineSynchedData() {
         super.defineSynchedData();
@@ -147,11 +150,11 @@ public class AnubisEntity extends Monster implements GeoEntity {
         return Monster.createMobAttributes()
 
                 .add(Attributes.MAX_HEALTH, 200)
-                .add(Attributes.ARMOR,15)
+                .add(Attributes.ARMOR,20)
                 .add(Attributes.ARMOR_TOUGHNESS,5)
-                .add(Attributes.ATTACK_DAMAGE, 6.00f)
+                .add(Attributes.ATTACK_DAMAGE, 10.00f)
                 .add(Attributes.ATTACK_SPEED, 1.1f)
-                .add(Attributes.MOVEMENT_SPEED, 0.200f)
+                .add(Attributes.MOVEMENT_SPEED, 0.215f)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.2f).build();
 
     }
@@ -323,10 +326,6 @@ public class AnubisEntity extends Monster implements GeoEntity {
         return super.hurt(p_31461_, p_31462_);
     }
 
-    @Override
-    public void setInvisible(boolean p_20304_) {
-        super.setInvisible(p_20304_);
-    }
 
     @Override
     public boolean doHurtTarget(Entity p_32892_) {

@@ -7,7 +7,7 @@
   ],
   "spawners": {
     "type": "elegantexpansions:tiger",
-    "weight": 50,
+    "weight": 40,
     "minCount": 1,
     "maxCount": 2
   }

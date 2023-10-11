@@ -53,7 +53,7 @@ public class PlayersMummy extends MummyEntity implements GeoEntity {
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 20f)
+                .add(Attributes.MAX_HEALTH, 30f)
                 .add(Attributes.ATTACK_DAMAGE, (double) 6f)
                 .add(Attributes.ATTACK_SPEED, 0.25)
                 .add(Attributes.MOVEMENT_SPEED, 0.2).build();

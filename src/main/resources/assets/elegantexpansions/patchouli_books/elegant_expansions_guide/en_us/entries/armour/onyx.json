@@ -1,0 +1,36 @@
+{
+  "name": "Infused Onyx Armour",
+  "icon": "elegantexpansions:infused_onyx",
+  "sortnum": 7,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Onyx Armour",
+      "item": "elegantexpansions:infused_onyx_helmet,elegantexpansions:infused_onyx_chestplate,elegantexpansions:infused_onyx_leggings,elegantexpansions:infused_onyx_boots",
+       "text": "To Make Infused Onyx Armour you will need one Infused Onyx per item you wish to make, a Diamond Piece of Armour matching that item and a Gem Upgrade Template.$(br)The Gem Upgrade Template goes in the First Slot, The Diamond Armour goes in the Second Slot and the Infused Onyx goes in the Third Slot"
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Onyx Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/onyx.png"
+      ],
+      "border": "true",
+      "text": "Equip a Full set of Infused Onyx Armour to Gain a Permenant Strength Boost"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_onyx_helmet_from_smithing",
+      "recipe2": "elegantexpansions:infused_onyx_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_onyx_leggings_from_smithing",
+      "recipe2": "elegantexpansions:infused_onyx_boots_from_smithing"
+    }
+  ]
+}

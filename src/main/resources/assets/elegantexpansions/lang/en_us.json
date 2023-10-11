@@ -103,6 +103,7 @@
   "block.elegantexpansions.gem_cutting_station": "Gem Cutting Station",
   "block.elegantexpansions.gem_infusing_station": "Gem Infusing Station",
   "block.elegantexpansions.shard_creation_station": "Shard Creation Station",
+  "block.elegantexpansions.sap_extractor": "Magical Sap Extractor",
 
   "effect.elegantexpansions.bleed": "Bleed",
 
@@ -123,6 +124,39 @@
   "block.elegantexpansions.onyx_block": "Onyx Block",
 
 
+  "block.elegantexpansions.echo_soil": "Echo Soil",
+  "block.elegantexpansions.sculk_gleam": "Sculk Gleam",
+
+  "block.elegantexpansions.sculk_stone": "Sculk Stone",
+  "block.elegantexpansions.sculk_stone_stairs": "Sculk Stone Stairs",
+  "block.elegantexpansions.sculk_stone_slab": "Sculk Stone Slab",
+  "block.elegantexpansions.sculk_stone_button": "Sculk Stone Button",
+  "block.elegantexpansions.sculk_stone_pressure_plate": "Sculk Stone Pressure Plate",
+  "block.elegantexpansions.sculk_stone_wall": "Sculk Stone Wall",
+
+  "block.elegantexpansions.cobbled_sculk_stone": "Cobbled Sculk Stone",
+  "block.elegantexpansions.cobbled_sculk_stone_stairs": "Cobbled Sculk Stone Stairs",
+  "block.elegantexpansions.cobbled_sculk_stone_slab": "Cobbled Sculk Stone Slab",
+  "block.elegantexpansions.cobbled_sculk_stone_wall": "Cobbled Sculk Stone Wall",
+
+  "block.elegantexpansions.sculk_stone_bricks": "Sculk Stone Bricks",
+  "block.elegantexpansions.sculk_stone_brick_stairs": "Sculk Stone Brick Stairs",
+  "block.elegantexpansions.sculk_stone_brick_slab": "Sculk Stone Brick Slab",
+  "block.elegantexpansions.sculk_stone_brick_wall": "Sculk Stone Brick Wall",
+
+  "block.elegantexpansions.polished_sculk_stone": "Polished Sculk Stone",
+  "block.elegantexpansions.polished_sculk_stone_stairs": "Polished Sculk Stone Stairs",
+  "block.elegantexpansions.polished_sculk_stone_slab": "Polished Sculk Stone Slab",
+  "block.elegantexpansions.polished_sculk_stone_wall": "Polished Sculk Stone Wall",
+
+  "block.elegantexpansions.smooth_sculk_stone": "Smooth Sculk Stone",
+  "block.elegantexpansions.smooth_sculk_stone_stairs": "Smooth Sculk Stone Stairs",
+  "block.elegantexpansions.smooth_sculk_stone_slab": "Smooth Sculk Stone Slab",
+
+  "block.elegantexpansions.chiseled_sculk_stone": "Chiseled Sculk Stone",
+
+
+
 
   "item.elegantexpansions.shark_tooth": "Shark Tooth",
   "item.elegantexpansions.ancient_scroll": "Ancient Scroll",
@@ -134,6 +168,8 @@
   "block.elegantexpansions.ankh_gold": "Ankh Glyph Carved In Gold",
 
   "block.elegantexpansions.anubis_summon_block": "Summon Anubis Block",
+  "block.elegantexpansions.mysterious_cube": "Mysterious Cube",
+  "block.elegantexpansions.display_case": "Display Case",
 
   "enchantment.elegantexpansions.lightning_strike": "Lightning Strike",
 
@@ -156,6 +192,7 @@
   "item.elegantexpansions.raccoon_spawn_egg": "Raccoon Spawn Egg",
   "item.elegantexpansions.lion_spawn_egg": "Lion Spawn Egg",
   "item.elegantexpansions.hippo_spawn_egg": "Hippo Spawn Egg",
+  "item.elegantexpansions.vulture_spawn_egg": "Vulture Spawn Egg",
 
   "item.elegantexpansions.staff_of_mummies": "Staff Of Mummies",
 
@@ -163,9 +200,9 @@
   "item.elegantexpansions.shrek_theme_music_disc.desc": "The Greatest Song Ever",
 
   "entity.elegantexpansions.mummy": "Mummy",
-  "entity.elegantexpansions.players_mummy": "Mummy",
+  "entity.elegantexpansions.players_mummy": "Possessed Mummy",
   "entity.elegantexpansions.anubis": "Anubis",
-  "entity.elegantexpansions.golem": "Golem",
+  "entity.elegantexpansions.golem": "Amethyst Golem",
   "entity.elegantexpansions.tiger": "Tiger",
   "entity.elegantexpansions.white_tiger": "White Tiger",
   "entity.elegantexpansions.albino_tiger": "Albino Tiger",
@@ -176,6 +213,9 @@
   "entity.elegantexpansions.raccoon": "Raccoon",
   "entity.elegantexpansions.lion": "Lion",
   "entity.elegantexpansions.hippo": "Hippo",
+  "entity.elegantexpansions.vulture": "Vulture",
+  "entity.elegantexpansions.echo_spider": "Echo Spider",
+
 
 
   "block.elegantexpansions.magic_log": "Magic Log",
@@ -185,6 +225,14 @@
   "block.elegantexpansions.stripped_magic_wood": "Stripped Magic Wood",
   "block.elegantexpansions.magic_leaves": "Magic Leaves",
   "block.elegantexpansions.magic_sapling": "Magic Sapling",
+
+  "block.elegantexpansions.echo_log": "Echo Log",
+  "block.elegantexpansions.echo_planks": "Echo Planks",
+  "block.elegantexpansions.echo_wood": "Echo Wood",
+  "block.elegantexpansions.stripped_echo_log": "Stripped Echo Log",
+  "block.elegantexpansions.stripped_echo_wood": "Stripped Echo Wood",
+  "block.elegantexpansions.echo_leaves": "Echo Leaves",
+  "block.elegantexpansions.echo_sapling": "Echo Sapling",
 
   "block.elegantexpansions.willow_log": "Willow Log",
   "block.elegantexpansions.willow_planks": "Willow Planks",
@@ -264,5 +312,12 @@
 
   "block.elegantexpansions.mysticshroom": "Mysticshroom",
   "block.elegantexpansions.mystic_glowflower": "Mystic Glowflower",
-  "block.elegantexpansions.icy_iris": "Icy Iris"
+  "block.elegantexpansions.icy_iris": "Icy Iris",
+
+  "biome.elegantexpansions.ancient_sands" : "Ancient Sands",
+  "biome.elegantexpansions.mystical_forest" : "Mystical Forest",
+  "biome.elegantexpansions.ash_forest" : "Ash Forest",
+  "biome.elegantexpansions.maple_forest" : "Maple Forest",
+
+  "entity.minecraft.villager.elegantexpansions.gem_master": "Gem Master"
 }

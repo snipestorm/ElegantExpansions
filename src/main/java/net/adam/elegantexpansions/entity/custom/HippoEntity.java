@@ -61,7 +61,7 @@ public class HippoEntity extends Animal implements GeoEntity {
     public HippoEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
         this.setPathfindingMalus(BlockPathTypes.WATER, 0.0f);
-        this.maxUpStep = 1.1f;
+        this.setMaxUpStep(1.1f);
     }
 
     public static AttributeSupplier setAttributes() {

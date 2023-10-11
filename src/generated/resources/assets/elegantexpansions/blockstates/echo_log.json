@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "elegantexpansions:block/echo_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "elegantexpansions:block/echo_log"
+    },
+    "axis=z": {
+      "model": "elegantexpansions:block/echo_log_horizontal",
+      "x": 90
+    }
+  }
+}

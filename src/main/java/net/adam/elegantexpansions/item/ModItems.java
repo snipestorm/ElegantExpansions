@@ -65,7 +65,7 @@ public class ModItems {
     public static final RegistryObject<Item> INFUSED_DIAMOND = ITEMS.register("infused_diamond",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_AMETHYST = ITEMS.register("infused_amethyst",
-            () -> new Item(new Item.Properties()));
+            () -> new InfusedAmethystItem(new Item.Properties()));
 
     public static final RegistryObject<Item> GEM_UPGRADE_TEMPLATE = ITEMS.register("gem_upgrade_template",
             () -> new GemUpgradeTemplateItem(new Item.Properties()));
@@ -79,18 +79,18 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> ALEXANDRITE_PAXEL = ITEMS.register("alexandrite_paxel",
-            () -> new PaxelItem(ModToolTiers.ALEXANDRITE, 2,3, new Item.Properties()));
+            () -> new PaxelItem(ModToolTiers.ALEXANDRITE, 6,(float)-2.6, new Item.Properties()));
 
     public static final RegistryObject<Item> ALEXANDRITE_SWORD = ITEMS.register("alexandrite_sword",
-            () -> new SwordItem(ModToolTiers.ALEXANDRITE, 2,3, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.ALEXANDRITE, 4,(float)-2.2, new Item.Properties()));
     public static final RegistryObject<Item> ALEXANDRITE_AXE = ITEMS.register("alexandrite_axe",
-            () -> new AxeItem(ModToolTiers.ALEXANDRITE, 2,3, new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.ALEXANDRITE, 6,(float)-2.8, new Item.Properties()));
     public static final RegistryObject<Item> ALEXANDRITE_PICKAXE = ITEMS.register("alexandrite_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.ALEXANDRITE, 1,2, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.ALEXANDRITE, 2,(float)-2.6, new Item.Properties()));
     public static final RegistryObject<Item> ALEXANDRITE_SHOVEL = ITEMS.register("alexandrite_shovel",
-            () -> new ShovelItem(ModToolTiers.ALEXANDRITE, 2,3, new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.ALEXANDRITE, (float)1.5,-3, new Item.Properties()));
     public static final RegistryObject<Item> ALEXANDRITE_HOE = ITEMS.register("alexandrite_hoe",
-            () -> new HoeItem(ModToolTiers.ALEXANDRITE, 2,3, new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.ALEXANDRITE, -5,1, new Item.Properties()));
 
     //armors//
 
@@ -224,8 +224,12 @@ public class ModItems {
     public static final RegistryObject<Item> HIPPO_SPAWN_EGG = ITEMS.register("hippo_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntityTypes.HIPPO, 0x57524f, 0x4f2b15, new Item.Properties()));
 
+    public static final RegistryObject<Item> VULTURE_SPAWN_EGG = ITEMS.register("vulture_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.VULTURE, 0x57524f, 0x4f2b15, new Item.Properties()));
+
     public static final RegistryObject<Item> STAFF_OF_MUMMIES = ITEMS.register("staff_of_mummies",
-            () -> new StaffOfMummiesItem(new Item.Properties().stacksTo(1).durability(25).fireResistant().rarity(Rarity.EPIC)));
+            () -> new StaffOfMummiesItem(Tiers.DIAMOND, 1, (float) -2.8, new Item.Properties().stacksTo(1).fireResistant().durability(25).rarity(Rarity.EPIC)));
+
 
 
     public static final RegistryObject<Item> SHREK_THEME_MUSIC_DISC = ITEMS.register("shrek_theme_music_disc",

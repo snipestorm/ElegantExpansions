@@ -1,0 +1,18 @@
+{
+  "name": "Raccoons",
+  "icon": "elegantexpansions:raccoon_spawn_egg",
+  "sortnum": 5,
+  "category": "elegantexpansions:animals",
+  "pages": [
+     {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:raccoon",
+      "title": "Raccoons"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "Raccoons are Passive Mobs that live in Multiple Forests, there are 7 Colour Variants and each have unique Forest Spawns$(li)Grey Racoons - Oak/Birch$(li)Brown Raccoons - Dark Oak$(li)Red Raccoons - Taiga$(li)Black Raccoons - Ash$(li)Blue Raccoons - Mystical$(li)White Raccoons - Snowy$(li)Gold Raccoons - Do not spawn, these are a very rare breed between 2 other Raccoons.$(br2)Raccoons cannot be tamed but can be bred with Sweet Berries"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "elegantexpansions:sculk_stone"
+  },
+  "result": "elegantexpansions:sculk_stone_bricks"
+}

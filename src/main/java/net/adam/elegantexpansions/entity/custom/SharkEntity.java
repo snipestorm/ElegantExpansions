@@ -5,6 +5,7 @@ import net.adam.elegantexpansions.entity.ModEntityTypes;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -24,6 +25,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
@@ -37,6 +39,8 @@ import software.bernie.geckolib.core.animation.*;
 import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 
+import java.util.EnumSet;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class SharkEntity extends WaterAnimal implements GeoEntity {
@@ -79,7 +83,7 @@ public class SharkEntity extends WaterAnimal implements GeoEntity {
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 18D)
-                .add(Attributes.ATTACK_DAMAGE, 5.0D)
+                .add(Attributes.ATTACK_DAMAGE, 8.0D)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.MOVEMENT_SPEED ,0.2f).build();
     }
@@ -90,6 +94,7 @@ public class SharkEntity extends WaterAnimal implements GeoEntity {
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 25.0F));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 5D, true));
         this.goalSelector.addGoal(2, new RandomSwimmingGoal(this, 1.0D, 80));
+        this.goalSelector.addGoal(3, new SharkEntity.SharkAttackBoatsGoal(this, 1.25D));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(4, new FollowBoatGoal(this));
         this.goalSelector.addGoal(9, new AvoidEntityGoal<>(this, Guardian.class, 8.0F, 1.0D, 1.0D));
@@ -156,6 +161,129 @@ public class SharkEntity extends WaterAnimal implements GeoEntity {
             super.travel(p_28383_);
         }
 
+    }
+    static class SharkAttackBoatsGoal extends Goal {
+        protected final PathfinderMob mob;
+        private final double speedModifier;
+        private Path path;
+        private double pathedTargetX;
+        private double pathedTargetY;
+        private double pathedTargetZ;
+        private int ticksUntilNextPathRecalculation;
+        private int ticksUntilNextAttack;
+        private long lastCanUseCheck;
+        private Boat target;
+
+        public SharkAttackBoatsGoal(PathfinderMob pathfinderMob, double speedModifier) {
+            this.mob = pathfinderMob;
+            this.speedModifier = speedModifier;
+            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK, Flag.TARGET));
+        }
+
+        @Override
+        public boolean canUse() {
+            if (this.mob.isBaby()) {
+                return false;
+            }
+            long gameTime = this.mob.level().getGameTime();
+            if (gameTime - this.lastCanUseCheck < 20L) {
+                return false;
+            }
+            this.lastCanUseCheck = gameTime;
+            List<Boat> entities = this.mob.level().getEntitiesOfClass(Boat.class, this.mob.getBoundingBox().inflate(8, 4, 8));
+            if (!entities.isEmpty()) {
+                this.target = entities.get(0);
+            }
+            if (this.target == null) {
+                return false;
+            }
+            if (this.target.isRemoved()) {
+                return false;
+            }
+            this.path = this.mob.getNavigation().createPath(this.target, 0);
+            if (this.path != null) {
+                return true;
+            }
+            return this.getAttackReachSqr(this.target) >= this.mob.distanceToSqr(this.target.getX(), this.target.getY(), this.target.getZ());
+        }
+
+        @Override
+        public boolean canContinueToUse() {
+            if (this.target == null) {
+                return false;
+            }
+            if (this.target.isRemoved()) {
+                return false;
+            }
+            return !this.mob.getNavigation().isDone();
+        }
+
+        @Override
+        public void start() {
+            this.mob.getNavigation().moveTo(this.path, this.speedModifier);
+            this.mob.setAggressive(true);
+            this.ticksUntilNextPathRecalculation = 0;
+            this.ticksUntilNextAttack = 0;
+        }
+
+        @Override
+        public void stop() {
+            LivingEntity livingEntity = this.mob.getTarget();
+            if (!EntitySelector.NO_CREATIVE_OR_SPECTATOR.test(livingEntity)) {
+                this.mob.setTarget(null);
+            }
+            this.mob.setAggressive(false);
+            this.mob.getNavigation().stop();
+        }
+
+        @Override
+        public boolean requiresUpdateEveryTick() {
+            return true;
+        }
+
+        @Override
+        public void tick() {
+            if (this.target == null) {
+                return;
+            }
+            this.mob.getLookControl().setLookAt(this.target, 30.0f, 30.0f);
+            double d = this.mob.distanceToSqr(this.target.getX(), this.target.getY(), this.target.getZ());
+            this.ticksUntilNextPathRecalculation = Math.max(this.ticksUntilNextPathRecalculation - 1, 0);
+            if ((this.mob.getSensing().hasLineOfSight(this.target)) && this.ticksUntilNextPathRecalculation <= 0 && (this.pathedTargetX == 0.0 && this.pathedTargetY == 0.0 && this.pathedTargetZ == 0.0 || this.target.distanceToSqr(this.pathedTargetX, this.pathedTargetY, this.pathedTargetZ) >= 1.0 || this.mob.getRandom().nextFloat() < 0.05f)) {
+                this.pathedTargetX = this.target.getX();
+                this.pathedTargetY = this.target.getY();
+                this.pathedTargetZ = this.target.getZ();
+                this.ticksUntilNextPathRecalculation = 4 + this.mob.getRandom().nextInt(7);
+                if (d > 1024.0) {
+                    this.ticksUntilNextPathRecalculation += 10;
+                } else if (d > 256.0) {
+                    this.ticksUntilNextPathRecalculation += 5;
+                }
+                if (!this.mob.getNavigation().moveTo(this.target, this.speedModifier)) {
+                    this.ticksUntilNextPathRecalculation += 15;
+                }
+                this.ticksUntilNextPathRecalculation = this.adjustedTickDelay(this.ticksUntilNextPathRecalculation);
+            }
+            this.ticksUntilNextAttack = Math.max(this.ticksUntilNextAttack - 1, 0);
+            this.checkAndPerformAttack(this.target, d);
+        }
+
+        protected void checkAndPerformAttack(Entity enemy, double distToEnemySqr) {
+            double reach = this.getAttackReachSqr(enemy);
+            if (distToEnemySqr <= reach && this.ticksUntilNextAttack <= 0) {
+                this.resetAttackCooldown();
+                this.mob.swing(InteractionHand.MAIN_HAND);
+                this.mob.doHurtTarget(enemy);
+            }
+        }
+
+        protected void resetAttackCooldown() {
+            this.ticksUntilNextAttack = this.adjustedTickDelay(20);
+        }
+
+        protected double getAttackReachSqr(Entity attackTarget) {
+            return Mth.square(this.mob.getBbWidth() * 1.2f) + attackTarget.getBbWidth();
+        }
     }
     }
 

@@ -1,0 +1,36 @@
+{
+  "name": "Infused Diamond Armour",
+  "icon": "elegantexpansions:infused_diamond",
+  "sortnum": 3,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Diamond Armour",
+      "item": "elegantexpansions:infused_diamond_helmet,elegantexpansions:infused_diamond_chestplate,elegantexpansions:infused_diamond_leggings,elegantexpansions:infused_diamond_boots",
+       "text": "To Make Infused Diamond Armour you will need one Infused Diamond per item you wish to make, a Diamond Piece of Armour matching that item and a Gem Upgrade Template.$(br)The Gem Upgrade Template goes in the First Slot, The Diamond Armour goes in the Second Slot and the Infused Diamond goes in the Third Slot"
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Diamond Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/diamond.png"
+      ],
+      "border": "true",
+      "text": "Equip a Full set of Infused Diamond Armour to Gain a Permenant Resistance Boost"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_diamond_helmet_from_smithing",
+      "recipe2": "elegantexpansions:infused_diamond_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_diamond_leggings_from_smithing",
+      "recipe2": "elegantexpansions:infused_diamond_boots_from_smithing"
+    }
+  ]
+}

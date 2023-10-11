@@ -1,0 +1,18 @@
+{
+  "name": "Shrek",
+  "icon": "elegantexpansions:shrek_spawn_egg",
+  "sortnum": 3,
+  "category": "elegantexpansions:mobs",
+  "pages": [
+     {
+      "type": "patchouli:entity",
+      "scale": "1",
+      "entity": "elegantexpansions:shrek",
+      "title": "Shrek"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "Shrek is a Neutral Mob that lives in his hut in Mangrove and Normal Swamps, He wont attack the player unless you attack him, this would be foolish though as he has 1000 Health, Armour and Toughness.$(br2)Shrek is here just to keep the peace, if you approach him he may ask what you are doing in his swamp, he can also summon a donkey. Explore Shreks hut to find some secrets."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Mummies",
+  "icon": "elegantexpansions:mummy_spawn_egg",
+  "sortnum": 0,
+  "category": "elegantexpansions:mobs",
+  "pages": [
+     {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:mummy",
+      "title": "Mummies"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "Mummies are Hostile Monsters that live within the Ancient Sands$(br2)Whilst they will only spawn at Night they can survive during the day. Mummies are similar to Zombies however when they attack they do Inflict Movement Slowdown on thier target, Mummies Will also be Summoned by Anubis.$(br2)Mummies are generally not dangerous in small groups, however when you run into 5 or more they can become a handful!"
+    }
+  ]
+}

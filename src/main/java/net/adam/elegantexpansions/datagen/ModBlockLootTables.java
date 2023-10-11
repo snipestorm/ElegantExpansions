@@ -5,6 +5,7 @@ import net.adam.elegantexpansions.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -24,6 +25,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.GEM_CUTTING_STATION.get());
         dropSelf(ModBlocks.GEM_INFUSING_STATION.get());
         dropSelf(ModBlocks.SHARD_CREATION_STATION.get());
+        dropSelf(ModBlocks.SAP_EXTRACTOR.get());
 
         dropSelf(ModBlocks.WHITE_SANDSTONE.get());
         dropSelf(ModBlocks.SMOOTH_WHITE_SANDSTONE.get());
@@ -34,6 +36,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.GLPYH_OF_ANUBIS_GOLD.get());
         dropSelf(ModBlocks.ANKH_GOLD.get());
         dropSelf(ModBlocks.GOLD_CHAIN.get());
+        dropSelf(ModBlocks.MYSTERIOUS_CUBE.get());
+        dropSelf(ModBlocks.DISPLAY_CASE.get());
+        dropSelf(ModBlocks.SCULK_GLEAM.get());
+        dropSelf(ModBlocks.SCULK_STONE_BRICKS.get());
+        dropSelf(ModBlocks.POLISHED_SCULK_STONE.get());
+        dropSelf(ModBlocks.COBBLED_SCULK_STONE.get());
+        dropSelf(ModBlocks.CHISELED_SCULK_STONE.get());
+        dropSelf(ModBlocks.SMOOTH_SCULK_STONE.get());
+        dropSelf(ModBlocks.ECHO_SOIL.get());
 
         dropSelf(ModBlocks.MYSTICSHROOM.get());
         add(ModBlocks.POTTED_MYSTICSHROOM.get(),
@@ -99,7 +110,50 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.PALM_DOOR.get(),
                 block -> createDoorTable(ModBlocks.PALM_DOOR.get()));
 
+        this.dropSelf(ModBlocks.ECHO_STAIRS.get());
+        this.dropSelf(ModBlocks.ECHO_BUTTON.get());
+        this.dropSelf(ModBlocks.ECHO_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.ECHO_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.ECHO_FENCE.get());
+        this.dropSelf(ModBlocks.ECHO_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.ECHO_WALL.get());
 
+        this.add(ModBlocks.ECHO_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.ECHO_SLAB.get()));
+        this.add(ModBlocks.ECHO_DOOR.get(),
+                block -> createDoorTable(ModBlocks.ECHO_DOOR.get()));
+
+
+        this.dropSelf(ModBlocks.SCULK_STONE_STAIRS.get());
+        this.dropSelf(ModBlocks.SCULK_STONE_BUTTON.get());
+        this.dropSelf(ModBlocks.SCULK_STONE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.SCULK_STONE_WALL.get());
+        this.add(ModBlocks.SCULK_STONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SCULK_STONE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.COBBLED_SCULK_STONE_STAIRS.get());
+        this.dropSelf(ModBlocks.COBBLED_SCULK_STONE_WALL.get());
+        this.add(ModBlocks.COBBLED_SCULK_STONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.COBBLED_SCULK_STONE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.POLISHED_SCULK_STONE_STAIRS.get());
+        this.dropSelf(ModBlocks.POLISHED_SCULK_STONE_WALL.get());
+        this.add(ModBlocks.POLISHED_SCULK_STONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.POLISHED_SCULK_STONE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.SCULK_STONE_BRICK_STAIRS.get());
+        this.dropSelf(ModBlocks.SCULK_STONE_BRICK_WALL.get());
+        this.add(ModBlocks.SCULK_STONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SCULK_STONE_BRICK_SLAB.get()));
+
+        this.dropSelf(ModBlocks.SMOOTH_SCULK_STONE_STAIRS.get());
+        this.add(ModBlocks.SMOOTH_SCULK_STONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.SMOOTH_SCULK_STONE_SLAB.get()));
+
+
+
+        add(ModBlocks.SCULK_STONE.get(),
+                (block) -> createOreDrop(ModBlocks.SCULK_STONE.get(), ModBlocks.COBBLED_SCULK_STONE.get().asItem()));
 
         add(ModBlocks.RUBY_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY.get()));
@@ -164,7 +218,20 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.add(ModBlocks.BANANA_LEAVES.get(), (block) ->
                 createLeavesDrops(block, ModBlocks.BANANA_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.dropSelf(ModBlocks.ECHO_LOG.get());
+        this.dropSelf(ModBlocks.ECHO_WOOD.get());
+        this.dropSelf(ModBlocks.ECHO_PLANKS.get());
+        this.dropSelf(ModBlocks.STRIPPED_ECHO_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_ECHO_LOG.get());
+        this.dropSelf(ModBlocks.ECHO_SAPLING.get());
+
+        this.add(ModBlocks.ECHO_LEAVES.get(), (block) ->
+                createLeavesDrops(block, ModBlocks.ECHO_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
     }
+
+
 
     @Override
     protected Iterable<Block> getKnownBlocks() {

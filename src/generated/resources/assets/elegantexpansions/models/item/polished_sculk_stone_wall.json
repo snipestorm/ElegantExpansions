@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "elegantexpansions:block/polished_sculk_stone"
+  }
+}

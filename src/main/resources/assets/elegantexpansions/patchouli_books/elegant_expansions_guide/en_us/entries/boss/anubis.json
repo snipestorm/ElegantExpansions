@@ -1,0 +1,75 @@
+{
+  "name": "Anubis",
+  "icon": "elegantexpansions:glyph_of_anubis_gold",
+  "sortnum": 1,
+  "category": "elegantexpansions:boss",
+  "pages": [
+
+    {
+      "type": "patchouli:spotlight",
+      "title": "Ancient Scroll",
+      "item": "elegantexpansions:ancient_scroll",
+      "text": "The Ancient Scroll is a powerful artifact, it is the only way to summon the Egyptian God of Death: Anubis... $(br2)To find an ancient scroll you will need to craft a brush and go diving into some ocean ruins, when you find one look for some suspicious sand. Use the brush on the suspicious sand to reveal a lost item, if you are lucky you will find the Ancient Scroll"
+
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Brush Crafting Recipe",
+      "recipe": "minecraft:brush",
+      "text": "Use the Brush on Suspicious Sand to reveal lost items!"
+
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Ancient Pyramid",
+      "text": "The Ancient Pyramid is where you will find The Shrine Of Anubis",
+
+      "images" : [
+        "elegantexpansions:textures/guide/ancient_pyramid.png"
+
+      ],
+
+      "border": "true"
+
+    },
+
+    {
+      "type": "patchouli:multiblock",
+      "name": "Anubis Shrine",
+      "enable_visualize": "false",
+      "text": "This is The Shrine Of Anubis, Place an Eye of Ender in each slot, Then use your Ancient Scroll on the Centre Block when it is Lit",
+      "multiblock": {
+        "pattern": [
+          [ "         ", " D     D ", "         ", "         ", "         ", "         ", "         ", " D     D ", "         "],
+          [ "         ", " G     G ", "         ", "         ", "         ", "         ", "         ", " G     G ", "         "],
+          [ "         ", " D     D ", "         ", "         ", "         ", "         ", "         ", " D     D ", "         "],
+          [ "    R    ", " DR   RD ", " R     R ", "   R R   ", "R       R", "   R R   ", " R     R ", " DR   RD ", "    R    "],
+          [ "  CCCCC  ", "  OOEOO  ", "COEOCOEOC", "COOOCOOOC", "CECC0CCEC", "COOOCOOOC", "COEOCOEOC", "  OOEOO  ", "  CCCCC  "]
+
+        ],
+        "mapping": {
+          "C": "minecraft:crying_obsidian",
+          "O": "minecraft:obsidian",
+          "E": "minecraft:end_portal_frame",
+          "D": "minecraft:polished_deepslate",
+          "R": "minecraft:redstone_wire",
+          "0": "elegantexpansions:anubis_summon_block",
+          "G": "elegantexpansions:glyph_of_anubis_gold"
+        }
+      }
+    },
+
+    {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "offset": "0.5",
+      "entity": "elegantexpansions:anubis",
+      "title": "Anubis"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Anubis is The Hardest Boss Fight in Elegant Expansions...$(br2)Whilst his health doesnt seem high at only 200 Anubis has the unique ability to regenerate back to max health up to 3 times during a fight, Each time he regenerates he will summon hoards of mummies to attack you as he regenerates"
+    }
+  ]
+}

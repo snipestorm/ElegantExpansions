@@ -17,6 +17,7 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> GOLEM_WALK = registerSoundEvent("golem_walk");
     public static final RegistryObject<SoundEvent> GOLEM_HURT = registerSoundEvent("golem_hurt");
     public static final RegistryObject<SoundEvent> GOLEM_DEATH = registerSoundEvent("golem_death");
+    public static final RegistryObject<SoundEvent> GOLEM_BLOCK_CRACK = registerSoundEvent("golem_block_crack");
     //Anubis//
     public static final RegistryObject<SoundEvent> ANUBIS_AMBIENT = registerSoundEvent("anubis_ambient");
     public static final RegistryObject<SoundEvent> ANUBIS_SPAWN = registerSoundEvent("anubis_spawn");
@@ -38,6 +39,13 @@ public class ModSounds {
     //hippo//
     public static final RegistryObject<SoundEvent> HIPPO_HURT = registerSoundEvent("hippo_hurt");
     public static final RegistryObject<SoundEvent> HIPPO_AMBIENT = registerSoundEvent("hippo_ambient");
+
+    //vulture//
+    public static final RegistryObject<SoundEvent> VULTURE_HURT = registerSoundEvent("vulture_hurt");
+    public static final RegistryObject<SoundEvent> VULTURE_AMBIENT = registerSoundEvent("vulture_ambient");
+    public static final RegistryObject<SoundEvent> VULTURE_DEATH = registerSoundEvent("vulture_death");
+
+
     //gems//
 
     public static final RegistryObject<SoundEvent> GEM_CUTTING = registerSoundEvent("gem_cutting");

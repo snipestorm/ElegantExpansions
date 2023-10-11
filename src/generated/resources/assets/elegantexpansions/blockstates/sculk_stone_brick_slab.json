@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elegantexpansions:block/sculk_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "elegantexpansions:block/sculk_stone_bricks"
+    },
+    "type=top": {
+      "model": "elegantexpansions:block/sculk_stone_brick_slab_top"
+    }
+  }
+}

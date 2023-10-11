@@ -1,0 +1,37 @@
+{
+  "name": "Tigers",
+  "icon": "elegantexpansions:tiger_spawn_egg",
+  "sortnum": 0,
+  "category": "elegantexpansions:animals",
+  "pages": [
+     {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:tiger",
+      "title": "Tigers"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "Tigers are an Aggresive Mob that spawn in Savannas, They cannot be Tamed and will attack the player and other Animals on sight.$(br2)You can however prevent an attack by holding out any Raw Meat, Tigers will follow you if you hold this, Feed 2 Tigers Raw Meat to make them Breed"
+    }, {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:white_tiger",
+      "title": "White Tigers"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "White Tigers are an Aggresive Mob that spawn in Snowy Biomes, They cannot be Tamed and will attack the player and other Animals on sight.$(br2)You can however prevent an attack by holding out any Raw Meat, White Tigers will follow you if you hold this, Feed 2 White Tigers Raw Meat to make them Breed"
+    },
+    {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:albino_tiger",
+      "title": "Albino Tigers"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Albino Tigers are an Aggresive Mob that cannot spawn natually, The only way to get an Albino Tiger is to Breed a Tiger and a White Tiger Together.$(br2)Albino Tigers cannot be Tamed and will attack the player and other Animals on sight.$(br2)You can however prevent an attack by holding out any Raw Meat, Albino Tigers will follow you if you hold this, Feed 2 Albino Tigers Raw Meat to make them Breed"
+    }
+  ]
+}

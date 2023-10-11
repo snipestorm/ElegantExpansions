@@ -14,9 +14,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Vanishable;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -35,16 +33,17 @@ import java.util.function.Consumer;
 
 import static net.adam.elegantexpansions.block.ModBlocks.WHITE_SANDSTONE;
 
-public class StaffOfMummiesItem extends Item implements GeoItem, Vanishable {
+public class StaffOfMummiesItem extends SwordItem implements GeoItem, Vanishable {
 
     public boolean cooldown;
 
 
     public AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
 
-    public StaffOfMummiesItem(Properties properties) {
-        super(properties);
+    public StaffOfMummiesItem(Tier p_43269_, int p_43270_, float p_43271_, Properties p_43272_) {
+        super(p_43269_, p_43270_, p_43271_, p_43272_);
     }
+
 
     private PlayState predicate(AnimationState animationState) {
         animationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
@@ -96,10 +95,16 @@ public class StaffOfMummiesItem extends Item implements GeoItem, Vanishable {
 
 
             if (!player.getCooldowns().isOnCooldown(this)) {
+                ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position.east(1),
+                                MobSpawnType.TRIGGERED, true, true)
+                        .setLimitedLife(1200);
+                ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position.west(1),
+                                MobSpawnType.TRIGGERED, true, true)
+                        .setLimitedLife(1200);
                 ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position,
                                 MobSpawnType.TRIGGERED, true, true)
                         .setLimitedLife(1200);
-                player.getCooldowns().addCooldown(this, 1200);
+                player.getCooldowns().addCooldown(this, 1800);
                 cooldown = true;
 
                 if (player != null) {

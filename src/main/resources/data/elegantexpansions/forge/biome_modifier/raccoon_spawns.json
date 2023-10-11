@@ -17,7 +17,7 @@
   ],
   "spawners": {
     "type": "elegantexpansions:raccoon",
-    "weight": 65,
+    "weight": 55,
     "minCount": 2,
     "maxCount": 4
   }

@@ -1,0 +1,23 @@
+{
+  "name": "Alexandrite",
+  "icon": "elegantexpansions:alexandrite",
+  "sortnum": 5,
+  "category": "elegantexpansions:gems",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Alexandrite Paxel",
+      "item": "elegantexpansions:alexandrite_paxel",
+       "text": "The Alexandrite Paxel is a unique item, it combines the mining power of an Axe, Shovel and a Pickaxe all into one Tool, Once you have an Alexandrite Paxel you can use it to mine Alexandrite Ores which are located in the same region as Diamonds.$(br2)Alexandrite Ore can only be Mined with Alexandrite tools, You can then use Alexandrite to craft its respective Tools, Weapons and Armour. The Ultimate End Game Tier. "
+
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:alexandrite_paxel",
+      "text": "This is the only way to craft the Alexandrite Paxel. To Craft other Alexandrite gear follow the same crafting Recipes of Diamond Weapons/Tools/Armour but use Alexandrite instead."
+
+    }
+
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Infused Amethyst Armour",
+  "icon": "elegantexpansions:infused_amethyst",
+  "sortnum": 4,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Amethyst Armour",
+      "item": "elegantexpansions:infused_amethyst_helmet,elegantexpansions:infused_amethyst_chestplate,elegantexpansions:infused_amethyst_leggings,elegantexpansions:infused_amethyst_boots",
+       "text": "To Make Infused Amethyst Armour you will need one Infused Amethyst per item you wish to make, a Diamond Piece of Armour matching that item and a Gem Upgrade Template.$(br)The Gem Upgrade Template goes in the First Slot, The Diamond Armour goes in the Second Slot and the Infused Amethyst goes in the Third Slot"
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Amethyst Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/amethyst.png"
+      ],
+      "border": "true",
+      "text": "Equip a Full set of Infused Amethyst Armour to Gain a Permenant Night Vision Boost"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_amethyst_helmet_from_smithing",
+      "recipe2": "elegantexpansions:infused_amethyst_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_amethyst_leggings_from_smithing",
+      "recipe2": "elegantexpansions:infused_amethyst_boots_from_smithing"
+    }
+  ]
+}

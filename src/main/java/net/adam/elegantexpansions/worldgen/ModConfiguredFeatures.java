@@ -4,6 +4,7 @@ import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.block.ModBlocks;
 import net.adam.elegantexpansions.worldgen.tree.custom.BananaFoliagePlacer;
 import net.adam.elegantexpansions.worldgen.tree.custom.LargeBananaFoliagePlacer;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -20,10 +21,13 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLeavesDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.UpwardsBranchingTrunkPlacer;
@@ -47,6 +51,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BURNT_LARGE_ASH_KEY = registerKey("burnt_large_ash");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BANANA_KEY = registerKey("banana");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LARGE_BANANA_KEY = registerKey("large_banana");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ECHO_KEY = registerKey("echo");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_KEY = registerKey("ruby_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_SAPPHIRE_ORE_KEY = registerKey("sapphire_ore");
@@ -182,6 +188,15 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.BANANA_LEAVES.get()),
                 new LargeBananaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
                 new TwoLayersFeatureSize(0, 0, 0)).dirt(BlockStateProvider.simple(Blocks.SAND)).build());
+
+
+        register(context,ECHO_KEY,Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.ECHO_LOG.get()),
+                new CherryTrunkPlacer(7, 1, 2, UniformInt.of(2, 3), UniformInt.of(2, 3), UniformInt.of(-5, -3), UniformInt.of(-1, 0)),
+                BlockStateProvider.simple(ModBlocks.ECHO_LEAVES.get()),
+                new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), UniformInt.of(5, 6), 0.25f, 0.4f, 0.65f, 0.4f),
+                new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(ModBlocks.ECHO_SOIL.get())).decorators(List.of(
+                new AttachedToLeavesDecorator(0.2f, 1, 0, BlockStateProvider.simple(ModBlocks.SCULK_GLEAM.get().defaultBlockState()), 2, List.of(Direction.DOWN)))).build());
 
     }
 

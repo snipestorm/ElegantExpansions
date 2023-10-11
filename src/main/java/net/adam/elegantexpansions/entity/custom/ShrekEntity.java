@@ -64,7 +64,9 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
 
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 750f)
+                .add(Attributes.MAX_HEALTH, 1000f)
+                .add(Attributes.ARMOR, 1000f)
+                .add(Attributes.ARMOR_TOUGHNESS, 1000f)
                 .add(Attributes.ATTACK_DAMAGE, 3f)
                 .add(Attributes.ATTACK_SPEED, 0.2)
                 .add(Attributes.FOLLOW_RANGE, 20D)

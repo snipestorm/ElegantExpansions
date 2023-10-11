@@ -1,0 +1,36 @@
+{
+  "name": "Infused Ruby Armour",
+  "icon": "elegantexpansions:infused_ruby",
+  "sortnum": 0,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Ruby Armour",
+      "item": "elegantexpansions:infused_ruby_helmet,elegantexpansions:infused_ruby_chestplate,elegantexpansions:infused_ruby_leggings,elegantexpansions:infused_ruby_boots",
+       "text": "To Make Infused Ruby Armour you will need one Infused Ruby per item you wish to make, a Diamond Piece of Armour matching that item and a Gem Upgrade Template.$(br)The Gem Upgrade Template goes in the First Slot, The Diamond Armour goes in the Second Slot and the Infused Ruby goes in the Third Slot"
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Ruby Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/ruby.png"
+      ],
+      "border": "true",
+      "text": "Equip a Full set of Infused Ruby Armour to Gain a Permenant Haste Boost"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_ruby_helmet_from_smithing",
+      "recipe2": "elegantexpansions:infused_ruby_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_ruby_leggings_from_smithing",
+      "recipe2": "elegantexpansions:infused_ruby_boots_from_smithing"
+    }
+  ]
+}

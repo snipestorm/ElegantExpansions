@@ -1,0 +1,20 @@
+package net.adam.elegantexpansions.block.custom;
+
+import net.adam.elegantexpansions.block.ModBlocks;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.state.BlockState;
+
+public class SculkSaplingBlock extends SaplingBlock {
+    public SculkSaplingBlock(AbstractTreeGrower p_55978_, Properties p_55979_) {
+        super(p_55978_, p_55979_);
+    }
+
+    @Override
+    protected boolean mayPlaceOn(BlockState state, BlockGetter blockGetter, BlockPos blockPos) {
+        return state.is(ModBlocks.ECHO_SOIL.get());
+    }
+}

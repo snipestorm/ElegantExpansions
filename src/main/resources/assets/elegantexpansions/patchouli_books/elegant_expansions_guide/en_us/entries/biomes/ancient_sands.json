@@ -1,0 +1,30 @@
+{
+  "name": "Ancient Sands",
+  "icon": "elegantexpansions:white_sand",
+  "sortnum": 3,
+  "category": "elegantexpansions:biomes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This Ancient Desert is home to many lost secrets, it hasnt rained in a thousand years, Anubis is the king of these lands and his army of mummies wander these sands at night.$(br2)Find Anubis's temple and challenge him and his hoardes in a great showdown, Keep your eyes peeled for any Oasis's as this may be your only chance of water, that is if you can see one in the thick sandstorm."
+
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Ancient Sands",
+
+      "images" : [
+        "elegantexpansions:textures/guide/ancient_sands.png",
+        "elegantexpansions:textures/guide/ancient_pyramid.png",
+        "elegantexpansions:textures/guide/oasis.png"
+
+
+      ],
+
+      "border": "true",
+      "text"  : "Cycle through the Images to see the Ancient Sands, Ancient Pyramid and Oasis."
+
+    }
+  ]
+}

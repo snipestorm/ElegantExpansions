@@ -7,7 +7,7 @@
   ],
   "spawners": {
     "type": "elegantexpansions:lion",
-    "weight": 15,
+    "weight": 35,
     "minCount": 3,
     "maxCount": 5
   }

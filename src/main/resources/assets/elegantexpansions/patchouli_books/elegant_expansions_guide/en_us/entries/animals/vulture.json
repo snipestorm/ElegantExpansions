@@ -1,0 +1,18 @@
+{
+  "name": "Vultures",
+  "icon": "elegantexpansions:vulture_spawn_egg",
+  "sortnum": 6,
+  "category": "elegantexpansions:animals",
+  "pages": [
+     {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:vulture",
+      "title": "Vultures"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "Vultures are Passive Mobs that roam the skies in Deserts, Savannas and Badlands. Vultures cannot be Tamed or Bred, but they do act as a helpful guardian, they will attack Undead Mobs i.e Zombies, Husks etc. $(br2)When a Vulture sees an Undead Mob it will begin to attack it, once it Kills the Mob it will search for any Rotten Flesh, if it finds Rotten Flesh it will pick it up and after a random amount of time eat it. If the Vulture has recently eaten it will not attack again until it is hungry."
+    }
+  ]
+}

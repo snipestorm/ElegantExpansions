@@ -1,0 +1,30 @@
+{
+  "name": "The Amethyst Golem",
+  "icon": "elegantexpansions:mysterious_cube",
+  "sortnum": 0,
+  "category": "elegantexpansions:boss",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "Mysterious Cube",
+      "item": "elegantexpansions:mysterious_cube",
+      "text": "The Mysterious Cube is an extremely rare Unique Artifact.$(br2)It can only be obtained by purchasing it from the Gem Master Villager. To turn a Villager into a Gem Master simply place down a Gem Cutting Station near a free villager and he will become the Gem Master."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "To unlock the Mysterious Cube you will need to advance the Gem Master all the way to 'Master' status.$(br2)When you initially place The Mysterious Cube down it will be inactive, to activate it right click it whilst holding an Infused Amethyst. The Crystal in the centre of the block will change from Black to Red. Once the cube has completed all its states,  The Amethyst Golem will be summoned.$(br2) The states are:$(li)Red$(li)Green$(li)Blue$(li)Complete."
+    },
+     {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "offset": "0.5",
+      "entity": "elegantexpansions:golem",
+      "title": "The Amethyst Golem"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "The Amethyst Golem is a Tough Boss fight, He has 350 health and packs a big punch. You can use arrows and projectiles until he gets to half health. At this point he will be enraged, some of his amethyst shards on his shoulder and arm will shatter and he will become visibly angry and damaged.$(br2)Once The Amethyst Golem is enraged he will become immune to all projectile damage, he will gain a speed boost and additional damage, you will need to bring your A game to beat him.$(br2)Once you defeat him you will be rewarded with a nice sum of XP and an Onyx "
+    }
+  ]
+}

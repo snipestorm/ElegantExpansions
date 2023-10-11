@@ -24,6 +24,12 @@
       "elegantexpansions:golem_death"
     ]
   },
+  "golem_block_crack": {
+    "subtitle": "sounds.elegantexpansions.golem_block_crack",
+    "sounds": [
+      "elegantexpansions:golem_block_crack"
+    ]
+  },
   "anubis_ambient": {
     "subtitle": "sounds.elegantexpansions.anubis_ambient",
     "sounds": [
@@ -153,6 +159,27 @@
     "sounds": [
       "elegantexpansions:elephant_idle1",
       "elegantexpansions:elephant_idle2"
+    ]
+  },
+
+  "vulture_hurt": {
+    "subtitle": "sounds.elegantexpansions.vulture_hurt",
+    "sounds": [
+      "elegantexpansions:vulture_hurt"
+
+    ]
+  },
+  "vulture_ambient": {
+    "subtitle": "sounds.elegantexpansions.vulture_ambient",
+    "sounds": [
+      "elegantexpansions:vulture_idle"
+    ]
+  },
+
+  "vulture_death": {
+    "subtitle": "sounds.elegantexpansions.vulture_death",
+    "sounds": [
+      "elegantexpansions:vulture_death"
     ]
   }
 }

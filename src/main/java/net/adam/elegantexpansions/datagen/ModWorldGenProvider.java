@@ -5,6 +5,8 @@ import net.adam.elegantexpansions.worldgen.ModBiomeModifiers;
 import net.adam.elegantexpansions.worldgen.ModConfiguredFeatures;
 import net.adam.elegantexpansions.worldgen.ModPlacedFeatures;
 import net.adam.elegantexpansions.worldgen.biome.ModBiomes;
+import net.adam.elegantexpansions.worldgen.biome.ModNetherBiomes;
+import net.adam.elegantexpansions.worldgen.biome.custom.ModNetherRegion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;

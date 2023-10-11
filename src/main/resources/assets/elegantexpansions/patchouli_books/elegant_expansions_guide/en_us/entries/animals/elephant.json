@@ -1,0 +1,18 @@
+{
+  "name": "Elephants",
+  "icon": "elegantexpansions:elephant_spawn_egg",
+  "sortnum": 2,
+  "category": "elegantexpansions:animals",
+  "pages": [
+     {
+      "type": "patchouli:entity",
+      "scale": "0.75",
+      "entity": "elegantexpansions:elephant",
+      "title": "Elephants"
+           },
+    {
+      "type": "patchouli:text",
+      "text": "Elephants are a Passive Mob that spawn in Jungles and Savannas. Elephants that spawn in the Jungle will be Brown in colour whilst Elephants that spawn in the Savanna will be Grey in colour.$(br2)Elephants have 3 Abilities$(li)They can move to a body of water and drink.$(li)They can Throw Mud onto their backs.$(li)They have a random chance to Trumpet if they sense a Hostile Mob Nearby.$(br2) Elephants cannot be tamed but can be Bred using Cocoa Beans."
+    }
+  ]
+}

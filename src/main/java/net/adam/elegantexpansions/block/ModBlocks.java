@@ -62,7 +62,11 @@ public class ModBlocks {
             () -> new AnubisSummonBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(AnubisSummonBlock.LIT) ? 15 : 0)
                     .strength(-1F, 1200F).sound(SoundType.METAL).noLootTable()));
 
+//golem//
 
+    public static final RegistryObject<Block> MYSTERIOUS_CUBE = registerblock("mysterious_cube",
+            () -> new MysteriousCube(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.GLASS)));
 
    //ruby//
 
@@ -123,15 +127,18 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> GEM_CUTTING_STATION = registerblock("gem_cutting_station",
             () -> new GemCuttingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
-                    .strength(6f).requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> GEM_INFUSING_STATION = registerblock("gem_infusing_station",
             () -> new GemInfusingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
-                    .strength(6f).requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> SHARD_CREATION_STATION = registerblock("shard_creation_station",
             () -> new ShardCreationStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
-                    .strength(6f).requiresCorrectToolForDrops()));
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> SAP_EXTRACTOR = registerblock("sap_extractor",
+            () -> new SapExtractorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     public static final RegistryObject<Block> WHITE_SAND = registerblock("white_sand",
             () -> new SandBlock(16118234, BlockBehaviour.Properties.of().mapColor(MapColor.SAND)
@@ -150,6 +157,16 @@ public class ModBlocks {
             () -> new Block (BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops().strength(0.8F)));
 
+
+
+    public static final RegistryObject<Block> ECHO_SOIL = registerblock("echo_soil",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(0.3f)
+                    .mapColor(MapColor.COLOR_PURPLE)));
+
+    public static final RegistryObject<Block> SCULK_GLEAM = registerblock("sculk_gleam",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(1f)
+                    .lightLevel(state -> 15).mapColor(MapColor.SAND), UniformInt.of(1, 3)));
+
     public static final RegistryObject<Block> CHISELED_WHITE_SANDSTONE = registerblock("chiseled_white_sandstone",
             () -> new Block (BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops().strength(0.8F)));
@@ -158,24 +175,24 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MAGIC_LOG = registerblock("magic_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> MAGIC_WOOD = registerblock("magic_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> STRIPPED_MAGIC_LOG = registerblock("stripped_magic_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> STRIPPED_MAGIC_WOOD = registerblock("stripped_magic_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
-                    .strength(5f)));
+                    .strength(2f)));
 
 
 
     public static final RegistryObject<Block> MAGIC_PLANKS = registerblock("magic_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(5f)) {
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -215,24 +232,24 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> WILLOW_LOG = registerblock("willow_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> WILLOW_WOOD = registerblock("willow_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> STRIPPED_WILLOW_LOG = registerblock("stripped_willow_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> STRIPPED_WILLOW_WOOD = registerblock("stripped_willow_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
-                    .strength(5f)));
+                    .strength(2f)));
 
 
 
     public static final RegistryObject<Block> WILLOW_PLANKS = registerblock("willow_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(5f)) {
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -294,24 +311,24 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> ASH_LOG = registerblock("ash_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> ASH_WOOD = registerblock("ash_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> STRIPPED_ASH_LOG = registerblock("stripped_ash_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> STRIPPED_ASH_WOOD = registerblock("stripped_ash_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
-                    .strength(5f)));
+                    .strength(2f)));
 
 
 
     public static final RegistryObject<Block> ASH_PLANKS = registerblock("ash_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(5f)) {
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -356,24 +373,24 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BANANA_LOG = registerblock("banana_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> BANANA_WOOD = registerblock("banana_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> STRIPPED_BANANA_LOG = registerblock("stripped_banana_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
-                    .strength(5f)));
+                    .strength(2f)));
 
     public static final RegistryObject<Block> STRIPPED_BANANA_WOOD = registerblock("stripped_banana_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
-                    .strength(5f)));
+                    .strength(2f)));
 
 
 
     public static final RegistryObject<Block> BANANA_PLANKS = registerblock("banana_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(5f)) {
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -411,7 +428,62 @@ public class ModBlocks {
     public static final RegistryObject<Block> BANANA_SAPLING = registerblock("banana_sapling",
             () -> new SandSaplingBlock(new BananaTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
+    public static final RegistryObject<Block> ECHO_LOG = registerblock("echo_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .strength(2f)));
 
+    public static final RegistryObject<Block> ECHO_WOOD = registerblock("echo_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
+                    .strength(2f)));
+
+    public static final RegistryObject<Block> STRIPPED_ECHO_LOG = registerblock("stripped_echo_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
+                    .strength(2f)));
+
+    public static final RegistryObject<Block> STRIPPED_ECHO_WOOD = registerblock("stripped_echo_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
+                    .strength(2f)));
+
+
+
+    public static final RegistryObject<Block> ECHO_PLANKS = registerblock("echo_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2f)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
+
+    public static final RegistryObject<Block> ECHO_LEAVES = registerblock("echo_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+            });
+
+    public static final RegistryObject<Block> ECHO_SAPLING = registerblock("echo_sapling",
+            () -> new SculkSaplingBlock(new EchoTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<LiquidBlock> MAGICAL_SAP_BLOCK = BLOCKS.register("magical_sap_block",
             () -> new LiquidBlock(ModFluids.SOURCE_MAGICAL_SAP, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
@@ -533,6 +605,105 @@ public class ModBlocks {
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.WOOD).noOcclusion(), BlockSetType.OAK));
     public static final RegistryObject<Block> PALM_TRAPDOOR = registerblock("palm_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).sound(SoundType.WOOD).noOcclusion(), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> ECHO_STAIRS = registerblock("echo_stairs",
+            () -> new StairBlock(() -> ModBlocks.ECHO_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> ECHO_SLAB = registerblock("echo_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> ECHO_BUTTON = registerblock("echo_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).sound(SoundType.WOOD),
+                    BlockSetType.OAK, 30, true));
+    public static final RegistryObject<Block> ECHO_PRESSURE_PLATE = registerblock("echo_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD),
+                    BlockSetType.OAK));
+
+    public static final RegistryObject<Block> ECHO_FENCE = registerblock("echo_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+    public static final RegistryObject<Block> ECHO_FENCE_GATE = registerblock("echo_fence_gate",
+            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.WOOD), SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+    public static final RegistryObject<Block> ECHO_WALL = registerblock("echo_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> ECHO_DOOR = registerblock("echo_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.WOOD).noOcclusion(), BlockSetType.OAK));
+    public static final RegistryObject<Block> ECHO_TRAPDOOR = registerblock("echo_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).sound(SoundType.WOOD).noOcclusion(), BlockSetType.OAK));
+
+    //SCULK STONE//
+
+    public static final RegistryObject<Block> SCULK_STONE = registerblock("sculk_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).mapColor(MapColor.COLOR_CYAN)
+                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SCULK_STONE_STAIRS = registerblock("sculk_stone_stairs",
+            () -> new StairBlock(() -> ModBlocks.SCULK_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SCULK_STONE_SLAB = registerblock("sculk_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SCULK_STONE_BUTTON = registerblock("sculk_stone_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.STONE),
+                    BlockSetType.STONE, 30, true));
+    public static final RegistryObject<Block> SCULK_STONE_PRESSURE_PLATE = registerblock("sculk_stone_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE),
+                    BlockSetType.STONE));
+    public static final RegistryObject<Block> SCULK_STONE_WALL = registerblock("sculk_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).sound(SoundType.STONE)));
+
+
+    public static final RegistryObject<Block> COBBLED_SCULK_STONE = registerblock("cobbled_sculk_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(SCULK_STONE.get())));
+    public static final RegistryObject<Block> COBBLED_SCULK_STONE_STAIRS = registerblock("cobbled_sculk_stone_stairs",
+            () -> new StairBlock(() -> ModBlocks.SCULK_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> COBBLED_SCULK_STONE_SLAB = registerblock("cobbled_sculk_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> COBBLED_SCULK_STONE_WALL = registerblock("cobbled_sculk_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> POLISHED_SCULK_STONE = registerblock("polished_sculk_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(SCULK_STONE.get())));
+    public static final RegistryObject<Block> POLISHED_SCULK_STONE_STAIRS = registerblock("polished_sculk_stone_stairs",
+            () -> new StairBlock(() -> ModBlocks.SCULK_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_SCULK_STONE_SLAB = registerblock("polished_sculk_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> POLISHED_SCULK_STONE_WALL = registerblock("polished_sculk_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> SCULK_STONE_BRICKS = registerblock("sculk_stone_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(SCULK_STONE.get())));
+    public static final RegistryObject<Block> SCULK_STONE_BRICK_STAIRS = registerblock("sculk_stone_brick_stairs",
+            () -> new StairBlock(() -> ModBlocks.SCULK_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SCULK_STONE_BRICK_SLAB = registerblock("sculk_stone_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SCULK_STONE_BRICK_WALL = registerblock("sculk_stone_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL).sound(SoundType.STONE)));
+
+
+    public static final RegistryObject<Block> SMOOTH_SCULK_STONE = registerblock("smooth_sculk_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(SCULK_STONE.get())));
+    public static final RegistryObject<Block> SMOOTH_SCULK_STONE_STAIRS = registerblock("smooth_sculk_stone_stairs",
+            () -> new StairBlock(() -> ModBlocks.SCULK_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SMOOTH_SCULK_STONE_SLAB = registerblock("smooth_sculk_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+
+
+    public static final RegistryObject<Block> CHISELED_SCULK_STONE = registerblock("chiseled_sculk_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(SCULK_STONE.get())));
+
+
+
+
+
+
+    //display cabinets//
+
+    public static final RegistryObject<Block> DISPLAY_CASE = registerblock("display_case",
+            () -> new DisplayCaseBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.GLASS)));
 
 
 

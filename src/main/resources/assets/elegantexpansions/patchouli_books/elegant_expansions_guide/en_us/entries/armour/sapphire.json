@@ -1,0 +1,36 @@
+{
+  "name": "Infused Sapphire Armour",
+  "icon": "elegantexpansions:infused_sapphire",
+  "sortnum": 1,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Sapphire Armour",
+      "item": "elegantexpansions:infused_sapphire_helmet,elegantexpansions:infused_sapphire_chestplate,elegantexpansions:infused_sapphire_leggings,elegantexpansions:infused_sapphire_boots",
+       "text": "To Make Infused Sapphire Armour you will need one Infused Sapphire per item you wish to make, a Diamond Piece of Armour matching that item and a Gem Upgrade Template.$(br)The Gem Upgrade Template goes in the First Slot, The Diamond Armour goes in the Second Slot and the Infused Sapphire goes in the Third Slot"
+    },
+
+    {
+      "type": "patchouli:image",
+      "title": "Sapphire Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/sapphire.png"
+      ],
+      "border": "true",
+      "text": "Equip a Full set of Infused Sapphire Armour to Gain a Permenant Water Breathing Boost"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_sapphire_helmet_from_smithing",
+      "recipe2": "elegantexpansions:infused_sapphire_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:infused_sapphire_leggings_from_smithing",
+      "recipe2": "elegantexpansions:infused_sapphire_boots_from_smithing"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ package net.adam.elegantexpansions.item.custom;
 import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.adam.elegantexpansions.util.InventoryUtil;
+import net.adam.elegantexpansions.util.ModLang;
 import net.adam.elegantexpansions.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.IllegalFormatException;
 import java.util.List;
 
 public class GemDetectorItem extends Item {
@@ -33,26 +35,25 @@ public class GemDetectorItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext pContext) {
-        if(!pContext.getLevel().isClientSide()) {
+        if (!pContext.getLevel().isClientSide()) {
             BlockPos positionClicked = pContext.getClickedPos();
             Player player = pContext.getPlayer();
             boolean foundBlock = false;
 
-            for(int i = 0; i <= positionClicked.getY() + 64; i++) {
+            for (int i = 0; i <= positionClicked.getY() + 64; i++) {
                 BlockState blockState = pContext.getLevel().getBlockState(positionClicked.below(i));
 
-                if(isValuableBlock(blockState)) {
+                if (isValuableBlock(blockState)) {
                     outputValuableCoordinates(positionClicked.below(i), player, blockState.getBlock());
                     foundBlock = true;
 
-                    if(InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET.get())) {
+                    if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET.get())) {
                         addDataToDataTablet(player, positionClicked.below(i), blockState.getBlock());
                     }
 
 
-
                     pContext.getLevel().playSeededSound(null, player.getX(), player.getY(), player.getZ(),
-                            ModSounds.GEM_DETECTOR_FOUND_GEM.get(), SoundSource.BLOCKS, 1f,1f,0);
+                            ModSounds.GEM_DETECTOR_FOUND_GEM.get(), SoundSource.BLOCKS, 1f, 1f, 0);
 
                     spawnFoundParticles(pContext, positionClicked, blockState);
 
@@ -60,7 +61,7 @@ public class GemDetectorItem extends Item {
                 }
             }
 
-            if(!foundBlock) {
+            if (!foundBlock) {
                 outputNoValuableFound(player);
             }
         }
@@ -75,15 +76,15 @@ public class GemDetectorItem extends Item {
         ItemStack dataTablet = player.getInventory().getItem(InventoryUtil.getFirstInventoryIndex(player, ModItems.DATA_TABLET.get()));
 
         CompoundTag data = new CompoundTag();
-        data.putString("elegantexpansions.found_gem","Gem Found: " + I18n.get(block.getDescriptionId())
+        data.putString("elegantexpansions.found_gem", "Gem Found: " + ModLang.get(block.getDescriptionId())
                 + " at (" + below.getX() + ", " + below.getY() + ", " + below.getZ() + ")");
 
         dataTablet.setTag(data);
 
-        }
+    }
 
     private void spawnFoundParticles(UseOnContext pContext, BlockPos positionClicked, BlockState blockState) {
-        for(int i = 0; i < 20; i++) {
+        for (int i = 0; i < 20; i++) {
             ServerLevel level = (ServerLevel) pContext.getLevel();
 
             level.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, blockState),
@@ -104,7 +105,7 @@ public class GemDetectorItem extends Item {
     }
 
     private void outputValuableCoordinates(BlockPos below, Player player, Block block) {
-        player.sendSystemMessage(Component.literal("Gem Found: " + I18n.get(block.getDescriptionId())
+        player.sendSystemMessage(Component.literal("Gem Found: " + ModLang.get(block.getDescriptionId())
                 + " at (" + below.getX() + ", " + below.getY() + ", " + below.getZ() + ")"));
     }
 

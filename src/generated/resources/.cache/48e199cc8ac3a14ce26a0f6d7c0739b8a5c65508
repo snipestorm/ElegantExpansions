@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-07T07:51:25.8304116	Item Tags
+// 1.20.1	2023-10-21T22:55:15.9877072	Item Tags
 e45b3f5820e7d811484e2dfb754a56ac176884f1 data/elegantexpansions/tags/items/ash_logs.json
 a1d3230aed367c5f162062fc874e3050cd602013 data/elegantexpansions/tags/items/echo_logs.json
 ade3f2d009c68deb6037ac1399c08d5c5e530e46 data/elegantexpansions/tags/items/magic_logs.json
@@ -7,4 +7,4 @@ cabb56be6677c09661ec550c5dd5577ca4a06e0a data/elegantexpansions/tags/items/willo
 42fe669311c241083de04193b44b222b441056e3 data/minecraft/tags/items/logs_that_burn.json
 d955e3f8e363ab0504ce4d02ec66b90f42d07785 data/minecraft/tags/items/music_discs.json
 cdfec837e1599d54eb463b1f71c4d9f5ce9df8d5 data/minecraft/tags/items/planks.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/items/trimmable_armor.json
+074910e8be5a0e7a8d9487401f5fafca0edafc51 data/minecraft/tags/items/trimmable_armor.json

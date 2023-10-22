@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:echo_shard"
+    },
+    "H": {
+      "item": "elegantexpansions:heart_of_the_deep"
+    }
+  },
+  "pattern": [
+    "SS ",
+    "SH ",
+    "  S"
+  ],
+  "result": {
+    "item": "elegantexpansions:warden_staff"
+  },
+  "show_notification": true
+}

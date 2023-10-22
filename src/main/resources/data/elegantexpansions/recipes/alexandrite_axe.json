@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "A": {
+      "item": "elegantexpansions:alexandrite"
+    }
+  },
+  "pattern": [
+    "AA",
+    "SA",
+    "S "
+  ],
+  "result": {
+    "item": "elegantexpansions:alexandrite_axe"
+  },
+  "show_notification": true
+}

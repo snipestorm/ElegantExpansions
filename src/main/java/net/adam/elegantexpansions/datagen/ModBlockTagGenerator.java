@@ -33,6 +33,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.ENDSTONE_TANZANITE_ORE.get(),
                         ModBlocks.CITRINE_BLOCK.get(),
                         ModBlocks.NETHER_CITRINE_ORE.get(),
+                        ModBlocks.ALEXANDRITE_ORE.get(),
+                        ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),
+                        ModBlocks.ALEXANDRITE_BLOCK.get(),
+
                         ModBlocks.GEM_CUTTING_STATION.get(),
                         ModBlocks.GEM_INFUSING_STATION.get(),
                         ModBlocks.SHARD_CREATION_STATION.get(),
@@ -68,6 +72,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SMOOTH_SCULK_STONE_STAIRS.get(),
                         ModBlocks.SMOOTH_SCULK_STONE_SLAB.get());
 
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ModBlocks.ECHO_SOIL.get());
 
 
 
@@ -88,9 +94,26 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.CITRINE_BLOCK.get(),
                         ModBlocks.NETHER_CITRINE_ORE.get());
 
-        this.tag(ModTags.Blocks.ANUBIS_BASE_BLOCKS)
+        this.tag(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL)
 
-                .add(Blocks.REINFORCED_DEEPSLATE);
+                .add(ModBlocks.ALEXANDRITE_ORE.get(),
+                        ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get());
+
+        this.tag(ModTags.Blocks.GEM_DETECTOR_GEMS)
+                .add(Blocks.DIAMOND_ORE,
+                Blocks.DEEPSLATE_DIAMOND_ORE,
+                Blocks.DEEPSLATE_EMERALD_ORE,
+                Blocks.EMERALD_ORE,
+                Blocks.AMETHYST_BLOCK,
+                Blocks.AMETHYST_CLUSTER,
+                Blocks.BUDDING_AMETHYST,
+                ModBlocks.RUBY_ORE.get(),
+                ModBlocks.DEEPSLATE_RUBY_ORE.get(),
+                ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+                ModBlocks.SAPPHIRE_ORE.get(),
+                ModBlocks.NETHER_CITRINE_ORE.get(),
+                ModBlocks.ENDSTONE_TANZANITE_ORE.get());
+
 
         this.tag(ModTags.Blocks.PAXEL_MINEABLE)
                 .addTags(BlockTags.MINEABLE_WITH_PICKAXE)

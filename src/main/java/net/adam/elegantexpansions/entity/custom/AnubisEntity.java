@@ -155,6 +155,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
                 .add(Attributes.ATTACK_DAMAGE, 10.00f)
                 .add(Attributes.ATTACK_SPEED, 1.1f)
                 .add(Attributes.MOVEMENT_SPEED, 0.215f)
+                .add(Attributes.FOLLOW_RANGE,45.0D)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.2f).build();
 
     }
@@ -411,7 +412,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
             if (this.quater() && !this.firstsummon && !this.isInvulnerable()) {
                 ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level();
                 this.heal(250);
-                for (int i = 0; i < 1; ++i) {
+                for (int i = 0; i < 3; ++i) {
                     BlockPos blockpos = AnubisEntity.this.blockPosition().offset(-2 + AnubisEntity.this.random.nextInt(5), 1, -2 + AnubisEntity.this.random.nextInt(5));
                     MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level());
                     if (mummy != null) {
@@ -430,7 +431,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
                 ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level();
                 this.heal(250);
 
-                for (int i = 0; i < 3; ++i) {
+                for (int i = 0; i < 7; ++i) {
                     BlockPos blockpos = AnubisEntity.this.blockPosition().offset(-2 + AnubisEntity.this.random.nextInt(5), 1, -2 + AnubisEntity.this.random.nextInt(5));
                     MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level());
                     if (mummy != null) {
@@ -451,7 +452,7 @@ public class AnubisEntity extends Monster implements GeoEntity {
                 ServerLevel serverlevel = (ServerLevel) AnubisEntity.this.level();
                 this.heal(250);
 
-                for (int i = 0; i < 5; ++i) {
+                for (int i = 0; i < 11; ++i) {
                     BlockPos blockpos = AnubisEntity.this.blockPosition().offset(-2 + AnubisEntity.this.random.nextInt(5), 1, -2 + AnubisEntity.this.random.nextInt(5));
                     MummyEntity mummy = ModEntityTypes.MUMMY.get().create(AnubisEntity.this.level());
                     if (mummy != null) {

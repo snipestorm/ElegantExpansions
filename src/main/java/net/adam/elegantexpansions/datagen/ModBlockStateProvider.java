@@ -39,6 +39,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.ONYX_BLOCK);
 
+        blockWithItem(ModBlocks.ALEXANDRITE_BLOCK);
+        blockWithItem(ModBlocks.ALEXANDRITE_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE);
+
+
         blockWithItem(ModBlocks.SCULK_GLEAM);
         blockWithItem(ModBlocks.SCULK_STONE);
         blockWithItem(ModBlocks.COBBLED_SCULK_STONE);

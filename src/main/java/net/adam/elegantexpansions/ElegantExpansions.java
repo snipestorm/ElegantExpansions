@@ -7,13 +7,14 @@ import net.adam.elegantexpansions.effect.ModEffects;
 import net.adam.elegantexpansions.enchantment.ModEnchantments;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
 import net.adam.elegantexpansions.entity.client.renderers.*;
-import net.adam.elegantexpansions.entity.custom.EchoSpider;
-import net.adam.elegantexpansions.entity.custom.VultureEntity;
 import net.adam.elegantexpansions.fluid.ModFluidTypes;
 import net.adam.elegantexpansions.fluid.ModFluids;
-import net.adam.elegantexpansions.item.ModCreativeModeTabs;
-import net.adam.elegantexpansions.item.ModItemProperties;
+import net.adam.elegantexpansions.item.modifiers.ModCreativeModeTabs;
+import net.adam.elegantexpansions.item.modifiers.ModItemProperties;
 import net.adam.elegantexpansions.item.ModItems;
+import net.adam.elegantexpansions.item.client.model.WardenHelmetModel;
+import net.adam.elegantexpansions.item.client.renderer.WardenHelmetRenderer;
+import net.adam.elegantexpansions.loot.ModLootModifiers;
 import net.adam.elegantexpansions.particle.ModParticles;
 import net.adam.elegantexpansions.potion.ModPotions;
 import net.adam.elegantexpansions.recipe.ModRecipes;
@@ -27,15 +28,17 @@ import net.adam.elegantexpansions.worldgen.tree.ModFoliagePlacerTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.ArmorStandRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -86,6 +89,7 @@ public class ElegantExpansions {
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
         ModFoliagePlacerTypes.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         ModTerrablender.registerRegions();
 
@@ -134,6 +138,8 @@ public class ElegantExpansions {
             event.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
             event.accept(ModBlocks.ENDSTONE_TANZANITE_ORE);
             event.accept(ModBlocks.NETHER_CITRINE_ORE);
+            event.accept(ModBlocks.ALEXANDRITE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE);
 
 
         }
@@ -297,8 +303,17 @@ public class ElegantExpansions {
             event.accept(ModBlocks.ANUBIS_SUMMON_BLOCK);
             event.accept(ModBlocks.MYSTERIOUS_CUBE);
             event.accept(ModBlocks.DISPLAY_CASE);
+            event.accept(ModItems.WARDEN_UPGRADE_TEMPLATE);
+            event.accept(ModItems.HEART_OF_THE_DEEP);
 
 
+        }
+
+        if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_FOOD.get()) {
+            event.accept(ModItems.EXOTIC_MEAT);
+            event.accept(ModItems.COOKED_EXOTIC_MEAT);
+            event.accept(ModItems.LARGE_CAT_MEAT);
+            event.accept(ModItems.COOKED_LARGE_CAT_MEAT);
         }
 
         if (event.getTab() == ModCreativeModeTabs.ELEGANT_EXPANSIONS_GEMS.get()) {
@@ -342,6 +357,7 @@ public class ElegantExpansions {
 
 
 
+
             event.accept(ModItems.GEM_CUTTERS);
             event.accept(ModBlocks.SAP_EXTRACTOR);
 
@@ -353,6 +369,7 @@ public class ElegantExpansions {
             event.accept(ModItems.DATA_TABLET);
             event.accept(ModItems.ALEXANDRITE_SHARD);
             event.accept(ModItems.ALEXANDRITE);
+            event.accept(ModBlocks.ALEXANDRITE_BLOCK);
 
         }
 
@@ -363,7 +380,14 @@ public class ElegantExpansions {
             event.accept(ModItems.ALEXANDRITE_SHOVEL);
             event.accept(ModItems.ALEXANDRITE_HOE);
             event.accept(ModItems.ALEXANDRITE_SWORD);
+            event.accept(ModItems.WARDEN_PICKAXE);
+            event.accept(ModItems.WARDEN_AXE);
+            event.accept(ModItems.WARDEN_SHOVEL);
+            event.accept(ModItems.WARDEN_HOE);
+            event.accept(ModItems.WARDEN_SWORD);
+            event.accept(ModItems.IRON_HAMMER);
             event.accept(ModItems.STAFF_OF_MUMMIES);
+            event.accept(ModItems.WARDEN_STAFF);
 
 
 
@@ -409,6 +433,16 @@ public class ElegantExpansions {
             event.accept(ModItems.INFUSED_ONYX_CHESTPLATE);
             event.accept(ModItems.INFUSED_ONYX_LEGGINGS);
             event.accept(ModItems.INFUSED_ONYX_BOOTS);
+
+            event.accept(ModItems.WARDEN_HELMET);
+            event.accept(ModItems.WARDEN_CHESTPLATE);
+            event.accept(ModItems.WARDEN_LEGGINGS);
+            event.accept(ModItems.WARDEN_BOOTS);
+
+            event.accept(ModItems.ALEXANDRITE_HELMET);
+            event.accept(ModItems.ALEXANDRITE_CHESTPLATE);
+            event.accept(ModItems.ALEXANDRITE_LEGGINGS);
+            event.accept(ModItems.ALEXANDRITE_BOOTS);
 
 
         }
@@ -464,6 +498,24 @@ public class ElegantExpansions {
             MenuScreens.register(ModMenuTypes.DISPLAY_CASE_MENU.get(), DisplayCaseScreen::new);
             MenuScreens.register(ModMenuTypes.SAP_EXTRACTOR_MENU.get(), SapExtractorScreen::new);
         }
-}
+        @SubscribeEvent
+        public static void registerLayers(final EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(WardenHelmetRenderer.MODEL, WardenHelmetModel::createBodyModel);
+        }
+
+        @SubscribeEvent
+        public static void addLayers(final EntityRenderersEvent.AddLayers event) {
+            event.getSkins().forEach(name -> {
+                if(event.getSkin(name) instanceof PlayerRenderer renderer) {
+
+                    renderer.addLayer(new WardenHelmetRenderer<>(renderer, event.getEntityModels()));
+                }
+            });
+            if(event.getRenderer(EntityType.ARMOR_STAND) instanceof ArmorStandRenderer renderer) {
+                renderer.addLayer(new WardenHelmetRenderer<>(renderer, event.getEntityModels()));
+            }
+        }
     }
+}
+
 

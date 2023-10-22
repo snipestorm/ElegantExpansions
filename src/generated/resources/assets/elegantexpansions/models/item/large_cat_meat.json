@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "elegantexpansions:item/large_cat_meat"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "A": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AAA",
+    " S "
+  ],
+  "result": {
+    "item": "elegantexpansions:iron_hammer"
+  },
+  "show_notification": true
+}

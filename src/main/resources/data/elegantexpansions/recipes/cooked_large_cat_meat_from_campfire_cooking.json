@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "elegantexpansions:large_cat_meat"
+  },
+  "result": "elegantexpansions:cooked_large_cat_meat"
+}

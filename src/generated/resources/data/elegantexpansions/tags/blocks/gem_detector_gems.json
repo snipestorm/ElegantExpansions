@@ -1,0 +1,19 @@
+{
+  "values": [
+    "minecraft:diamond_ore",
+    "minecraft:deepslate_diamond_ore",
+    "minecraft:deepslate_emerald_ore",
+    "minecraft:emerald_ore",
+    "minecraft:amethyst_block",
+    "minecraft:amethyst_cluster",
+    "minecraft:budding_amethyst",
+    "elegantexpansions:ruby_ore",
+    "elegantexpansions:deepslate_ruby_ore",
+    "elegantexpansions:deepslate_sapphire_ore",
+    "elegantexpansions:sapphire_ore",
+    "elegantexpansions:nether_citrine_ore",
+    "elegantexpansions:endstone_tanzanite_ore",
+    "elegantexpansions:alexandrite_ore",
+    "elegantexpansions:deepslate_alexandrite_ore"
+  ]
+}

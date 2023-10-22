@@ -1,0 +1,20 @@
+{
+  "name": "Warden Upgrade Template",
+  "icon": "elegantexpansions:warden_upgrade_template",
+  "sortnum": 0,
+  "category": "elegantexpansions:warden_armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Warden Upgrade Template",
+      "item": "elegantexpansions:warden_upgrade_template",
+       "text": "The Warden Upgrade Template can only be obtained by Looting Chests in An Ancient City.$(br2)Once you have a Warden Upgrade Template you can use the crafting recipe on the next page to duplicate it"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:warden_upgrade_template"
+
+    }
+  ]
+}

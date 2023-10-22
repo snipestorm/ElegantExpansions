@@ -80,6 +80,7 @@ public class VultureEntity extends PathfinderMob implements GeoEntity, FlyingAni
                 .add(Attributes.MAX_HEALTH, 10F)
                 .add(Attributes.FLYING_SPEED, 0.6F)
                 .add(Attributes.ATTACK_DAMAGE, 4F)
+                .add(Attributes.FOLLOW_RANGE, 25.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.3f).build();
     }
 

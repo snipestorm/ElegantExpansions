@@ -6,7 +6,7 @@ plugins {
 
 }
 
-version = '1.0 - 1.20.1'
+version = '1.0.1 - 1.20.1'
 group = 'net.adam.elegantexpansions' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'elegantexpansions'
 
@@ -133,6 +133,7 @@ dependencies {
     implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.20.1-3.0.0.169')
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-81-FORGE")
+    annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
@@ -146,10 +147,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
-mixin {
-    add sourceSets.main, 'mixins.elegantexpansions.refmap.json'
-    config 'mixins.elegantexpansions.json'
-}
+
 
 // Example for how to get properties into the manifest for reading at runtime.
 jar {
@@ -183,6 +181,10 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+}
+mixin {
+    add sourceSets.main, 'mixins.elegantexpansions.refmap.json'
+    config 'mixins.elegantexpansions.json'
 }
 
 tasks.withType(JavaCompile).configureEach {

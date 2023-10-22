@@ -13,10 +13,23 @@
     },
     {
       "type": "patchouli:crafting",
-      "title": "Crafting Recipe",
+      "title": "Paxel Crafting Recipe",
       "recipe": "elegantexpansions:alexandrite_paxel",
       "text": "This is the only way to craft the Alexandrite Paxel. To Craft other Alexandrite gear follow the same crafting Recipes of Diamond Weapons/Tools/Armour but use Alexandrite instead."
 
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipes",
+      "recipe": "elegantexpansions:alexandrite_helmet",
+      "recipe2": "elegantexpansions:alexandrite_chestplate"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipes",
+      "recipe": "elegantexpansions:alexandrite_leggings",
+      "recipe2": "elegantexpansions:alexandrite_boots"
     }
 
   ]

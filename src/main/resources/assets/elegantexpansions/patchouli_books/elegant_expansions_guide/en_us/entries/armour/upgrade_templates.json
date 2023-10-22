@@ -1,0 +1,20 @@
+{
+  "name": "Gem Upgrade Template",
+  "icon": "elegantexpansions:gem_upgrade_template",
+  "sortnum": 0,
+  "category": "elegantexpansions:armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Gem Upgrade Template",
+      "item": "elegantexpansions:gem_upgrade_template",
+       "text": "The Gem Upgrade Template can only be obtained by killing Anubis.$(br2)Once you have a Gem Upgrade Template you can use the crafting recipe on the next page to duplicate it"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:gem_upgrade_template"
+
+    }
+  ]
+}

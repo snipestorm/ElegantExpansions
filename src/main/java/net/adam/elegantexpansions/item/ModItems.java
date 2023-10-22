@@ -4,6 +4,9 @@ import net.adam.elegantexpansions.ElegantExpansions;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
 import net.adam.elegantexpansions.fluid.ModFluids;
 import net.adam.elegantexpansions.item.custom.*;
+import net.adam.elegantexpansions.item.modifiers.ModArmorMaterials;
+import net.adam.elegantexpansions.item.modifiers.ModFoodProperties;
+import net.adam.elegantexpansions.item.modifiers.ModToolTiers;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -68,29 +71,49 @@ public class ModItems {
             () -> new InfusedAmethystItem(new Item.Properties()));
 
     public static final RegistryObject<Item> GEM_UPGRADE_TEMPLATE = ITEMS.register("gem_upgrade_template",
-            () -> new GemUpgradeTemplateItem(new Item.Properties()));
+            () -> new GemUpgradeTemplateItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> WARDEN_UPGRADE_TEMPLATE = ITEMS.register("warden_upgrade_template",
+            () -> new WardenUpgradeTemplateItem(new Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> HEART_OF_THE_DEEP = ITEMS.register("heart_of_the_deep",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer",
+            () -> new HammerItem(Tiers.IRON, 2,(float)-3, new Item.Properties()));
 
     //alexandrite//
 
     public static final RegistryObject<Item> ALEXANDRITE_SHARD = ITEMS.register("alexandrite_shard",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> ALEXANDRITE = ITEMS.register("alexandrite",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
 
     public static final RegistryObject<Item> ALEXANDRITE_PAXEL = ITEMS.register("alexandrite_paxel",
-            () -> new PaxelItem(ModToolTiers.ALEXANDRITE, 6,(float)-2.6, new Item.Properties()));
+            () -> new PaxelItem(ModToolTiers.ALEXANDRITE, 6,(float)-2.6, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> ALEXANDRITE_SWORD = ITEMS.register("alexandrite_sword",
-            () -> new SwordItem(ModToolTiers.ALEXANDRITE, 4,(float)-2.2, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.ALEXANDRITE, 4,(float)-2.2, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> ALEXANDRITE_AXE = ITEMS.register("alexandrite_axe",
-            () -> new AxeItem(ModToolTiers.ALEXANDRITE, 6,(float)-2.8, new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.ALEXANDRITE, 6,(float)-2.8, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> ALEXANDRITE_PICKAXE = ITEMS.register("alexandrite_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.ALEXANDRITE, 2,(float)-2.6, new Item.Properties()));
+            () -> new PickaxeItem(ModToolTiers.ALEXANDRITE, 2,(float)-2.6, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> ALEXANDRITE_SHOVEL = ITEMS.register("alexandrite_shovel",
-            () -> new ShovelItem(ModToolTiers.ALEXANDRITE, (float)1.5,-3, new Item.Properties()));
+            () -> new ShovelItem(ModToolTiers.ALEXANDRITE, (float)1.5,-3, new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> ALEXANDRITE_HOE = ITEMS.register("alexandrite_hoe",
-            () -> new HoeItem(ModToolTiers.ALEXANDRITE, -5,1, new Item.Properties()));
+            () -> new HoeItem(ModToolTiers.ALEXANDRITE, -5,1, new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> WARDEN_SWORD = ITEMS.register("warden_sword",
+            () -> new SwordItem(ModToolTiers.WARDEN, 4,(float)-2.2, new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> WARDEN_AXE = ITEMS.register("warden_axe",
+            () -> new AxeItem(ModToolTiers.WARDEN, 6,(float)-2.8, new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> WARDEN_PICKAXE = ITEMS.register("warden_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.WARDEN, 2,(float)-2.6, new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> WARDEN_SHOVEL = ITEMS.register("warden_shovel",
+            () -> new ShovelItem(ModToolTiers.WARDEN, (float)1.5,-3, new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> WARDEN_HOE = ITEMS.register("warden_hoe",
+            () -> new HoeItem(ModToolTiers.WARDEN, -5,1, new Item.Properties().rarity(Rarity.RARE)));
 
     //armors//
 
@@ -166,8 +189,26 @@ public class ModItems {
     public static final RegistryObject<Item> INFUSED_ONYX_BOOTS = ITEMS.register("infused_onyx_boots",
             () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.BOOTS, new  Item.Properties()));
 
+    public static final RegistryObject<Item> WARDEN_HELMET = ITEMS.register("warden_helmet",
+            () -> new WardenArmorItem(ModArmorMaterials.WARDEN, ArmorItem.Type.HELMET, new  Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> WARDEN_CHESTPLATE = ITEMS.register("warden_chestplate",
+            () -> new WardenArmorItem(ModArmorMaterials.WARDEN, ArmorItem.Type.CHESTPLATE, new  Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> WARDEN_LEGGINGS = ITEMS.register("warden_leggings",
+            () -> new WardenArmorItem(ModArmorMaterials.WARDEN, ArmorItem.Type.LEGGINGS, new  Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> WARDEN_BOOTS = ITEMS.register("warden_boots",
+            () -> new WardenArmorItem(ModArmorMaterials.WARDEN, ArmorItem.Type.BOOTS, new  Item.Properties().rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> ALEXANDRITE_HELMET = ITEMS.register("alexandrite_helmet",
+            () -> new ModArmorItem(ModArmorMaterials.ALEXANDRITE, ArmorItem.Type.HELMET, new  Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> ALEXANDRITE_CHESTPLATE = ITEMS.register("alexandrite_chestplate",
+            () -> new ModArmorItem(ModArmorMaterials.ALEXANDRITE, ArmorItem.Type.CHESTPLATE, new  Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> ALEXANDRITE_LEGGINGS = ITEMS.register("alexandrite_leggings",
+            () -> new ModArmorItem(ModArmorMaterials.ALEXANDRITE, ArmorItem.Type.LEGGINGS, new  Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> ALEXANDRITE_BOOTS = ITEMS.register("alexandrite_boots",
+            () -> new ModArmorItem(ModArmorMaterials.ALEXANDRITE, ArmorItem.Type.BOOTS, new  Item.Properties().rarity(Rarity.UNCOMMON)));
+
     public static final RegistryObject<Item> ANCIENT_SCROLL = ITEMS.register("ancient_scroll",
-            () -> new AncientScrollItem(new Item.Properties().durability(1)));
+            () -> new AncientScrollItem(new Item.Properties().durability(1).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> SHARK_TOOTH = ITEMS.register("shark_tooth",
             () -> new Item(new Item.Properties()));
@@ -176,7 +217,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().durability(3)));
 
     public static final RegistryObject<Item> GEM_DETECTOR = ITEMS.register("gem_detector",
-            () -> new GemDetectorItem(new Item.Properties().durability(50)));
+            () -> new GemDetectorItem(new Item.Properties().durability(100).rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
             () -> new DataTabletItem(new Item.Properties().stacksTo(1)));
@@ -230,10 +271,25 @@ public class ModItems {
     public static final RegistryObject<Item> STAFF_OF_MUMMIES = ITEMS.register("staff_of_mummies",
             () -> new StaffOfMummiesItem(Tiers.DIAMOND, 1, (float) -2.8, new Item.Properties().stacksTo(1).fireResistant().durability(25).rarity(Rarity.EPIC)));
 
-
+    public static final RegistryObject<Item> WARDEN_STAFF = ITEMS.register("warden_staff",
+            () -> new WardenStaffItem(ModToolTiers.WARDEN,-3,-3, new Item.Properties().stacksTo(1).rarity(Rarity.RARE).fireResistant().durability(50)));
 
     public static final RegistryObject<Item> SHREK_THEME_MUSIC_DISC = ITEMS.register("shrek_theme_music_disc",
            () -> new RecordItem(4,ModSounds.SHREK_AMBIENT, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC),1740));
+
+    //food//
+
+    public static final RegistryObject<Item> EXOTIC_MEAT = ITEMS.register("exotic_meat",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.EXOTIC_MEAT)));
+
+    public static final RegistryObject<Item> COOKED_EXOTIC_MEAT = ITEMS.register("cooked_exotic_meat",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.COOKED_EXOTIC_MEAT)));
+
+    public static final RegistryObject<Item> LARGE_CAT_MEAT = ITEMS.register("large_cat_meat",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.LARGE_CAT_MEAT)));
+
+    public static final RegistryObject<Item> COOKED_LARGE_CAT_MEAT= ITEMS.register("cooked_large_cat_meat",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.COOKED_LARGE_CAT_MEAT)));
 
 
     public static void  register(IEventBus eventBus) {

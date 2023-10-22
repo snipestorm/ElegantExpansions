@@ -63,6 +63,7 @@ public class ModNetherBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.ECHO_PLACED_KEY);
 
         BiomeDefaultFeatures.addAncientDebris(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION,ModPlacedFeatures.NETHER_CITRINE_ORE_PLACED_KEY);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(false)

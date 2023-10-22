@@ -56,6 +56,7 @@ public class PlayersMummy extends MummyEntity implements GeoEntity {
                 .add(Attributes.MAX_HEALTH, 30f)
                 .add(Attributes.ATTACK_DAMAGE, (double) 6f)
                 .add(Attributes.ATTACK_SPEED, 0.25)
+                .add(Attributes.FOLLOW_RANGE, 50.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2).build();
 
     }

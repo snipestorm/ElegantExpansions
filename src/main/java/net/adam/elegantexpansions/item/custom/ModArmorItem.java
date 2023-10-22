@@ -1,8 +1,7 @@
 package net.adam.elegantexpansions.item.custom;
 
 import com.google.common.collect.ImmutableMap;
-import net.adam.elegantexpansions.item.ModArmorMaterials;
-import net.minecraft.world.effect.MobEffect;
+import net.adam.elegantexpansions.item.modifiers.ModArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -39,6 +38,7 @@ public class ModArmorItem extends ArmorItem {
         if(!level.isClientSide() && hasFullSuitOfArmorOn(player)) {
             evaluateArmorEffects(player);
         }
+
     }
 
     private void evaluateArmorEffects(Player player) {

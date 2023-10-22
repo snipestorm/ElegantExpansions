@@ -49,7 +49,8 @@
       "minecraft:spring_closed",
       "minecraft:ore_soul_sand",
       "minecraft:ore_ancient_debris_large",
-      "minecraft:ore_debris_small"
+      "minecraft:ore_debris_small",
+      "elegantexpansions:nether_citrine_ore_placed"
     ],
     [],
     [

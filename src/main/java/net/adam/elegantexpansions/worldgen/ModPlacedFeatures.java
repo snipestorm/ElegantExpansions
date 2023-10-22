@@ -35,6 +35,7 @@ public class ModPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> OVERWORLD_RUBY_ORE_PLACED_KEY = createKey("ruby_ore_placed");
     public static final ResourceKey<PlacedFeature> OVERWORLD_SAPPHIRE_ORE_PLACED_KEY = createKey("sapphire_ore_placed");
+    public static final ResourceKey<PlacedFeature> OVERWORLD_ALEXANDRITE_ORE_PLACED_KEY = createKey("alexandrite_ore_placed");
     public static final ResourceKey<PlacedFeature> NETHER_CITRINE_ORE_PLACED_KEY = createKey("nether_citrine_ore_placed");
     public static final ResourceKey<PlacedFeature> END_TANZANITE_ORE_PLACED_KEY = createKey("end_tanzanite_ore_placed");
 
@@ -52,6 +53,9 @@ public class ModPlacedFeatures {
                         HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
         register(context, OVERWORLD_SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_SAPPHIRE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(4,
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+        register(context, OVERWORLD_ALEXANDRITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_ALEXANDRITE_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(2,
                         HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
         register(context, NETHER_CITRINE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.NETHER_CITRINE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(2,

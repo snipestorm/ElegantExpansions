@@ -4,14 +4,15 @@ import net.adam.elegantexpansions.block.entity.ModBlockEntities;
 import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.recipe.GemCuttingStationRecipe;
 import net.adam.elegantexpansions.screen.GemCuttingStationMenu;
-import net.adam.elegantexpansions.sound.ModSounds;
 import net.adam.elegantexpansions.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
@@ -20,15 +21,12 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -39,7 +37,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import java.util.function.Predicate;
 
 
 public class GemCuttingStationBlockEntity extends BlockEntity implements MenuProvider {
@@ -165,32 +162,27 @@ public class GemCuttingStationBlockEntity extends BlockEntity implements MenuPro
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level pLevel, BlockPos pPos, BlockState pState, GemCuttingStationBlockEntity pBlockEntity) {
-        pBlockEntity.canPlay(pLevel);
-        if (hasRecipe(pBlockEntity)) {
-            pBlockEntity.progress++;
+    public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
+
+        if (hasRecipe()) {
+            this.progress++;
             setChanged(pLevel, pPos, pState);
 
 
 
-            if (pBlockEntity.progress > pBlockEntity.maxProgress) {
-                craftItem(pBlockEntity);
+            if (progress > maxProgress) {
+                craftItem();
             }
         } else {
-            pBlockEntity.resetProgress();
+            resetProgress();
             setChanged(pLevel, pPos, pState);
 
         }
     }
 
-    public void canPlay(Level pLevel) {
-        if (progress > 0) {
-            pLevel.playLocalSound(getBlockPos(),ModSounds.GEM_CUTTING.get(), SoundSource.AMBIENT,0.2f, 0.2f, false);
-        }
-    }
 
-
-    private static boolean hasRecipe(GemCuttingStationBlockEntity entity) {
+    private boolean hasRecipe() {
+        GemCuttingStationBlockEntity entity = this;
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
@@ -213,7 +205,8 @@ public class GemCuttingStationBlockEntity extends BlockEntity implements MenuPro
         return entity.itemHandler.getStackInSlot(2).getItem() == ModItems.GEM_CUTTERS.get();
     }
 
-    private static void craftItem(GemCuttingStationBlockEntity entity) {
+    private void craftItem() {
+        GemCuttingStationBlockEntity entity = this;
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
@@ -270,7 +263,25 @@ public class GemCuttingStationBlockEntity extends BlockEntity implements MenuPro
         return this.itemHandler.getStackInSlot(2).getItem() == ModItems.GEM_CUTTERS.get();
 
     }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        return saveWithoutMetadata();
+    }
+
+    @Override
+    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
+        super.onDataPacket(net, pkt);
+    }
 }
+
+
 
 
 

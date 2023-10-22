@@ -21,12 +21,6 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.desert"
     },
-    "particle": {
-      "options": {
-        "type": "elegantexpansions:sand_ash_particle"
-      },
-      "probability": 1.0
-    },
     "sky_color": 7254527,
     "water_color": 4159204,
     "water_fog_color": 329011
@@ -79,6 +73,7 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
+      "elegantexpansions:alexandrite_ore_placed",
       "elegantexpansions:ruby_ore_placed",
       "elegantexpansions:sapphire_ore_placed"
     ],

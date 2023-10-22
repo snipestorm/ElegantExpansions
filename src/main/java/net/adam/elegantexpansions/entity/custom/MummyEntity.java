@@ -42,6 +42,7 @@ public class MummyEntity extends Monster implements GeoEntity {
                 .add(Attributes.MAX_HEALTH, 30f)
                 .add(Attributes.ATTACK_DAMAGE, (double) 3f)
                 .add(Attributes.ATTACK_SPEED, 0.2)
+                .add(Attributes.FOLLOW_RANGE, 35.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.175).build();
 
     }

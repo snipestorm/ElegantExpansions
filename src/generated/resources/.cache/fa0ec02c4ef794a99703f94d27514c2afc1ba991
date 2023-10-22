@@ -1,0 +1,6 @@
+// 1.20.1	2023-10-21T17:30:26.4222671	Global Loot Modifiers : elegantexpansions
+baf2350c871dcbb744d420597c058ad01a5accd3 data/elegantexpansions/loot_modifiers/ancient_scroll_cold.json
+2e0055d35eb108bc17b3ddce49dfc69ce4c6ef7f data/elegantexpansions/loot_modifiers/ancient_scroll_warm.json
+36c92c7850ac25f9f01d1dd340a7bd1da827f80e data/elegantexpansions/loot_modifiers/heart_of_deep_from_warden.json
+94c943d5c383fa937b1a978718d1611d2771cb16 data/elegantexpansions/loot_modifiers/warden_upgrade_from_ancient_city.json
+df538cb667c9d0e58f00d5ac939ab5fd8ecb50a3 data/forge/loot_modifiers/global_loot_modifiers.json

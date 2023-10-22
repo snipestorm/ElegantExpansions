@@ -123,6 +123,20 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops()));
 
+    //alexandrite//
+
+    public static final RegistryObject<Block> ALEXANDRITE_ORE = registerblock("alexandrite_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)
+                    .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
+
+    public static final RegistryObject<Block> DEEPSLATE_ALEXANDRITE_ORE = registerblock("deepslate_alexandrite_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)
+                    .strength(8f).requiresCorrectToolForDrops(), UniformInt.of(2,6)));
+
+    public static final RegistryObject<Block> ALEXANDRITE_BLOCK = registerblock("alexandrite_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops()));
+
     //Gem based blocks//
 
     public static final RegistryObject<Block> GEM_CUTTING_STATION = registerblock("gem_cutting_station",
@@ -160,7 +174,7 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> ECHO_SOIL = registerblock("echo_soil",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(0.3f)
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SCULK).strength(0.5f)
                     .mapColor(MapColor.COLOR_PURPLE)));
 
     public static final RegistryObject<Block> SCULK_GLEAM = registerblock("sculk_gleam",

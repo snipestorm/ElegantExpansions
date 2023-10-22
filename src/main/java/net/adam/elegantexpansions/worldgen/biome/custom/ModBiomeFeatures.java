@@ -14,8 +14,10 @@ public class ModBiomeFeatures {
     }
 
     public static void addEEOres(BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.OVERWORLD_ALEXANDRITE_ORE_PLACED_KEY);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.OVERWORLD_RUBY_ORE_PLACED_KEY);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ModPlacedFeatures.OVERWORLD_SAPPHIRE_ORE_PLACED_KEY);
+
     }
 
 }

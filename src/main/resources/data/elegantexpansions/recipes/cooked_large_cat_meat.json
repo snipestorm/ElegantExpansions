@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "elegantexpansions:large_cat_meat"
+  },
+  "result": "elegantexpansions:cooked_large_cat_meat"
+}

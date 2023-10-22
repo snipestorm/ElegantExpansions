@@ -22,7 +22,56 @@ public class ModItemTagGenerator extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         // Add Item Tags here
-        this.tag(ItemTags.TRIMMABLE_ARMOR);
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+        .add(ModItems.ALEXANDRITE_HELMET.get())
+        .add(ModItems.ALEXANDRITE_CHESTPLATE.get())
+        .add(ModItems.ALEXANDRITE_LEGGINGS.get())
+        .add(ModItems.ALEXANDRITE_BOOTS.get())
+
+        .add(ModItems.WARDEN_HELMET.get())
+        .add(ModItems.WARDEN_CHESTPLATE.get())
+        .add(ModItems.WARDEN_LEGGINGS.get())
+        .add(ModItems.WARDEN_BOOTS.get())
+
+        .add(ModItems.INFUSED_DIAMOND_HELMET.get())
+        .add(ModItems.INFUSED_DIAMOND_CHESTPLATE.get())
+        .add(ModItems.INFUSED_DIAMOND_LEGGINGS.get())
+        .add(ModItems.INFUSED_DIAMOND_BOOTS.get())
+
+        .add(ModItems.INFUSED_RUBY_HELMET.get())
+        .add(ModItems.INFUSED_RUBY_CHESTPLATE.get())
+        .add(ModItems.INFUSED_RUBY_LEGGINGS.get())
+        .add(ModItems.INFUSED_RUBY_BOOTS.get())
+
+        .add(ModItems.INFUSED_SAPPHIRE_HELMET.get())
+        .add(ModItems.INFUSED_SAPPHIRE_CHESTPLATE.get())
+        .add(ModItems.INFUSED_SAPPHIRE_LEGGINGS.get())
+        .add(ModItems.INFUSED_SAPPHIRE_BOOTS.get())
+
+        .add(ModItems.INFUSED_EMERALD_HELMET.get())
+        .add(ModItems.INFUSED_EMERALD_CHESTPLATE.get())
+        .add(ModItems.INFUSED_EMERALD_LEGGINGS.get())
+        .add(ModItems.INFUSED_EMERALD_BOOTS.get())
+
+        .add(ModItems.INFUSED_AMETHYST_HELMET.get())
+        .add(ModItems.INFUSED_AMETHYST_CHESTPLATE.get())
+        .add(ModItems.INFUSED_AMETHYST_LEGGINGS.get())
+        .add(ModItems.INFUSED_AMETHYST_BOOTS.get())
+
+        .add(ModItems.INFUSED_CITRINE_HELMET.get())
+        .add(ModItems.INFUSED_CITRINE_CHESTPLATE.get())
+        .add(ModItems.INFUSED_CITRINE_LEGGINGS.get())
+        .add(ModItems.INFUSED_CITRINE_BOOTS.get())
+
+        .add(ModItems.INFUSED_TANZANITE_HELMET.get())
+        .add(ModItems.INFUSED_TANZANITE_CHESTPLATE.get())
+        .add(ModItems.INFUSED_TANZANITE_LEGGINGS.get())
+        .add(ModItems.INFUSED_TANZANITE_BOOTS.get())
+
+        .add(ModItems.INFUSED_ONYX_HELMET.get())
+        .add(ModItems.INFUSED_ONYX_CHESTPLATE.get())
+        .add(ModItems.INFUSED_ONYX_LEGGINGS.get())
+        .add(ModItems.INFUSED_ONYX_BOOTS.get());
 
 
         this.tag(ItemTags.MUSIC_DISCS)

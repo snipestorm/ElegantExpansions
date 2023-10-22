@@ -1,16 +1,10 @@
 package net.adam.elegantexpansions.item.custom;
 
-import net.adam.elegantexpansions.block.ModBlocks;
-import net.adam.elegantexpansions.enchantment.AncientPowerEnchantment;
-import net.adam.elegantexpansions.enchantment.ModEnchantments;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
-import net.adam.elegantexpansions.entity.custom.AnubisEntity;
-import net.adam.elegantexpansions.item.client.StaffOfMummiesRenderer;
-import net.minecraft.advancements.CriteriaTriggers;
+import net.adam.elegantexpansions.item.client.renderer.StaffOfMummiesRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
@@ -18,8 +12,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CryingObsidianBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -30,8 +22,6 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.RenderUtils;
 
 import java.util.function.Consumer;
-
-import static net.adam.elegantexpansions.block.ModBlocks.WHITE_SANDSTONE;
 
 public class StaffOfMummiesItem extends SwordItem implements GeoItem, Vanishable {
 

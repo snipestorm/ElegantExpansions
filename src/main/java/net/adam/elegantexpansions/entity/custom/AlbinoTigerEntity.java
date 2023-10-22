@@ -102,6 +102,7 @@ public class AlbinoTigerEntity extends TigerEntity implements GeoEntity {
                 .add(Attributes.MAX_HEALTH, 18D)
                 .add(Attributes.ATTACK_DAMAGE, 5.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
+                .add(Attributes.FOLLOW_RANGE, 30.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.35f).build();
     }
 

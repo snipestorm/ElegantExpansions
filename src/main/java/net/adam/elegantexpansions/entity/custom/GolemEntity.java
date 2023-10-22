@@ -170,11 +170,13 @@ public class GolemEntity extends Monster implements GeoEntity {
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
 
-                .add(Attributes.MAX_HEALTH, 350D)
+                .add(Attributes.MAX_HEALTH, 350)
                 .add(Attributes.ATTACK_DAMAGE, 6.00D)
-                .add(Attributes.ARMOR, 0.0D)
+                .add(Attributes.ARMOR, 10.0D)
+                .add(Attributes.ARMOR_TOUGHNESS, 10.0D)
                 .add(Attributes.ATTACK_SPEED, 0.8D)
                 .add(Attributes.MOVEMENT_SPEED, 0.175D)
+                .add(Attributes.FOLLOW_RANGE, 45.0D)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.5D).build();
 
     }
@@ -316,7 +318,7 @@ public class GolemEntity extends Monster implements GeoEntity {
                 this.level().playSound(null, blockPosition(), ModSounds.GOLEM_ROAR.get(), SoundSource.HOSTILE, 1, 1);
                 this.ragehasPlayedOnce = true;
                 this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.225D);
-                this.getAttribute(Attributes.ARMOR).setBaseValue(4.0D);
+                this.getAttribute(Attributes.ARMOR).setBaseValue(20.0D);
                 this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(12.0D);
 
 
@@ -325,7 +327,7 @@ public class GolemEntity extends Monster implements GeoEntity {
                 if(!this.isRage()) {
 
                     this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.175D);
-                    this.getAttribute(Attributes.ARMOR).setBaseValue(0.0D);
+                    this.getAttribute(Attributes.ARMOR).setBaseValue(10.0D);
                     this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 
                     if(this.ragehasPlayedOnce) {

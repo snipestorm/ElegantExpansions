@@ -7,14 +7,22 @@
   "creativemodetab.elegant_expansions_gems":"Elegant Expansions Gems+",
   "creativemodetab.elegant_expansions_tools":"Elegant Expansions Tools/Weapons",
   "creativemodetab.elegant_expansions_armor":"Elegant Expansions Armor",
+  "creativemodetab.elegant_expansions_food": "Elegant Expansions Food",
 
   "tooltip.elegant_expansions.gem_upgrade_template.tooltip" : "Use On A Smithing Table With An Infused Gem & A Piece Of Diamond Armor",
+  "tooltip.elegant_expansions.warden_upgrade_template.tooltip" : "Use On A Smithing Table With A Heart Of The Deep & A Piece Of Netherite Armor",
   "tooltip.elegant_expansions.gem_detector.tooltip" : "Right Click To Search For Gems",
 
   "elegantexpansions.tooltip.liquid.amount.with.capacity" : "%s / %s mB",
   "elegantexpansions.tooltip.liquid.amount" : "%s mB",
   "fluid_type.elegantexpansions.magical_sap_fluid" : "Magical Sap",
   "item.elegantexpansions.gem_detector.no_valuables": "No Gems Found!",
+  "elegantexpansions.found_gem": "Gem Found ",
+
+  "item.elegantexpansions.exotic_meat": "Exotic Meat",
+  "item.elegantexpansions.cooked_exotic_meat": "Cooked Exotic Meat",
+  "item.elegantexpansions.large_cat_meat": "Large Cat Meat",
+  "item.elegantexpansions.cooked_large_cat_meat": "Cooked Large Cat Meat",
 
   "item.elegantexpansions.alexandrite": "Alexandrite",
   "item.elegantexpansions.alexandrite_shard": "Alexandrite Shard",
@@ -24,6 +32,14 @@
   "item.elegantexpansions.alexandrite_pickaxe": "Alexandrite Pickaxe",
   "item.elegantexpansions.alexandrite_axe": "Alexandrite Axe",
   "item.elegantexpansions.alexandrite_hoe": "Alexandrite Hoe",
+  "item.elegantexpansions.iron_hammer": "Iron Hammer",
+
+  "item.elegantexpansions.warden_sword": "Warden Sword",
+  "item.elegantexpansions.warden_shovel": "Warden Shovel",
+  "item.elegantexpansions.warden_pickaxe": "Warden Pickaxe",
+  "item.elegantexpansions.warden_axe": "Warden Axe",
+  "item.elegantexpansions.warden_hoe": "Warden Hoe",
+  "item.elegantexpansions.warden_staff": "Warden Staff",
 
   "item.elegantexpansions.alexandrite_paxel": "Alexandrite Paxel",
 
@@ -93,11 +109,24 @@
   "item.elegantexpansions.infused_onyx_leggings": "Infused Onyx Leggings",
   "item.elegantexpansions.infused_onyx_boots": "Infused Onyx Boots",
 
+  "item.elegantexpansions.alexandrite_helmet": "Alexandrite Helmet",
+  "item.elegantexpansions.alexandrite_chestplate": "Alexandrite Chestplate",
+  "item.elegantexpansions.alexandrite_leggings": "Alexandrite Leggings",
+  "item.elegantexpansions.alexandrite_boots": "Alexandrite Boots",
+
+  "item.elegantexpansions.warden_helmet": "Warden Helmet",
+  "item.elegantexpansions.warden_chestplate": "Warden Chestplate",
+  "item.elegantexpansions.warden_leggings": "Warden Leggings",
+  "item.elegantexpansions.warden_boots": "Warden Boots",
+
 
 
   "item.elegantexpansions.gem_cutters": "Gem Cutters",
   "item.elegantexpansions.magical_sap_bucket": "Bucket Of Magical Sap",
   "item.elegantexpansions.gem_upgrade_template": "Gem Upgrade Template",
+  "item.elegantexpansions.warden_upgrade_template": "Warden Upgrade Template",
+
+  "item.elegantexpansions.heart_of_the_deep": "Heart Of The Deep",
 
 
   "block.elegantexpansions.gem_cutting_station": "Gem Cutting Station",
@@ -122,6 +151,10 @@
   "block.elegantexpansions.nether_citrine_ore": "Nether Citrine Ore",
 
   "block.elegantexpansions.onyx_block": "Onyx Block",
+
+  "block.elegantexpansions.alexandrite_block": "Alexandrite Block",
+  "block.elegantexpansions.alexandrite_ore": "Alexandrite Ore",
+  "block.elegantexpansions.deepslate_alexandrite_ore": "Deepslate Alexandrite Ore",
 
 
   "block.elegantexpansions.echo_soil": "Echo Soil",
@@ -304,6 +337,16 @@
   "block.elegantexpansions.palm_door": "Palm Door",
   "block.elegantexpansions.palm_trapdoor": "Palm Trapdoor",
 
+  "block.elegantexpansions.echo_stairs": "Echo Stairs",
+  "block.elegantexpansions.echo_slab": "Echo Slab",
+  "block.elegantexpansions.echo_button": "Echo Button",
+  "block.elegantexpansions.echo_pressure_plate": "Echo Pressure Plate",
+  "block.elegantexpansions.echo_fence": "Echo Fence",
+  "block.elegantexpansions.echo_fence_gate": "Echo Fence Gate",
+  "block.elegantexpansions.echo_wall": "Echo Wall",
+  "block.elegantexpansions.echo_door": "Echo Door",
+  "block.elegantexpansions.echo_trapdoor": "Echo Trapdoor",
+
   "block.elegantexpansions.white_sand": "White Sand",
   "block.elegantexpansions.white_sandstone": "White Sandstone",
   "block.elegantexpansions.smooth_white_sandstone": "Smooth White Sandstone",
@@ -318,6 +361,7 @@
   "biome.elegantexpansions.mystical_forest" : "Mystical Forest",
   "biome.elegantexpansions.ash_forest" : "Ash Forest",
   "biome.elegantexpansions.maple_forest" : "Maple Forest",
+  "biome.elegantexpansions.echoing_wastes" : "Echoing Wastes",
 
   "entity.minecraft.villager.elegantexpansions.gem_master": "Gem Master"
 }

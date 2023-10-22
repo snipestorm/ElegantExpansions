@@ -56,6 +56,7 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_RUBY_ORE_KEY = registerKey("ruby_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_SAPPHIRE_ORE_KEY = registerKey("sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_ALEXANDRITE_ORE_KEY = registerKey("alexandrite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_CITRINE_ORE_KEY = registerKey("nether_citrine_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_TANZANITE_ORE_KEY = registerKey("end_tanzanite_ore");
 
@@ -80,8 +81,13 @@ public class ModConfiguredFeatures {
                         ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState()));
 
+        List<OreConfiguration.TargetBlockState> overworldAlexandriteOres = List.of(OreConfiguration.target(stoneReplaceabeles,
+                        ModBlocks.ALEXANDRITE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceabeles, ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get().defaultBlockState()));
+
         register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 7));
         register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSapphireOres, 7));
+        register(context, OVERWORLD_ALEXANDRITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldAlexandriteOres, 7));
         register(context, NETHER_CITRINE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceabeles,
                 ModBlocks.NETHER_CITRINE_ORE.get().defaultBlockState(), 5));
         register(context, END_TANZANITE_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceabeles,

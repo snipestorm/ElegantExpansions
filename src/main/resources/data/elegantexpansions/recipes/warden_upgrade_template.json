@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "elegantexpansions:heart_of_the_deep"
+    },
+    "S": {
+      "item": "elegantexpansions:warden_upgrade_template"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "item": "elegantexpansions:warden_upgrade_template"
+  },
+  "show_notification": false
+}

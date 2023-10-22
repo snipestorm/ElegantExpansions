@@ -145,7 +145,7 @@ public class ModBiomes {
                         .fogColor(12638463)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT))
-                        .ambientParticle(new AmbientParticleSettings(ModParticles.SAND_ASH_PARTICLE.get(), 1F))
+                        //.ambientParticle(new AmbientParticleSettings(ModParticles.SAND_ASH_PARTICLE.get(), 1F))
                         .build())
                 .build();
     }

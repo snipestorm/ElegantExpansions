@@ -1,0 +1,58 @@
+{
+  "name": "Crafting Warden Equipment",
+  "icon": "minecraft:smithing_table",
+  "sortnum": 2,
+  "category": "elegantexpansions:warden_armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Warden Crafting",
+      "item": "elegantexpansions:warden_upgrade_template,minecraft:netherite_helmet,elegantexpansions:heart_of_the_deep,elegantexpansions:warden_helmet",
+       "text": "To Upgrade Your Tools, Sword And Armour To Warden you will need a Warden Upgrade Template, A Heart Of The Deep and A Netherite Item to upgrade. $(br2)In the example on the next page we upgrade to a Warden Helmet."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Warden Smithing",
+      "images": [
+        "elegantexpansions:textures/guide/warden_gui.png"
+      ],
+      "border": "true"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Warden Helmet",
+      "item": "elegantexpansions:warden_helmet",
+      "text": "The Warden Helmet is a powerful piece of equipment.$(br2)As long as you are wearing this helmet you are immune to darkness and blindness.$(br2)The Warden will still be able to smell you and he will still be able to sonic boom you, but with the power of sight, evading him becomes a lot easier."
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:warden_sword_from_smithing",
+      "text": "The Next Few pages contain the Smithing Recipes for Warden Equipment, Hover over the equiment with your cursor to see its stats"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:warden_axe_from_smithing",
+      "recipe2": "elegantexpansions:warden_pickaxe_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:warden_shovel_from_smithing",
+      "recipe2": "elegantexpansions:warden_hoe_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:warden_helmet_from_smithing",
+      "recipe2": "elegantexpansions:warden_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Smithing Recipe",
+      "recipe": "elegantexpansions:warden_leggings_from_smithing",
+      "recipe2": "elegantexpansions:warden_boots_from_smithing"
+    }
+  ]
+}

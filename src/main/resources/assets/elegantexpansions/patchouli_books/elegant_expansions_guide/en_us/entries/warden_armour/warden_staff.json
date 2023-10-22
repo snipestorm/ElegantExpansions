@@ -1,0 +1,21 @@
+{
+  "name": "The Warden Staff",
+  "icon": "elegantexpansions:warden_staff",
+  "sortnum": 3,
+  "category": "elegantexpansions:warden_armour",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "The Warden Staff",
+      "item": "elegantexpansions:warden_staff",
+       "text": "To obtain The Warden Staff you will need to craft it using Echo Shards and a Heart Of The Deep.$(br2)This Powerful Staff will allow you to deal high amounts of projectile damage by shooting a 'Sonic Boom' at your target!"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Recipe",
+      "recipe": "elegantexpansions:warden_staff",
+      "text": "To Repair the Staff Use Echo Shards in an Anvil."
+    }
+
+  ]
+}

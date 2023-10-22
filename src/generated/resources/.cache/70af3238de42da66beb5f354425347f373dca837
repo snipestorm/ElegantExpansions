@@ -1,11 +1,13 @@
-// 1.20.1	2023-10-11T18:50:55.5342435	Block Tags
-bfdfab925d3aae515709e426b963be6ae6fc0d4b data/elegantexpansions/tags/blocks/anubis_base.json
+// 1.20.1	2023-10-19T18:58:04.1729349	Block Tags
+8cae2a6cea69d022f1de6ddc0697e8965136cce8 data/elegantexpansions/tags/blocks/gem_detector_gems.json
 82362cfbd1836db13c7e9d36c8712821e795ac55 data/elegantexpansions/tags/blocks/mineable/paxel.json
+99bd0f91f9d5c3519a299853c3e7d16e634f493e data/elegantexpansions/tags/blocks/needs_alexandrite_tool.json
 03d076617ee7b3d00eab758359f825e82cc34def data/minecraft/tags/blocks/fences.json
 b4719968bb33a68ef75149a4716f53459c4b242e data/minecraft/tags/blocks/fence_gates.json
 42fe669311c241083de04193b44b222b441056e3 data/minecraft/tags/blocks/logs_that_burn.json
 849ce34d0e5022631265453f701765874fe5e08b data/minecraft/tags/blocks/mineable/hoe.json
-c1d8676b4274d2c8fcb2b7486b083f0076293263 data/minecraft/tags/blocks/mineable/pickaxe.json
+3e6f7560e00f3f7073efdd4557e7df44ce9f09a8 data/minecraft/tags/blocks/mineable/pickaxe.json
+65e5f954f64c7a9dc0b7c51ecca408ad78078093 data/minecraft/tags/blocks/mineable/shovel.json
 d0c804c389df13f3d17af93c8b6c444190b028db data/minecraft/tags/blocks/needs_diamond_tool.json
 f1c56c04e1ddd684c658d263ce6205796d6d4c28 data/minecraft/tags/blocks/needs_iron_tool.json
 cdfec837e1599d54eb463b1f71c4d9f5ce9df8d5 data/minecraft/tags/blocks/planks.json

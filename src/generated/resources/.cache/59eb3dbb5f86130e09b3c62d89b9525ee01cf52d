@@ -1,4 +1,6 @@
-// 1.20.1	2023-10-11T17:38:34.188878	Loot Tables
+// 1.20.1	2023-10-13T20:46:11.6812961	Loot Tables
+8666a9dbf5aa6756f36d5c955ad00a3898f84d7c data/elegantexpansions/loot_tables/blocks/alexandrite_block.json
+0cd7e19b9f95690d364f8cea669b0b46182e07a9 data/elegantexpansions/loot_tables/blocks/alexandrite_ore.json
 976e102ff830ccd18720ef98e9ec013a4a788274 data/elegantexpansions/loot_tables/blocks/ankh_gold.json
 f280fa6dd2a508e48e8ff93d080755892b5af19e data/elegantexpansions/loot_tables/blocks/ash_button.json
 135af3c4ae708f7b16a9812d85c18cd509fe42a8 data/elegantexpansions/loot_tables/blocks/ash_door.json
@@ -26,6 +28,7 @@ c4e11cc55ebb91d606d4ffc2b4f87e897ae880fe data/elegantexpansions/loot_tables/bloc
 7fd1d1f391fc348bc3524cc45b8fc026af4e9da1 data/elegantexpansions/loot_tables/blocks/cobbled_sculk_stone_slab.json
 4fcff4f68778c4e2b02ededa7c720c96c53d2e29 data/elegantexpansions/loot_tables/blocks/cobbled_sculk_stone_stairs.json
 4effd1097b8041109700704e43ac7365977d28f6 data/elegantexpansions/loot_tables/blocks/cobbled_sculk_stone_wall.json
+d3a2ee7a0347bf3ffad07b3025408e8f1131e121 data/elegantexpansions/loot_tables/blocks/deepslate_alexandrite_ore.json
 0ca8e18e013d412033ad53a1fb8a7c2256f2bf5e data/elegantexpansions/loot_tables/blocks/deepslate_ruby_ore.json
 433245b76563e99dde981ed0bfec0b04c7017313 data/elegantexpansions/loot_tables/blocks/deepslate_sapphire_ore.json
 374de9bdd18d75ce7dd74828d3fde7478cfaff25 data/elegantexpansions/loot_tables/blocks/display_case.json

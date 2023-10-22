@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "elegantexpansions:heart_of_the_deep"
+  },
+  "base": {
+    "item": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "item": "elegantexpansions:warden_helmet"
+  },
+  "template": {
+    "item": "elegantexpansions:warden_upgrade_template"
+  }
+}

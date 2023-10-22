@@ -21,6 +21,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.TANZANITE_BLOCK.get());
         dropSelf(ModBlocks.CITRINE_BLOCK.get());
         dropSelf(ModBlocks.ONYX_BLOCK.get());
+        dropSelf(ModBlocks.ALEXANDRITE_BLOCK.get());
 
         dropSelf(ModBlocks.GEM_CUTTING_STATION.get());
         dropSelf(ModBlocks.GEM_INFUSING_STATION.get());
@@ -170,6 +171,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         add(ModBlocks.ENDSTONE_TANZANITE_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.ENDSTONE_TANZANITE_ORE.get(), ModItems.TANZANITE.get()));
+
+        add(ModBlocks.ALEXANDRITE_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.ALEXANDRITE_ORE.get(), ModItems.ALEXANDRITE.get()));
+        add(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(), ModItems.ALEXANDRITE.get()));
 
 
         this.dropSelf(ModBlocks.MAGIC_LOG.get());

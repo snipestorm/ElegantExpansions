@@ -1,11 +1,15 @@
 package net.adam.elegantexpansions.entity.custom;
 
 import net.adam.elegantexpansions.entity.ModEntityTypes;
+import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -50,9 +54,9 @@ public class WhiteTigerEntity extends TigerEntity implements GeoEntity {
     private static final Predicate<LivingEntity> PREY_SELECTOR = (p_248371_) -> {
         EntityType<?> entitytype = p_248371_.getType();
         return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT || entitytype == ModEntityTypes.CAPYBARA.get() ||
-                entitytype == EntityType.FOX || entitytype == EntityType.COW||
-                entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA||
-                entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT||
+                entitytype == EntityType.FOX || entitytype == EntityType.COW|| entitytype == ModEntityTypes.VULTURE.get() ||
+                entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA|| entitytype == EntityType.PANDA||
+                entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT|| entitytype == ModEntityTypes.RACCOON.get() ||
                 entitytype == EntityType.HORSE|| entitytype == EntityType.DONKEY||
                 entitytype == EntityType.MULE || entitytype == EntityType.GOAT;};
 
@@ -107,7 +111,7 @@ public class WhiteTigerEntity extends TigerEntity implements GeoEntity {
                 .add(Attributes.ATTACK_DAMAGE, 5.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.FOLLOW_RANGE, 30.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.35f).build();
+                .add(Attributes.MOVEMENT_SPEED, 0.3f).build();
     }
 
     @SubscribeEvent
@@ -130,7 +134,7 @@ public class WhiteTigerEntity extends TigerEntity implements GeoEntity {
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, false, PREY_SELECTOR));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Zombie.class, true));
+        //this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Zombie.class, true));
     }
 
     @Nullable
@@ -174,8 +178,16 @@ public class WhiteTigerEntity extends TigerEntity implements GeoEntity {
     public void aiStep() {
         super.aiStep();
         this.followParent();
+        if (this.isAlive()) {
+            if (this.isImmobile()) {
+                this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.0D);
+            } else {
+                double d0 = this.getTarget() != null ? 0.35D : 0.3D;
+                double d1 = this.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
+                this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(Mth.lerp(0.1D, d1, d0));
+            }
+        }
     }
-
 
     protected void followParent() {
         if (this.isBred() && this.isBaby()) {
@@ -190,5 +202,28 @@ public class WhiteTigerEntity extends TigerEntity implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource p_21239_) {
+        return ModSounds.TIGER_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.TIGER_DEATH.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSounds.TIGER_AMBIENT.get();
+    }
+
+    @Override
+    protected float getSoundVolume() {
+        return 0.1F;
     }
   }

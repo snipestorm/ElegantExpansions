@@ -1,0 +1,20 @@
+{
+  "name": "Snout Armour Trim Template",
+  "icon": "minecraft:snout_armor_trim_smithing_template",
+  "sortnum": 15,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Snout Armour Trim",
+      "item": "minecraft:snout_armor_trim_smithing_template",
+       "text": "The Snout Armour Trim Smithing Template can only be found inside the Loot Chests of a Bastion Remnant.$(br2)There are 4 chests inside a Bastion Remnant each Chest has a 8.3% chance of containing the Snout Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:snout_armor_trim_smithing_template"
+    }
+  ]
+}

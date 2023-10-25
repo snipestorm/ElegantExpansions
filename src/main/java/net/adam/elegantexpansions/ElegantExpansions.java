@@ -478,6 +478,7 @@ public class ElegantExpansions {
             EntityRenderers.register(ModEntityTypes.ECHO_SPIDER.get(), EchoSpiderRenderer::new);
 
 
+
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_CUTTING_STATION.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.GEM_INFUSING_STATION.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.SHARD_CREATION_STATION.get(), RenderType.translucent());

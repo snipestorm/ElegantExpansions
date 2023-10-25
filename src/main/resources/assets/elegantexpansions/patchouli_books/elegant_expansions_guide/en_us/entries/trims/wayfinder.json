@@ -1,0 +1,21 @@
+
+{
+  "name": "Wayfinder Armour Trim Template",
+  "icon": "minecraft:wayfinder_armor_trim_smithing_template",
+  "sortnum": 3,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Wayfinder Armour Trim",
+      "item": "minecraft:wayfinder_armor_trim_smithing_template",
+       "text": "The Wayfinder Armour Trim Smithing Template can only be found within Suspicious Gravel inside of a Trail Ruin.$(br2)Bring a Brush and check all the Suspicous Gravel you find as it is only an 8.3% chance"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:wayfinder_armor_trim_smithing_template"
+    }
+  ]
+}

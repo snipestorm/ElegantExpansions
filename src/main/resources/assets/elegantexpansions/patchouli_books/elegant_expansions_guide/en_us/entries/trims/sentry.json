@@ -1,0 +1,20 @@
+{
+  "name": "Sentry Armour Trim Template",
+  "icon": "minecraft:sentry_armor_trim_smithing_template",
+  "sortnum": 7,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Sentry Armour Trim",
+      "item": "minecraft:sentry_armor_trim_smithing_template",
+       "text": "The Sentry Armour Trim Smithing Template can only be found inside the Loot Chest of a Pillager Outpost.$(br2)There is only 1 Loot Chest per Pillager Outpost, The Sentry Armour Trim Smithing Template has a 25% chance of being in that Chest."
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:sentry_armor_trim_smithing_template"
+    }
+  ]
+}

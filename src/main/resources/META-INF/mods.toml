@@ -29,7 +29,7 @@ displayName="Elegant Expansions" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="elegant_expansions.png" #optional
 # A text field displayed in the mod UI
-credits="A Mod In Development" #optional
+credits="Adam Hanford" #optional
 # A text field displayed in the mod UI
 authors="One Minute Redstone" #optional
 # Display Test controls the display for your mod in the server connection screen

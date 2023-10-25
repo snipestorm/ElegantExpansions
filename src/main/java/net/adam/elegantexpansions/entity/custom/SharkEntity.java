@@ -145,9 +145,12 @@ public class SharkEntity extends WaterAnimal implements GeoEntity {
 
     public void tick() {
         super.tick();
-
-
         }
+
+    @Override
+    public boolean canBeLeashed(Player p_30346_) {
+        return true;
+    }
 
     public void travel(Vec3 p_28383_) {
         if (this.isEffectiveAi() && this.isInWater()) {

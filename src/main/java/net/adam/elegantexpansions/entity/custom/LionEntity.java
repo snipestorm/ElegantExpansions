@@ -4,6 +4,7 @@ import net.adam.elegantexpansions.entity.custom.ai.goal.BabyHurtByTargetGoal;
 import net.adam.elegantexpansions.entity.custom.ai.goal.BabyPanicGoal;
 import net.adam.elegantexpansions.entity.custom.ai.goal.SleepGoal;
 import net.adam.elegantexpansions.entity.ModEntityTypes;
+import net.adam.elegantexpansions.item.ModItems;
 import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -15,6 +16,8 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -26,6 +29,7 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -48,15 +52,16 @@ import java.util.function.Predicate;
 
 public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(ModItems.EXOTIC_MEAT.get());
     private static final EntityDataAccessor<Boolean> SLEEPING = SynchedEntityData.defineId(LionEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> HAS_MANE = SynchedEntityData.defineId(LionEntity.class, EntityDataSerializers.BOOLEAN);
-
+    private static final EntityDataAccessor<Byte> DATA_ID_FLAGS = SynchedEntityData.defineId(LionEntity.class, EntityDataSerializers.BYTE);
     private static final Predicate<LivingEntity> PREY_SELECTOR = (p_248371_) -> {
         EntityType<?> entitytype = p_248371_.getType();
         return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT || entitytype == ModEntityTypes.CAPYBARA.get() ||
                 entitytype == EntityType.FOX || entitytype == EntityType.COW||
-                entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA||
-                entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT||
+                entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA|| entitytype == ModEntityTypes.VULTURE.get() ||
+                entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT|| entitytype == EntityType.PANDA||
                 entitytype == EntityType.HORSE|| entitytype == EntityType.DONKEY||
                 entitytype == EntityType.MULE || entitytype == EntityType.GOAT;};
 
@@ -64,6 +69,7 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
         super(entityType, level);
         this.setMaxUpStep(1.0F);
     }
+
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
@@ -93,10 +99,21 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
         return spawnData;
     }
 
-    @Nullable
-    @Override
-    public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return ModEntityTypes.LION.get().create(serverLevel);
+    protected boolean getFlag(int p_30648_) {
+        return (this.entityData.get(DATA_ID_FLAGS) & p_30648_) != 0;
+    }
+
+    protected void setFlag(int p_30598_, boolean p_30599_) {
+        byte b0 = this.entityData.get(DATA_ID_FLAGS);
+        if (p_30599_) {
+            this.entityData.set(DATA_ID_FLAGS, (byte)(b0 | p_30598_));
+        } else {
+            this.entityData.set(DATA_ID_FLAGS, (byte)(b0 & ~p_30598_));
+        }
+
+    }
+    public boolean canBeLeashed(Player p_21418_) {
+        return false;
     }
 
 
@@ -105,6 +122,8 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new LionPreyGoal(this));
+        this.goalSelector.addGoal(1, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(2, new TemptGoal(this, 1.25D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(2, new BabyPanicGoal(this, 2.0D));
         this.goalSelector.addGoal(3, new SleepGoal<>(this));
         this.goalSelector.addGoal(4, new LionFollowParentGoal(this, 1.1));
@@ -118,7 +137,18 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return false;
+        return FOOD_ITEMS.test(pStack);
+    }
+
+    public boolean isBred() {
+        return this.getFlag(8);
+    }
+    public void setBred(boolean babylion) {
+        this.setFlag(8, babylion);
+    }
+
+    public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
+        return ModEntityTypes.LION.get().create(serverLevel);
     }
 
     @Override
@@ -126,18 +156,21 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
         super.defineSynchedData();
         this.entityData.define(SLEEPING, false);
         this.entityData.define(HAS_MANE, false);
+        this.entityData.define(DATA_ID_FLAGS, (byte)0);
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
         pCompound.putBoolean("Mane", this.hasMane());
+        pCompound.putBoolean("Bred", this.isBred());
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
         this.setHasMane(pCompound.getBoolean("Mane"));
+        this.setBred(pCompound.getBoolean("Bred"));
     }
 
     @Override
@@ -156,16 +189,19 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
         this.setHasMane(this.getRandom().nextBoolean());
     }
 
-    @Override
-    public boolean canSleep() {
-        long dayTime = this.level().getDayTime();
-        if (this.getTarget() != null || this.level().isWaterAt(this.blockPosition())) {
-            return false;
-        } else {
-            return dayTime > 6000 && dayTime < 13000;
-        }
-    }
-
+   // @Override
+   // public boolean canSleep() {
+   //     long dayTime = this.level().getDayTime();
+   //     if (this.getTarget() != null || this.level().isWaterAt(this.blockPosition())) {
+   //         return false;
+   //     } else {
+   //         return dayTime > 6000 && dayTime < 13000;
+   //     }
+   // }
+   @Override
+   public boolean canSleep() {
+       return false;
+   }
     @Override
     public void customServerAiStep() {
         if (this.getMoveControl().hasWanted()) {
@@ -190,6 +226,8 @@ public class LionEntity extends Animal implements GeoEntity, SleepingAnimal {
     public boolean isSteppingCarefully() {
         return this.isCrouching() || super.isSteppingCarefully();
     }
+
+
 
     @Override
     public void setSleeping(boolean sleeping) {

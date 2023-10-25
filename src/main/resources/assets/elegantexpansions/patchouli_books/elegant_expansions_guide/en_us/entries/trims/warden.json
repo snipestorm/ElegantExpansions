@@ -1,0 +1,20 @@
+{
+  "name": "Warden Upgrade",
+  "icon": "elegantexpansions:warden_upgrade_template",
+  "sortnum": 2,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Warden Upgrade",
+      "item": "elegantexpansions:warden_upgrade_template",
+       "text": "The Warden Upgrade Smithing Template can be found inside Ancient City Loot Chests.$(br2)The Warden Upgrade Smithing Template is required to Upgrade Netherite equipment to Warden"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "elegantexpansions:warden_upgrade_template"
+    }
+  ]
+}

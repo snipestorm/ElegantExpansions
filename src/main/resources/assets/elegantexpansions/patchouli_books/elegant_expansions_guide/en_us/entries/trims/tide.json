@@ -1,0 +1,20 @@
+{
+  "name": "Tide Armour Trim Template",
+  "icon": "minecraft:tide_armor_trim_smithing_template",
+  "sortnum": 11,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Tide Armour Trim",
+      "item": "minecraft:tide_armor_trim_smithing_template",
+       "text": "The Tide Armour Trim Smithing Template can only be found by Killing an Elder Guardian.$(br2)Elder Guardians are located inside of Ocean Monuments each Elder Guardian has a 20% chance of dropping the Tide Armour Trim Smithing Template when Killed"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:tide_armor_trim_smithing_template"
+    }
+  ]
+}

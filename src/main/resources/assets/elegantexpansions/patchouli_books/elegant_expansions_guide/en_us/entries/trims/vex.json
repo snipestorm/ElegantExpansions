@@ -1,0 +1,20 @@
+{
+  "name": "Vex Armour Trim Template",
+  "icon": "minecraft:vex_armor_trim_smithing_template",
+  "sortnum": 8,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Vex Armour Trim",
+      "item": "minecraft:vex_armor_trim_smithing_template",
+       "text": "The Vex Armour Trim Smithing Template can only be found inside the Loot Chests of a Woodland Mansion.$(br2)There are not many chests inside a Woodland Mansion however each Chest has a 50% chance of containing the Vex Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:vex_armor_trim_smithing_template"
+    }
+  ]
+}

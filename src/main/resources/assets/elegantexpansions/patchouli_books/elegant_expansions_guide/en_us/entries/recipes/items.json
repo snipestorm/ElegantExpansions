@@ -1,0 +1,81 @@
+
+{
+  "name": "All Items & Non Generic Blocks",
+  "icon": "elegantexpansions:gem_cutters",
+  "sortnum": 0,
+  "category": "elegantexpansions:recipes",
+  "pages": [
+        {
+      "type": "patchouli:crafting",
+      "title": "Upgrade Templates",
+      "recipe": "elegantexpansions:gem_upgrade_template",
+      "recipe2": "elegantexpansions:warden_upgrade_template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Cutters & Chain",
+      "recipe": "elegantexpansions:gem_cutters",
+      "recipe2": "elegantexpansions:gold_chain"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Detector & Tablet",
+      "recipe": "elegantexpansions:gem_detector",
+      "recipe2": "elegantexpansions:data_tablet"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Cutting & Infusing",
+      "recipe": "elegantexpansions:gem_cutting_station",
+      "recipe2": "elegantexpansions:gem_infusing_station"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Creation & Extraction",
+      "recipe": "elegantexpansions:shard_creation_station",
+      "recipe2": "elegantexpansions:sap_extractor"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Display Case",
+      "recipe": "elegantexpansions:display_case"
+
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Rubies",
+      "recipe": "elegantexpansions:ruby_block",
+      "recipe2": "elegantexpansions:ruby"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Sapphires",
+      "recipe": "elegantexpansions:sapphire_block",
+      "recipe2": "elegantexpansions:sapphire"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Citrines",
+      "recipe": "elegantexpansions:citrine_block",
+      "recipe2": "elegantexpansions:citrine"
+    },{
+      "type": "patchouli:crafting",
+      "title": "Tanzanites",
+      "recipe": "elegantexpansions:tanzanite_block",
+      "recipe2": "elegantexpansions:tanzanite"
+    },{
+      "type": "patchouli:crafting",
+      "title": "Onyxs",
+      "recipe": "elegantexpansions:onyx_block",
+      "recipe2": "elegantexpansions:onyx"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Alexandrite",
+      "recipe": "elegantexpansions:alexandrite_block",
+      "recipe2": "elegantexpansions:alexandrite"
+    }
+  ]
+}

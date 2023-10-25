@@ -93,8 +93,8 @@ public class ModBiomes {
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
-                        .waterColor(0x6a32c9)
-                        .waterFogColor(0x402470)
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
                         .skyColor(0x9429f2)
                         .grassColorOverride(0x35599c)
                         .foliageColorOverride(0x35599c)
@@ -102,7 +102,6 @@ public class ModBiomes {
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_GROVE))
                         .ambientParticle(new AmbientParticleSettings(ParticleTypes.ELECTRIC_SPARK, 0.018093334F))
-                       // .ambientParticle(new AmbientParticleSettings(ModParticles.SAND_ASH_PARTICLE.get(), 1F))
                         .build())
                         .build();
     }

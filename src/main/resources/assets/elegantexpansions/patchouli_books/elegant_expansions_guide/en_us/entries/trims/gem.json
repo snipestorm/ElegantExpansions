@@ -1,0 +1,20 @@
+{
+  "name": "Gem Upgrade",
+  "icon": "elegantexpansions:gem_upgrade_template",
+  "sortnum": 1,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Gem Upgrade",
+      "item": "elegantexpansions:gem_upgrade_template",
+       "text": "The Gem Upgrade Smithing Template can be found inside Wizard Towers and Oasis Loot Chests.$(br2)It has a 100% drop rate from killing Anubis.$(br2)The Gem Upgrade Smithing Template is required to Upgrade Diamond Armour to Infused Gem Armour"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "elegantexpansions:gem_upgrade_template"
+    }
+  ]
+}

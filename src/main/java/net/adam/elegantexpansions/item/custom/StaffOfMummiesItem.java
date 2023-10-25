@@ -5,14 +5,20 @@ import net.adam.elegantexpansions.item.client.renderer.StaffOfMummiesRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Fireball;
+import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -26,6 +32,7 @@ import java.util.function.Consumer;
 public class StaffOfMummiesItem extends SwordItem implements GeoItem, Vanishable {
 
     public boolean cooldown;
+
 
 
     public AnimatableInstanceCache factory = new SingletonAnimatableInstanceCache(this);
@@ -71,7 +78,6 @@ public class StaffOfMummiesItem extends SwordItem implements GeoItem, Vanishable
         });
     }
 
-
     public InteractionResult useOn(UseOnContext use) {
         Player player = use.getPlayer();
         Level level = use.getLevel();
@@ -82,29 +88,27 @@ public class StaffOfMummiesItem extends SwordItem implements GeoItem, Vanishable
             BlockState blockState = level.getBlockState(position);
             Block block = blockState.getBlock();
 
+                if (!player.getCooldowns().isOnCooldown(this) && !player.isShiftKeyDown()) {
+                    ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position.east(1),
+                                    MobSpawnType.TRIGGERED, true, true)
+                            .setLimitedLife(1200);
+                    ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position.west(1),
+                                    MobSpawnType.TRIGGERED, true, true)
+                            .setLimitedLife(1200);
+                    ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position,
+                                    MobSpawnType.TRIGGERED, true, true)
+                            .setLimitedLife(1200);
+                    player.getCooldowns().addCooldown(this, 1800);
+                    cooldown = true;
 
+                    if (player != null) {
+                        use.getItemInHand().hurtAndBreak(1, player, (p_41303_) -> {
+                            p_41303_.broadcastBreakEvent(use.getHand());
 
-            if (!player.getCooldowns().isOnCooldown(this)) {
-                ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position.east(1),
-                                MobSpawnType.TRIGGERED, true, true)
-                        .setLimitedLife(1200);
-                ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position.west(1),
-                                MobSpawnType.TRIGGERED, true, true)
-                        .setLimitedLife(1200);
-                ModEntityTypes.PLAYERS_MUMMY.get().spawn(world, (ItemStack) null, null, position,
-                                MobSpawnType.TRIGGERED, true, true)
-                        .setLimitedLife(1200);
-                player.getCooldowns().addCooldown(this, 1800);
-                cooldown = true;
-
-                if (player != null) {
-                    use.getItemInHand().hurtAndBreak(1, player, (p_41303_) -> {
-                        p_41303_.broadcastBreakEvent(use.getHand());
-
-                                });
-                            }
-                        }
+                        });
                     }
+                }
+            }
 
         return InteractionResult.sidedSuccess(level.isClientSide());
     }

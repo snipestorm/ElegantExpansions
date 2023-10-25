@@ -1,0 +1,20 @@
+{
+  "name": "Wild Armour Trim Template",
+  "icon": "minecraft:wild_armor_trim_smithing_template",
+  "sortnum": 9,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Wild Armour Trim",
+      "item": "minecraft:wild_armor_trim_smithing_template",
+       "text": "The Wild Armour Trim Smithing Template can only be found inside the Loot Chests of a Jungle Temple.$(br2)There are 2 chests inside a Jungle Temple each Chest has a 33.3% chance of containing the Wild Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:wild_armor_trim_smithing_template"
+    }
+  ]
+}

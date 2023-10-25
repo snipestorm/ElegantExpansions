@@ -1,6 +1,6 @@
 {
   "name": "Elegant Expansions",
-  "landing_text": "Hello There $(#ff0000)$(l)$(playername)$()$(br)I am so happy that you have installed my mod <3 !$(br2)$(5)$(l)Welcome to Elegant Expansions!$()$(br2)Elegant Expansions is a Mod made for added exploration, immersion and new challenges.$(br)Check out the new Biomes, Gems, Armour and Creatures, Including 2 Brand New Bosses",
+  "landing_text": "Hello There $(#ff0000)$(l)$(playername)$()$(br)I am so happy that you installed my mod, 8 months of hard work went into this, I really hope you enjoy it! <3 !$(br2)$(5)$(l)Welcome to Elegant Expansions!$()$(br2)Elegant Expansions is a Mod made for added exploration, immersion and new challenges.$(br2)Check out the new Biomes, Gems, Tools, Weapons, Armour and Creatures!",
   "subtitle": "The Complete Guide",
   "book_texture": "patchouli:textures/gui/book_purple.png",
   "model": "elegantexpansions:ee_book",

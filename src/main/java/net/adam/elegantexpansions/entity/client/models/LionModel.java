@@ -28,11 +28,11 @@ public class LionModel extends GeoModel<LionEntity> {
                 !lion.hasMane() && lion.isSleeping() || lion.isBaby() &&lion.isSleeping() ? new ResourceLocation(ElegantExpansions.MOD_ID, "textures/entity/lioness_sleep.png") :
 
                         // Lioness & Baby
-                        !lion.hasMane() && !lion.isAggressive() || lion.isBaby() ? new ResourceLocation(ElegantExpansions.MOD_ID, "textures/entity/lioness.png") :
+                        //!lion.hasMane() && !lion.isAggressive() || lion.isBaby() ? new ResourceLocation(ElegantExpansions.MOD_ID, "textures/entity/lioness.png") :
 
                                 // Angry
                                 lion.isAggressive() ? new ResourceLocation(ElegantExpansions.MOD_ID, "textures/entity/lion_angry.png") :
-                                        !lion.hasMane() && lion.isAggressive() ? new ResourceLocation(ElegantExpansions.MOD_ID, "textures/entity/lioness_angry.png") :
+                                       // !lion.hasMane() && lion.isAggressive() ? new ResourceLocation(ElegantExpansions.MOD_ID, "textures/entity/lioness_angry.png") :
 
                                                 new ResourceLocation(ElegantExpansions.MOD_ID, "textures/entity/lion.png");
 

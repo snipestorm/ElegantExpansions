@@ -1,0 +1,20 @@
+{
+  "name": "Netherite Upgrade",
+  "icon": "minecraft:netherite_upgrade_smithing_template",
+  "sortnum": 0,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Netherite Upgrade",
+      "item": "minecraft:netherite_upgrade_smithing_template",
+       "text": "The Netherite Upgrade Smithing Template can be found inside Bastion Remnents within the Nether.$(br2)It has a 100% spawn rate inside a Bastions 'Treasure' Chest whilst the other 3 Bastion Chests have a 10% Chance.$(br2)The Netherite Upgrade Smithing Template is required to Upgrade Diamond equipment to Netherite"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:netherite_upgrade_smithing_template"
+    }
+  ]
+}

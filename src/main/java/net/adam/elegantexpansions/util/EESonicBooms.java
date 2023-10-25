@@ -16,7 +16,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.List;
 
 public class EESonicBooms {
-    public static int range = 40;
+    public static int range = 50;
     public static float damage = 25F;
     public static double knockback = 2;
     // Defined in seconds.

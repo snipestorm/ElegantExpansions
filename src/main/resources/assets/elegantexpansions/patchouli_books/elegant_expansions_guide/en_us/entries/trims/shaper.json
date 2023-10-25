@@ -1,0 +1,21 @@
+
+{
+  "name": "Shaper Armour Trim Template",
+  "icon": "minecraft:shaper_armor_trim_smithing_template",
+  "sortnum": 4,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Shaper Armour Trim",
+      "item": "minecraft:shaper_armor_trim_smithing_template",
+       "text": "The Shaper Armour Trim Smithing Template can only be found within Suspicious Gravel inside of a Trail Ruin.$(br2)Bring a Brush and check all the Suspicous Gravel you find as it is only an 8.3% chance"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:shaper_armor_trim_smithing_template"
+    }
+  ]
+}

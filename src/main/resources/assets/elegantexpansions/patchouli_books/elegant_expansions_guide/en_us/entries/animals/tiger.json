@@ -31,7 +31,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Albino Tigers are an Aggresive Mob that cannot spawn natually, The only way to get an Albino Tiger is to Breed a Tiger and a White Tiger Together.$(br2)Albino Tigers cannot be Tamed and will attack the player and other Animals on sight.$(br2)You can however prevent an attack by holding out any Raw Meat, Albino Tigers will follow you if you hold this, Feed 2 Albino Tigers Raw Meat to make them Breed"
+      "text": "Albino Tigers are a Passive Mob that cannot spawn natually, The only way to get an Albino Tiger is to Breed a Tiger and a White Tiger Together.$(br2)Albino Tigers cannot be Tamed but will not attack the player and other Animals, They will however attack zombies on sight, The perfect base guardian.$(br2)Albino Tigers will follow you if you hold raw meat, you can also move them with a lead. Feed 2 Albino Tigers Raw Meat to make them Breed"
     }
   ]
 }

@@ -8,6 +8,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -90,6 +91,11 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
 
     public MobType getMobType() {
         return MobType.UNDEFINED;
+    }
+
+    @Override
+    public boolean removeWhenFarAway(double p_21542_) {
+        return false;
     }
 
     public void addAdditionalSaveData(CompoundTag p_30418_) {
@@ -232,17 +238,19 @@ public class ShrekEntity extends PathfinderMob implements  GeoEntity, NeutralMob
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(ModSounds.GOLEM_WALK.get(), 0.25F, 1.0F);
+        this.playSound(SoundEvents.IRON_GOLEM_STEP, 0.25F, 1.0F);
     }
 
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return ModSounds.GOLEM_HURT.get();
+        return ModSounds.SHREK_HURT.get();
     }
 
     protected SoundEvent getDeathSound() {
-        return ModSounds.GOLEM_DEATH.get();
+        return ModSounds.SHREK_DEATH.get();
     }
+
+
 
 
     protected float getSoundVolume() {

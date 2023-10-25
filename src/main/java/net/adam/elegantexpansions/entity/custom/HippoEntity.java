@@ -360,7 +360,13 @@ public class HippoEntity extends Animal implements GeoEntity {
     protected double getAttackReachSqr(Entity attackTarget) {
         return Mth.square(this.mob.getBbWidth() * 1.2f) + attackTarget.getBbWidth();
     }
+
 }
+
+    @Override
+    public boolean canBeLeashed(Player p_21418_) {
+        return false;
+    }
 }
 
 

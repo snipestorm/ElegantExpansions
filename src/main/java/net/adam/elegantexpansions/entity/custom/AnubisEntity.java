@@ -259,9 +259,6 @@ public class AnubisEntity extends Monster implements GeoEntity {
         return factory;
     }
 
-    protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(ModSounds.GOLEM_WALK.get(), 0.25F, 1.0F);
-    }
 
     protected void dropCustomDeathLoot(DamageSource p_31464_, int p_31465_, boolean p_31466_) {
         super.dropCustomDeathLoot(p_31464_, p_31465_, p_31466_);
@@ -272,26 +269,6 @@ public class AnubisEntity extends Monster implements GeoEntity {
 
     }
 
-    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return ModSounds.GOLEM_HURT.get();
-    }
-    protected SoundEvent getDeathSound() {
-        return ModSounds.GOLEM_DEATH.get();
-    }
-    protected SoundEvent getAmbientSound() {
-        return !isInvulnerable() ? ModSounds.ANUBIS_AMBIENT.get() : null;
-
-    }
-
-    @Override
-    public int getAmbientSoundInterval() {
-        return 300;
-    }
-
-
-    protected float getSoundVolume() {
-        return 2F;
-    }
 
     @Override
     public void baseTick() {
@@ -307,8 +284,6 @@ public class AnubisEntity extends Monster implements GeoEntity {
                 return false;
 
             } else {
-
-
 
                 if (this.half()) {
                     Entity entity = p_31461_.getDirectEntity();
@@ -467,6 +442,31 @@ public class AnubisEntity extends Monster implements GeoEntity {
                 }
             }
         }
+    }
+    //SOUNDS//
+
+    protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+        return ModSounds.ANUBIS_HURT.get();
+    }
+    protected SoundEvent getDeathSound() {
+        return ModSounds.ANUBIS_DEATH.get();
+    }
+    protected SoundEvent getAmbientSound() {
+        return !isInvulnerable() ? ModSounds.ANUBIS_AMBIENT.get() : null;
+
+    }
+    protected void playStepSound(BlockPos pos, BlockState blockIn) {
+        this.playSound(ModSounds.ANUBIS_STEP.get(), 0.25F, 1.0F);
+    }
+
+    @Override
+    public int getAmbientSoundInterval() {
+        return 300;
+    }
+
+
+    protected float getSoundVolume() {
+        return 2F;
     }
 
 

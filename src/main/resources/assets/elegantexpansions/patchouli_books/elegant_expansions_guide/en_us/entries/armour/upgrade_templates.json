@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "title": "Gem Upgrade Template",
       "item": "elegantexpansions:gem_upgrade_template",
-       "text": "The Gem Upgrade Template can only be obtained by killing Anubis.$(br2)Once you have a Gem Upgrade Template you can use the crafting recipe on the next page to duplicate it"
+       "text": "The Gem Upgrade Template can be obtained by killing Anubis and if you get lucky from Hidden Chests in the Wizard Tower or Oasis.$(br2)Once you have a Gem Upgrade Template you can use the crafting recipe on the next page to duplicate it"
     },
     {
       "type": "patchouli:crafting",

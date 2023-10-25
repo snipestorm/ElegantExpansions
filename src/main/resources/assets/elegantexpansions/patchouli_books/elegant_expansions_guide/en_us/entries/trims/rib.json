@@ -1,0 +1,20 @@
+{
+  "name": "Rib Armour Trim Template",
+  "icon": "minecraft:rib_armor_trim_smithing_template",
+  "sortnum": 16,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Rib Armour Trim",
+      "item": "minecraft:rib_armor_trim_smithing_template",
+       "text": "The Rib Armour Trim Smithing Template can only be found inside the Loot Chests of a Nether Fortress.$(br2)Each Chest has a 6.7% chance of containing the Rib Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:rib_armor_trim_smithing_template"
+    }
+  ]
+}

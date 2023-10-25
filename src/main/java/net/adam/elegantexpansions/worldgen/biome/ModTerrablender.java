@@ -9,7 +9,7 @@ import terrablender.api.Regions;
 public class ModTerrablender {
 
     public static void registerRegions() {
-        Regions.register(new ModOverworldRegion(new ResourceLocation(ElegantExpansions.MOD_ID, "overworld"), 20));
+        Regions.register(new ModOverworldRegion(new ResourceLocation(ElegantExpansions.MOD_ID, "overworld"), 10));
         Regions.register(new ModNetherRegion(new ResourceLocation(ElegantExpansions.MOD_ID, "nether"), 20));
     }
 }

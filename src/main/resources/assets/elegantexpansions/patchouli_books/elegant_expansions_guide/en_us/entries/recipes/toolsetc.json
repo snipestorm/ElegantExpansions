@@ -1,0 +1,89 @@
+{
+  "name": "Tools, Armour & Weapons",
+  "icon": "elegantexpansions:alexandrite_paxel",
+  "sortnum": 1,
+  "category": "elegantexpansions:recipes",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "Iron Hammer",
+      "item": "elegantexpansions:iron_hammer",
+      "text": "The Iron Hammer is a unique tool that can mine a 3x3 area in any direction.$(br2)It can only mine blocks that an Iron Pickaxe can, for every block it destroys it will lose 1 Durability + 1.$(br2)For example if it destroys all 9 blocks, it will lose 10 durability. "
+
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Iron Hammer",
+      "recipe": "elegantexpansions:iron_hammer"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Alexandrite Tools",
+      "recipe": "elegantexpansions:alexandrite_axe",
+      "recipe2": "elegantexpansions:alexandrite_shovel"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Alexandrite Tools",
+      "recipe": "elegantexpansions:alexandrite_pickaxe",
+      "recipe2": "elegantexpansions:alexandrite_paxel"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Alexandrite Tools",
+      "recipe": "elegantexpansions:alexandrite_hoe",
+      "recipe2": "elegantexpansions:alexandrite_sword"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Alexandrite Armor",
+      "recipe": "elegantexpansions:alexandrite_helmet",
+      "recipe2": "elegantexpansions:alexandrite_chestplate"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Alexandrite Armor",
+      "recipe": "elegantexpansions:alexandrite_leggings",
+      "recipe2": "elegantexpansions:alexandrite_boots"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Warden Staff",
+      "recipe": "elegantexpansions:warden_staff"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Warden Tools",
+      "recipe": "elegantexpansions:warden_pickaxe_from_smithing",
+      "recipe2": "elegantexpansions:warden_axe_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Warden Tools",
+      "recipe": "elegantexpansions:warden_shovel_from_smithing",
+      "recipe2": "elegantexpansions:warden_hoe_from_smithing"
+    },
+
+    {
+      "type": "patchouli:smithing",
+      "title": "Warden Armour",
+      "recipe": "elegantexpansions:warden_helmet_from_smithing",
+      "recipe2": "elegantexpansions:warden_chestplate_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Warden Armour",
+      "recipe": "elegantexpansions:warden_leggings_from_smithing",
+      "recipe2": "elegantexpansions:warden_boots_from_smithing"
+    },
+    {
+      "type": "patchouli:smithing",
+      "title": "Warden Sword",
+      "recipe": "elegantexpansions:warden_sword_from_smithing"
+    },
+    {
+      "type": "patchouli:empty",
+      "draw_filler": false
+    }
+  ]
+}

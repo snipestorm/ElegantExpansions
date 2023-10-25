@@ -85,7 +85,7 @@ public class RaccoonEntity extends Animal implements GeoEntity, PlayerRideable {
     }
 
     public boolean canBeLeashed(Player p_21418_) {
-        return false;
+        return true;
     }
 
     public void addAdditionalSaveData(CompoundTag raccoonadd) {

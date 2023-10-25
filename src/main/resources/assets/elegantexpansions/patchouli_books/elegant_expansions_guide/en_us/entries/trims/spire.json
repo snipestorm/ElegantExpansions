@@ -1,0 +1,20 @@
+{
+  "name": "Spire Armour Trim Template",
+  "icon": "minecraft:spire_armor_trim_smithing_template",
+  "sortnum": 18,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Spire Armour Trim",
+      "item": "minecraft:spire_armor_trim_smithing_template",
+       "text": "The Spire Armour Trim Smithing Template can only be found inside the Loot Chests of an End City.$(br2)Each Chest has a 6.7% chance of containing the Spire Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:spire_armor_trim_smithing_template"
+    }
+  ]
+}

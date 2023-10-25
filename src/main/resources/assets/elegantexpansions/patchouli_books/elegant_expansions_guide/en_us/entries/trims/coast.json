@@ -1,0 +1,20 @@
+{
+  "name": "Coast Armour Trim Template",
+  "icon": "minecraft:coast_armor_trim_smithing_template",
+  "sortnum": 10,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Coast Armour Trim",
+      "item": "minecraft:coast_armor_trim_smithing_template",
+       "text": "The Coast Armour Trim Smithing Template can only be found inside the Loot Chests of a Shipwreck.$(br2)There are 2 - 3 chests inside a Shipwreck each Chest has a 16.7% chance of containing the Coast Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:coast_armor_trim_smithing_template"
+    }
+  ]
+}

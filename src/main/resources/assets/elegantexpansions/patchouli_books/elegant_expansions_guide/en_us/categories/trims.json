@@ -1,0 +1,7 @@
+{
+  "name": "Smithing Templates",
+  "description": "Locations and Duplication Recipes For All Smithing & Trim Templates In Minecraft & Elegant Expansions",
+  "icon": "minecraft:netherite_upgrade_smithing_template",
+  "sortnum": 7,
+  "draw_filler": false
+}

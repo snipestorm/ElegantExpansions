@@ -1,0 +1,20 @@
+{
+  "name": "Raiser Armour Trim Template",
+  "icon": "minecraft:raiser_armor_trim_smithing_template",
+  "sortnum": 6,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Raiser Armour Trim",
+      "item": "minecraft:raiser_armor_trim_smithing_template",
+       "text": "The Raiser Armour Trim Smithing Template can only be found within Suspicious Gravel inside of a Trail Ruin.$(br2)Bring a Brush and check all the Suspicous Gravel you find as it is only an 8.3% chance"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:raiser_armor_trim_smithing_template"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Ward Armour Trim Template",
+  "icon": "minecraft:ward_armor_trim_smithing_template",
+  "sortnum": 13,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Ward Armour Trim",
+      "item": "minecraft:ward_armor_trim_smithing_template",
+       "text": "The Ward Armour Trim Smithing Template can only be found inside the Loot Chests of an Ancient City.$(br2)This is a Rare Trim, each Chest only has a 5% chance of containing the Ward Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:ward_armor_trim_smithing_template"
+    }
+  ]
+}

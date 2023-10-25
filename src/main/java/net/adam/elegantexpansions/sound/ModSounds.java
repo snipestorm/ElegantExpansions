@@ -25,11 +25,22 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> ANUBIS_HEAL2 = registerSoundEvent("anubis_bless_me_again");
     public static final RegistryObject<SoundEvent> ANUBIS_HEAL3 = registerSoundEvent("anubis_restore_me");
     public static final RegistryObject<SoundEvent> ANUBIS_AWAKEN = registerSoundEvent("anubis_awaken_friends");
+    public static final RegistryObject<SoundEvent> ANUBIS_HURT = registerSoundEvent("anubis_hurt");
+    public static final RegistryObject<SoundEvent> ANUBIS_DEATH = registerSoundEvent("anubis_death");
+    public static final RegistryObject<SoundEvent> ANUBIS_STEP = registerSoundEvent("anubis_step");
 
     //shrek//
     public static final RegistryObject<SoundEvent> SHREK_DONKEY = registerSoundEvent("shrek_donkey");
-    public static final RegistryObject<SoundEvent> SHREK_AMBIENT = registerSoundEvent("shrek_ambient");
     public static final RegistryObject<SoundEvent> SHREK_WHAT = registerSoundEvent("shrek_what");
+    public static final RegistryObject<SoundEvent> SHREK_MUSIC = registerSoundEvent("shrek_music");
+    public static final RegistryObject<SoundEvent> SHREK_HURT = registerSoundEvent("shrek_hurt");
+    public static final RegistryObject<SoundEvent> SHREK_DEATH = registerSoundEvent("shrek_death");
+
+    //tiger//
+    public static final RegistryObject<SoundEvent> TIGER_HURT = registerSoundEvent("tiger_hurt");
+    public static final RegistryObject<SoundEvent> TIGER_ROAR = registerSoundEvent("tiger_roar");
+    public static final RegistryObject<SoundEvent> TIGER_AMBIENT = registerSoundEvent("tiger_ambient");
+    public static final RegistryObject<SoundEvent> TIGER_DEATH = registerSoundEvent("tiger_death");
 
     //lion//
     public static final RegistryObject<SoundEvent> LION_HURT = registerSoundEvent("lion_hurt");

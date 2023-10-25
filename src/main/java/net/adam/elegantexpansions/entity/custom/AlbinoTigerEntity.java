@@ -1,11 +1,15 @@
 package net.adam.elegantexpansions.entity.custom;
 
 import net.adam.elegantexpansions.entity.ModEntityTypes;
+import net.adam.elegantexpansions.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -46,14 +50,14 @@ public class AlbinoTigerEntity extends TigerEntity implements GeoEntity {
     private static final TargetingConditions MOMMY_TARGETING = TargetingConditions.forNonCombat().range(16.0D).ignoreLineOfSight().selector(PARENT_TIGER_SELECTOR);
     private static final int FLAG_BRED = 8;
     private static final EntityDataAccessor<Byte> DATA_ID_FLAGS = SynchedEntityData.defineId(AlbinoTigerEntity.class, EntityDataSerializers.BYTE);
-    private static final Predicate<LivingEntity> PREY_SELECTOR = (p_248371_) -> {
-        EntityType<?> entitytype = p_248371_.getType();
-        return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT || entitytype == ModEntityTypes.CAPYBARA.get() ||
-                entitytype == EntityType.FOX || entitytype == EntityType.COW||
-                entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA||
-                entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT||
-                entitytype == EntityType.HORSE|| entitytype == EntityType.DONKEY||
-                entitytype == EntityType.MULE || entitytype == EntityType.GOAT;};
+   // private static final Predicate<LivingEntity> PREY_SELECTOR = (p_248371_) -> {
+   //     EntityType<?> entitytype = p_248371_.getType();
+   //     return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT || entitytype == ModEntityTypes.CAPYBARA.get() ||
+   //             entitytype == EntityType.FOX || entitytype == EntityType.COW||
+   //             entitytype == EntityType.PIG|| entitytype == EntityType.LLAMA|| entitytype == ModEntityTypes.VULTURE.get() ||
+   //             entitytype == EntityType.CHICKEN|| entitytype == EntityType.CAT|| entitytype == EntityType.PANDA||
+   //             entitytype == EntityType.HORSE|| entitytype == EntityType.DONKEY||
+   //             entitytype == EntityType.MULE || entitytype == EntityType.GOAT;};
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
     public AlbinoTigerEntity(EntityType<? extends AlbinoTigerEntity> entityType, Level level) {
@@ -74,7 +78,7 @@ public class AlbinoTigerEntity extends TigerEntity implements GeoEntity {
     }
 
     public boolean canBeLeashed(Player p_21418_) {
-        return false;
+        return true;
     }
 
     public void addAdditionalSaveData(CompoundTag tigeradd) {
@@ -103,7 +107,7 @@ public class AlbinoTigerEntity extends TigerEntity implements GeoEntity {
                 .add(Attributes.ATTACK_DAMAGE, 5.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.FOLLOW_RANGE, 30.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.35f).build();
+                .add(Attributes.MOVEMENT_SPEED, 0.3f).build();
     }
 
     @SubscribeEvent
@@ -124,10 +128,10 @@ public class AlbinoTigerEntity extends TigerEntity implements GeoEntity {
 
 
 
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, false, PREY_SELECTOR));
+       // this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+       // this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
+      // this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+       // this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Animal.class, false, PREY_SELECTOR));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Zombie.class, true));
     }
 
@@ -171,6 +175,15 @@ public class AlbinoTigerEntity extends TigerEntity implements GeoEntity {
     public void aiStep() {
         super.aiStep();
         this.followParent();
+        if (this.isAlive()) {
+            if (this.isImmobile()) {
+                this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.0D);
+            } else {
+                double d0 = this.getTarget() != null ? 0.35D : 0.3D;
+                double d1 = this.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
+                this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(Mth.lerp(0.1D, d1, d0));
+            }
+        }
     }
 
 
@@ -186,5 +199,28 @@ public class AlbinoTigerEntity extends TigerEntity implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource p_21239_) {
+        return ModSounds.TIGER_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSounds.TIGER_DEATH.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSounds.TIGER_AMBIENT.get();
+    }
+
+    @Override
+    protected float getSoundVolume() {
+        return 0.1F;
     }
   }

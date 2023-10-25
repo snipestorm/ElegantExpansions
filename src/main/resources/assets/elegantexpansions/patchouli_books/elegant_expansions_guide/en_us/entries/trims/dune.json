@@ -1,0 +1,20 @@
+{
+  "name": "Dune Armour Trim Template",
+  "icon": "minecraft:dune_armor_trim_smithing_template",
+  "sortnum": 12,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Dune Armour Trim",
+      "item": "minecraft:dune_armor_trim_smithing_template",
+       "text": "The Dune Armour Trim Smithing Template can only be found inside the Loot Chests of a Desert Temple.$(br2)There are 4 chests inside a Desert Temple each Chest has a 14.3% chance of containing the Dune Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:dune_armor_trim_smithing_template"
+    }
+  ]
+}

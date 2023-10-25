@@ -26,25 +26,25 @@ public class ModItems {
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ONYX = ITEMS.register("onyx",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> CITRINE = ITEMS.register("citrine",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TANZANITE = ITEMS.register("tanzanite",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
 
     //CUT//
     public static final RegistryObject<Item> CUT_RUBY = ITEMS.register("cut_ruby",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CUT_ONYX = ITEMS.register("cut_onyx",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> CUT_CITRINE = ITEMS.register("cut_citrine",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> CUT_SAPPHIRE = ITEMS.register("cut_sapphire",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CUT_TANZANITE = ITEMS.register("cut_tanzanite",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CUT_EMERALD = ITEMS.register("cut_emerald",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CUT_DIAMOND = ITEMS.register("cut_diamond",
@@ -56,13 +56,13 @@ public class ModItems {
     public static final RegistryObject<Item> INFUSED_RUBY = ITEMS.register("infused_ruby",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_ONYX = ITEMS.register("infused_onyx",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> INFUSED_CITRINE = ITEMS.register("infused_citrine",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> INFUSED_SAPPHIRE = ITEMS.register("infused_sapphire",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_TANZANITE = ITEMS.register("infused_tanzanite",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> INFUSED_EMERALD = ITEMS.register("infused_emerald",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_DIAMOND = ITEMS.register("infused_diamond",
@@ -91,7 +91,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> ALEXANDRITE_PAXEL = ITEMS.register("alexandrite_paxel",
-            () -> new PaxelItem(ModToolTiers.ALEXANDRITE, 6,(float)-2.6, new Item.Properties().rarity(Rarity.UNCOMMON)));
+            () -> new PaxelItem(ModToolTiers.ALEXANDRITE, 2,(float)-2.6, new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> ALEXANDRITE_SWORD = ITEMS.register("alexandrite_sword",
             () -> new SwordItem(ModToolTiers.ALEXANDRITE, 4,(float)-2.2, new Item.Properties().rarity(Rarity.UNCOMMON)));
@@ -163,31 +163,31 @@ public class ModItems {
             () -> new ModArmorItem(ModArmorMaterials.INFUSED_AMETHYST, ArmorItem.Type.BOOTS, new  Item.Properties()));
 
     public static final RegistryObject<Item> INFUSED_CITRINE_HELMET = ITEMS.register("infused_citrine_helmet",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.HELMET, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.HELMET, new  Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> INFUSED_CITRINE_CHESTPLATE = ITEMS.register("infused_citrine_chestplate",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.CHESTPLATE, new  Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> INFUSED_CITRINE_LEGGINGS = ITEMS.register("infused_citrine_leggings",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.LEGGINGS, new  Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> INFUSED_CITRINE_BOOTS = ITEMS.register("infused_citrine_boots",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.BOOTS, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_CITRINE, ArmorItem.Type.BOOTS, new  Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> INFUSED_TANZANITE_HELMET = ITEMS.register("infused_tanzanite_helmet",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.HELMET, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.HELMET, new  Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> INFUSED_TANZANITE_CHESTPLATE = ITEMS.register("infused_tanzanite_chestplate",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.CHESTPLATE, new  Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> INFUSED_TANZANITE_LEGGINGS = ITEMS.register("infused_tanzanite_leggings",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.LEGGINGS, new  Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> INFUSED_TANZANITE_BOOTS = ITEMS.register("infused_tanzanite_boots",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.BOOTS, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_TANZANITE, ArmorItem.Type.BOOTS, new  Item.Properties().rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> INFUSED_ONYX_HELMET = ITEMS.register("infused_onyx_helmet",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.HELMET, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.HELMET, new  Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> INFUSED_ONYX_CHESTPLATE = ITEMS.register("infused_onyx_chestplate",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.CHESTPLATE, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.CHESTPLATE, new  Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> INFUSED_ONYX_LEGGINGS = ITEMS.register("infused_onyx_leggings",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.LEGGINGS, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.LEGGINGS, new  Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> INFUSED_ONYX_BOOTS = ITEMS.register("infused_onyx_boots",
-            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.BOOTS, new  Item.Properties()));
+            () -> new ModArmorItem(ModArmorMaterials.INFUSED_ONYX, ArmorItem.Type.BOOTS, new  Item.Properties().rarity(Rarity.EPIC)));
 
     public static final RegistryObject<Item> WARDEN_HELMET = ITEMS.register("warden_helmet",
             () -> new WardenArmorItem(ModArmorMaterials.WARDEN, ArmorItem.Type.HELMET, new  Item.Properties().rarity(Rarity.RARE)));
@@ -275,7 +275,7 @@ public class ModItems {
             () -> new WardenStaffItem(ModToolTiers.WARDEN,-3,-3, new Item.Properties().stacksTo(1).rarity(Rarity.RARE).fireResistant().durability(50)));
 
     public static final RegistryObject<Item> SHREK_THEME_MUSIC_DISC = ITEMS.register("shrek_theme_music_disc",
-           () -> new RecordItem(4,ModSounds.SHREK_AMBIENT, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC),1740));
+           () -> new RecordItem(4,ModSounds.SHREK_MUSIC, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC),1740));
 
     //food//
 

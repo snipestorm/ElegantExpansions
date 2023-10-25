@@ -66,6 +66,27 @@
   ]
 },
 
+  "anubis_hurt": {
+    "subtitle": "sounds.elegantexpansions.anubis_hurt",
+    "sounds": [
+      "elegantexpansions:anubis_hurt"
+    ]
+  },
+
+  "anubis_death": {
+    "subtitle": "sounds.elegantexpansions.anubis_death",
+    "sounds": [
+      "elegantexpansions:anubis_death"
+    ]
+  },
+
+  "anubis_step": {
+    "subtitle": "sounds.elegantexpansions.anubis_step",
+    "sounds": [
+      "elegantexpansions:anubis_step"
+    ]
+  },
+
 
   "shrek_donkey": {
   "subtitle": "sounds.elegantexpansions.shrek_donkey",
@@ -80,7 +101,7 @@
       "elegantexpansions:shrek_what"
     ]
   },
-  "shrek_ambient": {
+  "shrek_music": {
     "sounds": [
       {
         "name": "elegantexpansions:shrek_ambient",
@@ -88,7 +109,48 @@
       }
     ]
   },
+  "shrek_hurt": {
+    "subtitle": "sounds.elegantexpansions.shrek_hurt",
+    "sounds": [
+      "elegantexpansions:shrek_hurt_0",
+      "elegantexpansions:shrek_hurt_1",
+      "elegantexpansions:shrek_hurt_2"
+    ]
+  },
 
+  "shrek_death": {
+    "subtitle": "sounds.elegantexpansions.shrek_death",
+    "sounds": [
+      "elegantexpansions:shrek_hurt_2"
+    ]
+  },
+
+  "tiger_death": {
+    "subtitle": "sounds.elegantexpansions.tiger_death",
+    "sounds": [
+      "elegantexpansions:tiger_death"
+    ]
+  },
+  "tiger_hurt": {
+    "subtitle": "sounds.elegantexpansions.tiger_hurt",
+    "sounds": [
+      "elegantexpansions:tiger_hurt"
+    ]
+  },
+
+  "tiger_roar": {
+    "subtitle": "sounds.elegantexpansions.tiger_roar",
+    "sounds": [
+      "elegantexpansions:tiger_attack"
+    ]
+  },
+  "tiger_ambient": {
+    "subtitle": "sounds.elegantexpansions.tiger_ambient",
+    "sounds": [
+      "elegantexpansions:tiger_ambient_0",
+      "elegantexpansions:tiger_ambient_1"
+    ]
+  },
   "gem_cutting": {
     "subtitle": "sounds.elegantexpansions.gem_cutting",
     "sounds": [

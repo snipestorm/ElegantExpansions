@@ -71,8 +71,6 @@ public class VultureEntity extends PathfinderMob implements GeoEntity, FlyingAni
         this.setPathfindingMalus(BlockPathTypes.WATER_BORDER, 16.0F);
         this.setPathfindingMalus(BlockPathTypes.COCOA, -1.0F);
         this.setPathfindingMalus(BlockPathTypes.FENCE, -1.0F);
-        //this.setPathfindingMalus(BlockPathTypes.DANGER_CACTUS, 0.0F);
-        //this.setPathfindingMalus(BlockPathTypes.DAMAGE_CACTUS, 0.0F);
     }
 
     public static AttributeSupplier setAttributes() {

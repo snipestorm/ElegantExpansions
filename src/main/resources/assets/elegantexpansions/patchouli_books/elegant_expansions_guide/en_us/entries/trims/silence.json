@@ -1,0 +1,20 @@
+{
+  "name": "Silence Armour Trim Template",
+  "icon": "minecraft:silence_armor_trim_smithing_template",
+  "sortnum": 14,
+  "category": "elegantexpansions:trims",
+  "pages": [
+     {
+      "type": "patchouli:spotlight",
+      "title": "Silence Armour Trim",
+      "item": "minecraft:silence_armor_trim_smithing_template",
+       "text": "The Silence Armour Trim Smithing Template can only be found inside the Loot Chests of an Ancient City.$(br2)This is The Rarest Trim, each Chest only has a 1.2% chance of containing the Silence Armour Trim Smithing Template"
+    },
+
+    {
+      "type": "patchouli:crafting",
+      "title": "Duplication Recipe",
+      "recipe": "minecraft:silence_armor_trim_smithing_template"
+    }
+  ]
+}

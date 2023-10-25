@@ -29,8 +29,13 @@
           "name": "minecraft:diamond",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 3
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 6.0,
+                "min": 3.0
+              },
+
+              "function": "minecraft:set_count"
             }
           ]
         },
@@ -40,8 +45,13 @@
           "name": "elegantexpansions:sapphire",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 3
+
+              "count": {
+              "type": "minecraft:uniform",
+              "max": 6.0,
+              "min": 3.0
+            },
+              "function": "minecraft:set_count"
             }
           ]
         },
@@ -51,8 +61,14 @@
           "name": "elegantexpansions:ruby",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 3
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 6.0,
+                "min": 3.0
+              },
+
+              "function": "minecraft:set_count"
+
             }
           ]
         }

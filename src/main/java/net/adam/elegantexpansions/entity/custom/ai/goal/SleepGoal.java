@@ -1,6 +1,8 @@
 package net.adam.elegantexpansions.entity.custom.ai.goal;
 
 import net.adam.elegantexpansions.entity.custom.SleepingAnimal;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
 
